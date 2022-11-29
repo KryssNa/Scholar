@@ -2,10 +2,9 @@ package controller;
 
 import java.sql.*;
 import database.DbConnection;
+import java.awt.HeadlessException;
 import javax.swing.JOptionPane;
-import models.User;
-import view.Login;
-
+import models.User; 
 
 public class UserController {
     Connection conn=DbConnection.getconnection();
@@ -20,7 +19,7 @@ public class UserController {
         try {
             String query;
             query = "select * from new_user where user_username =? and user_pass =?";
-            pst = db.getconnection().prepareStatement(query);
+            pst = DbConnection.getconnection().prepareStatement(query);
             pst.setString(1, username);
             pst.setString(2, password);
             ResultSet rs = db.retrieve(pst);
@@ -29,7 +28,7 @@ public class UserController {
                 user.SETUserID(rs.getInt("custId"));
                 // Login.CUSTOMER_ID=rs.getInt("custId");
             }
-        } catch (Exception ex) {
+        } catch (SQLException ex) {
             System.out.println("Error " + ex);
         }
         return user;
@@ -40,7 +39,6 @@ public class UserController {
               
         String username =newuser.getuserUsername();
         String password = newuser.getuserPass();
-       User lv=new User(username,password);
         try {
                 
                 Connection conn=DbConnection.getconnection();
@@ -60,19 +58,15 @@ public class UserController {
                 
             }
                 
-            } catch (Exception e) {
+            } catch (HeadlessException | SQLException e) {
                 JOptionPane.showMessageDialog(null, e);
                 System.out.println(e);
                 
                 
             }
         return 0;
-        
-        
-        
+       
     }
-    
-    
 
     public int insertuser(User user) {
         String uname = user.getuserUsername();
@@ -85,21 +79,7 @@ public class UserController {
         conn =  DbConnection.getconnection();
         PreparedStatement pst=conn.prepareStatement(insertQuery);
         
-        
-        
-        // int result=pst.executeUpdate();      
-        
-        // if(result>0){
-        
-        //     System.out.println("Inserted successfully");
-        //     return result;
-        
-        // }
-        // else{
-        //     System.out.println("Some error occured");
-        // }
-//        
-        
+     
         }
         catch(SQLException e){
         
@@ -120,7 +100,7 @@ public class UserController {
             String query1="Select * from new_user where user_username=?";
             String query2="Select * from new_user where user_email=?";
             PreparedStatement usernamePST=conn.prepareStatement(query1);
-            PreparedStatement emailPST=conn.prepareStatement(query1);
+            PreparedStatement emailPST=conn.prepareStatement(query2);
             usernamePST.setString(1, uname);
             emailPST.setString(1, email);
             
@@ -145,46 +125,7 @@ public class UserController {
             JOptionPane.showMessageDialog(null, e); 
         }
         return isExist;
-        
-        
-        
-        
-
 
 }
 
-//    public int testUser(User newuser) {
-//              
-//        String username =newuser.getuserUsername();
-//        String password = newuser.getuserPass();
-//        User lv=new User(username,null,password,null);
-//        try {
-//                
-//                String query = "Select * from new_user where user_username='"+username+"' and user_pass='"+password+"' ";
-//                
-//                Statement smt = conn.createStatement();
-//                rs = smt.executeQuery(query);
-//                
-//            if(rs.next()){
-//
-//                JOptionPane.showMessageDialog(null, "You have logged in successfully","Success",
-//                            JOptionPane.INFORMATION_MESSAGE);
-//                
-//            }else{
-//                JOptionPane.showMessageDialog(null, "Wrong password. Try again","Failed!!",
-//                            JOptionPane.ERROR_MESSAGE);
-//                
-//            }
-//                
-//            } catch (Exception e) {
-//                JOptionPane.showMessageDialog(null, e);
-//                System.out.println(e);
-//                
-//                
-//            }
-//        return 0;
-//        
-//        
-//        
-//    }
 }
