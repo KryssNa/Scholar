@@ -4,13 +4,11 @@
  */
 
 package view;
-import controller.*;
 import database.DbConnection;
 import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.*;
 import javax.swing.*;
-import models.*;
 
 /**
  *
@@ -46,9 +44,9 @@ public class Login extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
         btnlogin = new javax.swing.JButton();
-        btnforgotpass = new javax.swing.JButton();
         btnsignup = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
+        btnForgotpass = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
 
@@ -138,23 +136,6 @@ public class Login extends javax.swing.JFrame {
         jPanel1.add(btnlogin);
         btnlogin.setBounds(80, 310, 420, 50);
 
-        btnforgotpass.setBackground(new java.awt.Color(152, 200, 231));
-        btnforgotpass.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
-        btnforgotpass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/icons8-alzheimer-40.png"))); // NOI18N
-        btnforgotpass.setText("Forgot Password?");
-        btnforgotpass.setBorder(null);
-        btnforgotpass.setBorderPainted(false);
-        btnforgotpass.setContentAreaFilled(false);
-        btnforgotpass.setDefaultCapable(false);
-        btnforgotpass.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icons/icons8-alzheimer-40.png"))); // NOI18N
-        btnforgotpass.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnforgotpassActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnforgotpass);
-        btnforgotpass.setBounds(410, 260, 140, 30);
-
         btnsignup.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
         btnsignup.setText("Sign Up");
         btnsignup.addActionListener(new java.awt.event.ActionListener() {
@@ -168,6 +149,14 @@ public class Login extends javax.swing.JFrame {
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/icons8-secure-40-2.png"))); // NOI18N
         jPanel1.add(jLabel7);
         jLabel7.setBounds(66, 218, 50, 40);
+
+        btnForgotpass.setBackground(new java.awt.Color(152, 200, 231));
+        btnForgotpass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/icons8-alzheimer-40.png"))); // NOI18N
+        btnForgotpass.setText("Forgot Password?");
+        btnForgotpass.setBorderPainted(false);
+        btnForgotpass.setContentAreaFilled(false);
+        jPanel1.add(btnForgotpass);
+        btnForgotpass.setBounds(390, 247, 180, 60);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(610, 180, 580, 460);
@@ -252,10 +241,6 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnsignupActionPerformed
 
-    private void btnforgotpassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnforgotpassActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnforgotpassActionPerformed
-
     private void tfpassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfpassActionPerformed
 
 
@@ -308,7 +293,7 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnforgotpass;
+    private javax.swing.JButton btnForgotpass;
     private javax.swing.JButton btnlogin;
     private javax.swing.JButton btnsignup;
     private javax.swing.JLabel jLabel2;
