@@ -4,22 +4,47 @@ import java.sql.*;
 import database.DbConnection;
 import javax.swing.JOptionPane;
 import models.User;
+import view.Login;
 
 
 public class UserController {
     Connection conn=DbConnection.getconnection();
     ResultSet rs;
+    PreparedStatement pst;
+    DbConnection db=new DbConnection();
+
+
+    //    fetching username and password----for login
+    public User loginUser(String username, String password) {
+        User user = null;
+        try {
+            String query;
+            query = "select * from new_user where user_username =? and user_pass =?";
+            pst = db.getconnection().prepareStatement(query);
+            pst.setString(1, username);
+            pst.setString(2, password);
+            ResultSet rs = db.retrieve(pst);
+            while (rs.next()) {
+                user = new User();
+                user.SETUserID(rs.getInt("custId"));
+                // Login.CUSTOMER_ID=rs.getInt("custId");
+            }
+        } catch (Exception ex) {
+            System.out.println("Error " + ex);
+        }
+        return user;
+    }
     
 
     public int testUser(User newuser) {
               
         String username =newuser.getuserUsername();
         String password = newuser.getuserPass();
-//        User lv=new User(username,password);
+       User lv=new User(username,password);
         try {
                 
                 Connection conn=DbConnection.getconnection();
-                String query = "Select * from new_user where user_email='"+username+"' and user_pass='"+password+"' ";
+                String query = "Select * from new_user where user_username='"+username+"' and user_pass='"+password+"' ";
                 
                 Statement smt = conn.createStatement();
                 rs = smt.executeQuery(query);
@@ -59,18 +84,20 @@ public class UserController {
                 + "values('"+uname+"','"+email+"','"+pass+"','"+cpass+"')";
         conn =  DbConnection.getconnection();
         PreparedStatement pst=conn.prepareStatement(insertQuery);
-        int result=pst.executeUpdate();
         
         
-        if(result>0){
         
-            System.out.println("Inserted successfully");
-            return result;
+        // int result=pst.executeUpdate();      
         
-        }
-        else{
-            System.out.println("Some error occured");
-        }
+        // if(result>0){
+        
+        //     System.out.println("Inserted successfully");
+        //     return result;
+        
+        // }
+        // else{
+        //     System.out.println("Some error occured");
+        // }
 //        
         
         }

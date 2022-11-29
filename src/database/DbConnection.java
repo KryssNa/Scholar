@@ -82,20 +82,13 @@ public class DbConnection {
 
     }
 
-    public ResultSet retrieve(String query) {
-
+    public ResultSet retrieve(PreparedStatement st){
         try {
-
-            resultSet = statement.executeQuery(query);
-
-        } catch (SQLException e) {
-
+            resultSet=st.executeQuery();
+        }catch (SQLException e){
             e.printStackTrace();
-
         }
-
         return resultSet;
-
     }
 
     public static void main(String[] args) {

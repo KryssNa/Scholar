@@ -4,11 +4,11 @@
  */
 
 package view;
-import database.DbConnection;
-import java.awt.HeadlessException;
-import java.sql.Connection;
+import models.User;
 import java.sql.*;
 import javax.swing.*;
+
+import controller.UserController;
 
 /**
  *
@@ -192,45 +192,19 @@ public class Login extends javax.swing.JFrame {
         if(username.equals("") || pass.equals("") ){
             JOptionPane.showMessageDialog(null, "Please fill all the details");
         }else{
-//        User lv=new User(username,password);
-        try {
-                
-                Connection conn=DbConnection.getconnection();
-                String query = "Select * from new_user where user_username='"+username+"' and user_pass='"+pass+"' ";
-                Statement smt = conn.createStatement();
-                rs = smt.executeQuery(query);
-                
-            if(rs.next()){
 
-                JOptionPane.showMessageDialog(null, "You have logged in successfully","Success",
+            UserController uc=new UserController();
+            User user=uc.loginUser(username, pass);
+            if(user!=null){
+
+                         JOptionPane.showMessageDialog(null, "You have logged in successfully","Success",
                             JOptionPane.INFORMATION_MESSAGE);
                 
             }else{
-                JOptionPane.showMessageDialog(null, "Wrong password. Try again","Failed!!",
-                            JOptionPane.ERROR_MESSAGE);
+               JOptionPane.showMessageDialog(null, "Wrong password. Try again","Failed!!",
+                         JOptionPane.ERROR_MESSAGE);
                 
-            }
-                
-            } catch (HeadlessException | SQLException e) {
-                JOptionPane.showMessageDialog(null, e);
-                System.out.println(e);
-                
-                
-            }
-
-//            User s1 = new User(username,null,pass,null);
-//            UserController sc= new UserController();
-//            sc.insertuser(s1);
-//           int isLogin = sc.testUser(s1);
-//           if(isLogin!=0){
-//               System.out.println("Logged In");
-//               JOptionPane.showMessageDialog(null,"Login Successfully");
-
-//           }else{
-//               System.out.println(" LoginFailed");
-                          // JOptionPane.showMessageDialog(null,"Not Inserted ");
-               
-                   
+            }            
         }
         
         
