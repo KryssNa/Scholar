@@ -147,8 +147,6 @@ PreparedStatement pst=null;
         jLabel5 = new javax.swing.JLabel();
         txt_studentid = new javax.swing.JTextField();
         txt_courseid = new javax.swing.JTextField();
-        txt_emp = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         student_table = new javax.swing.JTable();
         jPanel5 = new javax.swing.JPanel();
@@ -239,13 +237,13 @@ PreparedStatement pst=null;
                 .addContainerGap())
         );
 
-        jLabel8.setText("Address Line 1 :");
+        jLabel8.setText("Permanent Address   :");
 
-        jLabel14.setText("Address Line 2 :");
+        jLabel14.setText("Temporary Address :");
 
-        jLabel15.setText("Apt./House No :");
+        jLabel15.setText("User Name:");
 
-        jLabel16.setText("Post Code :");
+        jLabel16.setText("Password:");
 
         txt_apt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -285,7 +283,7 @@ PreparedStatement pst=null;
             }
         });
 
-        jLabel4.setText("Course Code :");
+        jLabel4.setText("Confirm Password:");
 
         jLabel5.setText("Student ID :");
 
@@ -300,33 +298,21 @@ PreparedStatement pst=null;
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6)
                             .addComponent(jLabel7)
                             .addComponent(jLabel11))
-                        .addGap(41, 41, 41)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(r_male)
-                                .addGap(4, 4, 4)
+                                .addGap(58, 58, 58)
                                 .addComponent(r_female))
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(txt_tel, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txt_email, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel5))
-                        .addGap(58, 58, 58)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(txt_surname, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txt_firstname)
-                            .addComponent(txt_dob)
-                            .addComponent(txt_studentid, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)))
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txt_tel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txt_email, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel14)
@@ -343,7 +329,19 @@ PreparedStatement pst=null;
                                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                         .addComponent(txt_add2, javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(txt_address, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(txt_courseid, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(txt_courseid, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel5))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txt_dob, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txt_surname, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txt_firstname, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txt_studentid, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(57, 57, 57)
@@ -376,8 +374,8 @@ PreparedStatement pst=null;
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(186, 186, 186))
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(21, 21, 21)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(txt_studentid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -385,18 +383,18 @@ PreparedStatement pst=null;
                     .addComponent(jLabel1)
                     .addComponent(txt_firstname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txt_surname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(9, 9, 9)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
                     .addComponent(txt_dob, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(r_male)
-                    .addComponent(r_female))
+                    .addComponent(r_female)
+                    .addComponent(jLabel11))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -427,10 +425,6 @@ PreparedStatement pst=null;
                     .addComponent(txt_courseid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        txt_emp.setText("emp");
-
-        jLabel10.setText("Logged in As :");
 
         student_table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -512,31 +506,19 @@ PreparedStatement pst=null;
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txt_emp))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txt_emp))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -607,20 +589,20 @@ PreparedStatement pst=null;
         String email=txt_email.getText();
         String telephon=txt_tel.getText();
         
-        String address=txt_address.getText();
+        String Paddress=txt_address.getText();
 //        Image personimg=person_image;
         String genderr=gender;
-        String address1=txt_add2.getText();
-        String pc=txt_pc.getText();
-        String houseNo=txt_apt.getText();
-        String Coursecode=txt_courseid.getText();
+        String Taddress=txt_add2.getText();
+        String password=txt_pc.getText();
+        String Uname=txt_apt.getText();
+        String ConfirmPass=txt_courseid.getText();
         String stdid=txt_studentid.getText();
 
         
         if(p==0){
             
             if(stdid.equals("")||fname.equals("") ||sname.equals("")||dob.equals("")||email.equals("")||telephon.equals("")
-                    ||address.equals("")||genderr.equals("")||address1.equals("")||pc.equals("")||houseNo.equals("")||Coursecode.equals("")||genderr.isBlank()){
+                    ||Paddress.equals("")||genderr.equals("")||Taddress.equals("")||password.equals("")||Uname.equals("")||ConfirmPass.equals("")||genderr.isBlank()){
                 JOptionPane.showMessageDialog(rootPane, "One or more field is empty!!");
             
             }else if(telephon.length()<10){
@@ -635,13 +617,13 @@ PreparedStatement pst=null;
                 
                 st=conn.createStatement();
                 Long telephone=Long.parseLong(telephon);
-                int cc=Integer.parseInt(Coursecode);
+          
                 int std_idd=Integer.parseInt(stdid);
                 
                 
                
-               int result= st.executeUpdate("insert into AdminDash_AddStudent"+" values ('"+std_idd+"','"+fname+"','"+sname+"','"+dob+"','"+email+"','"+telephone+"','"+address+"'"
-                        + ",'"+genderr+"','"+address1+"','"+pc+"','"+houseNo+"','"+cc+"')");
+               int result= st.executeUpdate("insert into AdminDash_AddStudent"+" values ('"+std_idd+"','"+fname+"','"+sname+"','"+dob+"','"+email+"','"+telephone+"','"+Paddress+"'"
+                        + ",'"+genderr+"','"+Taddress+"','"+password+"','"+Uname+"','"+ConfirmPass+"')");
                 
                 if(result>0){
                 
@@ -669,10 +651,10 @@ PreparedStatement pst=null;
 
             String value0 = timeString;
             String value1 = dateString;
-            String val = txt_emp.getText().toString();
+           
                 try{
 
-                String reg= "insert into Admin_Audit (emp_id, date, status) values ('"+val+"','"+value0+" / "+value1+"','Added Record')";
+                String reg= "insert into Admin_Audit (emp_id, date, status) values ('"+value0+" / "+value1+"','Added Record')";
                 pst=conn.prepareStatement(reg);
                 pst.execute();
 
@@ -736,9 +718,9 @@ PreparedStatement pst=null;
 
             String value0 = timeString;
             String value1 = dateString;
-            String val = txt_emp.getText().toString();
+           
             try{
-                String reg= "insert into Admin_Audit (emp_id, date, status) values ('"+val+"','"+value0+" / "+value1+"','Deleted Record')";
+                String reg= "insert into Admin_Audit (emp_id, date, status) values ('',"+value0+" / "+value1+"','Deleted Record')";
                 pst=conn.prepareStatement(reg);
                 pst.execute();
             }
@@ -822,9 +804,9 @@ PreparedStatement pst=null;
 
             String value0 = timeString;
             String values = dateString;
-            String val = txt_emp.getText().toString();
+            
             try{
-                String reg= "insert into Admin_Audit (emp_id, date, status) values ('"+val+"','"+value0+" / "+values+"','Updated Record')";
+                String reg= "insert into Admin_Audit (emp_id, date, status) values ('','"+value0+" / "+values+"','Updated Record')";
                 pst=conn.prepareStatement(reg);
                 pst.execute();
             }
@@ -890,22 +872,22 @@ Update_table();
             String add5 =rs.getString("Email");
             txt_email.setText(add5);
 
-            String add6 =rs.getString("Telephone");
+            String add6 =rs.getString("contact");
             txt_tel.setText(add6);
 
-            String add7 =rs.getString("Address");
+            String add7 =rs.getString("P_address");
             txt_address.setText(add7);
 
-            String add8 =rs.getString("Address2");
+            String add8 =rs.getString("T_address");
             txt_add2.setText(add8);
 
-            String add9 =rs.getString("Apartment");
+            String add9 =rs.getString("user_name");
             txt_apt.setText(add9);
 
-            String add10 =rs.getString("Post_code");
+            String add10 =rs.getString("password");
             txt_pc.setText(add10);
 
-            String add11 =rs.getString("course_id");
+            String add11 =rs.getString("c_password");
             txt_courseid.setText(add11);
            
 
@@ -1013,7 +995,6 @@ Update_table();
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -1046,7 +1027,6 @@ Update_table();
     private javax.swing.JTextField txt_courseid;
     private javax.swing.JTextField txt_dob;
     private javax.swing.JTextField txt_email;
-    private javax.swing.JLabel txt_emp;
     private javax.swing.JTextField txt_firstname;
     private javax.swing.JTextField txt_pc;
     private javax.swing.JTextField txt_search1;
