@@ -19,21 +19,27 @@ public class DbConnection {
         try {
 
             
-            final String username = "root";
 
-            final String password = "Slesh@#";
+
+
+            final String username = "scholar";
+
+            final String password = "Scholar@123";
+
 
             Class.forName("com.mysql.cj.jdbc.Driver");
 
            Connection connection = DriverManager.getConnection(
 
-                    "jdbc:mysql://localhost:3306/scholardb", username, password);
+
+                    "jdbc:mysql://db4free.net :3306/e_scholar", username, password);
+
            
 
             if (connection != null) {
                 
 
-                System.out.println("Connected to database --> scholar E-Learning System Database");
+                System.out.println("Connected to database --> scholar Database");
                 return connection;
                 
               } else {
