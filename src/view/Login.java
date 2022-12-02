@@ -9,6 +9,8 @@ import java.sql.*;
 import javax.swing.*;
 
 import controller.UserController;
+import database.DbConnection;
+import java.awt.HeadlessException;
 
 /**
  *
@@ -22,7 +24,47 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();
     }
+    
+    public boolean enrollment(){
+        
+        Connection conn=DbConnection.getconnection();
+        ResultSet rs;
+        PreparedStatement pst;
+        boolean isvalid=false;
+        String username = tfusername.getText();
+        String pass = new String(tfpass.getPassword());
+        try {
 
+                String query = "Select * from AdminDash_AddStudent where Uname='"+username+"' and password='"+pass+"' ";
+                
+                Statement smt = conn.createStatement();
+                rs = smt.executeQuery(query);
+                
+            if(rs.next()){
+
+                JOptionPane.showMessageDialog(null, "You have logged in successfully","Success",
+                            JOptionPane.INFORMATION_MESSAGE);
+                return true;
+                
+            }else{
+                JOptionPane.showMessageDialog(null, "Wrong password. Try again","Failed!!",
+                            JOptionPane.ERROR_MESSAGE);
+                return false;
+                
+            }
+                
+            } catch (HeadlessException | SQLException e) {
+                JOptionPane.showMessageDialog(null, e);
+                System.out.println(e);
+                
+                
+            }
+        
+        
+
+        
+        return isvalid;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -191,17 +233,20 @@ public class Login extends javax.swing.JFrame {
 
         if(username.equals("") || pass.equals("") ){
             JOptionPane.showMessageDialog(null, "Please fill all the details");
+        }else if(enrollment()==true){
+            new StdDashScreen().setVisible(true);
+        
         }else{
 
             UserController uc=new UserController();
             User user=uc.loginUser(username, pass);
             if(user!=null){
 
-                         JOptionPane.showMessageDialog(null, "You have logged in successfully","Success",
+                         JOptionPane.showMessageDialog(null, "Welcome","Student Login",
                             JOptionPane.INFORMATION_MESSAGE);
                 
             }else{
-               JOptionPane.showMessageDialog(null, "Wrong password. Try again","Failed!!",
+               JOptionPane.showMessageDialog(null, "Wrong password. Try again","Student Login",
                          JOptionPane.ERROR_MESSAGE);
                 
             }            

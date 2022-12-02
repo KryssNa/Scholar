@@ -18,14 +18,14 @@ public class UserController {
         User user = null;
         try {
             String query;
-            query = "select * from new_user where user_username =? and user_pass =?";
+            query = "select * from Admin where username =? and password =?";
             pst = DbConnection.getconnection().prepareStatement(query);
             pst.setString(1, username);
             pst.setString(2, password);
             ResultSet rs = db.retrieve(pst);
             while (rs.next()) {
-                user = new User();
-                user.SETUserID(rs.getInt("custId"));
+//                user = new User();
+//                user.SETUserID(rs.getInt("custId"));
                 // Login.CUSTOMER_ID=rs.getInt("custId");
             }
         } catch (SQLException ex) {
@@ -42,7 +42,7 @@ public class UserController {
         try {
                 
                 Connection conn=DbConnection.getconnection();
-                String query = "Select * from new_user where user_username='"+username+"' and user_pass='"+password+"' ";
+                String query = "Select * from Admin where username='"+username+"' and password='"+password+"' ";
                 
                 Statement smt = conn.createStatement();
                 rs = smt.executeQuery(query);
@@ -74,7 +74,7 @@ public class UserController {
         String pass = user.getuserPass();
         String cpass = user.getuserCpass();
         try{
-        String insertQuery ="insert into new_user(user_username,user_email,user_pass,user_cpass)"
+        String insertQuery ="insert into Admin(username,email,password,Confirm_pass)"
                 + "values('"+uname+"','"+email+"','"+pass+"','"+cpass+"')";
         conn =  DbConnection.getconnection();
         PreparedStatement pst=conn.prepareStatement(insertQuery);
@@ -97,8 +97,8 @@ public class UserController {
         
         try{
         
-            String query1="Select * from new_user where user_username=?";
-            String query2="Select * from new_user where user_email=?";
+            String query1="Select * from Admin where username=?";
+            String query2="Select * from Admin where email=?";
             PreparedStatement usernamePST=conn.prepareStatement(query1);
             PreparedStatement emailPST=conn.prepareStatement(query2);
             usernamePST.setString(1, uname);
