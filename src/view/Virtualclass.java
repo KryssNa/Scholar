@@ -61,7 +61,6 @@ public class Virtualclass extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1200, 600));
         getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
@@ -142,9 +141,9 @@ public class Virtualclass extends javax.swing.JFrame {
         getContentPane().add(jLabel2);
         jLabel2.setBounds(570, 0, 112, 49);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/her.jpg"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/her.jpg"))); // NOI18N
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(340, 60, 690, 520);
+        jLabel5.setBounds(340, 60, 600, 520);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
