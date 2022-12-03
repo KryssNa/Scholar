@@ -82,7 +82,7 @@ PreparedStatement pst=null;
         
         conn=dbconn.getconnection();
 
-        String sql ="select * from AdminDash_AddStudent";
+        String sql ="select std_id as ID,CONCAT(firstname ,' ', surname) as Name,contact as Contact,P_address as Address,gender as Gender,Uname as Username,password as Password from AdminDash_AddStudent";
         pst=conn.prepareStatement(sql);
         rs=pst.executeQuery();
         student_table.setModel(DbUtils.resultSetToTableModel(rs));
@@ -135,9 +135,9 @@ PreparedStatement pst=null;
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        txt_pc = new javax.swing.JTextField();
-        txt_apt = new javax.swing.JTextField();
-        txt_add2 = new javax.swing.JTextField();
+        tf_pass = new javax.swing.JTextField();
+        tf_username = new javax.swing.JTextField();
+        tf_TAddress = new javax.swing.JTextField();
         txt_address = new javax.swing.JTextField();
         cmd_save = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
@@ -146,7 +146,7 @@ PreparedStatement pst=null;
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         txt_studentid = new javax.swing.JTextField();
-        txt_courseid = new javax.swing.JTextField();
+        tf_Cpass = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         student_table = new javax.swing.JTable();
         jPanel5 = new javax.swing.JPanel();
@@ -245,9 +245,9 @@ PreparedStatement pst=null;
 
         jLabel16.setText("Password:");
 
-        txt_apt.addActionListener(new java.awt.event.ActionListener() {
+        tf_username.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_aptActionPerformed(evt);
+                tf_usernameActionPerformed(evt);
             }
         });
 
@@ -323,13 +323,13 @@ PreparedStatement pst=null;
                         .addGap(48, 48, 48)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txt_pc, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(tf_pass, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txt_apt, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(tf_username, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(txt_add2, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(tf_TAddress, javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(txt_address, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(txt_courseid, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(tf_Cpass, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
@@ -409,20 +409,20 @@ PreparedStatement pst=null;
                     .addComponent(jLabel8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_add2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_TAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel14))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_apt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel15))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16)
-                    .addComponent(txt_pc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tf_pass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(txt_courseid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tf_Cpass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -570,12 +570,12 @@ PreparedStatement pst=null;
         txt_dob.setText("");
         txt_email.setText("");
         txt_address.setText("");
-        txt_courseid.setText("");
+        tf_Cpass.setText("");
         txt_studentid.setText("");
    
-        txt_add2.setText("");
-        txt_pc.setText("");
-        txt_apt.setText("");
+        tf_TAddress.setText("");
+        tf_pass.setText("");
+        tf_username.setText("");
         lbl_img.setIcon(null);
         txt_search1.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -592,21 +592,23 @@ PreparedStatement pst=null;
         String Paddress=txt_address.getText();
 //        Image personimg=person_image;
         String genderr=gender;
-        String Taddress=txt_add2.getText();
-        String password=txt_pc.getText();
-        String Uname=txt_apt.getText();
-        String ConfirmPass=txt_courseid.getText();
-        String stdid=txt_studentid.getText();
+        String Taddress=tf_TAddress.getText();
+        String password=tf_pass.getText();
+        String Uname=tf_username.getText();
+        String ConfirmPass=tf_Cpass.getText();
+//        String stdid=txt_studentid.getText();
 
         
         if(p==0){
-            
-            if(stdid.equals("")||fname.equals("") ||sname.equals("")||dob.equals("")||email.equals("")||telephon.equals("")
+//            
+            if(fname.equals("") ||sname.equals("")||dob.equals("")||email.equals("")||telephon.equals("")
                     ||Paddress.equals("")||genderr.equals("")||Taddress.equals("")||password.equals("")||Uname.equals("")||ConfirmPass.equals("")||genderr.isBlank()){
                 JOptionPane.showMessageDialog(rootPane, "One or more field is empty!!");
             
-            }else if(telephon.length()<10){
-            JOptionPane.showMessageDialog(rootPane, "Contact Number must be of 10 digits");
+            }else if(telephon.length()!=10){
+            JOptionPane.showMessageDialog(rootPane, "Contact Number must be of 10 digits","Number Length Error!!",JOptionPane.ERROR_MESSAGE);
+            }else if(!password.equals(ConfirmPass)){
+            JOptionPane.showMessageDialog(rootPane, "Password must be same","Password Error",JOptionPane.ERROR_MESSAGE);
             }else if(!email.endsWith("@gmail.com")){
                 JOptionPane.showMessageDialog(rootPane, "Invalid E-mail!!");                
             }else{
@@ -618,16 +620,17 @@ PreparedStatement pst=null;
                 st=conn.createStatement();
                 Long telephone=Long.parseLong(telephon);
           
-                int std_idd=Integer.parseInt(stdid);
+                
                 
                 
                
-               int result= st.executeUpdate("insert into AdminDash_AddStudent"+" values ('"+std_idd+"','"+fname+"','"+sname+"','"+dob+"','"+email+"','"+telephone+"','"+Paddress+"'"
-                        + ",'"+genderr+"','"+Taddress+"','"+password+"','"+Uname+"','"+ConfirmPass+"')");
+               int result= st.executeUpdate("insert into AdminDash_AddStudent(firstname,surname,dob,email,contact,P_address,gender,T_address,Uname,password,Confirmpass)"+" values ('"+fname+"','"+sname+"','"+dob+"','"+email+"','"+telephone+"','"+Paddress+"'"
+                        + ",'"+genderr+"','"+Taddress+"','"+Uname+"','"+password+"','"+ConfirmPass+"')");
                 
                 if(result>0){
                 
                     JOptionPane.showMessageDialog(rootPane, "Student Added Successfully");
+                    Update_table();
                 }
 
                 
@@ -636,7 +639,8 @@ PreparedStatement pst=null;
                 
 
             {
-                JOptionPane.showMessageDialog(rootPane, e);
+//                JOptionPane.showMessageDialog(rootPane, e);
+                System.out.println("SQL Error "+e);
                
             }}
 
@@ -654,7 +658,7 @@ PreparedStatement pst=null;
            
                 try{
 
-                String reg= "insert into Admin_Audit (emp_id, date, status) values ('"+value0+" / "+value1+"','Added Record')";
+                String reg= "insert into Admin_Audit ( date, status) values ('"+value0+" / "+value1+"','Added Record')";
                 pst=conn.prepareStatement(reg);
                 pst.execute();
 
@@ -680,9 +684,9 @@ PreparedStatement pst=null;
         }
     }//GEN-LAST:event_cmd_saveActionPerformed
 
-    private void txt_aptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_aptActionPerformed
+    private void tf_usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_usernameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txt_aptActionPerformed
+    }//GEN-LAST:event_tf_usernameActionPerformed
 
     private void txt_firstnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_firstnameActionPerformed
         // TODO add your handling code here:
@@ -720,7 +724,7 @@ PreparedStatement pst=null;
             String value1 = dateString;
            
             try{
-                String reg= "insert into Admin_Audit (emp_id, date, status) values ('',"+value0+" / "+value1+"','Deleted Record')";
+                String reg= "insert into Admin_Audit ( date, status) values ("+value0+" / "+value1+"','Deleted Record')";
                 pst=conn.prepareStatement(reg);
                 pst.execute();
             }
@@ -776,12 +780,12 @@ PreparedStatement pst=null;
                 String value66 = txt_tel.getText();
                 Long value6=Long.parseLong(value66);
                 String value7 = txt_address.getText();
-                String value9 = txt_add2.getText();
-                String value10 = txt_apt.getText();
-                String value11 = txt_pc.getText();
+                String value9 = tf_TAddress.getText();
+                String value10 = tf_username.getText();
+                String value11 = tf_pass.getText();
 
 
-                String sql= "update AdminDash_AddStudent set std_id='"+value4+"',firtstname='"+value1+"', surname='"+value2+"', "
+                String sql= "update AdminDash_AddStudent set std_id='"+value4+"',firSstname='"+value1+"', surname='"+value2+"', "
                         + "dob='"+value3+"',Email='"+value5+"',telephone='"+value6+"',Address='"+value7+"',Address2= '"+value9+"', "
                         + "Apartment='"+value10+"',Post_code ='"+value11+"'"
                         + "where std_id='"+value4+"' ";
@@ -879,16 +883,16 @@ Update_table();
             txt_address.setText(add7);
 
             String add8 =rs.getString("T_address");
-            txt_add2.setText(add8);
+            tf_TAddress.setText(add8);
 
             String add9 =rs.getString("user_name");
-            txt_apt.setText(add9);
+            tf_username.setText(add9);
 
             String add10 =rs.getString("password");
-            txt_pc.setText(add10);
+            tf_pass.setText(add10);
 
             String add11 =rs.getString("c_password");
-            txt_courseid.setText(add11);
+            tf_Cpass.setText(add11);
            
 
             byte[] img = rs.getBytes("Image");
@@ -1021,14 +1025,14 @@ Update_table();
     private javax.swing.JRadioButton r_female;
     private javax.swing.JRadioButton r_male;
     private javax.swing.JTable student_table;
-    private javax.swing.JTextField txt_add2;
+    private javax.swing.JTextField tf_Cpass;
+    private javax.swing.JTextField tf_TAddress;
+    private javax.swing.JTextField tf_pass;
+    private javax.swing.JTextField tf_username;
     private javax.swing.JTextField txt_address;
-    private javax.swing.JTextField txt_apt;
-    private javax.swing.JTextField txt_courseid;
     private javax.swing.JTextField txt_dob;
     private javax.swing.JTextField txt_email;
     private javax.swing.JTextField txt_firstname;
-    private javax.swing.JTextField txt_pc;
     private javax.swing.JTextField txt_search1;
     private javax.swing.JTextField txt_studentid;
     private javax.swing.JTextField txt_surname;

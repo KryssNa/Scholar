@@ -165,16 +165,16 @@
                           <EmptySpace min="48" pref="48" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="txt_pc" alignment="1" min="-2" pref="168" max="-2" attributes="0"/>
+                                  <Component id="tf_pass" alignment="1" min="-2" pref="168" max="-2" attributes="0"/>
                                   <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                      <Component id="txt_apt" min="-2" pref="168" max="-2" attributes="0"/>
+                                      <Component id="tf_username" min="-2" pref="168" max="-2" attributes="0"/>
                                       <Group type="103" alignment="1" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="txt_add2" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="tf_TAddress" alignment="0" max="32767" attributes="0"/>
                                           <Component id="txt_address" min="-2" pref="168" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
-                              <Component id="txt_courseid" alignment="1" min="-2" pref="168" max="-2" attributes="0"/>
+                              <Component id="tf_Cpass" alignment="1" min="-2" pref="168" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
@@ -279,23 +279,23 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="txt_add2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tf_TAddress" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="txt_apt" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tf_username" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txt_pc" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tf_pass" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txt_courseid" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tf_Cpass" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -412,14 +412,14 @@
             <Property name="text" type="java.lang.String" value="Password:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txt_pc">
+        <Component class="javax.swing.JTextField" name="tf_pass">
         </Component>
-        <Component class="javax.swing.JTextField" name="txt_apt">
+        <Component class="javax.swing.JTextField" name="tf_username">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_aptActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tf_usernameActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="txt_add2">
+        <Component class="javax.swing.JTextField" name="tf_TAddress">
         </Component>
         <Component class="javax.swing.JTextField" name="txt_address">
         </Component>
@@ -482,7 +482,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_studentidActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="txt_courseid">
+        <Component class="javax.swing.JTextField" name="tf_Cpass">
         </Component>
       </SubComponents>
     </Container>
