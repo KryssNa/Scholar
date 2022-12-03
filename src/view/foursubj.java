@@ -77,7 +77,7 @@ public class foursubj extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(255, 204, 153));
 
         jButton1.setBackground(new java.awt.Color(255, 204, 153));
-        jButton1.setText("Home");
+        jButton1.setText("Back");
         jButton1.setBorder(null);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
