@@ -15,31 +15,31 @@ import models.User;
 public class Virtualclass extends javax.swing.JFrame {
 
     /**
-     * Creates new form 
+     * Creates new form
      */
     public Virtualclass() {
         initComponents();
     }
-    
-    public boolean validateLogin(){
-        String name=txt_username.getText();
-        String pwd=new String(txt_password.getPassword());
-        
-        if (name.equals("")){
-            JOptionPane.showMessageDialog(this,"please enter username");
+
+    public boolean validateLogin() {
+        String name = txt_username.getText();
+        String pwd = new String(txt_password.getPassword());
+
+        if (name.equals("")) {
+            JOptionPane.showMessageDialog(this, "please enter username");
             return false;
-            
+
         }
-        if (pwd.equals("")){
-            JOptionPane.showMessageDialog(this,"please enter password");
+        if (pwd.equals("")) {
+            JOptionPane.showMessageDialog(this, "please enter password");
             return false;
-            
+
         }
         return true;
     }
-    
-    //verify creds
-    
+
+    // verify creds
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -60,6 +60,7 @@ public class Virtualclass extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setLayout(null);
@@ -121,6 +122,18 @@ public class Virtualclass extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(341, Short.MAX_VALUE))
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(570, 0, 112, 49);
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/her.jpg"))); // NOI18N
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(340, 60, 600, 520);
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -139,44 +152,48 @@ public class Virtualclass extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txt_usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_usernameActionPerformed
+    private void txt_usernameActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_txt_usernameActionPerformed
         validateLogin();
-    }//GEN-LAST:event_txt_usernameActionPerformed
+    }// GEN-LAST:event_txt_usernameActionPerformed
 
-    private void txt_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_passwordActionPerformed
+    private void txt_passwordActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_txt_passwordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txt_passwordActionPerformed
+    }// GEN-LAST:event_txt_passwordActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       // 
-       
-       if(validateLogin()==true){
-       String email=txt_username.getText();
-       String pass=new String(txt_password.getPassword());
-       
-        User s1 = new User(email,null,pass,null);
-            UserController sc= new UserController();
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
+        //
+
+        if (validateLogin() == true) {
+            String email = txt_username.getText();
+            String pass = new String(txt_password.getPassword());
+
+            User s1 = new User(email, null, pass, null);
+            UserController sc = new UserController();
             int isLogin = sc.testUser(s1);
-            if(isLogin==0){
+            if (isLogin == 0) {
                 System.out.println("Joined");
-                //JOptionPane.showMessageDialog(null,"Meeting Joined Successfully");
-                
+                // JOptionPane.showMessageDialog(null,"Meeting Joined Successfully");
 
-            }else{
+            } else {
                 System.out.println(" Error Joining meeting");
-                           // JOptionPane.showMessageDialog(null,"Not Inserted ");
-            }   }  
-       
-    }//GEN-LAST:event_jButton1ActionPerformed
+                // JOptionPane.showMessageDialog(null,"Not Inserted ");
+            }
+        }
+
+    }// GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+        // <editor-fold defaultstate="collapsed" desc=" Look and feel setting code
+        // (optional) ">
+        /*
+         * If Nimbus (introduced in Java SE 6) is not available, stay with the default
+         * look and feel.
+         * For details see
+         * http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -186,15 +203,19 @@ public class Virtualclass extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Virtualclass.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Virtualclass.class.getName()).log(java.util.logging.Level.SEVERE, null,
+                    ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Virtualclass.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Virtualclass.class.getName()).log(java.util.logging.Level.SEVERE, null,
+                    ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Virtualclass.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Virtualclass.class.getName()).log(java.util.logging.Level.SEVERE, null,
+                    ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Virtualclass.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Virtualclass.class.getName()).log(java.util.logging.Level.SEVERE, null,
+                    ex);
         }
-        //</editor-fold>
+        // </editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
