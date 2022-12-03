@@ -24,8 +24,8 @@ public class UserController {
             pst.setString(2, password);
             ResultSet rs = db.retrieve(pst);
             while (rs.next()) {
-//                user = new User();
-//                user.SETUserID(rs.getInt("custId"));
+                user = new User();
+                user.SETUserID(rs.getInt("email"));
                 // Login.CUSTOMER_ID=rs.getInt("custId");
             }
         } catch (SQLException ex) {

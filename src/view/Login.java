@@ -42,14 +42,12 @@ public class Login extends javax.swing.JFrame {
                 
             if(rs.next()){
 
-                JOptionPane.showMessageDialog(null, "You have logged in successfully","Success",
+                JOptionPane.showMessageDialog(null, "Welcome to Scholar","Student",
                             JOptionPane.INFORMATION_MESSAGE);
                 return true;
                 
             }else{
-                JOptionPane.showMessageDialog(null, "Wrong password. Try again","Failed!!",
-                            JOptionPane.ERROR_MESSAGE);
-                return false;
+                   return false;
                 
             }
                 
@@ -236,17 +234,20 @@ public class Login extends javax.swing.JFrame {
         }else if(enrollment()==true){
             new StdDashScreen().setVisible(true);
         
+        }else if("Teacher".equals(username) &&"Teacher123".equals(pass)){
+            new teacherDash().setVisible(true);
+            
         }else{
 
             UserController uc=new UserController();
             User user=uc.loginUser(username, pass);
             if(user!=null){
 
-                         JOptionPane.showMessageDialog(null, "Welcome","Student Login",
+                         JOptionPane.showMessageDialog(null, "Welcome to Scholar Admin","Administration",
                             JOptionPane.INFORMATION_MESSAGE);
                 
             }else{
-               JOptionPane.showMessageDialog(null, "Wrong password. Try again","Student Login",
+               JOptionPane.showMessageDialog(null, "Wrong password. Try again","Administration",
                          JOptionPane.ERROR_MESSAGE);
                 
             }            
