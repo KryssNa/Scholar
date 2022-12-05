@@ -30,6 +30,7 @@ double gp=0.0;
         jPanel1 = new javax.swing.JPanel();
         lbl = new javax.swing.JLabel();
         ProBar = new javax.swing.JProgressBar();
+        evaluation = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -42,21 +43,32 @@ double gp=0.0;
         ProBar.setMaximum(300);
         ProBar.setStringPainted(true);
 
+        evaluation.setFont(new java.awt.Font("Luminari", 0, 24)); // NOI18N
+        evaluation.setForeground(new java.awt.Color(102, 0, 0));
+        evaluation.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(158, 158, 158)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ProBar, javax.swing.GroupLayout.DEFAULT_SIZE, 572, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(158, 158, 158)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ProBar, javax.swing.GroupLayout.DEFAULT_SIZE, 572, Short.MAX_VALUE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(251, 251, 251)
+                        .addComponent(evaluation, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(129, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(62, 62, 62)
+                .addContainerGap()
+                .addComponent(evaluation, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
                 .addComponent(lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(56, 56, 56)
                 .addComponent(ProBar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -64,7 +76,7 @@ double gp=0.0;
         );
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jButton1.setText("Show Result");
+        jButton1.setText("Get Evaluation");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -91,7 +103,7 @@ double gp=0.0;
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(80, 80, 80)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(93, Short.MAX_VALUE))
+                .addContainerGap(76, Short.MAX_VALUE))
         );
 
         pack();
@@ -101,18 +113,22 @@ double gp=0.0;
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         String str="";
-        if(this.gp<100){
-            str="Hard Luck ";
+        if(this.gp>=0 && this.gp<20){
+            str=" Very Poor Performance ";
+        }
+        else if(this.gp>21 && this.gp<50){
+            str="Needs more improvement";
         }
         else{
-            if(this.gp>=100 && this.gp<200){
+            if(this.gp>=50 && this.gp<80){
                 str="Good Job !";
             }
             else{
                 str="Excellent work !";
             }
         }
-        lbl.setText(" Your Marks : "+this.gp + " "+str);
+        lbl.setText(" Your Marks : "+this.gp);
+        evaluation.setText(str);
         ProBar.setValue((int)this.gp);
     }//GEN-LAST:event_jButton1ActionPerformed
 public void getPoints(double pts){
@@ -155,6 +171,7 @@ public void getPoints(double pts){
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JProgressBar ProBar;
+    private javax.swing.JLabel evaluation;
     private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lbl;

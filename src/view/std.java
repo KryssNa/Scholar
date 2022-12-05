@@ -56,9 +56,10 @@ public class std extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(153, 204, 0));
+        jPanel1.setBackground(new java.awt.Color(0, 51, 153));
 
         jTextField1.setText("Attendance");
+        jTextField1.setEnabled(false);
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -66,8 +67,10 @@ public class std extends javax.swing.JFrame {
         });
 
         jTextField2.setText("1");
+        jTextField2.setEnabled(false);
 
         jTextField3.setText("Python");
+        jTextField3.setEnabled(false);
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField3ActionPerformed(evt);
@@ -75,16 +78,22 @@ public class std extends javax.swing.JFrame {
         });
 
         jTextField4.setText("Subject");
+        jTextField4.setEnabled(false);
 
         jTextField5.setText("Present");
+        jTextField5.setEnabled(false);
 
         jTextField6.setText("Absent");
+        jTextField6.setEnabled(false);
 
         jTextField7.setText("Total");
+        jTextField7.setEnabled(false);
 
         jTextField8.setText("S.N");
+        jTextField8.setEnabled(false);
 
         jTextField9.setText("Java");
+        jTextField9.setEnabled(false);
         jTextField9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField9ActionPerformed(evt);
@@ -92,6 +101,7 @@ public class std extends javax.swing.JFrame {
         });
 
         jTextField10.setText("C++");
+        jTextField10.setEnabled(false);
         jTextField10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField10ActionPerformed(evt);
@@ -99,6 +109,7 @@ public class std extends javax.swing.JFrame {
         });
 
         jTextField11.setText("Html");
+        jTextField11.setEnabled(false);
         jTextField11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField11ActionPerformed(evt);
@@ -106,22 +117,47 @@ public class std extends javax.swing.JFrame {
         });
 
         jTextField12.setText("2");
+        jTextField12.setEnabled(false);
 
         jTextField13.setText("3");
+        jTextField13.setEnabled(false);
 
         jTextField14.setText("4");
+        jTextField14.setEnabled(false);
 
+        jTextField15.setEnabled(false);
+
+        jTextField16.setEnabled(false);
+
+        jTextField17.setEnabled(false);
+
+        jTextField18.setEnabled(false);
+
+        jTextField19.setEnabled(false);
+
+        jTextField20.setEnabled(false);
         jTextField20.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField20ActionPerformed(evt);
             }
         });
 
+        jTextField21.setEnabled(false);
+
+        jTextField22.setEnabled(false);
+
+        jTextField23.setEnabled(false);
+
+        jTextField24.setEnabled(false);
+
+        jTextField25.setEnabled(false);
         jTextField25.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField25ActionPerformed(evt);
             }
         });
+
+        jTextField26.setEnabled(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
