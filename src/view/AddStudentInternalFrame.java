@@ -1,16 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
-
 package view;
-
-
-/**
- *
- * @author Hyrex
- */
 import database.DbConnection;
 import net.proteanit.sql.DbUtils;
 import java.awt.*;
@@ -29,11 +21,11 @@ import java.util.GregorianCalendar;
 
 import javax.swing.*;
 
-
-
-public class AddingStdScreen extends javax.swing.JFrame {
-        
-        
+/**
+ *
+ * @author Lenovo
+ */
+public class AddStudentInternalFrame extends javax.swing.JInternalFrame {
 
 Connection conn;
 DbConnection dbconn;
@@ -43,11 +35,12 @@ ResultSet rs=null;
 Statement st;
 PreparedStatement pst=null;
     /**
-     * Creates new form Staff_details
+     * Creates new form AddStudentInternalFrame
      */
-    public AddingStdScreen() {
+    public AddStudentInternalFrame() {
         initComponents();
-        Toolkit toolkit = getToolkit();
+        
+            Toolkit toolkit = getToolkit();
         Dimension size = toolkit.getScreenSize();
         setLocation(size.width/2 - getWidth()/2, 
         size.height/2 - getHeight()/2);
@@ -64,7 +57,7 @@ PreparedStatement pst=null;
         int year = cal.get(Calendar.YEAR);
         int day = cal.get(Calendar.DAY_OF_MONTH);
         
-        lbl_date.setText((month+1)+"/"+day+"/"+year);
+//        lbl_date.setText((month+1)+"/"+day+"/"+year);
         
         //Time
       
@@ -85,7 +78,7 @@ PreparedStatement pst=null;
         String sql ="select std_id as ID,CONCAT(firstname ,' ', surname) as Name,contact as Contact,P_address as Address,gender as Gender,Uname as Username,password as Password from AdminDash_AddStudent";
         pst=conn.prepareStatement(sql);
         rs=pst.executeQuery();
-        student_table.setModel(DbUtils.resultSetToTableModel(rs));
+//        student_table.setModel(DbUtils.resultSetToTableModel(rs));
     }
     catch(Exception e){
     JOptionPane.showMessageDialog(null, e);
@@ -102,6 +95,7 @@ PreparedStatement pst=null;
             }
         }
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -111,10 +105,6 @@ PreparedStatement pst=null;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jMenuBar2 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
-        jDialog1 = new javax.swing.JDialog();
         jPanel3 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         txt_tel = new javax.swing.JTextField();
@@ -157,26 +147,6 @@ PreparedStatement pst=null;
         jMenuItem1 = new javax.swing.JMenuItem();
         lbl_date = new javax.swing.JMenu();
         lbl_time = new javax.swing.JMenu();
-
-        jMenu1.setText("File");
-        jMenuBar2.add(jMenu1);
-
-        jMenu2.setText("Edit");
-        jMenuBar2.add(jMenu2);
-
-        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
-        jDialog1.getContentPane().setLayout(jDialog1Layout);
-        jDialog1Layout.setHorizontalGroup(
-            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        jDialog1Layout.setVerticalGroup(
-            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setResizable(false);
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Student Information", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Adobe Arabic", 1, 36))); // NOI18N
 
@@ -357,7 +327,7 @@ PreparedStatement pst=null;
                                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -466,9 +436,9 @@ PreparedStatement pst=null;
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel13)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txt_search1, javax.swing.GroupLayout.PREFERRED_SIZE, 565, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(8, 8, 8))
+                .addGap(14, 14, 14))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -507,40 +477,40 @@ PreparedStatement pst=null;
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(24, 24, 24)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 34, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 514, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 76, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
-        
+
         JFileChooser chooser = new JFileChooser();
         chooser.showOpenDialog(null);
         File f = chooser.getSelectedFile();
-        
+
         filename =f.getAbsolutePath();
         ImageIcon imageIcon = new ImageIcon(new ImageIcon(filename).getImage().getScaledInstance(lbl_img.getWidth(), lbl_img.getHeight(), Image.SCALE_DEFAULT));
         lbl_img.setIcon(imageIcon);
-      try {
+        try {
 
             File image = new File(filename);
             FileInputStream fis = new FileInputStream (image);
@@ -558,27 +528,35 @@ PreparedStatement pst=null;
             JOptionPane.showMessageDialog(null,e);
 
         }
-       
+
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void r_maleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_maleActionPerformed
         // TODO add your handling code here:
-        
-        txt_firstname.setText("");
-        txt_surname.setText("");
-        txt_tel.setText("");
-        txt_dob.setText("");
-        txt_email.setText("");
-        txt_address.setText("");
-        tf_Cpass.setText("");
-        txt_studentid.setText("");
-   
-        tf_TAddress.setText("");
-        tf_pass.setText("");
-        tf_username.setText("");
-        lbl_img.setIcon(null);
-        txt_search1.setText("");
-    }//GEN-LAST:event_jButton1ActionPerformed
+        gender ="Male";
+        r_male.setSelected(true);
+        r_female.setSelected(false);
+    }//GEN-LAST:event_r_maleActionPerformed
+
+    private void r_femaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_femaleActionPerformed
+        // TODO add your handling code here:
+        gender ="Female";
+        r_female.setSelected(true);
+        r_male.setSelected(false);
+
+    }//GEN-LAST:event_r_femaleActionPerformed
+
+    private void txt_surnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_surnameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_surnameActionPerformed
+
+    private void txt_firstnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_firstnameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_firstnameActionPerformed
+
+    private void tf_usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_usernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_usernameActionPerformed
 
     private void cmd_saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmd_saveActionPerformed
         // TODO add your handling code here:
@@ -588,63 +566,146 @@ PreparedStatement pst=null;
         String dob=txt_dob.getText();
         String email=txt_email.getText();
         String telephon=txt_tel.getText();
-        
+
         String Paddress=txt_address.getText();
-//        Image personimg=person_image;
+        //        Image personimg=person_image;
         String genderr=gender;
         String Taddress=tf_TAddress.getText();
         String password=tf_pass.getText();
         String Uname=tf_username.getText();
         String ConfirmPass=tf_Cpass.getText();
-//        String stdid=txt_studentid.getText();
+        //        String stdid=txt_studentid.getText();
 
-        
         if(p==0){
-//            
+            //
             if(fname.equals("") ||sname.equals("")||dob.equals("")||email.equals("")||telephon.equals("")
-                    ||Paddress.equals("")||genderr.equals("")||Taddress.equals("")||password.equals("")||Uname.equals("")||ConfirmPass.equals("")||genderr.isBlank()){
+                ||Paddress.equals("")||genderr.equals("")||Taddress.equals("")||password.equals("")||Uname.equals("")||ConfirmPass.equals("")||genderr.isBlank()){
                 JOptionPane.showMessageDialog(rootPane, "One or more field is empty!!");
-            
+
             }else if(telephon.length()!=10){
-            JOptionPane.showMessageDialog(rootPane, "Contact Number must be of 10 digits","Number Length Error!!",JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(rootPane, "Contact Number must be of 10 digits","Number Length Error!!",JOptionPane.ERROR_MESSAGE);
             }else if(!password.equals(ConfirmPass)){
-            JOptionPane.showMessageDialog(rootPane, "Password must be same","Password Error",JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(rootPane, "Password must be same","Password Error",JOptionPane.ERROR_MESSAGE);
             }else if(!email.endsWith("@gmail.com")){
-                JOptionPane.showMessageDialog(rootPane, "Invalid E-mail!!");                
+                JOptionPane.showMessageDialog(rootPane, "Invalid E-mail!!");
             }else{
 
-            try {
-               
-                conn=dbconn.getconnection();
-                
-                st=conn.createStatement();
-                Long telephone=Long.parseLong(telephon);
-          
-                
-                
-                
-               
-               int result= st.executeUpdate("insert into AdminDash_AddStudent(firstname,surname,dob,email,contact,P_address,gender,T_address,Uname,password,Confirmpass)"+" values ('"+fname+"','"+sname+"','"+dob+"','"+email+"','"+telephone+"','"+Paddress+"'"
+                try {
+
+                    conn=dbconn.getconnection();
+
+                    st=conn.createStatement();
+                    Long telephone=Long.parseLong(telephon);
+
+                    int result= st.executeUpdate("insert into AdminDash_AddStudent(firstname,surname,dob,email,contact,P_address,gender,T_address,Uname,password,Confirmpass)"+" values ('"+fname+"','"+sname+"','"+dob+"','"+email+"','"+telephone+"','"+Paddress+"'"
                         + ",'"+genderr+"','"+Taddress+"','"+Uname+"','"+password+"','"+ConfirmPass+"')");
-                
-                if(result>0){
-                
-                    JOptionPane.showMessageDialog(rootPane, "Student Added Successfully");
-                    Update_table();
+
+                    if(result>0){
+
+                        JOptionPane.showMessageDialog(rootPane, "Student Added Successfully");
+                        Update_table();
+                    }
+
                 }
+                catch (Exception e)
 
-                
+                {
+                    //                JOptionPane.showMessageDialog(rootPane, e);
+                    System.out.println("SQL Error "+e);
+
+                }}
+
+                Date currentDate = GregorianCalendar.getInstance().getTime();
+                DateFormat df = DateFormat.getDateInstance();
+                String dateString = df.format(currentDate);
+
+                Date d = new Date();
+                SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+                String timeString = sdf.format(d);
+
+                String value0 = timeString;
+                String value1 = dateString;
+
+                try{
+
+                    String reg= "insert into Admin_Audit ( date, status) values ('"+value0+" / "+value1+"','Added Record')";
+                    pst=conn.prepareStatement(reg);
+                    pst.execute();
+
+                }
+                catch (Exception e)
+
+                {
+                    JOptionPane.showMessageDialog(null,e);
+                }
+                finally {
+
+                    try{
+                        rs.close();
+                        pst.close();
+
+                    }
+
+                    catch(Exception e){
+                        JOptionPane.showMessageDialog(null,e);
+
+                    }
+                }
             }
-            catch (Exception e)
-                
+    }//GEN-LAST:event_cmd_saveActionPerformed
 
-            {
-//                JOptionPane.showMessageDialog(rootPane, e);
-                System.out.println("SQL Error "+e);
-               
-            }}
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
 
-        
+        txt_firstname.setText("");
+        txt_surname.setText("");
+        txt_tel.setText("");
+        txt_dob.setText("");
+        txt_email.setText("");
+        txt_address.setText("");
+        tf_Cpass.setText("");
+        txt_studentid.setText("");
+
+        tf_TAddress.setText("");
+        tf_pass.setText("");
+        tf_username.setText("");
+        lbl_img.setIcon(null);
+        txt_search1.setText("");
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+
+        int p = JOptionPane.showConfirmDialog(null, "Are you sure you want to update?","Update Record",JOptionPane.YES_NO_OPTION);
+        if(p==0){
+
+            try{
+
+                String value1 = txt_firstname.getText();
+                String value2 = txt_surname.getText();
+                String value3 = txt_dob.getText();
+                String value4 = txt_studentid.getText();
+                String value5 = txt_email.getText();
+                String value66 = txt_tel.getText();
+                Long value6=Long.parseLong(value66);
+                String value7 = txt_address.getText();
+                String value9 = tf_TAddress.getText();
+                String value10 = tf_username.getText();
+                String value11 = tf_pass.getText();
+
+                String sql= "update AdminDash_AddStudent set std_id='"+value4+"',firSstname='"+value1+"', surname='"+value2+"', "
+                + "dob='"+value3+"',Email='"+value5+"',telephone='"+value6+"',Address='"+value7+"',Address2= '"+value9+"', "
+                + "Apartment='"+value10+"',Post_code ='"+value11+"'"
+                + "where std_id='"+value4+"' ";
+
+                pst=conn.prepareStatement(sql);
+                pst.execute();
+                JOptionPane.showMessageDialog(null, "Record Updated");
+
+            }catch(Exception e){
+                JOptionPane.showMessageDialog(null, e);
+            }
+
             Date currentDate = GregorianCalendar.getInstance().getTime();
             DateFormat df = DateFormat.getDateInstance();
             String dateString = df.format(currentDate);
@@ -654,63 +715,38 @@ PreparedStatement pst=null;
             String timeString = sdf.format(d);
 
             String value0 = timeString;
-            String value1 = dateString;
-           
-                try{
+            String values = dateString;
 
-                String reg= "insert into Admin_Audit ( date, status) values ('"+value0+" / "+value1+"','Added Record')";
+            try{
+                String reg= "insert into Admin_Audit (emp_id, date, status) values ('','"+value0+" / "+values+"','Updated Record')";
                 pst=conn.prepareStatement(reg);
                 pst.execute();
-
-                  }
+            }
             catch (Exception e)
 
             {
                 JOptionPane.showMessageDialog(null,e);
             }
-             finally {
+            finally {
 
                 try{
                     rs.close();
                     pst.close();
 
-                }  
-                
+                }
                 catch(Exception e){
-                   JOptionPane.showMessageDialog(null,e);
-                
+
+                }
             }
-         }
+            Update_table();
         }
-    }//GEN-LAST:event_cmd_saveActionPerformed
 
-    private void tf_usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_usernameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tf_usernameActionPerformed
-
-    private void txt_firstnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_firstnameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_firstnameActionPerformed
-
-    private void r_femaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_femaleActionPerformed
-        // TODO add your handling code here:
-        gender ="Female";
-        r_female.setSelected(true);
-        r_male.setSelected(false);
-        
-    }//GEN-LAST:event_r_femaleActionPerformed
-
-    private void r_maleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_maleActionPerformed
-        // TODO add your handling code here:
-        gender ="Male";
-        r_male.setSelected(true);
-        r_female.setSelected(false);
-    }//GEN-LAST:event_r_maleActionPerformed
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        
-         int p = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete record?","Delete",JOptionPane.YES_NO_OPTION);
+
+        int p = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete record?","Delete",JOptionPane.YES_NO_OPTION);
         if(p==0){
             Date currentDate = GregorianCalendar.getInstance().getTime();
             DateFormat df = DateFormat.getDateInstance();
@@ -722,7 +758,7 @@ PreparedStatement pst=null;
 
             String value0 = timeString;
             String value1 = dateString;
-           
+
             try{
                 String reg= "insert into Admin_Audit ( date, status) values ("+value0+" / "+value1+"','Deleted Record')";
                 pst=conn.prepareStatement(reg);
@@ -755,91 +791,17 @@ PreparedStatement pst=null;
 
                 }
             }
-        Update_table()
-                
-                ;
-        
+            Update_table()
+
+            ;
+
         }
-        
-        
+
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void txt_studentidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_studentidActionPerformed
         // TODO add your handling code here:
-        
-        int p = JOptionPane.showConfirmDialog(null, "Are you sure you want to update?","Update Record",JOptionPane.YES_NO_OPTION);
-        if(p==0){
-           
-            try{
-
-                String value1 = txt_firstname.getText();
-                String value2 = txt_surname.getText();
-                String value3 = txt_dob.getText();
-                String value4 = txt_studentid.getText();
-                String value5 = txt_email.getText();
-                String value66 = txt_tel.getText();
-                Long value6=Long.parseLong(value66);
-                String value7 = txt_address.getText();
-                String value9 = tf_TAddress.getText();
-                String value10 = tf_username.getText();
-                String value11 = tf_pass.getText();
-
-
-                String sql= "update AdminDash_AddStudent set std_id='"+value4+"',firSstname='"+value1+"', surname='"+value2+"', "
-                        + "dob='"+value3+"',Email='"+value5+"',telephone='"+value6+"',Address='"+value7+"',Address2= '"+value9+"', "
-                        + "Apartment='"+value10+"',Post_code ='"+value11+"'"
-                        + "where std_id='"+value4+"' ";
-
-                pst=conn.prepareStatement(sql);
-                pst.execute();
-                JOptionPane.showMessageDialog(null, "Record Updated");
-
-            }catch(Exception e){
-                JOptionPane.showMessageDialog(null, e);
-            }
-            
-             Date currentDate = GregorianCalendar.getInstance().getTime();
-            DateFormat df = DateFormat.getDateInstance();
-            String dateString = df.format(currentDate);
-
-            Date d = new Date();
-            SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
-            String timeString = sdf.format(d);
-
-            String value0 = timeString;
-            String values = dateString;
-            
-            try{
-                String reg= "insert into Admin_Audit (emp_id, date, status) values ('','"+value0+" / "+values+"','Updated Record')";
-                pst=conn.prepareStatement(reg);
-                pst.execute();
-            }
-            catch (Exception e)
-
-            {
-                JOptionPane.showMessageDialog(null,e);
-            }
-            finally {
-
-                try{
-                    rs.close();
-                    pst.close();
-
-                }
-                catch(Exception e){
-
-                }
-            }
-Update_table();
-        }
-        
-        
-        
-        
-        
-        
-        
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_txt_studentidActionPerformed
 
     private void txt_search1ComponentRemoved(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_txt_search1ComponentRemoved
         // TODO add your handling code here:
@@ -852,8 +814,6 @@ Update_table();
     private void txt_search1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_search1KeyReleased
         // TODO add your handling code here:
         try{
-            
-            
 
             String sql ="select * from AdminDash_AddStudent where std_id=? ";
 
@@ -893,14 +853,13 @@ Update_table();
 
             String add11 =rs.getString("c_password");
             tf_Cpass.setText(add11);
-           
 
             byte[] img = rs.getBytes("Image");
             ImageIcon imageIcon = new ImageIcon(new ImageIcon(img).getImage().getScaledInstance(lbl_img.getWidth(), lbl_img.getHeight(), Image.SCALE_SMOOTH));
             lbl_img.setIcon(imageIcon);
 
         }catch(Exception e){
-            
+
         }
         finally {
 
@@ -916,79 +875,6 @@ Update_table();
         }
     }//GEN-LAST:event_txt_search1KeyReleased
 
-    private void txt_studentidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_studentidActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_studentidActionPerformed
-
-    private void txt_surnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_surnameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_surnameActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AddingStdScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AddingStdScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AddingStdScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AddingStdScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new AddingStdScreen().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu File;
@@ -997,7 +883,6 @@ Update_table();
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JDesktopPane jDesktopPane1;
-    private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
@@ -1011,10 +896,7 @@ Update_table();
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel5;
@@ -1038,13 +920,12 @@ Update_table();
     private javax.swing.JTextField txt_surname;
     private javax.swing.JTextField txt_tel;
     // End of variables declaration//GEN-END:variables
-     
-    private ImageIcon format =null;
+private ImageIcon format =null;
     //strin filename
     String filename = null;
     byte[] person_image = null;
     
     private String gender;
     
-    
+
 }
