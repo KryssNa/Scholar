@@ -16,5 +16,6 @@ nb-configuration.xml
 
 /build/
 .DS_Store
+/.vscode/
 
 
