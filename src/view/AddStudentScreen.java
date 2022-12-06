@@ -25,7 +25,7 @@ import javax.swing.*;
  *
  * @author Lenovo
  */
-public class AddStudentInternalFrame extends javax.swing.JInternalFrame {
+public class AddStudentScreen extends javax.swing.JInternalFrame {
 
 Connection conn;
 DbConnection dbconn;
@@ -37,7 +37,7 @@ PreparedStatement pst=null;
     /**
      * Creates new form AddStudentInternalFrame
      */
-    public AddStudentInternalFrame() {
+    public AddStudentScreen() {
         initComponents();
         
             Toolkit toolkit = getToolkit();

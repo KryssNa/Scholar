@@ -580,7 +580,7 @@ public class AdminScreen extends javax.swing.JFrame {
 //        this.dispose();
 //        new AddingStdScreen().setVisible(true);
 
-        AddStudentInternalFrame ttdf = new AddStudentInternalFrame();
+        AddStudentScreen ttdf = new AddStudentScreen();
         jDesktopPane1.removeAll();
         jDesktopPane1.add(ttdf);
         ttdf.setBounds(0, 0, 1060, 650);
