@@ -78,10 +78,10 @@ PreparedStatement pst=null;
         String sql ="select std_id as ID,CONCAT(firstname ,' ', surname) as Name,contact as Contact,P_address as Address,gender as Gender,Uname as Username,password as Password from AdminDash_AddStudent";
         pst=conn.prepareStatement(sql);
         rs=pst.executeQuery();
-//        student_table.setModel(DbUtils.resultSetToTableModel(rs));
+        student_table.setModel(DbUtils.resultSetToTableModel(rs));
     }
     catch(Exception e){
-    JOptionPane.showMessageDialog(null, e);
+    JOptionPane.showMessageDialog(null, "Update Table Error:"+e);
     }
     finally {
             
@@ -119,8 +119,6 @@ PreparedStatement pst=null;
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         txt_firstname = new javax.swing.JTextField();
-        jDesktopPane1 = new javax.swing.JDesktopPane();
-        lbl_img = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -139,88 +137,139 @@ PreparedStatement pst=null;
         tf_Cpass = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         student_table = new javax.swing.JTable();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel13 = new javax.swing.JLabel();
-        txt_search1 = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         File = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         lbl_date = new javax.swing.JMenu();
         lbl_time = new javax.swing.JMenu();
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Student Information", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Adobe Arabic", 1, 36))); // NOI18N
+        getContentPane().setLayout(null);
 
+        jPanel3.setBackground(new java.awt.Color(0, 0, 51));
+        jPanel3.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel3.setLayout(null);
+
+        jLabel7.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Contact Number :");
+        jPanel3.add(jLabel7);
+        jLabel7.setBounds(530, 90, 150, 20);
+        jPanel3.add(txt_tel);
+        txt_tel.setBounds(720, 90, 168, 20);
+        jPanel3.add(txt_email);
+        txt_email.setBounds(290, 260, 188, 20);
 
+        jLabel6.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Email :");
+        jPanel3.add(jLabel6);
+        jLabel6.setBounds(110, 260, 130, 20);
 
+        jLabel11.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Gender:");
+        jPanel3.add(jLabel11);
+        jLabel11.setBounds(110, 220, 130, 20);
 
+        r_male.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
+        r_male.setForeground(new java.awt.Color(255, 255, 255));
         r_male.setText("Male");
         r_male.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r_maleActionPerformed(evt);
             }
         });
+        jPanel3.add(r_male);
+        r_male.setBounds(300, 220, 80, 30);
 
+        r_female.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
+        r_female.setForeground(new java.awt.Color(255, 255, 255));
         r_female.setText("Female");
         r_female.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r_femaleActionPerformed(evt);
             }
         });
+        jPanel3.add(r_female);
+        r_female.setBounds(380, 220, 100, 30);
+        jPanel3.add(txt_dob);
+        txt_dob.setBounds(290, 190, 188, 20);
 
+        jLabel3.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Date of Birth :");
+        jPanel3.add(jLabel3);
+        jLabel3.setBounds(110, 190, 130, 20);
 
         txt_surname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_surnameActionPerformed(evt);
             }
         });
+        jPanel3.add(txt_surname);
+        txt_surname.setBounds(290, 150, 188, 20);
 
+        jLabel2.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Surname :");
+        jPanel3.add(jLabel2);
+        jLabel2.setBounds(110, 150, 130, 20);
 
+        jLabel1.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("First name :");
+        jPanel3.add(jLabel1);
+        jLabel1.setBounds(110, 120, 130, 20);
 
         txt_firstname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_firstnameActionPerformed(evt);
             }
         });
+        jPanel3.add(txt_firstname);
+        txt_firstname.setBounds(290, 120, 188, 20);
 
-        jDesktopPane1.setLayer(lbl_img, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLabel8.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Permanent Address :");
+        jPanel3.add(jLabel8);
+        jLabel8.setBounds(520, 120, 180, 20);
 
-        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
-        jDesktopPane1.setLayout(jDesktopPane1Layout);
-        jDesktopPane1Layout.setHorizontalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lbl_img, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jDesktopPane1Layout.setVerticalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lbl_img, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        jLabel8.setText("Permanent Address   :");
-
+        jLabel14.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("Temporary Address :");
+        jPanel3.add(jLabel14);
+        jLabel14.setBounds(520, 150, 180, 20);
 
+        jLabel15.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setText("User Name:");
+        jPanel3.add(jLabel15);
+        jLabel15.setBounds(560, 180, 120, 30);
 
+        jLabel16.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setText("Password:");
+        jPanel3.add(jLabel16);
+        jLabel16.setBounds(560, 220, 110, 30);
+        jPanel3.add(tf_pass);
+        tf_pass.setBounds(720, 220, 168, 20);
 
         tf_username.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tf_usernameActionPerformed(evt);
             }
         });
+        jPanel3.add(tf_username);
+        tf_username.setBounds(720, 180, 168, 20);
+        jPanel3.add(tf_TAddress);
+        tf_TAddress.setBounds(720, 150, 168, 20);
+        jPanel3.add(txt_address);
+        txt_address.setBounds(720, 120, 168, 20);
 
+        cmd_save.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
         cmd_save.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/Save-icon.png"))); // NOI18N
         cmd_save.setText("Add Record");
         cmd_save.addActionListener(new java.awt.event.ActionListener() {
@@ -228,7 +277,10 @@ PreparedStatement pst=null;
                 cmd_saveActionPerformed(evt);
             }
         });
+        jPanel3.add(cmd_save);
+        cmd_save.setBounds(150, 310, 147, 50);
 
+        jButton1.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/erase-128.png"))); // NOI18N
         jButton1.setText("Clear");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -236,7 +288,10 @@ PreparedStatement pst=null;
                 jButton1ActionPerformed(evt);
             }
         });
+        jPanel3.add(jButton1);
+        jButton1.setBounds(520, 310, 147, 50);
 
+        jButton2.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/icons8-available-updates-24.png"))); // NOI18N
         jButton2.setText("Update");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -244,7 +299,10 @@ PreparedStatement pst=null;
                 jButton2ActionPerformed(evt);
             }
         });
+        jPanel3.add(jButton2);
+        jButton2.setBounds(330, 310, 147, 50);
 
+        jButton3.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/delete_16x16.gif"))); // NOI18N
         jButton3.setText("Delete");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -252,150 +310,35 @@ PreparedStatement pst=null;
                 jButton3ActionPerformed(evt);
             }
         });
+        jPanel3.add(jButton3);
+        jButton3.setBounds(710, 310, 177, 50);
 
+        jLabel4.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Confirm Password:");
+        jPanel3.add(jLabel4);
+        jLabel4.setBounds(530, 260, 160, 20);
 
+        jLabel5.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Student ID :");
+        jPanel3.add(jLabel5);
+        jLabel5.setBounds(110, 90, 130, 20);
 
         txt_studentid.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_studentidActionPerformed(evt);
             }
         });
+        jPanel3.add(txt_studentid);
+        txt_studentid.setBounds(290, 90, 188, 20);
+        jPanel3.add(tf_Cpass);
+        tf_Cpass.setBounds(720, 260, 168, 20);
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel11))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(r_male)
-                                .addGap(58, 58, 58)
-                                .addComponent(r_female))
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txt_tel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txt_email, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel14)
-                            .addComponent(jLabel15)
-                            .addComponent(jLabel16)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel4))
-                        .addGap(48, 48, 48)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(tf_pass, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(tf_username, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(tf_TAddress, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(txt_address, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(tf_Cpass, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel5))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txt_dob, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txt_surname, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txt_firstname, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txt_studentid, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(57, 57, 57)
-                        .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(cmd_save, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(cmd_save, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(186, 186, 186))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(txt_studentid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(txt_firstname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txt_surname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(9, 9, 9)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(txt_dob, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(r_male)
-                    .addComponent(r_female)
-                    .addComponent(jLabel11))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_tel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_address, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tf_TAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel14))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tf_username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel15))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel16)
-                    .addComponent(tf_pass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(tf_Cpass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jScrollPane1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
+        student_table.setFont(new java.awt.Font("Lucida Calligraphy", 0, 12)); // NOI18N
         student_table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -407,48 +350,31 @@ PreparedStatement pst=null;
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        student_table.setColumnSelectionAllowed(true);
+        student_table.setGridColor(new java.awt.Color(102, 102, 102));
+        student_table.setSelectionBackground(new java.awt.Color(0, 255, 102));
+        student_table.setSelectionForeground(new java.awt.Color(255, 255, 255));
         jScrollPane1.setViewportView(student_table);
 
-        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Search", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Adobe Arabic", 1, 14))); // NOI18N
+        jPanel3.add(jScrollPane1);
+        jScrollPane1.setBounds(90, 370, 810, 180);
 
-        jLabel13.setText("Student ID :");
+        jLabel10.setFont(new java.awt.Font("Lucida Calligraphy", 1, 35)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("Student Information");
+        jPanel3.add(jLabel10);
+        jLabel10.setBounds(120, 10, 760, 50);
 
-        txt_search1.addContainerListener(new java.awt.event.ContainerAdapter() {
-            public void componentRemoved(java.awt.event.ContainerEvent evt) {
-                txt_search1ComponentRemoved(evt);
-            }
-        });
-        txt_search1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_search1ActionPerformed(evt);
-            }
-        });
-        txt_search1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txt_search1KeyReleased(evt);
-            }
-        });
+        jLabel9.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/FrameBG.png"))); // NOI18N
+        jPanel3.add(jLabel9);
+        jLabel9.setBounds(0, 0, 1020, 560);
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel13)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txt_search1, javax.swing.GroupLayout.PREFERRED_SIZE, 565, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(14, 14, 14))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_search1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel13))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        getContentPane().add(jPanel3);
+        jPanel3.setBounds(6, 6, 1000, 560);
+        jPanel3.getAccessibleContext().setAccessibleName("");
 
         File.setText("File");
 
@@ -470,64 +396,37 @@ PreparedStatement pst=null;
 
         setJMenuBar(jMenuBar1);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(24, 24, 24)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 34, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 514, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 76, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
 
-        JFileChooser chooser = new JFileChooser();
-        chooser.showOpenDialog(null);
-        File f = chooser.getSelectedFile();
-
-        filename =f.getAbsolutePath();
-        ImageIcon imageIcon = new ImageIcon(new ImageIcon(filename).getImage().getScaledInstance(lbl_img.getWidth(), lbl_img.getHeight(), Image.SCALE_DEFAULT));
-        lbl_img.setIcon(imageIcon);
-        try {
-
-            File image = new File(filename);
-            FileInputStream fis = new FileInputStream (image);
-            ByteArrayOutputStream bos= new ByteArrayOutputStream();
-            byte[] buf = new byte[1024];
-
-            for(int readNum; (readNum=fis.read(buf))!=-1; ){
-
-                bos.write(buf,0,readNum);
-            }
-            person_image=bos.toByteArray();
-        }
-
-        catch(Exception e){
-            JOptionPane.showMessageDialog(null,e);
-
-        }
+//        JFileChooser chooser = new JFileChooser();
+//        chooser.showOpenDialog(null);
+//        File f = chooser.getSelectedFile();
+//
+//        filename =f.getAbsolutePath();
+//        ImageIcon imageIcon = new ImageIcon(new ImageIcon(filename).getImage().getScaledInstance(lbl_img.getWidth(), lbl_img.getHeight(), Image.SCALE_DEFAULT));
+////        lbl_img.setIcon(imageIcon);
+//        try {
+//
+//            File image = new File(filename);
+//            FileInputStream fis = new FileInputStream (image);
+//            ByteArrayOutputStream bos= new ByteArrayOutputStream();
+//            byte[] buf = new byte[1024];
+//
+//            for(int readNum; (readNum=fis.read(buf))!=-1; ){
+//
+//                bos.write(buf,0,readNum);
+//            }
+//            person_image=bos.toByteArray();
+//        }
+//
+//        catch(Exception e){
+//            JOptionPane.showMessageDialog(null,e);
+//
+//        }
 
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
@@ -669,8 +568,8 @@ PreparedStatement pst=null;
         tf_TAddress.setText("");
         tf_pass.setText("");
         tf_username.setText("");
-        lbl_img.setIcon(null);
-        txt_search1.setText("");
+//        lbl_img.setIcon(null);
+//        txt_search1.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -681,22 +580,22 @@ PreparedStatement pst=null;
 
             try{
 
-                String value1 = txt_firstname.getText();
-                String value2 = txt_surname.getText();
-                String value3 = txt_dob.getText();
-                String value4 = txt_studentid.getText();
-                String value5 = txt_email.getText();
-                String value66 = txt_tel.getText();
-                Long value6=Long.parseLong(value66);
-                String value7 = txt_address.getText();
-                String value9 = tf_TAddress.getText();
-                String value10 = tf_username.getText();
-                String value11 = tf_pass.getText();
+                String fname = txt_firstname.getText();
+                String S_name = txt_surname.getText();
+                String dob = txt_dob.getText();
+                String std_id = txt_studentid.getText();
+                String email = txt_email.getText();
+                String telephone = txt_tel.getText();
+                Long contact=Long.valueOf(telephone);
+                String P_address = txt_address.getText();
+                String T_address = tf_TAddress.getText();
+                String uname = tf_username.getText();
+                String password = tf_pass.getText();
 
-                String sql= "update AdminDash_AddStudent set std_id='"+value4+"',firSstname='"+value1+"', surname='"+value2+"', "
-                + "dob='"+value3+"',Email='"+value5+"',telephone='"+value6+"',Address='"+value7+"',Address2= '"+value9+"', "
-                + "Apartment='"+value10+"',Post_code ='"+value11+"'"
-                + "where std_id='"+value4+"' ";
+                String sql= "update AdminDash_AddStudent set firstname='"+fname+"', surname='"+S_name+"', "
+                + "dob='"+dob+"',Email='"+email+"',contact='"+contact+"',P_address='"+P_address+"',T_address= '"+T_address+"', "
+                + "password='"+password+"',Uname='"+uname+"'"
+                + "where std_id='"+std_id+"' ";
 
                 pst=conn.prepareStatement(sql);
                 pst.execute();
@@ -803,78 +702,6 @@ PreparedStatement pst=null;
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_studentidActionPerformed
 
-    private void txt_search1ComponentRemoved(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_txt_search1ComponentRemoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_search1ComponentRemoved
-
-    private void txt_search1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_search1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_search1ActionPerformed
-
-    private void txt_search1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_search1KeyReleased
-        // TODO add your handling code here:
-        try{
-
-            String sql ="select * from AdminDash_AddStudent where std_id=? ";
-
-            pst=conn.prepareStatement(sql);
-            pst.setString(1,txt_search1.getText());
-            rs=pst.executeQuery();
-
-            String add1 =rs.getString("std_id");
-            txt_studentid.setText(add1);
-
-            String add2 =rs.getString("firtstname");
-            txt_firstname.setText(add2);
-
-            String add3 =rs.getString("surname");
-            txt_surname.setText(add3);
-
-            String add4 =rs.getString("Dob");
-            txt_dob.setText(add4);
-
-            String add5 =rs.getString("Email");
-            txt_email.setText(add5);
-
-            String add6 =rs.getString("contact");
-            txt_tel.setText(add6);
-
-            String add7 =rs.getString("P_address");
-            txt_address.setText(add7);
-
-            String add8 =rs.getString("T_address");
-            tf_TAddress.setText(add8);
-
-            String add9 =rs.getString("user_name");
-            tf_username.setText(add9);
-
-            String add10 =rs.getString("password");
-            tf_pass.setText(add10);
-
-            String add11 =rs.getString("c_password");
-            tf_Cpass.setText(add11);
-
-            byte[] img = rs.getBytes("Image");
-            ImageIcon imageIcon = new ImageIcon(new ImageIcon(img).getImage().getScaledInstance(lbl_img.getWidth(), lbl_img.getHeight(), Image.SCALE_SMOOTH));
-            lbl_img.setIcon(imageIcon);
-
-        }catch(Exception e){
-
-        }
-        finally {
-
-            try{
-
-                rs.close();
-                pst.close();
-
-            }
-            catch(Exception e){
-
-            }
-        }
-    }//GEN-LAST:event_txt_search1KeyReleased
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu File;
@@ -882,10 +709,9 @@ PreparedStatement pst=null;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
@@ -896,13 +722,12 @@ PreparedStatement pst=null;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JMenu lbl_date;
-    private javax.swing.JLabel lbl_img;
     private javax.swing.JMenu lbl_time;
     private javax.swing.JRadioButton r_female;
     private javax.swing.JRadioButton r_male;
@@ -915,7 +740,6 @@ PreparedStatement pst=null;
     private javax.swing.JTextField txt_dob;
     private javax.swing.JTextField txt_email;
     private javax.swing.JTextField txt_firstname;
-    private javax.swing.JTextField txt_search1;
     private javax.swing.JTextField txt_studentid;
     private javax.swing.JTextField txt_surname;
     private javax.swing.JTextField txt_tel;
