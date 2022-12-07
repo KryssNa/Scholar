@@ -7,6 +7,15 @@ package view;
 import models.User;
 import java.sql.*;
 import javax.swing.*;
+import constraint.*;
+import static constraint.Constant.DB_EMAIL;
+import static constraint.Constant.DB_STUDENT_EMAIL;
+import static constraint.Constant.DB_STUDENT_ID;
+import static constraint.Constant.DB_STUDENT_PASSWORD;
+import static constraint.Constant.DB_STUDENT_USERNAME;
+import static constraint.Constant.DB_USER_ID;
+import static constraint.Constant.DB_USER_PASSWORD;
+import static constraint.Constant.DB_USER_USERNAME;
 
 import controller.UserController;
 import database.DbConnection;
@@ -41,6 +50,13 @@ public class Login extends javax.swing.JFrame {
                 rs = smt.executeQuery(query);
                 
             if(rs.next()){
+                    int user_id = rs.getInt(DB_STUDENT_ID);
+                String user_username = rs.getString(DB_STUDENT_USERNAME);
+                String user_password = rs.getString(DB_STUDENT_PASSWORD);
+                String user_email = rs.getString(DB_STUDENT_EMAIL);
+                User user = new User(user_id,user_username,user_email,user_password);
+                
+                constraint.Constant.loggedInUser=user;
 
                 JOptionPane.showMessageDialog(null, "Welcome to Scholar","Student",
                             JOptionPane.INFORMATION_MESSAGE);
@@ -242,7 +258,8 @@ public class Login extends javax.swing.JFrame {
             UserController uc=new UserController();
             User user=uc.loginUser(username, pass);
             if(user!=null){
-
+                constraint.Constant.loggedInUser=user;
+                new Virtualclass().setVisible(true);
                          JOptionPane.showMessageDialog(null, "Welcome to Scholar Admin","Administration",
                             JOptionPane.INFORMATION_MESSAGE);
                 
