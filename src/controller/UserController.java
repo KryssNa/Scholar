@@ -1,5 +1,6 @@
 package controller;
 
+import static constraint.Constant.*;
 import java.sql.*;
 import database.DbConnection;
 import java.awt.HeadlessException;
@@ -15,6 +16,29 @@ public class UserController {
 
     //    fetching username and password----for login
     public User loginUser(String username, String password) {
+        User user = null;
+        try {
+            String query;
+            query = "select * from Admin where username =? and password =?";
+            pst = DbConnection.getconnection().prepareStatement(query);
+            pst.setString(1, username);
+            pst.setString(2, password);
+            ResultSet rs = db.retrieve(pst);
+            while (rs.next()) {
+                int user_id = rs.getInt(DB_USER_ID);
+                String user_username = rs.getString(DB_USER_USERNAME);
+                String user_password = rs.getString(DB_USER_PASSWORD);
+                String user_email = rs.getString(DB_EMAIL);
+                user = new User(user_id,user_username,user_email,user_password);
+                return user;
+            }
+        } catch (SQLException ex) {
+            System.out.println("Error " + ex);
+        }
+        return user;
+    }
+        //    fetching username and password----for login
+    public User fetchUserDetails(String username, String password) {
         User user = null;
         try {
             String query;

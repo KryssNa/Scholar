@@ -4,6 +4,7 @@
  */
 package view;
 
+import constraint.Constant;
 import controller.UserController;
 import javax.swing.JOptionPane;
 import models.User;
@@ -150,12 +151,12 @@ public class Virtualclass extends javax.swing.JFrame {
 
         if (validateLogin() == true) {
             String email = txt_username.getText();
-            String pass = new String(txt_password.getPassword());
+            String pass=txt_password.getText();
+            System.out.println(pass);
+            
+            System.out.println(Constant.loggedInUser.getuserEmail());
 
-            User s1 = new User(email, null, pass, null);
-            UserController sc = new UserController();
-            int isLogin = sc.testUser(s1);
-            if (isLogin == 0) {
+            if (Constant.loggedInUser.getuserUsername().equals(email) && Constant.loggedInUser.getuserPass().equals(pass)) {
                 System.out.println("Joined");
                 // JOptionPane.showMessageDialog(null,"Meeting Joined Successfully");
 
