@@ -11,11 +11,11 @@ nb-configuration.xml
 *.class
 
 # Package Files #
-*.jar
 *.war
 *.ear
 
 /build/
 .DS_Store
+/.vscode/
 
 
