@@ -4,6 +4,8 @@
  */
 package view;
 
+import constraint.Constant;
+
 /**
  *
  * @author HP
@@ -53,7 +55,7 @@ public class StdDashScreen extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jLabel16 = new javax.swing.JLabel();
+        lblStudentName = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
@@ -87,6 +89,11 @@ public class StdDashScreen extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -303,7 +310,7 @@ public class StdDashScreen extends javax.swing.JFrame {
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
 
-        jLabel16.setText("Student's Name");
+        lblStudentName.setText("Student's Name");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -323,7 +330,7 @@ public class StdDashScreen extends javax.swing.JFrame {
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel4Layout.createSequentialGroup()
                                         .addGap(6, 6, 6)
-                                        .addComponent(jLabel16))
+                                        .addComponent(lblStudentName))
                                     .addComponent(jLabel11))
                                 .addGap(14, 14, 14)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -346,10 +353,10 @@ public class StdDashScreen extends javax.swing.JFrame {
                 .addGap(22, 22, 22)
                 .addComponent(jLabel11)
                 .addGap(12, 12, 12)
-                .addComponent(jLabel16)
+                .addComponent(lblStudentName)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
 
         jTextField1.setText("Search Books");
@@ -695,6 +702,11 @@ public class StdDashScreen extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Class8ActionPerformed
 
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        lblStudentName.setText(Constant.loggedInUser.getuserUsername());
+    }//GEN-LAST:event_formWindowOpened
+
     /**
      * @param args the command line arguments
      */
@@ -756,7 +768,6 @@ public class StdDashScreen extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -789,5 +800,6 @@ public class StdDashScreen extends javax.swing.JFrame {
     private java.awt.Label label6;
     private java.awt.Label label7;
     private java.awt.Label label8;
+    private javax.swing.JLabel lblStudentName;
     // End of variables declaration//GEN-END:variables
 }
