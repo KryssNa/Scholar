@@ -564,7 +564,13 @@ public class AdminScreen extends javax.swing.JFrame {
 
     private void ClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClassActionPerformed
 
-        new OpenRoom().setVisible(true);
+    
+        AddingClassesScreen ttdf = new AddingClassesScreen();
+        jDesktopPane1.removeAll();
+        jDesktopPane1.add(ttdf);
+        ttdf.setBounds(0, 0, 1060, 650);
+        ttdf.show();
+        
     }//GEN-LAST:event_ClassActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
