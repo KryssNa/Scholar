@@ -72,7 +72,7 @@ PreparedStatement pst=null;
         
         conn=dbconn.getconnection();
 
-        String sql ="select std_id as ID,CONCAT(firstname ,' ', surname) as Name,contact as Contact,address as Address,gender as Gender,std_batch as Batch ,Uname as Username,password as Password from AdminDash_AddStudent";
+        String sql ="select std_id as ID,CONCAT(firstname ,' ', surname) as Name,contact as Contact,address as Address,gender as Gender,std_batch as Batch ,Uname as Username,password as Password from AddStudent order by std_id asc";
         pst=conn.prepareStatement(sql);
         rs=pst.executeQuery();
         student_table.setModel(DbUtils.resultSetToTableModel(rs));
@@ -512,8 +512,8 @@ PreparedStatement pst=null;
                     st=conn.createStatement();
                     Long telephone=Long.parseLong(telephon);
 
-                    int result= st.executeUpdate("insert into AdminDash_AddStudent(firstname,surname,dob,email,contact,address,gender,std_batch,Uname,password,Confirmpass)"+" values ('"+fname+"','"+sname+"','"+dob+"','"+email+"','"+telephone+"','"+address+"'"
-                        + ",'"+genderr+"','"+std_batch+"','"+Uname+"','"+password+"','"+ConfirmPass+"')");
+                    int result= st.executeUpdate("insert into AddStudent(firstname,surname,dob,email,contact,address,gender,std_batch,Uname,password)"+" values ('"+fname+"','"+sname+"','"+dob+"','"+email+"','"+telephone+"','"+address+"'"
+                        + ",'"+genderr+"','"+std_batch+"','"+Uname+"','"+password+"')");
 
                     if(result>0){
 
@@ -608,7 +608,7 @@ PreparedStatement pst=null;
                 String uname = tf_username.getText();
                 String password = tf_pass.getText();
 
-                String sql= "update AdminDash_AddStudent set firstname='"+fname+"', surname='"+S_name+"', "
+                String sql= "update AddStudent set firstname='"+fname+"', surname='"+S_name+"', "
                 + "dob='"+dob+"',Email='"+email+"',contact='"+contact+"',address='"+address+"',std_batch= '"+std_batch+"', "
                 + "password='"+password+"',Uname='"+uname+"'"
                 + "where std_id='"+std_id+"' ";
@@ -684,7 +684,7 @@ PreparedStatement pst=null;
             {
                 JOptionPane.showMessageDialog(null,e);
             }
-            String sql ="delete from AdminDash_AddStudent where std_id=? ";
+            String sql ="delete from AddStudent where std_id=? ";
             try{
                 pst=conn.prepareStatement(sql);
                 pst.setString(1, txt_studentid.getText());

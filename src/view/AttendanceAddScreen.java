@@ -28,6 +28,9 @@ import javax.swing.table.DefaultTableCellRenderer;
 public class AttendanceAddScreen extends javax.swing.JInternalFrame {
 
     Connection c;
+    Connection conn=DbConnection.getconnection();
+    PreparedStatement pst;
+    ResultSet rs;
 
     /**
      * Creates new form ClassJInternalFrame
@@ -46,7 +49,6 @@ public class AttendanceAddScreen extends javax.swing.JInternalFrame {
 
         selectFromCombo();
 
-        semester();
 
 //        AbsentSemester();
 
@@ -91,33 +93,23 @@ public class AttendanceAddScreen extends javax.swing.JInternalFrame {
     /**
      * semester NAme Label
      */
-    public void semester() {
-        try {
-            PreparedStatement pst=c.prepareStatement("select semester_name from tbl_batch where batch_code ='" + jLabelbatchCode.getText() + "'");
-            ResultSet rs = pst.executeQuery();
-            while (rs.next()) {
-                jLabelSemester.setText(rs.getString(1));
-            }
-        } catch (Exception ex) {
-            System.out.println(ex.toString());
-        }
-    }
+    
 
     /**
      * Semester Books
      */
     public void bookName() {
-        try {
-            jComboBoxBook.addItem("Please Select Book...");
-               PreparedStatement pst=c.prepareStatement("select semester_book from tbl_book where semester_name = '" + jLabelSemester.getText() + "' group by semester_book");
-            ResultSet rs = pst.executeQuery();
-            //ResultSet rs = c.st.executeQuery("select semester_book from tbl_book where semester_name = '" + jLabelSemester.getText() + "' group by semester_book");
-            while (rs.next()) {
-                jComboBoxBook.addItem(rs.getString(1));
-            }
-        } catch (Exception ex) {
-            System.out.println(ex.toString());
-        }
+//        try {
+//            jComboBoxBook.addItem("Please Select Book...");
+////               PreparedStatement pst=c.prepareStatement("select semester_book from tbl_book where semester_name = '" + jLabelSemester.getText() + "' group by semester_book");
+//            ResultSet rs = pst.executeQuery();
+//            //ResultSet rs = c.st.executeQuery("select semester_book from tbl_book where semester_name = '" + jLabelSemester.getText() + "' group by semester_book");
+//            while (rs.next()) {
+//                jComboBoxBook.addItem(rs.getString(1));
+//            }
+//        } catch (Exception ex) {
+//            System.out.println(ex.toString());
+//        }
     }
 
     /**
@@ -125,7 +117,7 @@ public class AttendanceAddScreen extends javax.swing.JInternalFrame {
      */
     public void selectFromCombo() {
 //        try {
-//
+////
 //            String getValue = (String) TeacherInternalFrame.getComboBox().getSelectedItem();
 //
 //            PreparedStatement pst = c.xc.prepareStatement("select batch_code from tbl_batch join tbl_teacher on tbl_batch.teacher_id = tbl_teacher.teacher_id where tbl_teacher.teacher_name = ?");
@@ -202,9 +194,7 @@ public class AttendanceAddScreen extends javax.swing.JInternalFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTableAbsent = new javax.swing.JTable();
         jLabel10 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabelAbsentsemester = new javax.swing.JLabel();
         jLabelAbsentbook = new javax.swing.JLabel();
         jLabelAbsentPAnelBG = new javax.swing.JLabel();
 
@@ -212,11 +202,28 @@ public class AttendanceAddScreen extends javax.swing.JInternalFrame {
         setMinimumSize(new java.awt.Dimension(800, 550));
         setOpaque(true);
         setPreferredSize(new java.awt.Dimension(800, 550));
+        addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
+            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameDeactivated(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameDeiconified(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameIconified(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
+                formInternalFrameOpened(evt);
+            }
+        });
         getContentPane().setLayout(null);
 
         jPanelForPresent.setLayout(null);
 
-        ClassAttendanceTable.setFont(new java.awt.Font("Candara", 1, 12)); // NOI18N
+        ClassAttendanceTable.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
         ClassAttendanceTable.setForeground(new java.awt.Color(255, 255, 255));
         ClassAttendanceTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -249,17 +256,17 @@ public class AttendanceAddScreen extends javax.swing.JInternalFrame {
         jPanelForPresent.add(jScrollPane1);
         jScrollPane1.setBounds(20, 300, 750, 200);
 
-        jLabel1.setFont(new java.awt.Font("Candara", 0, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Lucida Calligraphy", 3, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Batch Code");
         jPanelForPresent.add(jLabel1);
-        jLabel1.setBounds(150, 30, 100, 30);
+        jLabel1.setBounds(170, 50, 100, 30);
 
-        jLabel3.setFont(new java.awt.Font("Candara", 0, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Book");
+        jLabel3.setText("Subject");
         jPanelForPresent.add(jLabel3);
-        jLabel3.setBounds(150, 110, 100, 30);
+        jLabel3.setBounds(170, 110, 100, 30);
 
         ClassAttendanceButton.setFont(new java.awt.Font("Candara", 1, 12)); // NOI18N
         ClassAttendanceButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/marked.png"))); // NOI18N
@@ -275,8 +282,9 @@ public class AttendanceAddScreen extends javax.swing.JInternalFrame {
 
         jLabelbatchCode.setFont(new java.awt.Font("Candara", 0, 14)); // NOI18N
         jLabelbatchCode.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelbatchCode.setText("Batch 32A");
         jPanelForPresent.add(jLabelbatchCode);
-        jLabelbatchCode.setBounds(290, 30, 240, 30);
+        jLabelbatchCode.setBounds(290, 50, 240, 30);
 
         TableButton.setFont(new java.awt.Font("Candara", 1, 12)); // NOI18N
         TableButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/table.png"))); // NOI18N
@@ -289,7 +297,7 @@ public class AttendanceAddScreen extends javax.swing.JInternalFrame {
         jPanelForPresent.add(TableButton);
         TableButton.setBounds(180, 250, 110, 30);
 
-        AbsenteesButton.setFont(new java.awt.Font("Candara", 1, 12)); // NOI18N
+        AbsenteesButton.setFont(new java.awt.Font("Lucida Calligraphy", 0, 12)); // NOI18N
         AbsenteesButton.setText("Mark Absent Student Attendance");
         AbsenteesButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         AbsenteesButton.addActionListener(new java.awt.event.ActionListener() {
@@ -298,7 +306,7 @@ public class AttendanceAddScreen extends javax.swing.JInternalFrame {
             }
         });
         jPanelForPresent.add(AbsenteesButton);
-        AbsenteesButton.setBounds(570, 250, 210, 40);
+        AbsenteesButton.setBounds(520, 250, 250, 40);
 
         jComboBoxBook.setFont(new java.awt.Font("Candara", 0, 14)); // NOI18N
         jComboBoxBook.addActionListener(new java.awt.event.ActionListener() {
@@ -307,7 +315,7 @@ public class AttendanceAddScreen extends javax.swing.JInternalFrame {
             }
         });
         jPanelForPresent.add(jComboBoxBook);
-        jComboBoxBook.setBounds(290, 110, 300, 30);
+        jComboBoxBook.setBounds(290, 110, 240, 30);
 
         jDateChooser1.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
@@ -317,11 +325,11 @@ public class AttendanceAddScreen extends javax.swing.JInternalFrame {
         jPanelForPresent.add(jDateChooser1);
         jDateChooser1.setBounds(290, 190, 240, 30);
 
-        jLabel6.setFont(new java.awt.Font("Candara", 0, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Lucida Calligraphy", 3, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Date");
         jPanelForPresent.add(jLabel6);
-        jLabel6.setBounds(150, 194, 70, 30);
+        jLabel6.setBounds(170, 190, 70, 30);
 
         ClassAttendanceBG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/FrameBG.png"))); // NOI18N
         jPanelForPresent.add(ClassAttendanceBG);
@@ -422,22 +430,11 @@ public class AttendanceAddScreen extends javax.swing.JInternalFrame {
         jPanelForAbsent.add(jLabel10);
         jLabel10.setBounds(150, 120, 120, 30);
 
-        jLabel7.setFont(new java.awt.Font("Candara", 0, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Semester");
-        jPanelForAbsent.add(jLabel7);
-        jLabel7.setBounds(150, 160, 120, 30);
-
         jLabel8.setFont(new java.awt.Font("Candara", 0, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Book");
         jPanelForAbsent.add(jLabel8);
         jLabel8.setBounds(150, 200, 120, 30);
-
-        jLabelAbsentsemester.setFont(new java.awt.Font("Candara", 0, 14)); // NOI18N
-        jLabelAbsentsemester.setForeground(new java.awt.Color(255, 255, 255));
-        jPanelForAbsent.add(jLabelAbsentsemester);
-        jLabelAbsentsemester.setBounds(290, 160, 380, 30);
 
         jLabelAbsentbook.setFont(new java.awt.Font("Candara", 0, 14)); // NOI18N
         jLabelAbsentbook.setForeground(new java.awt.Color(255, 255, 255));
@@ -468,22 +465,23 @@ public class AttendanceAddScreen extends javax.swing.JInternalFrame {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
         String d = sdf.format(jDateChooser1.getDate());
 
-//        try {
-//            CallableStatement call = c.xc.prepareCall("{ call myproc( ? , ?) }");
-//            call.setString(1, d);
-//            call.setString(2, jLabelbatchCode.getText());
-//            ResultSet rs = call.executeQuery();
-//
-//            DefaultTableModel dt = (DefaultTableModel) ClassAttendanceTable.getModel();
-//            while (rs.next()) {
-//                dt.addRow(new Object[]{rs.getString("std_id"), rs.getString("std_name"), rs.getString("std_batch_code"), false});
-//            }
-//            ClassAttendanceTable.setModel(dt);
-//
-//        } catch (Exception ex) {
-//
-//            JOptionPane.showMessageDialog(null, "Attendance is already Marked", "Choosen Marked Date", JOptionPane.WARNING_MESSAGE);
-//        }
+        try {
+            
+            CallableStatement call = conn.prepareCall("{ call myproc( ? , ?) }");
+            call.setString(1, d);
+            call.setString(2, jLabelbatchCode.getText());
+            ResultSet rs = call.executeQuery();
+
+            DefaultTableModel dt = (DefaultTableModel) ClassAttendanceTable.getModel();
+            while (rs.next()) {
+                dt.addRow(new Object[]{rs.getString("std_id"), rs.getString("std_name"), rs.getString("std_batch"), false});
+            }
+            ClassAttendanceTable.setModel(dt);
+
+        } catch (Exception ex) {
+
+            JOptionPane.showMessageDialog(null, "Attendance is already Marked", "Choosen Marked Date", JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_TableButtonActionPerformed
 
     private void AbsenteesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AbsenteesButtonActionPerformed
@@ -499,16 +497,15 @@ public class AttendanceAddScreen extends javax.swing.JInternalFrame {
 
     private void jComboBoxBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxBookActionPerformed
         // TODO add your handling code here:
-//        try {
-//            jComboBoxSession.removeAllItems();
-//            jComboBoxSession.addItem("Please Select....");
-//            ResultSet rs = c.xc.createStatement().executeQuery("select std_book_session from tbl_book where semester_book = '" + jComboBoxBook.getSelectedItem() + "' group by std_book_session");
-//            while (rs.next()) {
-//                jComboBoxSession.addItem(rs.getString(1));
-//            }
-//        } catch (Exception ex) {
-//            System.out.println(ex.toString());
-//        }
+        try {
+            jComboBoxBook.addItem("Please Select....");
+            ResultSet rs = conn.createStatement().executeQuery("select std_book from std_attend where std_book = '" + jComboBoxBook.getSelectedItem() + "' ");//group by std_book_session
+            while (rs.next()) {
+                jComboBoxBook.addItem(rs.getString(1));
+            }
+        } catch (Exception ex) {
+            System.out.println(ex.toString());
+        }
     }//GEN-LAST:event_jComboBoxBookActionPerformed
 
     private void ClassAttendanceButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClassAttendanceButtonActionPerformed
@@ -534,8 +531,9 @@ public class AttendanceAddScreen extends javax.swing.JInternalFrame {
                 } else {
                     result = "Absent";
                 }
-//                c.st.executeUpdate("insert into std_attend values ('" + d + "','" + id + "','" + name + "','" + jLabelbatchCode.getText() + "','" + jComboBoxBook.getSelectedItem() + "','" + result + "')");
-
+                
+                pst=conn.prepareStatement("insert into std_attend values ('" + d + "','" + id + "','" + name + "','" + jLabelbatchCode.getText() + "','" + jComboBoxBook.getSelectedItem() + "','" + result + "')");
+                pst.executeUpdate();
             }
             JOptionPane.showMessageDialog(this, "Attendance Marked", "Notify", JOptionPane.PLAIN_MESSAGE);
 
@@ -586,21 +584,24 @@ public class AttendanceAddScreen extends javax.swing.JInternalFrame {
         /**
          * Retrieving data from database
          */
-//        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-//        String d = sdf.format(jDateChooser2.getDate());
-//
-//        clearingAbsent();
-//        try {
-//            DefaultTableModel dt = (DefaultTableModel) jTableAbsent.getModel();
-//
-//            ResultSet rs = c.PreparedStatement.executeQuery("select * from std_attend where attend_date = '" + d + "' and std_batch_code = '" + jLabelBatchCodeAbsent.getText() + "' and std_status = 'Absent'");
-//
-//            while (rs.next()) {
-//                dt.addRow(new Object[]{rs.getString("std_id"), rs.getString("std_name"), rs.getString("std_batch_code"), false});
-//            }
-//        } catch (Exception ex) {
-//            System.out.println(ex.toString());
-//        }
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+        String d = sdf.format(jDateChooser2.getDate());
+
+        clearingAbsent();
+        try {
+            DefaultTableModel dt = (DefaultTableModel) jTableAbsent.getModel();
+            Connection conn=DbConnection.getconnection();
+            String query ="select * from std_attend where attend_date = '" + d + "' and std_batch = '" + jLabelBatchCodeAbsent.getText() + "' and std_status = 'Absent'";
+            Statement pst=conn.createStatement();
+            ResultSet rs=pst.executeQuery(query);
+            
+
+            while (rs.next()) {
+                dt.addRow(new Object[]{rs.getString("std_id"), rs.getString("std_name"), rs.getString("std_batch"), false});
+            }
+        } catch (Exception ex) {
+            System.out.println(ex.toString());
+        }
 
     }//GEN-LAST:event_jButtonabsentTableActionPerformed
 
@@ -625,8 +626,9 @@ public class AttendanceAddScreen extends javax.swing.JInternalFrame {
                 } else {
                     result = "Absent";
                 }
-//                c.st.executeUpdate("Update std_attend set std_status = '" + result + "' where std_id = '" + id + "' and attend_date = '" + d + "'");
-
+             
+                pst=conn.prepareStatement("Update std_attend set std_status = '" + result + "' where std_id = '" + id + "' and attend_date = '" + d + "'");
+                pst.executeUpdate();
             }
 
             JOptionPane.showMessageDialog(this, "Present is marked on " + d, "Absentees Attendnace", JOptionPane.INFORMATION_MESSAGE);
@@ -667,20 +669,22 @@ public class AttendanceAddScreen extends javax.swing.JInternalFrame {
         /**
          * Book Name and Session
          */
-//        try {
+        try {
 //            //JDateChooser Format
-//            SimpleDateFormat comparedate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-//            String d = comparedate.format(jDateChooser2.getDate());
-//
-//            ResultSet rs = c.st.executeQuery("select std_book, std_book_session from std_attend where attend_date = '" + d + "' and std_batch_code = '" + jLabelBatchCodeAbsent.getText() + "' group by std_book , std_book_session");
-//            while (rs.next()) {
-//                jLabelAbsentbook.setText(rs.getString(1));
-//                jLabelAbsentsession.setText(rs.getString(2));
-//            }
-//        } catch (Exception ex) {
-//            System.out.println(ex.toString());
-//        }
+            SimpleDateFormat comparedate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+            String d = comparedate.format(jDateChooser2.getDate());
+            
+            String query ="select std_book from std_attend where attend_date = '" + d + "' and std_batch= '" + jLabelBatchCodeAbsent.getText() + "' ";
+            Statement pst=conn.createStatement();
+            ResultSet rs=pst.executeQuery(query);
 
+          while (rs.next()) {
+                jLabelAbsentbook.setText(rs.getString(1));
+//                jLabelAbsentsession.setText(rs.getString(2));
+            }
+        } catch (Exception ex) {
+            System.out.println(ex.toString());}
+        
 
     }//GEN-LAST:event_jDateChooser2PropertyChange
 
@@ -697,7 +701,36 @@ public class AttendanceAddScreen extends javax.swing.JInternalFrame {
 
     }//GEN-LAST:event_jButtonBackActionPerformed
 
+    private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameOpened
 
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+        String d = sdf.format(jDateChooser1.getDate());
+
+        try {
+            
+            CallableStatement call = conn.prepareCall("{ call myproc( ? , ?) }");
+            call.setString(1, d);
+            call.setString(2, jLabelbatchCode.getText());
+            ResultSet rs = call.executeQuery();
+
+            DefaultTableModel dt = (DefaultTableModel) ClassAttendanceTable.getModel();
+            while (rs.next()) {
+                dt.addRow(new Object[]{rs.getString("std_id"), rs.getString("std_name"), rs.getString("std_batch"), false});
+            }
+            ClassAttendanceTable.setModel(dt);
+
+        } catch (Exception ex) {
+
+            JOptionPane.showMessageDialog(null, "Attendance is already Marked", "Choosen Marked Date", JOptionPane.WARNING_MESSAGE);
+        }
+    
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formInternalFrameOpened
+
+    public static void main(String[] args) {
+        new AttendanceAddScreen().setVisible(true);
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AbsenteesButton;
     private javax.swing.JLabel ClassAttendanceBG;
@@ -715,11 +748,9 @@ public class AttendanceAddScreen extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabelAbsentPAnelBG;
     private javax.swing.JLabel jLabelAbsentbook;
-    private javax.swing.JLabel jLabelAbsentsemester;
     private javax.swing.JLabel jLabelBatchCodeAbsent;
     private javax.swing.JLabel jLabelbatchCode;
     private javax.swing.JPanel jPanelForAbsent;

@@ -618,6 +618,12 @@ this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_jLabel7MouseClicked
 
     private void TEACHERSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TEACHERSActionPerformed
+        AttendanceAddScreen ttdf = new AttendanceAddScreen();
+        jDesktopPane1.removeAll();
+        jDesktopPane1.add(ttdf);
+        ttdf.setBounds(0, 0, 1060, 610);
+        ttdf.show();
+
         // TODO add your handling code here:
     }//GEN-LAST:event_TEACHERSActionPerformed
 
