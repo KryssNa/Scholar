@@ -96,12 +96,19 @@ public class UserController {
         String uname = user.getuserUsername();
         String email = user.getuserEmail();
         String pass = user.getuserPass();
-        String cpass = user.getuserCpass();
+//        String cpass = user.getuserCpass();
+        int isinserted=0;
         try{
-        String insertQuery ="insert into Admin(username,email,password,Confirm_pass)"
-                + "values('"+uname+"','"+email+"','"+pass+"','"+cpass+"')";
+        String insertQuery ="insert into Admin(username,password,email)"
+                + "values('"+uname+"','"+pass+"','"+email+"')";
         conn =  DbConnection.getconnection();
         PreparedStatement pst=conn.prepareStatement(insertQuery);
+        isinserted=pst.executeUpdate();
+//        if(isinserted >0){
+//            return 1;       
+//        }else{
+//        return 0;
+//                }
         
      
         }
@@ -109,7 +116,7 @@ public class UserController {
         
             JOptionPane.showMessageDialog(null, e,"Error",JOptionPane.ERROR_MESSAGE);
         }
-        return 0;
+        return isinserted;
        
     }
     

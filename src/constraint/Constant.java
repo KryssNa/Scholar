@@ -17,7 +17,7 @@ public class Constant {
     public static String DB_USER_USERNAME = "username";
     public static String DB_USER_PASSWORD = "password";
     public static String DB_EMAIL= "email";
-    //    for user
+    //    for student
     public static String DB_STUDENT_ID  = "std_id";
     public static String DB_STUDENT_USERNAME = "Uname";
     public static String DB_STUDENT_PASSWORD = "password";

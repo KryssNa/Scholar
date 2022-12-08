@@ -14,11 +14,10 @@ public class User {
 
     }
 
-    public User(String user_username,String user_email, String user_pass,String user_cpass){
+    public User(String user_username,String user_email, String user_pass){
         this.user_username=user_username;
         this.user_email = user_email;
         this.user_pass = user_pass;
-        this.user_cpass = user_cpass;
     }
     
     public User(int user_id,String user_username,String user_email, String user_pass){
