@@ -297,6 +297,11 @@ public class StdDashScreen extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(255, 204, 153));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/Edit.png"))); // NOI18N
         jButton2.setBorder(null);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/Profile.png"))); // NOI18N
 
@@ -349,7 +354,7 @@ public class StdDashScreen extends javax.swing.JFrame {
                 .addComponent(jLabel16)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
 
         jTextField1.setText("Search Books");
@@ -695,6 +700,14 @@ public class StdDashScreen extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Class8ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        UpdateProfileScreen ttdf = new UpdateProfileScreen();
+        jDesktopPane1.removeAll();
+        jDesktopPane1.add(ttdf);
+        ttdf.setBounds(0, 0, 1060, 650);
+        ttdf.show();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -749,6 +762,7 @@ public class StdDashScreen extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -758,6 +772,7 @@ public class StdDashScreen extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -767,6 +782,8 @@ public class StdDashScreen extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -782,6 +799,7 @@ public class StdDashScreen extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField jTextField1;
     private java.awt.Label label1;
+    private java.awt.Label label12;
     private java.awt.Label label2;
     private java.awt.Label label3;
     private java.awt.Label label4;

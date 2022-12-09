@@ -351,6 +351,11 @@ public class AdminScreen extends javax.swing.JFrame {
         jButton4.setBackground(new java.awt.Color(255, 204, 153));
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/Edit.png"))); // NOI18N
         jButton4.setBorder(null);
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jLabel4.setText("User Name");
 
@@ -594,6 +599,13 @@ public class AdminScreen extends javax.swing.JFrame {
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
 this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        UpdateProfileScreen ttdf = new UpdateProfileScreen();
+        jDesktopPane1.removeAll();
+        jDesktopPane1.add(ttdf);
+        ttdf.setBounds(0, 0, 1060, 650);
+        ttdf.show();    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
