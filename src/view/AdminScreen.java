@@ -1,8 +1,5 @@
 package view;
 
-import view.OpenRoom;
-import view.foursubj;
-
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -140,6 +137,11 @@ public class AdminScreen extends javax.swing.JFrame {
         TEACHERS.setBackground(new java.awt.Color(255, 204, 153));
         TEACHERS.setText("Teachers");
         TEACHERS.setBorder(null);
+        TEACHERS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TEACHERSActionPerformed(evt);
+            }
+        });
 
         EVENTS.setBackground(new java.awt.Color(255, 204, 153));
         EVENTS.setText("Events");
@@ -204,8 +206,8 @@ public class AdminScreen extends javax.swing.JFrame {
         );
         PanelMenuLayout.setVerticalGroup(
             PanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelMenuLayout.createSequentialGroup()
-                .addContainerGap(20, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelMenuLayout.createSequentialGroup()
+                .addGap(66, 66, 66)
                 .addGroup(PanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Classroom, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Class, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE))
@@ -227,11 +229,11 @@ public class AdminScreen extends javax.swing.JFrame {
                     .addComponent(Events, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(PanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(37, 37, 37)
                 .addComponent(jButton7)
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         LogoPanel.setBackground(new java.awt.Color(255, 255, 255));
@@ -351,6 +353,11 @@ public class AdminScreen extends javax.swing.JFrame {
         jButton4.setBackground(new java.awt.Color(255, 204, 153));
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/Edit.png"))); // NOI18N
         jButton4.setBorder(null);
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jLabel4.setText("User Name");
 
@@ -564,7 +571,13 @@ public class AdminScreen extends javax.swing.JFrame {
 
     private void ClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClassActionPerformed
 
-        new OpenRoom().setVisible(true);
+    
+        AddingClassesScreen ttdf = new AddingClassesScreen();
+        jDesktopPane1.removeAll();
+        jDesktopPane1.add(ttdf);
+        ttdf.setBounds(0, 0, 1060, 650);
+        ttdf.show();
+        
     }//GEN-LAST:event_ClassActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -572,13 +585,10 @@ public class AdminScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void SUBJECTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SUBJECTActionPerformed
-       this.dispose();
-        new foursubj().setVisible(true);
+
     }//GEN-LAST:event_SUBJECTActionPerformed
 
     private void STUDENTSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_STUDENTSActionPerformed
-//        this.dispose();
-//        new AddingStdScreen().setVisible(true);
 
         AddStudentScreen ttdf = new AddStudentScreen();
         jDesktopPane1.removeAll();
@@ -594,6 +604,20 @@ public class AdminScreen extends javax.swing.JFrame {
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
 this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        UpdateProfileScreen ttdf = new UpdateProfileScreen();
+        jDesktopPane1.removeAll();
+        jDesktopPane1.add(ttdf);
+        ttdf.setBounds(0, 0, 1060, 650);
+        ttdf.show();    }//GEN-LAST:event_jButton4ActionPerformed
+    private void TEACHERSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TEACHERSActionPerformed
+        AddTeacherScreen ttdf = new AddTeacherScreen();
+        jDesktopPane1.removeAll();
+        jDesktopPane1.add(ttdf);
+        ttdf.setBounds(0, 0, 1060, 650);
+        ttdf.show();
+    }//GEN-LAST:event_TEACHERSActionPerformed
 
     /**
      * @param args the command line arguments

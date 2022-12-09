@@ -4,6 +4,7 @@
  */
 package view;
 
+import constraint.Constant;
 import controller.UserController;
 import javax.swing.JOptionPane;
 import models.User;
@@ -67,12 +68,12 @@ public class Virtualclass extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("username:");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(6, 15, 54, 16);
+        jLabel3.setBounds(6, 15, 61, 17);
 
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("password:");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(6, 63, 53, 16);
+        jLabel4.setBounds(6, 63, 62, 17);
 
         txt_username.setBackground(new java.awt.Color(153, 204, 255));
         txt_username.addActionListener(new java.awt.event.ActionListener() {
@@ -81,7 +82,7 @@ public class Virtualclass extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txt_username);
-        txt_username.setBounds(12, 38, 112, 22);
+        txt_username.setBounds(12, 38, 112, 23);
 
         txt_password.setBackground(new java.awt.Color(153, 204, 255));
         txt_password.addActionListener(new java.awt.event.ActionListener() {
@@ -90,7 +91,7 @@ public class Virtualclass extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txt_password);
-        txt_password.setBounds(12, 92, 112, 22);
+        txt_password.setBounds(12, 92, 112, 23);
 
         jButton1.setBackground(new java.awt.Color(153, 204, 255));
         jButton1.setText("Join");
@@ -150,12 +151,12 @@ public class Virtualclass extends javax.swing.JFrame {
 
         if (validateLogin() == true) {
             String email = txt_username.getText();
-            String pass = new String(txt_password.getPassword());
+            String pass=txt_password.getText();
+            System.out.println(pass);
+            
+            System.out.println(Constant.loggedInUser.getuserEmail());
 
-            User s1 = new User(email, null, pass, null);
-            UserController sc = new UserController();
-            int isLogin = sc.testUser(s1);
-            if (isLogin == 0) {
+            if (Constant.loggedInUser.getuserUsername().equals(email) && Constant.loggedInUser.getuserPass().equals(pass)) {
                 System.out.println("Joined");
                 // JOptionPane.showMessageDialog(null,"Meeting Joined Successfully");
 

@@ -99,7 +99,7 @@ public class DbConnection {
 
     public static void main(String[] args) {
 
-         DbConnection.getconnection();
+//         DbConnection.getconnection();
 
     }
 
