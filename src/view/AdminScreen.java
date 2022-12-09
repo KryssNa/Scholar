@@ -140,6 +140,11 @@ public class AdminScreen extends javax.swing.JFrame {
         TEACHERS.setBackground(new java.awt.Color(255, 204, 153));
         TEACHERS.setText("Teachers");
         TEACHERS.setBorder(null);
+        TEACHERS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TEACHERSActionPerformed(evt);
+            }
+        });
 
         EVENTS.setBackground(new java.awt.Color(255, 204, 153));
         EVENTS.setText("Events");
@@ -583,8 +588,6 @@ public class AdminScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_SUBJECTActionPerformed
 
     private void STUDENTSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_STUDENTSActionPerformed
-//        this.dispose();
-//        new AddingStdScreen().setVisible(true);
 
         AddStudentScreen ttdf = new AddStudentScreen();
         jDesktopPane1.removeAll();
@@ -600,6 +603,14 @@ public class AdminScreen extends javax.swing.JFrame {
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
 this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void TEACHERSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TEACHERSActionPerformed
+        AddTeacherScreen ttdf = new AddTeacherScreen();
+        jDesktopPane1.removeAll();
+        jDesktopPane1.add(ttdf);
+        ttdf.setBounds(0, 0, 1060, 650);
+        ttdf.show();
+    }//GEN-LAST:event_TEACHERSActionPerformed
 
     /**
      * @param args the command line arguments
