@@ -1,5 +1,6 @@
 package controller;
 
+import static constraint.Constant.*;
 import java.sql.*;
 import database.DbConnection;
 import java.awt.HeadlessException;
@@ -15,6 +16,29 @@ public class UserController {
 
     //    fetching username and password----for login
     public User loginUser(String username, String password) {
+        User user = null;
+        try {
+            String query;
+            query = "select * from Admin where username =? and password =?";
+            pst = DbConnection.getconnection().prepareStatement(query);
+            pst.setString(1, username);
+            pst.setString(2, password);
+            ResultSet rs = db.retrieve(pst);
+            while (rs.next()) {
+                int user_id = rs.getInt(DB_USER_ID);
+                String user_username = rs.getString(DB_USER_USERNAME);
+                String user_password = rs.getString(DB_USER_PASSWORD);
+                String user_email = rs.getString(DB_EMAIL);
+                user = new User(user_id,user_username,user_email,user_password);
+                return user;
+            }
+        } catch (SQLException ex) {
+            System.out.println("Error " + ex);
+        }
+        return user;
+    }
+        //    fetching username and password----for login
+    public User fetchUserDetails(String username, String password) {
         User user = null;
         try {
             String query;
@@ -72,12 +96,19 @@ public class UserController {
         String uname = user.getuserUsername();
         String email = user.getuserEmail();
         String pass = user.getuserPass();
-        String cpass = user.getuserCpass();
+//        String cpass = user.getuserCpass();
+        int isinserted=0;
         try{
-        String insertQuery ="insert into Admin(username,email,password,Confirm_pass)"
-                + "values('"+uname+"','"+email+"','"+pass+"','"+cpass+"')";
+        String insertQuery ="insert into Admin(username,password,email)"
+                + "values('"+uname+"','"+pass+"','"+email+"')";
         conn =  DbConnection.getconnection();
         PreparedStatement pst=conn.prepareStatement(insertQuery);
+        isinserted=pst.executeUpdate();
+//        if(isinserted >0){
+//            return 1;       
+//        }else{
+//        return 0;
+//                }
         
      
         }
@@ -85,7 +116,7 @@ public class UserController {
         
             JOptionPane.showMessageDialog(null, e,"Error",JOptionPane.ERROR_MESSAGE);
         }
-        return 0;
+        return isinserted;
        
     }
     

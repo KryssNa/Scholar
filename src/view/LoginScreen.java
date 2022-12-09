@@ -7,7 +7,7 @@ package view;
 import models.User;
 import java.sql.*;
 import javax.swing.*;
-
+import static constraint.Constant.*;
 import controller.UserController;
 import database.DbConnection;
 import java.awt.HeadlessException;
@@ -16,12 +16,12 @@ import java.awt.HeadlessException;
  *
  * @author HP
  */
-public class Login extends javax.swing.JFrame {
+public class LoginScreen extends javax.swing.JFrame {
 
     /**
      * Creates new form Login
      */
-    public Login() {
+    public LoginScreen() {
         initComponents();
     }
     
@@ -41,6 +41,13 @@ public class Login extends javax.swing.JFrame {
                 rs = smt.executeQuery(query);
                 
             if(rs.next()){
+                    int user_id = rs.getInt(DB_STUDENT_ID);
+                String user_username = rs.getString(DB_STUDENT_USERNAME);
+                String user_password = rs.getString(DB_STUDENT_PASSWORD);
+                String user_email = rs.getString(DB_STUDENT_EMAIL);
+                User user = new User(user_id,user_username,user_email,user_password);
+                
+                constraint.Constant.loggedInUser=user;
 
                 JOptionPane.showMessageDialog(null, "Welcome to Scholar","Student",
                             JOptionPane.INFORMATION_MESSAGE);
@@ -63,6 +70,48 @@ public class Login extends javax.swing.JFrame {
         
         return isvalid;
     }
+    public boolean testenrollment(){
+        
+        String uname = tfusername.getText();
+//        String email = user.getuserEmail();
+        Connection conn=DbConnection.getconnection();
+        
+        boolean isExist=false;
+        
+        try{
+        
+            String query1="Select * from Admin where username=?";
+            String query2="Select * from AdminDash_AddStudent where Uname=?";
+            PreparedStatement usernamePST=conn.prepareStatement(query1);
+            PreparedStatement emailPST=conn.prepareStatement(query2);
+            usernamePST.setString(1, uname);
+            emailPST.setString(1, uname);
+            
+            ResultSet rs2=emailPST.executeQuery();
+            ResultSet rs1=usernamePST.executeQuery();
+            if (rs1.next()){
+            
+                isExist=true;
+                lblEnrollment.setText("Admin");
+            
+            }else if(rs2.next()){
+                 isExist=true;
+                 lblEnrollment.setText("Student");
+            
+            }
+            else{
+            
+            isExist=false;
+            lblEnrollment.setText("Invalid Username!!");
+            }
+        
+        }catch(SQLException e){
+        
+            JOptionPane.showMessageDialog(null, e); 
+        }
+        return isExist;
+        }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -87,6 +136,7 @@ public class Login extends javax.swing.JFrame {
         btnsignup = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         btnForgotpass = new javax.swing.JButton();
+        lblEnrollment = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
 
@@ -116,6 +166,11 @@ public class Login extends javax.swing.JFrame {
         tfusername.setFont(new java.awt.Font("Leelawadee UI", 0, 17)); // NOI18N
         tfusername.setText("Username or email");
         tfusername.setBorder(null);
+        tfusername.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                tfusernameMouseMoved(evt);
+            }
+        });
         tfusername.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tfusernameMouseClicked(evt);
@@ -127,7 +182,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
         jPanel1.add(tfusername);
-        tfusername.setBounds(120, 160, 260, 30);
+        tfusername.setBounds(120, 160, 210, 30);
 
         tfpass.setBackground(new java.awt.Color(152, 200, 231));
         tfpass.setText("jPasswordField1");
@@ -198,6 +253,11 @@ public class Login extends javax.swing.JFrame {
         jPanel1.add(btnForgotpass);
         btnForgotpass.setBounds(390, 247, 180, 60);
 
+        lblEnrollment.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
+        lblEnrollment.setForeground(new java.awt.Color(255, 0, 0));
+        jPanel1.add(lblEnrollment);
+        lblEnrollment.setBounds(350, 160, 180, 30);
+
         getContentPane().add(jPanel1);
         jPanel1.setBounds(610, 180, 580, 460);
 
@@ -242,12 +302,13 @@ public class Login extends javax.swing.JFrame {
             UserController uc=new UserController();
             User user=uc.loginUser(username, pass);
             if(user!=null){
-
+                constraint.Constant.loggedInUser=user;                
                          JOptionPane.showMessageDialog(null, "Welcome to Scholar Admin","Administration",
                             JOptionPane.INFORMATION_MESSAGE);
+                         new AdminScreen().setVisible(true);
                 
             }else{
-               JOptionPane.showMessageDialog(null, "Wrong password. Try again","Administration",
+               JOptionPane.showMessageDialog(null, "Wrong password. Try again","Failed!!",
                          JOptionPane.ERROR_MESSAGE);
                 
             }            
@@ -267,15 +328,19 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tfpassActionPerformed
 
+    private void tfpassMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tfpassMouseClicked
+        // TODO add your handling code here:
+        tfpass.setText("");
+    }//GEN-LAST:event_tfpassMouseClicked
+
     private void tfusernameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tfusernameMouseClicked
         tfusername.setText("");
         // TODO add your handling code here:
     }//GEN-LAST:event_tfusernameMouseClicked
 
-    private void tfpassMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tfpassMouseClicked
-        // TODO add your handling code here:
-        tfpass.setText("");
-    }//GEN-LAST:event_tfpassMouseClicked
+    private void tfusernameMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tfusernameMouseMoved
+testenrollment();        // TODO add your handling code here:
+    }//GEN-LAST:event_tfusernameMouseMoved
 
     /**
      * @param args the command line arguments
@@ -294,20 +359,21 @@ public class Login extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Login().setVisible(true);
+                new LoginScreen().setVisible(true);
             }
         });
     }
@@ -328,6 +394,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JLabel lblEnrollment;
     private javax.swing.JPasswordField tfpass;
     private javax.swing.JTextField tfusername;
     // End of variables declaration//GEN-END:variables

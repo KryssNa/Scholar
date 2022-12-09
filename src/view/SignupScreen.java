@@ -16,7 +16,7 @@ import models.User;
 public class SignupScreen extends javax.swing.JFrame {
 //
     /**
-     * Creates new form Login
+     * Creates new form LoginScreen
      */
     public SignupScreen() {
         initComponents();
@@ -30,6 +30,7 @@ public class SignupScreen extends javax.swing.JFrame {
         String email = tfemail.getText();
         String pass = tfpass.getText();
         String cpass = tfCpass.getText();
+        int user_id=0;
 
         
         
@@ -52,12 +53,13 @@ public class SignupScreen extends javax.swing.JFrame {
         else{
         // try {
                   
-            User s1 = new User(uname,email,pass,cpass);
+            User s1 = new User(uname,email,pass);
             UserController sc= new UserController();
             int isInserted = sc.insertuser(s1);
             if(isInserted>0){
                 System.out.println("Inserted");
                             JOptionPane.showMessageDialog(null,"User Registered Successfully");
+                            new LoginScreen().setVisible(true);
 
             }else{
                 System.out.println(" NOt Inserted");
@@ -224,7 +226,7 @@ public class SignupScreen extends javax.swing.JFrame {
     private void btnsignupActionPerformed(java.awt.event.ActionEvent evt) { 
         String uname = tfusername.getText();
         String email = tfemail.getText();
-        User s1 = new User(uname,email,null,null);
+        User s1 = new User(uname,email,null);
         UserController sc= new UserController();
         boolean isValid = sc.validateduplicatedata(s1);
         
