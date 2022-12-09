@@ -233,15 +233,15 @@ PreparedStatement pst=null;
 
         jLabel8.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Permanent Address :");
+        jLabel8.setText("Course Name :");
         jPanel3.add(jLabel8);
-        jLabel8.setBounds(520, 120, 180, 20);
+        jLabel8.setBounds(540, 120, 150, 20);
 
         jLabel14.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText("Temporary Address :");
+        jLabel14.setText("Address :");
         jPanel3.add(jLabel14);
-        jLabel14.setBounds(520, 150, 180, 20);
+        jLabel14.setBounds(560, 150, 90, 20);
 
         jLabel15.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));

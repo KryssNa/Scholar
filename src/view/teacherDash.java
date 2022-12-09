@@ -259,6 +259,11 @@ public class teacherDash extends javax.swing.JFrame {
         jButton4.setBackground(new java.awt.Color(255, 204, 153));
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/Edit.png"))); // NOI18N
         jButton4.setBorder(null);
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Teacher Name");
 
@@ -617,6 +622,15 @@ this.dispose();        // TODO add your handling code here:
         jDesktopPane1.show();       // TODO add your handling code here:
     }//GEN-LAST:event_jLabel7MouseClicked
 
+<<<<<<< HEAD
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        UpdateProfileScreen ttdf = new UpdateProfileScreen();
+        jDesktopPane1.removeAll();
+        jDesktopPane1.add(ttdf);
+        ttdf.setBounds(0, 0, 1060, 650);
+        ttdf.show();
+    }//GEN-LAST:event_jButton4ActionPerformed
+=======
     private void TEACHERSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TEACHERSActionPerformed
         AttendanceAddScreen ttdf = new AttendanceAddScreen();
         jDesktopPane1.removeAll();
@@ -626,6 +640,7 @@ this.dispose();        // TODO add your handling code here:
 
         // TODO add your handling code here:
     }//GEN-LAST:event_TEACHERSActionPerformed
+>>>>>>> 83c562236a179caa0919ea29a24b2ce4f4bcdc7d
 
     /**
      * @param args the command line arguments
