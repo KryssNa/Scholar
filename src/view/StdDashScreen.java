@@ -307,12 +307,8 @@ public class StdDashScreen extends javax.swing.JFrame {
                 .addComponent(lblStudentName)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-<<<<<<< HEAD
-                .addContainerGap(58, Short.MAX_VALUE))
-=======
-                .addContainerGap(100, Short.MAX_VALUE))
->>>>>>> 83c562236a179caa0919ea29a24b2ce4f4bcdc7d
-        );
+                .addContainerGap(58, Short.MAX_VALUE)));
+    
 
         jDesktopPane1.add(Profile);
         Profile.setBounds(740, 0, 221, 320);
@@ -670,11 +666,8 @@ public class StdDashScreen extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-<<<<<<< HEAD
-=======
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
->>>>>>> 83c562236a179caa0919ea29a24b2ce4f4bcdc7d
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -684,9 +677,7 @@ public class StdDashScreen extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-<<<<<<< HEAD
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -695,9 +686,7 @@ public class StdDashScreen extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-=======
     private javax.swing.JLabel jLabel18;
->>>>>>> 83c562236a179caa0919ea29a24b2ce4f4bcdc7d
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
