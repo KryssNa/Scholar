@@ -5,31 +5,8 @@
  */
 package view;
 
-import view.*;
-import com.itextpdf.text.BaseColor;
-import com.itextpdf.text.Chunk;
-import com.itextpdf.text.Document;
-import com.itextpdf.text.FontFactory;
-import com.itextpdf.text.PageSize;
-import com.itextpdf.text.Paragraph;
-import com.itextpdf.text.Rectangle;
-import com.itextpdf.text.pdf.PdfPCell;
-import com.itextpdf.text.pdf.PdfPTable;
-import com.itextpdf.text.pdf.PdfWriter;
 import database.DbConnection;
-import java.awt.Color;
-import java.awt.Font;
-import java.io.FileOutputStream;
-import java.io.PrintWriter;
 import java.sql.*;
-import java.text.MessageFormat;
-import java.text.SimpleDateFormat;
-import java.util.Locale;
-import javax.swing.JFileChooser;
-import javax.swing.JOptionPane;
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableCellRenderer;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -49,128 +26,10 @@ ResultSet rs;
         
         //title
         setTitle("Reporting Panel");        
-        
-//        teacherCombo();
-//        
-//        //Calling Method
-//        getDataInTable();
-//        
-        //All Batch Attendance Table Data
-        BatchAttendance();
-        
-        // Applying white color while selection mode        
-//        jTableBS.setSelectionForeground(Color.WHITE);
-//        jTableDate.setSelectionForeground(Color.WHITE);
-        jTableForAllBatch.setSelectionForeground(Color.WHITE);
-//        jTableBatchwithCustomized.setSelectionForeground(Color.WHITE);
-        
-        //Getting DateWise Batch Attendance
-//        dateWiseBatch();
-        
-    }
-    
-    
-    
-    /**
-     * Filling batch code combo for DAte Wise PAnel
-    */
-//    public void dateWiseBatch(){
-//        try{
-//             ResultSet rs = c.xc.createStatement().executeQuery("select batch_code from tbl_batch");
-//             while (rs.next()){
-//                 jComboBoxBatch.addItem(rs.getString(1));
-//             }
-//        }
-//        catch(Exception ex) {
-//            System.out.println(ex.toString());
-//        }
-//    } 
 
-    /**
-     * Teacher Combo in Student and Batch Wise Panel
-     */
-//    public void teacherCombo(){
-//        try {
-//             ResultSet rs = c.st.executeQuery("select teacher_name from tbl_teacher");
-//             while(rs.next()){
-//                 jTeacherCombo.addItem(rs.getString(1));
-//             }
-//        }
-//        catch(Exception ex){
-//            System.out.println(ex.toString());
-//        }
-//       
-//    }
-    
-    /**
-     * Getting Data in table All Batches Attendance with Customized Date
-     */
-//    public void getDataInTable(){
-//        /**
-//         * Clearing Rows from Table
-//         */
-//        
-////        DefaultTableModel dm = (DefaultTableModel) jTableDate.getModel();
-////        int rowCount = dm.getRowCount();
-////        //Remove rows one by one from the end of the table
-////        for (int i = rowCount - 1; i >= 0; i--) {
-////           dm.removeRow(i);
-////        }
-//        
-//        
-//         /**
-//          * Filling table
-//          */
-////         try {
-////             DefaultTableModel dt = (DefaultTableModel)jTableDate.getModel();
-////             
-////             ResultSet rs = c.st.executeQuery("select attend_date as 'Attendance Date', std_id as 'Student ID', std_name as 'Student Name' , std_batch_code as 'Batch Code', std_book as 'Book', std_book_session as 'Book Session', std_status as 'Status' from std_attend");
-////            while(rs.next()){
-////                dt.addRow(new Object[] {rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7)});
-////            }
-////            jTableDate.setModel(dt);
-////         }
-////         catch(Exception ex){
-////             System.out.println(ex.toString());
-////         }
-   
-//    
-//    
-    //BSPanel Absent Present
-//    public void BSPresentAbsent(){
-//        try {
-//            ResultSet pre = c.st.executeQuery("select count(std_status) from std_attend where std_status = 'Present' and std_batch_code = '"+jBatchCodeCombo.getSelectedItem()+"'");
-//                while(pre.next()){
-//                    jLabelBGPresent.setText(pre.getString(1));
-//                }
-//            ResultSet abs = c.st.executeQuery("select count(std_status) from std_attend where std_status = 'Absent' and std_batch_code = '"+jBatchCodeCombo.getSelectedItem()+"'");
-//                while(abs.next()){
-//                    jLabelBSAbsent.setText(abs.getString(1));
-//                }
-//        }
-//        catch(Exception ex){
-//            System.out.println(ex.toString());
-//        }
-//    }
-    
-    /**
-     * Fetching table for BatchAttendance Panel
-     */
-    public void BatchAttendance(){
-        try {
-            DefaultTableModel dt = (DefaultTableModel)jTableForAllBatch.getModel();
-            
-            pst=conn.prepareStatement("select * from std_attend");
-            ResultSet rs = pst.executeQuery();
-            while (rs.next()){
-                dt.addRow(new Object[]{rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7)});
-            }
-            jTableForAllBatch.setModel(dt);
-        }
-        catch(Exception ex) {
-            System.out.println(ex.toString());
-        }
-    }
+        
+    } 
+
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -182,14 +41,27 @@ ResultSet rs;
     private void initComponents() {
 
         jPanel3 = new javax.swing.JPanel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTableForAllBatch = new javax.swing.JTable();
+        jPanel1 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jButtonAllBatchExcel = new javax.swing.JButton();
-        jButtonAllBatchPDf = new javax.swing.JButton();
-        jButtonAllBatchPrint = new javax.swing.JButton();
         jLabelAllBatchAttendanceBG = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 255, 255));
         setMaximumSize(new java.awt.Dimension(990, 550));
         setMinimumSize(new java.awt.Dimension(990, 550));
         setName(""); // NOI18N
@@ -198,74 +70,144 @@ ResultSet rs;
 
         jPanel3.setLayout(null);
 
-        jScrollPane3.setBorder(null);
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
 
-        jTableForAllBatch.setFont(new java.awt.Font("Candara", 0, 14)); // NOI18N
-        jTableForAllBatch.setForeground(new java.awt.Color(240, 240, 240));
-        jTableForAllBatch.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
-            },
-            new String [] {
-                "Assignment Date", "Subject Name", "Batch Number"
+        jButton1.setText("Python");
+        jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jButton2.setText("Java");
+        jButton2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jButton3.setText("C++");
+        jButton3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jButton4.setText("HTML");
+        jButton4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jButton5.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        jButton5.setText("Save");
+        jButton5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
             }
-        ));
-        jTableForAllBatch.setOpaque(false);
-        ((DefaultTableCellRenderer)jTableForAllBatch.getDefaultRenderer(Object.class)).setOpaque(false);
+        });
 
-        jScrollPane3.setOpaque(false);
-        jScrollPane3.getViewport().setOpaque(false);
+        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        jLabel1.setText("Assignment Date");
+        jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jTableForAllBatch.setShowGrid(false);
-        jScrollPane3.setViewportView(jTableForAllBatch);
+        jLabel2.setText("2022-03-13");
+        jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jPanel3.add(jScrollPane3);
-        jScrollPane3.setBounds(40, 122, 860, 350);
+        jLabel3.setText("2022-02-15");
+        jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel10.setFont(new java.awt.Font("Candara", 1, 18)); // NOI18N
+        jLabel4.setText("2022-03-17");
+        jLabel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel5.setText("2022-03-21");
+        jLabel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel6.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        jLabel6.setText("Subject Name");
+        jLabel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel7.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        jLabel7.setText("Batch Number");
+        jLabel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel8.setText("32A");
+        jLabel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel9.setText("32A");
+        jLabel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel11.setText("32A");
+        jLabel11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel12.setText("32A");
+        jLabel12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 312, Short.MAX_VALUE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(361, Short.MAX_VALUE)
+                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(304, 304, 304))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(27, 27, 27)
+                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(71, 71, 71))
+        );
+
+        jPanel3.add(jPanel1);
+        jPanel1.setBounds(50, 120, 850, 340);
+
+        jLabel10.setFont(new java.awt.Font("Candara", 1, 36)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(240, 240, 240));
         jLabel10.setText("All Assignments");
         jPanel3.add(jLabel10);
-        jLabel10.setBounds(380, 20, 210, 30);
+        jLabel10.setBounds(330, 20, 380, 60);
 
-        jButtonAllBatchExcel.setFont(new java.awt.Font("Candara", 1, 14)); // NOI18N
-        jButtonAllBatchExcel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/excel.png"))); // NOI18N
-        jButtonAllBatchExcel.setBorderPainted(false);
-        jButtonAllBatchExcel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonAllBatchExcel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAllBatchExcelActionPerformed(evt);
-            }
-        });
-        jPanel3.add(jButtonAllBatchExcel);
-        jButtonAllBatchExcel.setBounds(190, 70, 110, 30);
-
-        jButtonAllBatchPDf.setFont(new java.awt.Font("Candara", 1, 14)); // NOI18N
-        jButtonAllBatchPDf.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/pdf.png"))); // NOI18N
-        jButtonAllBatchPDf.setBorderPainted(false);
-        jButtonAllBatchPDf.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonAllBatchPDf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAllBatchPDfActionPerformed(evt);
-            }
-        });
-        jPanel3.add(jButtonAllBatchPDf);
-        jButtonAllBatchPDf.setBounds(430, 70, 110, 30);
-
-        jButtonAllBatchPrint.setFont(new java.awt.Font("Candara", 1, 14)); // NOI18N
-        jButtonAllBatchPrint.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/Printer.png"))); // NOI18N
-        jButtonAllBatchPrint.setBorderPainted(false);
-        jButtonAllBatchPrint.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonAllBatchPrint.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAllBatchPrintActionPerformed(evt);
-            }
-        });
-        jPanel3.add(jButtonAllBatchPrint);
-        jButtonAllBatchPrint.setBounds(650, 70, 110, 30);
-
+        jLabelAllBatchAttendanceBG.setBackground(new java.awt.Color(255, 255, 255));
+        jLabelAllBatchAttendanceBG.setForeground(new java.awt.Color(255, 255, 255));
         jLabelAllBatchAttendanceBG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/FrameBG.png"))); // NOI18N
         jPanel3.add(jLabelAllBatchAttendanceBG);
         jLabelAllBatchAttendanceBG.setBounds(0, 0, 960, 510);
@@ -276,101 +218,32 @@ ResultSet rs;
         setBounds(0, 0, 990, 550);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonAllBatchPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAllBatchPrintActionPerformed
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-
-        /**
-        * Printing Report
-        */
-        try {
-            MessageFormat h = new MessageFormat("Attendance Record \n All Batches Report");
-            MessageFormat f = new MessageFormat("Attendance Management System");
-
-            jTableForAllBatch.print(JTable.PrintMode.FIT_WIDTH, h, f);
-        }
-        catch(Exception ex) {
-            System.out.println(ex.toString());
-        }
-    }//GEN-LAST:event_jButtonAllBatchPrintActionPerformed
-
-    private void jButtonAllBatchPDfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAllBatchPDfActionPerformed
-        // TODO add your handling code here:
-
-        /**
-        * Reporting in PDF File
-        */
-        try {
-            //BaseColor(7, 20, 42)
-            Rectangle pageSize = new Rectangle(PageSize.A4.rotate());
-            pageSize.setBackgroundColor(new BaseColor(135 ,206 ,250));
-            pageSize.setBorder(Rectangle.BOX);
-            pageSize.setBorderWidth(10f);
-            Document doc = new Document(pageSize);
-            PdfWriter.getInstance(doc, new FileOutputStream("AllBatchAttendanceReport.pdf"));
-            doc.open();
-
-            doc.add(new Paragraph("All Batches Attendance", FontFactory.getFont("Candara", 35, Font.BOLD, BaseColor.BLACK)));
-            doc.add(new Paragraph(20f, Chunk.NEWLINE));
-
-            jTableForAllBatch.setForeground(Color.WHITE);
-            PdfPTable pdfTable = new PdfPTable(jTableForAllBatch.getColumnCount());
-            //adding table headers
-            for (int i = 0; i < jTableForAllBatch.getColumnCount(); i++) {
-                pdfTable.addCell(jTableForAllBatch.getColumnName(i));
-            }
-            //extracting data from the jTableForAllBatch and inserting it to PdfPTable
-            for (int rows = 0; rows < jTableForAllBatch.getRowCount(); rows++) {
-                for (int cols = 0; cols < jTableForAllBatch.getColumnCount(); cols++) {
-                    pdfTable.addCell(jTableForAllBatch.getModel().getValueAt(rows, cols).toString());
-
-                }
-            }
-            doc.add(pdfTable);
-            doc.close();
-            JOptionPane.showMessageDialog(null, "Attendance Report Saved");
-
-        }
-        catch(Exception ex) {
-            System.out.println(ex.toString());
-        }
-    }//GEN-LAST:event_jButtonAllBatchPDfActionPerformed
-
-    private void jButtonAllBatchExcelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAllBatchExcelActionPerformed
-        // TODO add your handling code here:
-
-        /**
-        * Excel Report
-        */
-
-        JFileChooser j = new JFileChooser();
-        int i = j.showSaveDialog(this);
-        System.out.println(i);
-        if (i==0){
-            try {
-                PrintWriter p = new PrintWriter(j.getSelectedFile()+".csv");
-
-                p.println(jTableForAllBatch.getColumnName(0)+","+jTableForAllBatch.getColumnName(1)+","+jTableForAllBatch.getColumnName(2)+","+jTableForAllBatch.getColumnName(3)+","+jTableForAllBatch.getColumnName(4)+","+jTableForAllBatch.getColumnName(5)+","+jTableForAllBatch.getColumnName(6));
-
-                for (int x = 0; x< jTableForAllBatch.getRowCount();x++){
-                    p.println(jTableForAllBatch.getValueAt(x, 0)+","+jTableForAllBatch.getValueAt(x, 1)+","+jTableForAllBatch.getValueAt(x, 2)+","+jTableForAllBatch.getValueAt(x, 3)+","+jTableForAllBatch.getValueAt(x, 4)+","+jTableForAllBatch.getValueAt(x, 5)+","+jTableForAllBatch.getValueAt(x, 6));
-                }p.flush();
-            }
-            catch(Exception ex) {
-                System.out.println(ex.toString());
-            }
-        }
-    }//GEN-LAST:event_jButtonAllBatchExcelActionPerformed
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonAllBatchExcel;
-    private javax.swing.JButton jButtonAllBatchPDf;
-    private javax.swing.JButton jButtonAllBatchPrint;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelAllBatchAttendanceBG;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTable jTableForAllBatch;
     // End of variables declaration//GEN-END:variables
 }
