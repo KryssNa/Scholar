@@ -7,9 +7,6 @@ import database.DbConnection;
 import net.proteanit.sql.DbUtils;
 import java.awt.*;
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
 import java.sql.*;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -57,7 +54,7 @@ PreparedStatement pst=null;
         int year = cal.get(Calendar.YEAR);
         int day = cal.get(Calendar.DAY_OF_MONTH);
         
-//        lbl_date.setText((month+1)+"/"+day+"/"+year);
+        lbl_date.setText((month+1)+"/"+day+"/"+year);
         
         //Time
       
@@ -75,7 +72,7 @@ PreparedStatement pst=null;
         
         conn=dbconn.getconnection();
 
-        String sql ="select std_id as ID,CONCAT(firstname ,' ', surname) as Name,contact as Contact,P_address as Address,gender as Gender,Uname as Username,password as Password from AdminDash_AddStudent";
+        String sql ="select std_id as ID,CONCAT(firstname ,' ', surname) as Name,contact as Contact,address as Address,gender as Gender,std_batch as Batch ,Uname as Username,password as Password from AddStudent order by std_id asc";
         pst=conn.prepareStatement(sql);
         rs=pst.executeQuery();
         student_table.setModel(DbUtils.resultSetToTableModel(rs));
@@ -155,23 +152,27 @@ PreparedStatement pst=null;
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Contact Number :");
         jPanel3.add(jLabel7);
-        jLabel7.setBounds(530, 90, 150, 20);
+        jLabel7.setBounds(530, 70, 150, 30);
+
+        txt_tel.setFont(new java.awt.Font("Lucida Bright", 0, 14)); // NOI18N
         jPanel3.add(txt_tel);
-        txt_tel.setBounds(720, 90, 168, 20);
+        txt_tel.setBounds(720, 70, 168, 30);
+
+        txt_email.setFont(new java.awt.Font("Lucida Bright", 0, 14)); // NOI18N
         jPanel3.add(txt_email);
-        txt_email.setBounds(290, 260, 188, 20);
+        txt_email.setBounds(290, 270, 188, 30);
 
         jLabel6.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Email :");
         jPanel3.add(jLabel6);
-        jLabel6.setBounds(110, 260, 130, 20);
+        jLabel6.setBounds(110, 270, 130, 30);
 
         jLabel11.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Gender:");
         jPanel3.add(jLabel11);
-        jLabel11.setBounds(110, 220, 130, 20);
+        jLabel11.setBounds(110, 230, 130, 30);
 
         r_male.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
         r_male.setForeground(new java.awt.Color(255, 255, 255));
@@ -182,7 +183,7 @@ PreparedStatement pst=null;
             }
         });
         jPanel3.add(r_male);
-        r_male.setBounds(300, 220, 80, 30);
+        r_male.setBounds(300, 230, 80, 40);
 
         r_female.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
         r_female.setForeground(new java.awt.Color(255, 255, 255));
@@ -193,81 +194,92 @@ PreparedStatement pst=null;
             }
         });
         jPanel3.add(r_female);
-        r_female.setBounds(380, 220, 100, 30);
+        r_female.setBounds(380, 230, 100, 40);
+
+        txt_dob.setFont(new java.awt.Font("Lucida Bright", 0, 14)); // NOI18N
         jPanel3.add(txt_dob);
-        txt_dob.setBounds(290, 190, 188, 20);
+        txt_dob.setBounds(290, 200, 188, 30);
 
         jLabel3.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Date of Birth :");
         jPanel3.add(jLabel3);
-        jLabel3.setBounds(110, 190, 130, 20);
+        jLabel3.setBounds(110, 200, 130, 30);
 
+        txt_surname.setFont(new java.awt.Font("Lucida Bright", 0, 14)); // NOI18N
         txt_surname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_surnameActionPerformed(evt);
             }
         });
         jPanel3.add(txt_surname);
-        txt_surname.setBounds(290, 150, 188, 20);
+        txt_surname.setBounds(290, 160, 188, 30);
 
         jLabel2.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Surname :");
         jPanel3.add(jLabel2);
-        jLabel2.setBounds(110, 150, 130, 20);
+        jLabel2.setBounds(110, 160, 130, 30);
 
         jLabel1.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("First name :");
         jPanel3.add(jLabel1);
-        jLabel1.setBounds(110, 120, 130, 20);
+        jLabel1.setBounds(110, 120, 130, 30);
 
+        txt_firstname.setFont(new java.awt.Font("Lucida Bright", 0, 14)); // NOI18N
         txt_firstname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_firstnameActionPerformed(evt);
             }
         });
         jPanel3.add(txt_firstname);
-        txt_firstname.setBounds(290, 120, 188, 20);
+        txt_firstname.setBounds(290, 120, 188, 30);
 
         jLabel8.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Permanent Address :");
+        jLabel8.setText("     Address :");
         jPanel3.add(jLabel8);
-        jLabel8.setBounds(520, 120, 180, 20);
+        jLabel8.setBounds(530, 110, 150, 30);
 
         jLabel14.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText("Temporary Address :");
+        jLabel14.setText("Student Batch:");
         jPanel3.add(jLabel14);
-        jLabel14.setBounds(520, 150, 180, 20);
+        jLabel14.setBounds(540, 150, 160, 30);
 
         jLabel15.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setText("User Name:");
         jPanel3.add(jLabel15);
-        jLabel15.setBounds(560, 180, 120, 30);
+        jLabel15.setBounds(540, 190, 140, 30);
 
         jLabel16.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setText("Password:");
         jPanel3.add(jLabel16);
-        jLabel16.setBounds(560, 220, 110, 30);
-        jPanel3.add(tf_pass);
-        tf_pass.setBounds(720, 220, 168, 20);
+        jLabel16.setBounds(540, 230, 140, 30);
 
+        tf_pass.setFont(new java.awt.Font("Lucida Bright", 0, 14)); // NOI18N
+        jPanel3.add(tf_pass);
+        tf_pass.setBounds(720, 230, 168, 30);
+
+        tf_username.setFont(new java.awt.Font("Lucida Bright", 0, 14)); // NOI18N
         tf_username.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tf_usernameActionPerformed(evt);
             }
         });
         jPanel3.add(tf_username);
-        tf_username.setBounds(720, 180, 168, 20);
+        tf_username.setBounds(720, 190, 168, 30);
+
+        tf_TAddress.setFont(new java.awt.Font("Lucida Bright", 0, 14)); // NOI18N
         jPanel3.add(tf_TAddress);
-        tf_TAddress.setBounds(720, 150, 168, 20);
+        tf_TAddress.setBounds(720, 150, 168, 30);
+
+        txt_address.setFont(new java.awt.Font("Lucida Bright", 0, 14)); // NOI18N
         jPanel3.add(txt_address);
-        txt_address.setBounds(720, 120, 168, 20);
+        txt_address.setBounds(720, 110, 168, 30);
 
         cmd_save.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
         cmd_save.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/Save-icon.png"))); // NOI18N
@@ -278,7 +290,7 @@ PreparedStatement pst=null;
             }
         });
         jPanel3.add(cmd_save);
-        cmd_save.setBounds(150, 310, 147, 50);
+        cmd_save.setBounds(130, 320, 147, 40);
 
         jButton1.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/erase-128.png"))); // NOI18N
@@ -289,7 +301,7 @@ PreparedStatement pst=null;
             }
         });
         jPanel3.add(jButton1);
-        jButton1.setBounds(520, 310, 147, 50);
+        jButton1.setBounds(500, 320, 147, 40);
 
         jButton2.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/icons8-available-updates-24.png"))); // NOI18N
@@ -300,7 +312,7 @@ PreparedStatement pst=null;
             }
         });
         jPanel3.add(jButton2);
-        jButton2.setBounds(330, 310, 147, 50);
+        jButton2.setBounds(310, 320, 147, 40);
 
         jButton3.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/delete_16x16.gif"))); // NOI18N
@@ -311,29 +323,32 @@ PreparedStatement pst=null;
             }
         });
         jPanel3.add(jButton3);
-        jButton3.setBounds(710, 310, 177, 50);
+        jButton3.setBounds(690, 320, 177, 40);
 
         jLabel4.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Confirm Password:");
         jPanel3.add(jLabel4);
-        jLabel4.setBounds(530, 260, 160, 20);
+        jLabel4.setBounds(530, 270, 160, 30);
 
         jLabel5.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Student ID :");
         jPanel3.add(jLabel5);
-        jLabel5.setBounds(110, 90, 130, 20);
+        jLabel5.setBounds(110, 80, 130, 30);
 
+        txt_studentid.setFont(new java.awt.Font("Lucida Bright", 0, 14)); // NOI18N
         txt_studentid.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_studentidActionPerformed(evt);
             }
         });
         jPanel3.add(txt_studentid);
-        txt_studentid.setBounds(290, 90, 188, 20);
+        txt_studentid.setBounds(290, 80, 188, 30);
+
+        tf_Cpass.setFont(new java.awt.Font("Lucida Bright", 0, 14)); // NOI18N
         jPanel3.add(tf_Cpass);
-        tf_Cpass.setBounds(720, 260, 168, 20);
+        tf_Cpass.setBounds(720, 270, 168, 30);
 
         jScrollPane1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
@@ -351,20 +366,21 @@ PreparedStatement pst=null;
             }
         ));
         student_table.setColumnSelectionAllowed(true);
-        student_table.setGridColor(new java.awt.Color(102, 102, 102));
+        student_table.setGridColor(new java.awt.Color(0, 102, 102));
         student_table.setSelectionBackground(new java.awt.Color(0, 255, 102));
         student_table.setSelectionForeground(new java.awt.Color(255, 255, 255));
+        student_table.setShowGrid(false);
         jScrollPane1.setViewportView(student_table);
 
         jPanel3.add(jScrollPane1);
-        jScrollPane1.setBounds(90, 370, 810, 180);
+        jScrollPane1.setBounds(60, 370, 870, 180);
 
         jLabel10.setFont(new java.awt.Font("Lucida Calligraphy", 1, 35)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("Student Information");
         jPanel3.add(jLabel10);
-        jLabel10.setBounds(120, 10, 760, 50);
+        jLabel10.setBounds(120, 0, 760, 40);
 
         jLabel9.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
@@ -466,10 +482,10 @@ PreparedStatement pst=null;
         String email=txt_email.getText();
         String telephon=txt_tel.getText();
 
-        String Paddress=txt_address.getText();
+        String address=txt_address.getText();
         //        Image personimg=person_image;
         String genderr=gender;
-        String Taddress=tf_TAddress.getText();
+        String std_batch=tf_TAddress.getText();
         String password=tf_pass.getText();
         String Uname=tf_username.getText();
         String ConfirmPass=tf_Cpass.getText();
@@ -478,7 +494,7 @@ PreparedStatement pst=null;
         if(p==0){
             //
             if(fname.equals("") ||sname.equals("")||dob.equals("")||email.equals("")||telephon.equals("")
-                ||Paddress.equals("")||genderr.equals("")||Taddress.equals("")||password.equals("")||Uname.equals("")||ConfirmPass.equals("")||genderr.isBlank()){
+                ||address.equals("")||genderr.equals("")||std_batch.equals("")||password.equals("")||Uname.equals("")||ConfirmPass.equals("")||genderr.isBlank()){
                 JOptionPane.showMessageDialog(rootPane, "One or more field is empty!!");
 
             }else if(telephon.length()!=10){
@@ -496,8 +512,8 @@ PreparedStatement pst=null;
                     st=conn.createStatement();
                     Long telephone=Long.parseLong(telephon);
 
-                    int result= st.executeUpdate("insert into AdminDash_AddStudent(firstname,surname,dob,email,contact,P_address,gender,T_address,Uname,password,Confirmpass)"+" values ('"+fname+"','"+sname+"','"+dob+"','"+email+"','"+telephone+"','"+Paddress+"'"
-                        + ",'"+genderr+"','"+Taddress+"','"+Uname+"','"+password+"','"+ConfirmPass+"')");
+                    int result= st.executeUpdate("insert into AddStudent(firstname,surname,dob,email,contact,address,gender,std_batch,Uname,password)"+" values ('"+fname+"','"+sname+"','"+dob+"','"+email+"','"+telephone+"','"+address+"'"
+                        + ",'"+genderr+"','"+std_batch+"','"+Uname+"','"+password+"')");
 
                     if(result>0){
 
@@ -587,13 +603,13 @@ PreparedStatement pst=null;
                 String email = txt_email.getText();
                 String telephone = txt_tel.getText();
                 Long contact=Long.valueOf(telephone);
-                String P_address = txt_address.getText();
-                String T_address = tf_TAddress.getText();
+                String address = txt_address.getText();
+                String std_batch = tf_TAddress.getText();
                 String uname = tf_username.getText();
                 String password = tf_pass.getText();
 
-                String sql= "update AdminDash_AddStudent set firstname='"+fname+"', surname='"+S_name+"', "
-                + "dob='"+dob+"',Email='"+email+"',contact='"+contact+"',P_address='"+P_address+"',T_address= '"+T_address+"', "
+                String sql= "update AddStudent set firstname='"+fname+"', surname='"+S_name+"', "
+                + "dob='"+dob+"',Email='"+email+"',contact='"+contact+"',address='"+address+"',std_batch= '"+std_batch+"', "
                 + "password='"+password+"',Uname='"+uname+"'"
                 + "where std_id='"+std_id+"' ";
 
@@ -668,7 +684,7 @@ PreparedStatement pst=null;
             {
                 JOptionPane.showMessageDialog(null,e);
             }
-            String sql ="delete from AdminDash_AddStudent where std_id=? ";
+            String sql ="delete from AddStudent where std_id=? ";
             try{
                 pst=conn.prepareStatement(sql);
                 pst.setString(1, txt_studentid.getText());
