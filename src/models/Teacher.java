@@ -34,6 +34,20 @@ public Teacher(int teacher_id,String fname,String Sname,String dob,String email,
     this.gender= gender;
     this.address= address;
     this.course_name= course_name;
+    this.contact=contact;
+ }
+public Teacher(String fname,String Sname,String dob,String email,String contact,String gender,String address,String course_name,String username,String password){ 
+       
+    this.username= username;
+    this.email= email;        
+    this.fname= fname;
+    this.Sname= Sname;
+    this.password= password;
+    this.dob= dob;
+    this.gender= gender;
+    this.address= address;
+    this.course_name= course_name;
+    this.contact=contact;
  }
 
 
