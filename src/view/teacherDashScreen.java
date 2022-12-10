@@ -607,7 +607,7 @@ this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void btnOnlineAssessmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOnlineAssessmentActionPerformed
-        ReportInternalFrame ttdf = new ReportInternalFrame();
+        AssignmentScreen ttdf = new AssignmentScreen();
         jDesktopPane1.removeAll();
         jDesktopPane1.add(ttdf);
         ttdf.setBounds(0, 0, 1060, 610);
