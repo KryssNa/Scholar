@@ -1,5 +1,9 @@
 package view;
 
+import database.DbConnection;
+import java.sql.*;
+import net.proteanit.sql.DbUtils;
+
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -61,6 +65,7 @@ public class StudentDashboard extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
+        noticepanel = new javax.swing.JPanel();
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -309,11 +314,11 @@ public class StudentDashboard extends javax.swing.JFrame {
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 610, Short.MAX_VALUE)
+            .addGap(0, 470, Short.MAX_VALUE)
         );
 
         jDesktopPane1.add(jPanel4);
-        jPanel4.setBounds(-5, 0, 870, 610);
+        jPanel4.setBounds(-5, 140, 870, 470);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -444,6 +449,11 @@ public class StudentDashboard extends javax.swing.JFrame {
         jDesktopPane1.add(jPanel1);
         jPanel1.setBounds(850, 310, 210, 300);
 
+        noticepanel.setBackground(new java.awt.Color(255, 255, 255));
+        noticepanel.setLayout(null);
+        jDesktopPane1.add(noticepanel);
+        noticepanel.setBounds(0, 0, 860, 140);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -477,6 +487,76 @@ public class StudentDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_ClassActionPerformed
 
     private void btnNoticeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNoticeActionPerformed
+//        ViewNoticeScreen ttdf = new ViewNoticeScreen();
+//        jDesktopPane1.remove(noticepanel);
+//        jDesktopPane1.add(ttdf);
+//        ttdf.setBounds(0, 0, 860, 160);
+//        ttdf.show(); 
+
+
+//    jLabel111 = new javax.swing.JLabel();
+//    jLabel111.setBackground(new java.awt.Color(255, 255, 255));
+//    jLabel111.setBounds(0,150,50,20);
+//    jLabel111.setFont(new java.awt.Font("Lucida Calligraphy", 1, 22)); // NOI18N
+//    jLabel111.setForeground(new java.awt.Color(255, 102, 102));
+//    jLabel111.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+//    jLabel111.setText("Notice");
+//    jLabel111.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+//
+//    noticepanel.add(jLabel111);
+    
+    tblNotice = new javax.swing.JTable();
+    tblNotice.setBounds(0, 3, 858, 136);
+    tblNotice.setRowHeight(30);
+    tblNotice.setName("Notice");
+    tblNotice.setShowGrid(false);
+    tblNotice.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0)));
+    tblNotice.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14));
+    tblNotice.setModel(new javax.swing.table.DefaultTableModel(
+        new Object [][] {
+            {null},
+            {null},
+            {null},
+            {null}
+        },
+        new String [] {
+            "Notice"
+        }
+    ) {
+        boolean[] canEdit = new boolean [] {
+            false
+        };
+        
+        public boolean isCellEditable(int rowIndex, int columnIndex) {
+            return canEdit [columnIndex];
+        }
+    });
+    tblNotice.getTableHeader().setReorderingAllowed(false);
+    noticepanel.add(tblNotice);
+    
+    if (tblNotice.getColumnModel().getColumnCount() > 0) {
+        tblNotice.getColumnModel().getColumn(0).setPreferredWidth(20);
+    }
+    
+    try{
+    
+        Connection conn=DbConnection.getconnection();
+        String query = "select * from noticee";
+        Statement st=conn.createStatement();
+        ResultSet rs=st.executeQuery(query);
+        
+        while(rs.next()){
+        
+            tblNotice.setModel(DbUtils.resultSetToTableModel(rs));
+        }
+        
+        
+    }catch(SQLException e){
+    
+        System.out.println("SQL error: "+e);
+    }
+    
+        
         // TODO add your handling code here:
     }//GEN-LAST:event_btnNoticeActionPerformed
 
@@ -494,7 +574,9 @@ this.dispose();        // TODO add your handling code here:
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
         jDesktopPane1.removeAll();
+        noticepanel.removeAll();
         jDesktopPane1.add(jPanel1);
+        jDesktopPane1.add(noticepanel);
         jDesktopPane1.add(Profile);
         jDesktopPane1.add(jPanel4);
         jDesktopPane1.show();       // TODO add your handling code here:
@@ -593,5 +675,8 @@ this.dispose();        // TODO add your handling code here:
     private java.awt.Label label7;
     private java.awt.Label label8;
     private java.awt.Label label9;
+    private javax.swing.JPanel noticepanel;
     // End of variables declaration//GEN-END:variables
+    private javax.swing.JTable tblNotice;
+    private javax.swing.JLabel jLabel111;
 }
