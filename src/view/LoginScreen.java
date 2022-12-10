@@ -292,10 +292,10 @@ public class LoginScreen extends javax.swing.JFrame {
         if(username.equals("") || pass.equals("") ){
             JOptionPane.showMessageDialog(null, "Please fill all the details");
         }else if(enrollment()==true){
-            new StdDashScreen().setVisible(true);
+            new StudentDashboard().setVisible(true);
         
         }else if("Teacher".equals(username) &&"Teacher123".equals(pass)){
-            new teacherDash().setVisible(true);
+            new teacherDashScreen().setVisible(true);
             
         }else{
 
