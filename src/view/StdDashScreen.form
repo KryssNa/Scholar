@@ -383,7 +383,6 @@
                                   <Component id="jButton2" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
-<<<<<<< HEAD
                       </Group>
                       <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                       <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
@@ -565,7 +564,6 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="label1" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-=======
                           <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                           <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
@@ -573,7 +571,6 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jSeparator1" min="-2" pref="14" max="-2" attributes="0"/>
                           <EmptySpace pref="100" max="32767" attributes="0"/>
->>>>>>> 83c562236a179caa0919ea29a24b2ce4f4bcdc7d
                       </Group>
                   </Group>
                 </DimensionLayout>

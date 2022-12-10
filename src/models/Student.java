@@ -6,10 +6,10 @@ package models;
 
 /**
  *
- * @author HP
+ * @author Lenovo
  */
-public class Teacher {
-    private int teacher_id;
+public class Student {
+     private int std_id;
     private String username;
     private String email;
     private String fname;
@@ -18,13 +18,13 @@ public class Teacher {
     private String dob;
     private String gender;
     private String address;
-    private String course_name;
+    private String std_batch;
     private String contact;
 
 
-public Teacher(int teacher_id,String fname,String Sname,String dob,String email,String contact,String gender,String address,String course_name,String username,String password){ 
-       
-    this.teacher_id=teacher_id;
+public Student(int std_id,String fname,String Sname,String dob,String email,String contact,String gender,String address,String std_batch,String username,String password){ 
+    
+    this.std_id=std_id;
     this.username= username;
     this.email= email;        
     this.fname= fname;
@@ -33,16 +33,36 @@ public Teacher(int teacher_id,String fname,String Sname,String dob,String email,
     this.dob= dob;
     this.gender= gender;
     this.address= address;
-    this.course_name= course_name;
+    this.std_batch= std_batch;
+    this.contact=contact;
+ }
+public Student(String fname,String Sname,String dob,String email,String contact,String gender,String address,String std_batch,String username,String password){ 
+    
+    this.username= username;
+    this.email= email;        
+    this.fname= fname;
+    this.Sname= Sname;
+    this.password= password;
+    this.dob= dob;
+    this.gender= gender;
+    this.address= address;
+    this.std_batch= std_batch;
+    this.contact=contact;
  }
 
+public Student(String username,String password){
+this.username=username;
+this.password=password;
+    
+}
 
-	public int getTeacher_id() {
-		return this.teacher_id;
+
+	public int getstd_id() {
+		return this.std_id;
 	}
 
-	public void setTeacher_id(int teacher_id) {
-		this.teacher_id = teacher_id;
+	public void setstd_id(int std_id) {
+		this.std_id = std_id;
 	}
 
 	public String getUsername() {
@@ -109,12 +129,12 @@ public Teacher(int teacher_id,String fname,String Sname,String dob,String email,
 		this.address = address;
 	}
 
-	public String getCourse_name() {
-		return this.course_name;
+	public String getstd_batch() {
+		return this.std_batch;
 	}
 
-	public void setCourse_name(String course_name) {
-		this.course_name = course_name;
+	public void setstd_batch(String std_batch) {
+		this.std_batch = std_batch;
 	}
 
 	public String getContact() {
@@ -124,4 +144,5 @@ public Teacher(int teacher_id,String fname,String Sname,String dob,String email,
 	public void setContact(String contact) {
 		this.contact = contact;
 	}
+    
 }
