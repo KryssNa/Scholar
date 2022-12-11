@@ -8,12 +8,10 @@ import models.Student;
 import models.User;
 import java.sql.*;
 import javax.swing.*;
-import static constraint.Constant.*;
 import controller.UserController;
 import controller.StudentController;
 import controller.TeacherController;
 import database.DbConnection;
-import java.awt.HeadlessException;
 import models.Teacher;
 
 /**
