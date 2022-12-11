@@ -618,7 +618,7 @@ this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        UpdateProfileScreen ttdf = new UpdateProfileScreen();
+        UpdateAdProfile ttdf = new UpdateAdProfile();
         jDesktopPane1.removeAll();
         jDesktopPane1.add(ttdf);
         ttdf.setBounds(0, 0, 1060, 650);
