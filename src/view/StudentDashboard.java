@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 package view;
 
 import database.DbConnection;
@@ -509,11 +516,11 @@ public class StudentDashboard extends javax.swing.JFrame {
     
     tblNotice = new javax.swing.JTable();
     tblNotice.setBounds(0, 3, 858, 136);
-    tblNotice.setRowHeight(30);
+    tblNotice.setRowHeight(50);
     tblNotice.setName("Notice");
     tblNotice.setShowGrid(false);
-    tblNotice.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0)));
-    tblNotice.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14));
+    tblNotice.setBorder(javax.swing.BorderFactory.createTitledBorder("Notice!"));
+    tblNotice.setFont(new java.awt.Font("Lucida Calligraphy", 1, 10));
     tblNotice.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
             {null},
