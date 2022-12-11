@@ -40,7 +40,6 @@ public class TextIntoSpeechScreen extends javax.swing.JFrame {
         text.setColumns(20);
         text.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         text.setRows(5);
-        text.setText("hyy");
         text.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jScrollPane1.setViewportView(text);
 
