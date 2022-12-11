@@ -4,13 +4,17 @@
  */
 
 package view;
+import models.Student;
 import models.User;
 import java.sql.*;
 import javax.swing.*;
 import static constraint.Constant.*;
 import controller.UserController;
+import controller.StudentController;
+import controller.TeacherController;
 import database.DbConnection;
 import java.awt.HeadlessException;
+import models.Teacher;
 
 /**
  *
@@ -25,51 +29,95 @@ public class LoginScreen extends javax.swing.JFrame {
         initComponents();
     }
     
-    public boolean enrollment(){
+    public boolean enrollmentStudent(){
         
-        Connection conn=DbConnection.getconnection();
-        ResultSet rs;
-        PreparedStatement pst;
         boolean isvalid=false;
         String username = tfusername.getText();
         String pass = new String(tfpass.getPassword());
-        try {
-
-                String query = "Select * from AdminDash_AddStudent where Uname='"+username+"' and password='"+pass+"' ";
-                
-                Statement smt = conn.createStatement();
-                rs = smt.executeQuery(query);
-                
-            if(rs.next()){
-                    int user_id = rs.getInt(DB_STUDENT_ID);
-                String user_username = rs.getString(DB_STUDENT_USERNAME);
-                String user_password = rs.getString(DB_STUDENT_PASSWORD);
-                String user_email = rs.getString(DB_STUDENT_EMAIL);
-                User user = new User(user_id,user_username,user_email,user_password);
-                
-                constraint.Constant.loggedInUser=user;
-
-                JOptionPane.showMessageDialog(null, "Welcome to Scholar","Student",
-                            JOptionPane.INFORMATION_MESSAGE);
-                return true;
-                
-            }else{
-                   return false;
-                
-            }
-                
-            } catch (HeadlessException | SQLException e) {
-                JOptionPane.showMessageDialog(null, e);
-                System.out.println(e);
-                
-                
-            }
         
-        
-
-        
-        return isvalid;
+        StudentController sc=new StudentController();
+        Student student=sc.loginStudent(username, pass);
+        if(student!=null){
+                    constraint.Constant.loggedInStudent=student;                
+                    JOptionPane.showMessageDialog(null, "Welcome to Scholar","Student",
+                        JOptionPane.INFORMATION_MESSAGE);
+                    new StudentDashboard().setVisible(true);
+                    return isvalid=true;
+            
+        }else{
+            return isvalid=false;
+            
+        }     
+       
     }
+    
+    public boolean enrollmentTeacher(){
+        
+        String username = tfusername.getText();
+        String pass = new String(tfpass.getPassword());
+        boolean isvalid=false;
+        
+        TeacherController sc=new TeacherController();
+        Teacher teacher=sc.loginTeacher(username, pass);
+        if(teacher!=null){
+                    constraint.Constant.loggedInTeacher=teacher;                
+                    JOptionPane.showMessageDialog(null, "Welcome to Scholar","Teacher",
+                        JOptionPane.INFORMATION_MESSAGE);
+                    new teacherDashScreen().setVisible(true);
+                    return true;
+            
+        }else{
+            return false;
+            
+                        // return false;
+            
+        }     
+//        return isvalid;
+        
+//        Connection conn=DbConnection.getconnection();
+//        ResultSet rs;
+//        PreparedStatement pst;
+//        boolean isvalid=false;
+//        String username = tfusername.getText();
+//        String pass = new String(tfpass.getPassword());
+//        try {
+//
+//                String query = "Select * from AddTeacher where Username='"+username+"' and Password='"+pass+"' ";
+//                
+//                Statement smt = conn.createStatement();
+//                rs = smt.executeQuery(query);
+//                
+//            if(rs.next()){
+//                    int user_id = rs.getInt(DB_STUDENT_ID);
+//                    String user_username = rs.getString(DB_STUDENT_USERNAME);
+//                    String user_password = rs.getString(DB_STUDENT_PASSWORD);
+//                    String user_email = rs.getString(DB_STUDENT_EMAIL);
+//                    User user = new User(user_id,user_username,user_email,user_password);
+//
+//                    constraint.Constant.loggedInUser=user;
+//
+//                    JOptionPane.showMessageDialog(null, "Welcome to Scholar","Student",
+//                                JOptionPane.INFORMATION_MESSAGE);
+//                    return true;
+//
+//            }else{
+//                return false;
+//
+//                }
+//                
+//            } catch (HeadlessException | SQLException e) {
+//                JOptionPane.showMessageDialog(null, e);
+//                System.out.println(e);
+//                
+//                
+//            }
+//        
+//        
+//
+//        
+//        return isvalid;
+    }
+    
     public boolean testenrollment(){
         
         String uname = tfusername.getText();
@@ -81,14 +129,18 @@ public class LoginScreen extends javax.swing.JFrame {
         try{
         
             String query1="Select * from Admin where username=?";
-            String query2="Select * from AdminDash_AddStudent where Uname=?";
+            String query2="Select * from AddStudent where Username=?";
+            String query3="Select * from AddTeacher where Username=?";
             PreparedStatement usernamePST=conn.prepareStatement(query1);
-            PreparedStatement emailPST=conn.prepareStatement(query2);
+            PreparedStatement studentPST=conn.prepareStatement(query2);
+            PreparedStatement TeacherPST=conn.prepareStatement(query3);
             usernamePST.setString(1, uname);
-            emailPST.setString(1, uname);
+            studentPST.setString(1, uname);
+            TeacherPST.setString(1, uname);
             
-            ResultSet rs2=emailPST.executeQuery();
+            ResultSet rs2=studentPST.executeQuery();
             ResultSet rs1=usernamePST.executeQuery();
+            ResultSet rs3=TeacherPST.executeQuery();
             if (rs1.next()){
             
                 isExist=true;
@@ -97,6 +149,10 @@ public class LoginScreen extends javax.swing.JFrame {
             }else if(rs2.next()){
                  isExist=true;
                  lblEnrollment.setText("Student");
+            
+            }else if(rs3.next()){
+                 isExist=true;
+                 lblEnrollment.setText("Teacher");
             
             }
             else{
@@ -291,11 +347,11 @@ public class LoginScreen extends javax.swing.JFrame {
 
         if(username.equals("") || pass.equals("") ){
             JOptionPane.showMessageDialog(null, "Please fill all the details");
-        }else if(enrollment()==true){
-            new StdDashScreen().setVisible(true);
+        }else if(enrollmentStudent()==true){
+            new StudentDashboard().setVisible(true);
         
-        }else if("Teacher".equals(username) &&"Teacher123".equals(pass)){
-            new teacherDash().setVisible(true);
+        }else if(enrollmentTeacher()==true){
+            new teacherDashScreen().setVisible(true);
             
         }else{
 

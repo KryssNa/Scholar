@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
 package view;
+import controller.StudentController;
 import database.DbConnection;
 import net.proteanit.sql.DbUtils;
 import java.awt.*;
@@ -17,6 +18,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 import javax.swing.*;
+import models.Student;
 
 /**
  *
@@ -72,8 +74,8 @@ PreparedStatement pst=null;
         
         conn=dbconn.getconnection();
 
-        String sql ="select std_id as ID,CONCAT(firstname ,' ', surname) as Name,contact as Contact,address as Address,gender as Gender,std_batch as Batch ,Uname as Username,password as Password from AddStudent order by std_id asc";
-        pst=conn.prepareStatement(sql);
+       String sql ="select std_id as ID,CONCAT(FirstName ,' ', SurName) as Name, Contact,Address, Gender,std_batch,Username,Password from AddStudent";
+       pst=conn.prepareStatement(sql);
         rs=pst.executeQuery();
         student_table.setModel(DbUtils.resultSetToTableModel(rs));
     }
@@ -122,7 +124,7 @@ PreparedStatement pst=null;
         jLabel16 = new javax.swing.JLabel();
         tf_pass = new javax.swing.JTextField();
         tf_username = new javax.swing.JTextField();
-        tf_TAddress = new javax.swing.JTextField();
+        tf_studentBatch = new javax.swing.JTextField();
         txt_address = new javax.swing.JTextField();
         cmd_save = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
@@ -273,9 +275,9 @@ PreparedStatement pst=null;
         jPanel3.add(tf_username);
         tf_username.setBounds(720, 190, 168, 30);
 
-        tf_TAddress.setFont(new java.awt.Font("Lucida Bright", 0, 14)); // NOI18N
-        jPanel3.add(tf_TAddress);
-        tf_TAddress.setBounds(720, 150, 168, 30);
+        tf_studentBatch.setFont(new java.awt.Font("Lucida Bright", 0, 14)); // NOI18N
+        jPanel3.add(tf_studentBatch);
+        tf_studentBatch.setBounds(720, 150, 168, 30);
 
         txt_address.setFont(new java.awt.Font("Lucida Bright", 0, 14)); // NOI18N
         jPanel3.add(txt_address);
@@ -480,24 +482,24 @@ PreparedStatement pst=null;
         String sname=txt_surname.getText();
         String dob=txt_dob.getText();
         String email=txt_email.getText();
-        String telephon=txt_tel.getText();
+        String contact=txt_tel.getText();
 
         String address=txt_address.getText();
         //        Image personimg=person_image;
         String genderr=gender;
-        String std_batch=tf_TAddress.getText();
+        String std_batch=tf_studentBatch.getText();
         String password=tf_pass.getText();
-        String Uname=tf_username.getText();
+        String username=tf_username.getText();
         String ConfirmPass=tf_Cpass.getText();
         //        String stdid=txt_studentid.getText();
 
         if(p==0){
             //
-            if(fname.equals("") ||sname.equals("")||dob.equals("")||email.equals("")||telephon.equals("")
-                ||address.equals("")||genderr.equals("")||std_batch.equals("")||password.equals("")||Uname.equals("")||ConfirmPass.equals("")||genderr.isBlank()){
+            if(fname.equals("") ||sname.equals("")||dob.equals("")||email.equals("")||contact.equals("")
+                ||address.equals("")||genderr.equals("")||std_batch.equals("")||password.equals("")||username.equals("")||ConfirmPass.equals("")||genderr.isBlank()){
                 JOptionPane.showMessageDialog(rootPane, "One or more field is empty!!");
 
-            }else if(telephon.length()!=10){
+            }else if(contact.length()!=10){
                 JOptionPane.showMessageDialog(rootPane, "Contact Number must be of 10 digits","Number Length Error!!",JOptionPane.ERROR_MESSAGE);
             }else if(!password.equals(ConfirmPass)){
                 JOptionPane.showMessageDialog(rootPane, "Password must be same","Password Error",JOptionPane.ERROR_MESSAGE);
@@ -507,19 +509,17 @@ PreparedStatement pst=null;
 
                 try {
 
-                    conn=dbconn.getconnection();
-
-                    st=conn.createStatement();
-                    Long telephone=Long.parseLong(telephon);
-
-                    int result= st.executeUpdate("insert into AddStudent(firstname,surname,dob,email,contact,address,gender,std_batch,Uname,password)"+" values ('"+fname+"','"+sname+"','"+dob+"','"+email+"','"+telephone+"','"+address+"'"
-                        + ",'"+genderr+"','"+std_batch+"','"+Uname+"','"+password+"')");
-
-                    if(result>0){
-
-                        JOptionPane.showMessageDialog(rootPane, "Student Added Successfully");
-                        Update_table();
-                    }
+                Student t1=new Student(fname,sname,dob,email,contact,genderr,address,std_batch,username,password);
+                StudentController tc= new StudentController();
+                int isinserted=tc.inserStudent(t1);
+                if(isinserted>0){
+                
+                    JOptionPane.showMessageDialog(null, "Student added successfully","Success",JOptionPane.INFORMATION_MESSAGE);
+                    Update_table();
+                }else{
+                
+                    System.out.println("Some error occured");
+                }
 
                 }
                 catch (Exception e)
@@ -581,7 +581,7 @@ PreparedStatement pst=null;
         tf_Cpass.setText("");
         txt_studentid.setText("");
 
-        tf_TAddress.setText("");
+        tf_studentBatch.setText("");
         tf_pass.setText("");
         tf_username.setText("");
 //        lbl_img.setIcon(null);
@@ -594,32 +594,34 @@ PreparedStatement pst=null;
         int p = JOptionPane.showConfirmDialog(null, "Are you sure you want to update?","Update Record",JOptionPane.YES_NO_OPTION);
         if(p==0){
 
-            try{
-
                 String fname = txt_firstname.getText();
                 String S_name = txt_surname.getText();
                 String dob = txt_dob.getText();
                 String std_id = txt_studentid.getText();
                 String email = txt_email.getText();
-                String telephone = txt_tel.getText();
-                Long contact=Long.valueOf(telephone);
+                String contact = txt_tel.getText();
                 String address = txt_address.getText();
-                String std_batch = tf_TAddress.getText();
+                String std_batch = tf_studentBatch.getText();
                 String uname = tf_username.getText();
                 String password = tf_pass.getText();
+                String genderr=gender;
+                
+                
+                if(fname.equals("") ||S_name.equals("")||dob.equals("")||email.equals("")||contact.equals("")
+                ||address.equals("")||genderr.equals("")||std_batch.equals("")||password.equals("")||uname.equals("")||genderr.isBlank()){
+                JOptionPane.showMessageDialog(rootPane, "One or more field is empty!!");
 
-                String sql= "update AddStudent set firstname='"+fname+"', surname='"+S_name+"', "
-                + "dob='"+dob+"',Email='"+email+"',contact='"+contact+"',address='"+address+"',std_batch= '"+std_batch+"', "
-                + "password='"+password+"',Uname='"+uname+"'"
-                + "where std_id='"+std_id+"' ";
+                }else if(contact.length()!=10){
+                    JOptionPane.showMessageDialog(rootPane, "Contact Number must be of 10 digits","Number Length Error!!",JOptionPane.ERROR_MESSAGE);
+                }else if(!email.endsWith("@gmail.com")){
+                    JOptionPane.showMessageDialog(rootPane, "Invalid E-mail!!");
+                }else{
+                     Student t1=new Student(fname,S_name,dob,email,contact,genderr,address,std_batch,uname,password);
+                     StudentController tc=new StudentController();
+                     tc.updateRecord(t1);
+                     JOptionPane.showMessageDialog(null, "Record Updated");
+                }
 
-                pst=conn.prepareStatement(sql);
-                pst.execute();
-                JOptionPane.showMessageDialog(null, "Record Updated");
-
-            }catch(Exception e){
-                JOptionPane.showMessageDialog(null, e);
-            }
 
             Date currentDate = GregorianCalendar.getInstance().getTime();
             DateFormat df = DateFormat.getDateInstance();
@@ -749,8 +751,8 @@ PreparedStatement pst=null;
     private javax.swing.JRadioButton r_male;
     private javax.swing.JTable student_table;
     private javax.swing.JTextField tf_Cpass;
-    private javax.swing.JTextField tf_TAddress;
     private javax.swing.JTextField tf_pass;
+    private javax.swing.JTextField tf_studentBatch;
     private javax.swing.JTextField tf_username;
     private javax.swing.JTextField txt_address;
     private javax.swing.JTextField txt_dob;

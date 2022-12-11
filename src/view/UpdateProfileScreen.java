@@ -27,167 +27,307 @@ public class UpdateProfileScreen extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        tf_address = new javax.swing.JTextField();
+        tf_username = new javax.swing.JTextField();
+        tf_password = new javax.swing.JTextField();
+        tf_contact = new javax.swing.JTextField();
+        tf_course = new javax.swing.JTextField();
         label1 = new java.awt.Label();
         label2 = new java.awt.Label();
         label3 = new java.awt.Label();
         label4 = new java.awt.Label();
         label5 = new java.awt.Label();
-        label6 = new java.awt.Label();
         label7 = new java.awt.Label();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
+        tf_Sname = new javax.swing.JTextField();
+        td_dob = new javax.swing.JTextField();
+        tf_bio = new javax.swing.JTextField();
+        tf_Fname = new javax.swing.JTextField();
+        tf_userID = new javax.swing.JTextField();
+        checkbox_gender_male = new javax.swing.JCheckBox();
+        checkbox_Genderr_female = new javax.swing.JCheckBox();
+        label8 = new java.awt.Label();
+        label9 = new java.awt.Label();
+        label10 = new java.awt.Label();
+        label11 = new java.awt.Label();
+        label12 = new java.awt.Label();
+        btn_editDetails = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1060, 650));
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setPreferredSize(new java.awt.Dimension(1060, 650));
+        jPanel1.setLayout(null);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/logo.PNG"))); // NOI18N
+        tf_address.setBackground(java.awt.Color.black);
+        tf_address.setFont(new java.awt.Font("Lucida Calligraphy", 1, 15)); // NOI18N
+        tf_address.setForeground(new java.awt.Color(255, 255, 255));
+        tf_address.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
+        tf_address.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        tf_address.setEnabled(false);
+        jPanel1.add(tf_address);
+        tf_address.setBounds(670, 243, 190, 30);
 
-        label1.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
-        label1.setText("Update Profile");
+        tf_username.setBackground(java.awt.Color.black);
+        tf_username.setFont(new java.awt.Font("Lucida Calligraphy", 1, 15)); // NOI18N
+        tf_username.setForeground(new java.awt.Color(255, 255, 255));
+        tf_username.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
+        tf_username.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        tf_username.setEnabled(false);
+        jPanel1.add(tf_username);
+        tf_username.setBounds(670, 303, 190, 30);
 
-        label2.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
-        label2.setText("Name:");
+        tf_password.setBackground(java.awt.Color.black);
+        tf_password.setFont(new java.awt.Font("Lucida Calligraphy", 1, 15)); // NOI18N
+        tf_password.setForeground(new java.awt.Color(255, 255, 255));
+        tf_password.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
+        tf_password.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        tf_password.setEnabled(false);
+        jPanel1.add(tf_password);
+        tf_password.setBounds(670, 353, 190, 30);
 
-        label3.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
-        label3.setText("User ID:");
-
-        label4.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
-        label4.setText("D.O.B:");
-
-        label5.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
-        label5.setText("Bio:");
-
-        label6.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
-        label6.setText("Contact:");
-
-        label7.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
-        label7.setText("Gender:");
-
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        tf_contact.setBackground(java.awt.Color.black);
+        tf_contact.setFont(new java.awt.Font("Lucida Calligraphy", 1, 15)); // NOI18N
+        tf_contact.setForeground(new java.awt.Color(255, 255, 255));
+        tf_contact.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
+        tf_contact.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        tf_contact.setEnabled(false);
+        tf_contact.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                tf_contactActionPerformed(evt);
             }
         });
+        jPanel1.add(tf_contact);
+        tf_contact.setBounds(670, 143, 190, 30);
 
-        jCheckBox1.setText("Male");
+        tf_course.setBackground(java.awt.Color.black);
+        tf_course.setFont(new java.awt.Font("Lucida Calligraphy", 1, 15)); // NOI18N
+        tf_course.setForeground(new java.awt.Color(255, 255, 255));
+        tf_course.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
+        tf_course.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        tf_course.setEnabled(false);
+        jPanel1.add(tf_course);
+        tf_course.setBounds(670, 193, 190, 30);
 
-        jCheckBox2.setText("Female");
+        label1.setBackground(java.awt.Color.black);
+        label1.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
+        label1.setForeground(new java.awt.Color(255, 255, 255));
+        label1.setText("Update Profile");
+        jPanel1.add(label1);
+        label1.setBounds(400, 20, 160, 28);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(418, 418, 418))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(384, 384, 384))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(289, 289, 289)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label5, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label6, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label7, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 322, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jCheckBox1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jCheckBox2)))
-                .addGap(214, 214, 214))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(label7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jCheckBox1)
-                        .addComponent(jCheckBox2)))
-                .addContainerGap(85, Short.MAX_VALUE))
-        );
+        label2.setBackground(java.awt.Color.black);
+        label2.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
+        label2.setForeground(new java.awt.Color(0, 255, 51));
+        label2.setText("Name:");
+        jPanel1.add(label2);
+        label2.setBounds(120, 190, 90, 23);
+
+        label3.setBackground(java.awt.Color.black);
+        label3.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
+        label3.setForeground(new java.awt.Color(0, 255, 51));
+        label3.setText("User ID:");
+        jPanel1.add(label3);
+        label3.setBounds(100, 140, 90, 23);
+
+        label4.setBackground(java.awt.Color.black);
+        label4.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
+        label4.setForeground(new java.awt.Color(0, 255, 51));
+        label4.setText("D.O.B:");
+        jPanel1.add(label4);
+        label4.setBounds(120, 240, 80, 23);
+
+        label5.setBackground(java.awt.Color.black);
+        label5.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
+        label5.setForeground(new java.awt.Color(0, 255, 51));
+        label5.setText("Bio:");
+        jPanel1.add(label5);
+        label5.setBounds(150, 300, 60, 23);
+
+        label7.setBackground(java.awt.Color.black);
+        label7.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
+        label7.setForeground(new java.awt.Color(0, 255, 51));
+        label7.setText("Gender:");
+        jPanel1.add(label7);
+        label7.setBounds(110, 360, 90, 23);
+
+        tf_Sname.setBackground(java.awt.Color.black);
+        tf_Sname.setFont(new java.awt.Font("Lucida Calligraphy", 1, 15)); // NOI18N
+        tf_Sname.setForeground(new java.awt.Color(255, 255, 255));
+        tf_Sname.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
+        tf_Sname.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        tf_Sname.setEnabled(false);
+        tf_Sname.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_SnameActionPerformed(evt);
+            }
+        });
+        jPanel1.add(tf_Sname);
+        tf_Sname.setBounds(330, 190, 90, 30);
+
+        td_dob.setBackground(java.awt.Color.black);
+        td_dob.setFont(new java.awt.Font("Lucida Calligraphy", 1, 15)); // NOI18N
+        td_dob.setForeground(new java.awt.Color(255, 255, 255));
+        td_dob.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
+        td_dob.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        td_dob.setEnabled(false);
+        jPanel1.add(td_dob);
+        td_dob.setBounds(230, 240, 190, 23);
+
+        tf_bio.setBackground(java.awt.Color.black);
+        tf_bio.setFont(new java.awt.Font("Lucida Calligraphy", 1, 15)); // NOI18N
+        tf_bio.setForeground(new java.awt.Color(255, 255, 255));
+        tf_bio.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
+        tf_bio.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        tf_bio.setEnabled(false);
+        jPanel1.add(tf_bio);
+        tf_bio.setBounds(230, 300, 190, 23);
+
+        tf_Fname.setBackground(java.awt.Color.black);
+        tf_Fname.setFont(new java.awt.Font("Lucida Calligraphy", 1, 15)); // NOI18N
+        tf_Fname.setForeground(new java.awt.Color(255, 255, 255));
+        tf_Fname.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
+        tf_Fname.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        tf_Fname.setEnabled(false);
+        tf_Fname.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_FnameActionPerformed(evt);
+            }
+        });
+        jPanel1.add(tf_Fname);
+        tf_Fname.setBounds(230, 190, 100, 30);
+
+        tf_userID.setBackground(java.awt.Color.black);
+        tf_userID.setFont(new java.awt.Font("Lucida Calligraphy", 1, 15)); // NOI18N
+        tf_userID.setForeground(new java.awt.Color(255, 255, 255));
+        tf_userID.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
+        tf_userID.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        tf_userID.setEnabled(false);
+        jPanel1.add(tf_userID);
+        tf_userID.setBounds(230, 140, 190, 23);
+
+        checkbox_gender_male.setBackground(java.awt.Color.black);
+        checkbox_gender_male.setFont(new java.awt.Font("Lucida Calligraphy", 1, 15)); // NOI18N
+        checkbox_gender_male.setForeground(new java.awt.Color(255, 255, 255));
+        checkbox_gender_male.setText("Male");
+        checkbox_gender_male.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
+        checkbox_gender_male.setEnabled(false);
+        jPanel1.add(checkbox_gender_male);
+        checkbox_gender_male.setBounds(240, 360, 80, 30);
+
+        checkbox_Genderr_female.setBackground(java.awt.Color.black);
+        checkbox_Genderr_female.setFont(new java.awt.Font("Lucida Calligraphy", 1, 15)); // NOI18N
+        checkbox_Genderr_female.setForeground(new java.awt.Color(255, 255, 255));
+        checkbox_Genderr_female.setText("Female");
+        checkbox_Genderr_female.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
+        checkbox_Genderr_female.setEnabled(false);
+        jPanel1.add(checkbox_Genderr_female);
+        checkbox_Genderr_female.setBounds(340, 360, 90, 30);
+
+        label8.setBackground(java.awt.Color.black);
+        label8.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
+        label8.setForeground(new java.awt.Color(0, 255, 51));
+        label8.setText("Contact:");
+        jPanel1.add(label8);
+        label8.setBounds(540, 140, 100, 30);
+
+        label9.setBackground(java.awt.Color.black);
+        label9.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
+        label9.setForeground(new java.awt.Color(0, 255, 51));
+        label9.setText("Course:");
+        jPanel1.add(label9);
+        label9.setBounds(550, 190, 100, 30);
+
+        label10.setBackground(java.awt.Color.black);
+        label10.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
+        label10.setForeground(new java.awt.Color(0, 255, 51));
+        label10.setText("Address:");
+        jPanel1.add(label10);
+        label10.setBounds(540, 243, 90, 30);
+
+        label11.setBackground(java.awt.Color.black);
+        label11.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
+        label11.setForeground(new java.awt.Color(0, 255, 51));
+        label11.setText("Username:");
+        jPanel1.add(label11);
+        label11.setBounds(520, 303, 110, 30);
+
+        label12.setBackground(java.awt.Color.black);
+        label12.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
+        label12.setForeground(new java.awt.Color(0, 255, 51));
+        label12.setText("Password:");
+        jPanel1.add(label12);
+        label12.setBounds(520, 350, 120, 30);
+
+        btn_editDetails.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
+        btn_editDetails.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/icons8-pencil-35.png"))); // NOI18N
+        btn_editDetails.setText("Edit Details");
+        jPanel1.add(btn_editDetails);
+        btn_editDetails.setBounds(420, 460, 170, 40);
+
+        jLabel1.setFont(new java.awt.Font("Lucida Calligraphy", 1, 15)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 255, 51));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/FrameBG.png"))); // NOI18N
+        jLabel1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(0, 0, 1030, 550);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1027, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 554, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void tf_FnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_FnameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_tf_FnameActionPerformed
+
+    private void tf_SnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_SnameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_SnameActionPerformed
+
+    private void tf_contactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_contactActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_contactActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
+    private javax.swing.JButton btn_editDetails;
+    private javax.swing.JCheckBox checkbox_Genderr_female;
+    private javax.swing.JCheckBox checkbox_gender_male;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
     private java.awt.Label label1;
+    private java.awt.Label label10;
+    private java.awt.Label label11;
+    private java.awt.Label label12;
     private java.awt.Label label2;
     private java.awt.Label label3;
     private java.awt.Label label4;
     private java.awt.Label label5;
-    private java.awt.Label label6;
     private java.awt.Label label7;
+    private java.awt.Label label8;
+    private java.awt.Label label9;
+    private javax.swing.JTextField td_dob;
+    private javax.swing.JTextField tf_Fname;
+    private javax.swing.JTextField tf_Sname;
+    private javax.swing.JTextField tf_address;
+    private javax.swing.JTextField tf_bio;
+    private javax.swing.JTextField tf_contact;
+    private javax.swing.JTextField tf_course;
+    private javax.swing.JTextField tf_password;
+    private javax.swing.JTextField tf_userID;
+    private javax.swing.JTextField tf_username;
     // End of variables declaration//GEN-END:variables
 }
