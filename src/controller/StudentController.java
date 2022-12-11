@@ -4,6 +4,8 @@
  */
 package controller;
 
+import static constraint.Constant.*;
+import static constraint.Constant.DB_STUDENT_ID;
 import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -22,7 +24,7 @@ import models.Student;
  */
 public class StudentController {
  
-    
+    DbConnection db=new DbConnection();
     Connection conn=DbConnection.getconnection();
     PreparedStatement pst;
     Statement st;
@@ -86,6 +88,37 @@ public class StudentController {
          }        
          return isvalid;     
      }
+     
+     public Student loginStudent(String username, String password) {
+        Student student = null;
+        try {
+            String query;
+            query = "select * from AddStudent where username =? and password =?";
+            pst = DbConnection.getconnection().prepareStatement(query);
+            pst.setString(1, username);
+            pst.setString(2, password);
+            ResultSet rs = db.retrieve(pst);
+            while (rs.next()) {
+                int std_id = rs.getInt(DB_STUDENT_ID);
+                String std_username = rs.getString(DB_STUDENT_USERNAME);
+                String std_password = rs.getString(DB_STUDENT_PASSWORD);
+                String std_email = rs.getString(DB_STUDENT_EMAIL);
+                String std_FName=rs.getString(DB_STUDENT_FIRSTNAME);
+                String std_sName=rs.getString(DB_STUDENT_SURNAME);
+                String std_contact=rs.getString(DB_STUDENT_CONTACT);
+                String std_dob=rs.getString(DB_STUDENT_DOB);
+                String std_address=rs.getString(DB_STUDENT_ADDRESS);
+                String std_gender=rs.getString(DB_STUDENT_GENDER);
+                String std_batch=rs.getString(DB_STUDENT_BATCH);
+                student = new Student(std_id,std_FName,std_sName,std_dob,std_email,std_contact,std_gender,std_address,std_batch,std_username,std_password);
+                return student;
+            }
+        } catch (SQLException ex) {
+            System.out.println("Error " + ex);
+        }
+        return student;
+    }
+     
     public void Updatetable() {
 //        try{
 //            String sql ="select std_id as ID,CONCAT(FirstName ,' ', SurName) as Name,Contact,Address,Gender,Username,Password from AddStudent";

@@ -10,6 +10,7 @@ import java.sql.*;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import models.Teacher;
+import static constraint.Constant.*;
 
 /**
  *
@@ -17,6 +18,7 @@ import models.Teacher;
  */
 public class TeacherController {
     
+    DbConnection db=new DbConnection();
     Connection conn=DbConnection.getconnection();
     PreparedStatement pst;
     Statement st;
@@ -80,6 +82,36 @@ public class TeacherController {
          }        
          return isvalid;     
      }
+
+     public Teacher loginTeacher(String username, String password) {
+        Teacher teacher = null;
+        try {
+            String query;
+            query = "select * from AddTeacher where username =? and password =?";
+            pst = DbConnection.getconnection().prepareStatement(query);
+            pst.setString(1, username);
+            pst.setString(2, password);
+            ResultSet rs = db.retrieve(pst);
+            while (rs.next()) {
+                int teacher_id = rs.getInt(DB_TEACHER_ID);
+                String teacher_username = rs.getString(DB_TEACHER_USERNAME);
+                String teacher_password = rs.getString(DB_TEACHER_PASSWORD);
+                String teacher_email = rs.getString(DB_TEACHER_EMAIL);
+                String teacher_FName=rs.getString(DB_TEACHER_FIRSTNAME);
+                String teacher_sName=rs.getString(DB_TEACHER_SURNAME);
+                String teacher_contact=rs.getString(DB_TEACHER_CONTACT);
+                String teacher_dob=rs.getString(DB_TEACHER_DOB);
+                String teacher_address=rs.getString(DB_TEACHER_ADDRESS);
+                String teacher_gender=rs.getString(DB_TEACHER_GENDER);
+                String teacher_batch=rs.getString(DB_TEACHER_COURSENAME);
+                teacher = new Teacher(teacher_id,teacher_FName,teacher_sName,teacher_dob,teacher_email,teacher_contact,teacher_gender,teacher_address,teacher_batch,teacher_username,teacher_password);
+                return teacher;
+            }
+        } catch (SQLException ex) {
+            System.out.println("Error " + ex);
+        }
+        return teacher;
+    }
     public void Updatetable() {
 //        try{
 //            String sql ="select Teacher_id as ID,CONCAT(FirstName ,' ', SurName) as Name,Contact,Address,Gender,Username,Password from AddTeacher";
