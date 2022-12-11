@@ -37,6 +37,9 @@
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
       <SubComponents>
         <Container class="javax.swing.JPanel" name="python">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="Python">
@@ -68,12 +71,15 @@
             <Component class="javax.swing.JLabel" name="jLabel2">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="2"/>
-                <Property name="text" type="java.lang.String" value="&lt;html&gt; Defnition: &lt;br&gt; Python is an interpreted, object-oriented, high-level programming language with dynamic semantics. Its high-level built in data structures, combined with &lt;br&gt;&#xa; dynamic typing and dynamic binding, make it very attractive for Rapid Application Development, as well as for use as a scripting or glue language to connect &lt;br&gt; existing components together.&#xa; &lt;br&gt; &lt;br&gt; Importance: &lt;br&gt;  Importance of Python Programming Python is extremely popular with active developers in the field because of its wide variety of uses. It&#x2019;s used for everything &lt;br&gt; from web&#xa; development, to scientific &amp; numeric computing, and even desktop applications. &lt;br&gt; &lt;br&gt; Python Programming Examples &lt;br&gt;&#xa;&#xa;Simple Python Programs Python Program to Check Whether a Given Number is Even or Odd using Recursion &lt;br&gt;&#xa;Python Programs on Numbers Python Program to Find Prime Numbers in a Given Range &lt;br&gt;&#xa;Factorial &amp; Fibonacci Programs in Python  &lt;br&gt;&#xa;Conversion Programs in Python  &lt;br&gt;&#xa;Pattern Programs in Python  &lt;br&gt;&#xa;Python Programs on Math Functions  &lt;br&gt; &#xa;Python Programs on Progression Series  &lt;br&gt;&#xa;Python Programs on GCD and LCM  &lt;br&gt;&#xa; &lt;/html&gt;"/>
+                <Property name="text" type="java.lang.String" value="&lt;html&gt; Defnition: &lt;br&gt; Python is an interpreted, object-oriented, high-level programming language with dynamic semantics. Its high-level built in data structures, combined with &lt;br&gt;  dynamic typing and dynamic binding, make it very attractive for Rapid Application Development, as well as for use as a scripting or glue language to connect &lt;br&gt; existing components together.  &lt;br&gt; &lt;br&gt; Importance: &lt;br&gt;  Importance of Python Programming Python is extremely popular with active developers in the field because of its wide variety of uses. It&#x2019;s used for everything &lt;br&gt; from web  development, to scientific &amp; numeric computing, and even desktop applications. &lt;br&gt; &lt;br&gt; Python Programming Examples &lt;br&gt;  Simple Python Programs Python Program to Check Whether a Given Number is Even or Odd using Recursion &lt;br&gt; Python Programs on Numbers Python Program to Find Prime Numbers in a Given Range &lt;br&gt; Factorial &amp; Fibonacci Programs in Python  &lt;br&gt; Conversion Programs in Python  &lt;br&gt; Pattern Programs in Python  &lt;br&gt; Python Programs on Math Functions  &lt;br&gt;  Python Programs on Progression Series  &lt;br&gt; Python Programs on GCD and LCM  &lt;br&gt;  &lt;/html&gt;"/>
               </Properties>
             </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="html">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="HTML">
@@ -111,6 +117,9 @@
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="Cpp">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="CPP">
@@ -144,6 +153,9 @@
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="java">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="Java">

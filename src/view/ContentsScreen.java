@@ -24,7 +24,7 @@ public class ContentsScreen extends javax.swing.JInternalFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
@@ -38,94 +38,98 @@ public class ContentsScreen extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel2.setText(
-                "<html> Defnition: <br> Python is an interpreted, object-oriented, high-level programming language with dynamic semantics. Its high-level built in data structures, combined with <br>\n dynamic typing and dynamic binding, make it very attractive for Rapid Application Development, as well as for use as a scripting or glue language to connect <br> existing components together.\n <br> <br> Importance: <br>  Importance of Python Programming Python is extremely popular with active developers in the field because of its wide variety of uses. It’s used for everything <br> from web\n development, to scientific & numeric computing, and even desktop applications. <br> <br> Python Programming Examples <br>\n\nSimple Python Programs Python Program to Check Whether a Given Number is Even or Odd using Recursion <br>\nPython Programs on Numbers Python Program to Find Prime Numbers in a Given Range <br>\nFactorial & Fibonacci Programs in Python  <br>\nConversion Programs in Python  <br>\nPattern Programs in Python  <br>\nPython Programs on Math Functions  <br> \nPython Programs on Progression Series  <br>\nPython Programs on GCD and LCM  <br>\n </html>");
+        jLabel2.setText("<html> Defnition: <br> Python is an interpreted, object-oriented, high-level programming language with dynamic semantics. Its high-level built in data structures, combined with <br>  dynamic typing and dynamic binding, make it very attractive for Rapid Application Development, as well as for use as a scripting or glue language to connect <br> existing components together.  <br> <br> Importance: <br>  Importance of Python Programming Python is extremely popular with active developers in the field because of its wide variety of uses. It’s used for everything <br> from web  development, to scientific & numeric computing, and even desktop applications. <br> <br> Python Programming Examples <br>  Simple Python Programs Python Program to Check Whether a Given Number is Even or Odd using Recursion <br> Python Programs on Numbers Python Program to Find Prime Numbers in a Given Range <br> Factorial & Fibonacci Programs in Python  <br> Conversion Programs in Python  <br> Pattern Programs in Python  <br> Python Programs on Math Functions  <br>  Python Programs on Progression Series  <br> Python Programs on GCD and LCM  <br>  </html>");
 
         javax.swing.GroupLayout pythonLayout = new javax.swing.GroupLayout(python);
         python.setLayout(pythonLayout);
         pythonLayout.setHorizontalGroup(
-                pythonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(pythonLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel2)
-                                .addContainerGap()));
+            pythonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pythonLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addContainerGap())
+        );
         pythonLayout.setVerticalGroup(
-                pythonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(pythonLayout.createSequentialGroup()
-                                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 378, Short.MAX_VALUE)
-                                .addContainerGap()));
+            pythonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pythonLayout.createSequentialGroup()
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 378, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
         jTabbedPane1.addTab("Python", python);
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel3.setText(
-                "<html> Definition: <br> What is HTML? <br>\nTo understand \"HTML\" from front to back, let's look at each word that makes up the abbreviation: <br>\n \nHypertext: text (often with embeds such as images, too) that is organized in order to connect related items <br>\n\nMarkup: a style guide for typesetting anything to be printed in hardcopy or soft copy format <br>\n\nLanguage: a language that a computer system understands and uses to interpret commands. <br>\n\nHTML determines the structure of web pages. This structure alone is not enough to make a web page\n look good and interactive. So you'll use assisted technologies such as CSS and <br> JavaScript to make \nyour HTML beautiful and add interactivity, <br> respectively. <br> <br>\nImporatnce: <br> Html is the most important language on the world wide web. Every page on the web has \n some HTML inside it. You cannot escape Html <br> when it comes to the web. Some might not consider it as an actual \n programming language because it is a markup <br> language. But it is very important for Websites and web applications.<html>");
+        jLabel3.setText("<html> Definition: <br> What is HTML? <br>\nTo understand \"HTML\" from front to back, let's look at each word that makes up the abbreviation: <br>\n \nHypertext: text (often with embeds such as images, too) that is organized in order to connect related items <br>\n\nMarkup: a style guide for typesetting anything to be printed in hardcopy or soft copy format <br>\n\nLanguage: a language that a computer system understands and uses to interpret commands. <br>\n\nHTML determines the structure of web pages. This structure alone is not enough to make a web page\n look good and interactive. So you'll use assisted technologies such as CSS and <br> JavaScript to make \nyour HTML beautiful and add interactivity, <br> respectively. <br> <br>\nImporatnce: <br> Html is the most important language on the world wide web. Every page on the web has \n some HTML inside it. You cannot escape Html <br> when it comes to the web. Some might not consider it as an actual \n programming language because it is a markup <br> language. But it is very important for Websites and web applications.<html>");
 
         javax.swing.GroupLayout htmlLayout = new javax.swing.GroupLayout(html);
         html.setLayout(htmlLayout);
         htmlLayout.setHorizontalGroup(
-                htmlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(htmlLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 862, Short.MAX_VALUE)));
+            htmlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(htmlLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 862, Short.MAX_VALUE))
+        );
         htmlLayout.setVerticalGroup(
-                htmlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, htmlLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 372, Short.MAX_VALUE)
-                                .addContainerGap()));
+            htmlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, htmlLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 372, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
         jTabbedPane1.addTab("HTML", html);
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel4.setText(
-                "<html> Definition; <br> C++ is a programming language developed by Bjarne Stroustrup in 1979 at Bell Labs. C++ is regarded as a middle-level language, as it comprises a combination of both\n high-level and low-level language features. It is a superset of C, and that virtually any legal C program is a legal C++ program. C++ runs on a variety of platforms, such as Windows, Mac OS, and the various versions of UNIX. <br> <br> Importance: <br> If you want to start learning programming, then C++ can be the best choice to make a good start, you might be wondering Why?<br>\n\nLet’s go into it, C and C++ are low-level programming languages, you can get the chance to learn about memory management and stuffs related to hardware interacting with software, that’s a good thing to learn programming by unrolling many abstract scenarios in software<br> development that some newer programming languages do it for you.\n\nThis process of starting coding with C++ takes more time if you are willing to work for some hardware controlling software, so in this case, also C++ can be useful.<br>\n\nFurther many interviews and coding tests allow you to write in C++, Java, or other older languages, then you can go with Java to participate in coding interviews, contests.<br>\n\nAs an absolute beginner, you can also start with Python, or JavaScript to have a better entry point.<html>");
+        jLabel4.setText("<html> Definition; <br> C++ is a programming language developed by Bjarne Stroustrup in 1979 at Bell Labs. C++ is regarded as a middle-level language, as it comprises a combination of both\n high-level and low-level language features. It is a superset of C, and that virtually any legal C program is a legal C++ program. C++ runs on a variety of platforms, such as Windows, Mac OS, and the various versions of UNIX. <br> <br> Importance: <br> If you want to start learning programming, then C++ can be the best choice to make a good start, you might be wondering Why?<br>\n\nLet’s go into it, C and C++ are low-level programming languages, you can get the chance to learn about memory management and stuffs related to hardware interacting with software, that’s a good thing to learn programming by unrolling many abstract scenarios in software<br> development that some newer programming languages do it for you.\n\nThis process of starting coding with C++ takes more time if you are willing to work for some hardware controlling software, so in this case, also C++ can be useful.<br>\n\nFurther many interviews and coding tests allow you to write in C++, Java, or other older languages, then you can go with Java to participate in coding interviews, contests.<br>\n\nAs an absolute beginner, you can also start with Python, or JavaScript to have a better entry point.<html>");
 
         javax.swing.GroupLayout CppLayout = new javax.swing.GroupLayout(Cpp);
         Cpp.setLayout(CppLayout);
         CppLayout.setHorizontalGroup(
-                CppLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(CppLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 862, Short.MAX_VALUE)));
+            CppLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CppLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 862, Short.MAX_VALUE))
+        );
         CppLayout.setVerticalGroup(
-                CppLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING,
-                                javax.swing.GroupLayout.DEFAULT_SIZE, 384, Short.MAX_VALUE));
+            CppLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 384, Short.MAX_VALUE)
+        );
 
         jTabbedPane1.addTab("CPP", Cpp);
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel1.setText(
-                "<html> Definition: <br> Java is a high-level, class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible.<br> It is a\n general-purpose programming language intended to let programmers write once, run anywhere (WORA),[17] meaning that compiled Java code can run on all platforms that support<br>\n  Java without the need to recompile.[18] Java applications are typically compiled to bytecode that can run on any Java virtual machine (JVM) regardless of the underlying computer architecture.\n The syntax of Java is similar<br> to C and C++, but has fewer low-level facilities than either of them. The Java runtime provides dynamic capabilities (such as reflection<br>  and runtime code\n modification) that are typically not available in traditional compiled languages. As of 2019, Java was one of the most popular programming languages in use according to GitHub,<br> [19][20]\n particularly for client–server web applications, with a reported 9 million developers. <br> <br> Importance: <br>When Java was first released in 1995, it was primarily important because of its\n platform-independent nature. At the time, Java revolutionized <br> the programming world by being the only platform-independent programming language. Today, Java is important because it’s the\n most popular and widely-used language in the world.<html>");
+        jLabel1.setText("<html> Definition: <br> Java is a high-level, class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible.<br> It is a\n general-purpose programming language intended to let programmers write once, run anywhere (WORA),[17] meaning that compiled Java code can run on all platforms that support<br>\n  Java without the need to recompile.[18] Java applications are typically compiled to bytecode that can run on any Java virtual machine (JVM) regardless of the underlying computer architecture.\n The syntax of Java is similar<br> to C and C++, but has fewer low-level facilities than either of them. The Java runtime provides dynamic capabilities (such as reflection<br>  and runtime code\n modification) that are typically not available in traditional compiled languages. As of 2019, Java was one of the most popular programming languages in use according to GitHub,<br> [19][20]\n particularly for client–server web applications, with a reported 9 million developers. <br> <br> Importance: <br>When Java was first released in 1995, it was primarily important because of its\n platform-independent nature. At the time, Java revolutionized <br> the programming world by being the only platform-independent programming language. Today, Java is important because it’s the\n most popular and widely-used language in the world.<html>");
 
         javax.swing.GroupLayout javaLayout = new javax.swing.GroupLayout(java);
         java.setLayout(javaLayout);
         javaLayout.setHorizontalGroup(
-                javaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javaLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 862, Short.MAX_VALUE)));
+            javaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 862, Short.MAX_VALUE))
+        );
         javaLayout.setVerticalGroup(
-                javaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, javaLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 372, Short.MAX_VALUE)
-                                .addContainerGap()));
+            javaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, javaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 372, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
         jTabbedPane1.addTab("Java", java);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 868,
-                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 8, Short.MAX_VALUE)));
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 868, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 8, Short.MAX_VALUE))
+        );
         layout.setVerticalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jTabbedPane1));
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jTabbedPane1)
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
