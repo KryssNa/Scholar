@@ -113,7 +113,7 @@ public class UpdateAdProfile extends javax.swing.JInternalFrame {
         label3.setForeground(new java.awt.Color(0, 255, 51));
         label3.setText("User ID:");
         jPanel1.add(label3);
-        label3.setBounds(100, 140, 76, 23);
+        label3.setBounds(100, 140, 90, 23);
 
         label4.setBackground(java.awt.Color.black);
         label4.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
@@ -237,7 +237,7 @@ public class UpdateAdProfile extends javax.swing.JInternalFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/FrameBG.png"))); // NOI18N
         jLabel1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 0, 1030, 550);
+        jLabel1.setBounds(0, 0, 1030, 620);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
