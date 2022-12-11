@@ -8,12 +8,12 @@ package view;
  *
  * @author kritimakhatri
  */
-public class UpdateProfileScreen extends javax.swing.JInternalFrame {
+public class UpdateStdProfile extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form UpdateProfileScreen
+     * Creates new form UpdateStdProfile
      */
-    public UpdateProfileScreen() {
+    public UpdateStdProfile() {
         initComponents();
     }
 
@@ -52,9 +52,6 @@ public class UpdateProfileScreen extends javax.swing.JInternalFrame {
         label12 = new java.awt.Label();
         btn_editDetails = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-
-        setBackground(new java.awt.Color(255, 255, 255));
-        setPreferredSize(new java.awt.Dimension(1060, 650));
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setPreferredSize(new java.awt.Dimension(1060, 650));
@@ -235,23 +232,24 @@ public class UpdateProfileScreen extends javax.swing.JInternalFrame {
         label9.setBackground(java.awt.Color.black);
         label9.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
         label9.setForeground(new java.awt.Color(0, 255, 51));
-        label9.setText("Course:");
+        label9.setText("Batch No:");
         jPanel1.add(label9);
-        label9.setBounds(550, 190, 100, 30);
+        label9.setBounds(540, 190, 100, 30);
+        label9.getAccessibleContext().setAccessibleName("Batch No:");
 
         label10.setBackground(java.awt.Color.black);
         label10.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
         label10.setForeground(new java.awt.Color(0, 255, 51));
         label10.setText("Address:");
         jPanel1.add(label10);
-        label10.setBounds(540, 243, 90, 30);
+        label10.setBounds(540, 240, 90, 30);
 
         label11.setBackground(java.awt.Color.black);
         label11.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
         label11.setForeground(new java.awt.Color(0, 255, 51));
         label11.setText("Username:");
         jPanel1.add(label11);
-        label11.setBounds(520, 303, 110, 30);
+        label11.setBounds(530, 300, 110, 30);
 
         label12.setBackground(java.awt.Color.black);
         label12.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
@@ -288,26 +286,26 @@ public class UpdateProfileScreen extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 554, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 614, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tf_FnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_FnameActionPerformed
+    private void tf_contactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_contactActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tf_FnameActionPerformed
+    }//GEN-LAST:event_tf_contactActionPerformed
 
     private void tf_SnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_SnameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tf_SnameActionPerformed
 
-    private void tf_contactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_contactActionPerformed
+    private void tf_FnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_FnameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tf_contactActionPerformed
+    }//GEN-LAST:event_tf_FnameActionPerformed
 
     private void btn_editDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editDetailsActionPerformed
-       
+
     }//GEN-LAST:event_btn_editDetailsActionPerformed
 
 
