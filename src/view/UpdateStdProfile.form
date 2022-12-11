@@ -1,20 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JInternalFrameFormInfo">
-  <Properties>
-    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-    </Property>
-    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[1060, 650]"/>
-    </Property>
-  </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
   </SyntheticProperties>
-  <Events>
-    <EventHandler event="internalFrameOpened" listener="javax.swing.event.InternalFrameListener" parameters="javax.swing.event.InternalFrameEvent" handler="formInternalFrameOpened"/>
-  </Events>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -30,23 +19,15 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-<<<<<<< HEAD
           <Group type="102" alignment="0" attributes="0">
               <Component id="jPanel1" min="-2" pref="1027" max="-2" attributes="0"/>
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
-=======
-          <Component id="jPanel1" min="-2" pref="1027" max="-2" attributes="0"/>
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-<<<<<<< HEAD
-          <Component id="jPanel1" alignment="0" pref="554" max="32767" attributes="0"/>
-=======
-          <Component id="jPanel1" alignment="0" pref="552" max="32767" attributes="0"/>
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
+          <Component id="jPanel1" alignment="0" pref="614" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -67,26 +48,8 @@
       <SubComponents>
         <Component class="javax.swing.JTextField" name="tf_address">
           <Properties>
-<<<<<<< HEAD
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
-=======
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Lucida Calligraphy" size="15" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="0" red="99" type="rgb"/>
-            </Property>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
-                <MatteColorBorder bottom="1" left="0" right="0" top="0">
-                  <Color PropertyName="color" blue="ff" green="ff" red="ff" type="rgb"/>
-                </MatteColorBorder>
-              </Border>
-            </Property>
-            <Property name="disabledTextColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Lucida Calligraphy" size="15" style="1"/>
@@ -108,31 +71,20 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-<<<<<<< HEAD
               <AbsoluteConstraints x="670" y="243" width="190" height="30"/>
-=======
-              <AbsoluteConstraints x="670" y="233" width="190" height="40"/>
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
             </Constraint>
           </Constraints>
         </Component>
         <Component class="javax.swing.JTextField" name="tf_username">
           <Properties>
-<<<<<<< HEAD
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
             </Property>
-=======
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Lucida Calligraphy" size="15" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-<<<<<<< HEAD
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
-=======
-              <Color blue="0" green="0" red="99" type="rgb"/>
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
@@ -144,38 +96,24 @@
             <Property name="disabledTextColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-<<<<<<< HEAD
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="670" y="303" width="190" height="30"/>
-=======
-          </Properties>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="670" y="293" width="190" height="40"/>
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
             </Constraint>
           </Constraints>
         </Component>
         <Component class="javax.swing.JTextField" name="tf_password">
           <Properties>
-<<<<<<< HEAD
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
             </Property>
-=======
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Lucida Calligraphy" size="15" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-<<<<<<< HEAD
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
-=======
-              <Color blue="0" green="0" red="99" type="rgb"/>
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
@@ -187,38 +125,24 @@
             <Property name="disabledTextColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-<<<<<<< HEAD
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="670" y="353" width="190" height="30"/>
-=======
-          </Properties>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="670" y="343" width="190" height="40"/>
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
             </Constraint>
           </Constraints>
         </Component>
         <Component class="javax.swing.JTextField" name="tf_contact">
           <Properties>
-<<<<<<< HEAD
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
             </Property>
-=======
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Lucida Calligraphy" size="15" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-<<<<<<< HEAD
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
-=======
-              <Color blue="0" green="0" red="99" type="rgb"/>
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
@@ -230,41 +154,27 @@
             <Property name="disabledTextColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-<<<<<<< HEAD
             <Property name="enabled" type="boolean" value="false"/>
-=======
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tf_contactActionPerformed"/>
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-<<<<<<< HEAD
               <AbsoluteConstraints x="670" y="143" width="190" height="30"/>
-=======
-              <AbsoluteConstraints x="670" y="133" width="190" height="40"/>
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
             </Constraint>
           </Constraints>
         </Component>
         <Component class="javax.swing.JTextField" name="tf_course">
           <Properties>
-<<<<<<< HEAD
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
             </Property>
-=======
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Lucida Calligraphy" size="15" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-<<<<<<< HEAD
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
-=======
-              <Color blue="0" green="0" red="99" type="rgb"/>
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
@@ -280,11 +190,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-<<<<<<< HEAD
               <AbsoluteConstraints x="670" y="193" width="190" height="30"/>
-=======
-              <AbsoluteConstraints x="670" y="183" width="190" height="40"/>
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
             </Constraint>
           </Constraints>
         </Component>
@@ -322,11 +228,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-<<<<<<< HEAD
               <AbsoluteConstraints x="120" y="190" width="90" height="23"/>
-=======
-              <AbsoluteConstraints x="120" y="193" width="90" height="30"/>
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
             </Constraint>
           </Constraints>
         </Component>
@@ -372,7 +274,6 @@
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
-<<<<<<< HEAD
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Lucida Calligraphy" size="18" style="1"/>
@@ -385,20 +286,6 @@
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="150" y="300" width="60" height="23"/>
-=======
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Lucida Calligraphy" size="18" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="33" green="ff" red="0" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Email:"/>
-          </Properties>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="120" y="293" width="90" height="30"/>
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
             </Constraint>
           </Constraints>
         </Component>
@@ -423,21 +310,14 @@
         </Component>
         <Component class="javax.swing.JTextField" name="tf_Sname">
           <Properties>
-<<<<<<< HEAD
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
             </Property>
-=======
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Lucida Calligraphy" size="15" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-<<<<<<< HEAD
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
-=======
-              <Color blue="0" green="0" red="99" type="rgb"/>
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
@@ -449,10 +329,7 @@
             <Property name="disabledTextColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-<<<<<<< HEAD
             <Property name="enabled" type="boolean" value="false"/>
-=======
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tf_SnameActionPerformed"/>
@@ -463,25 +340,16 @@
             </Constraint>
           </Constraints>
         </Component>
-<<<<<<< HEAD
         <Component class="javax.swing.JTextField" name="td_dob">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
             </Property>
-=======
-        <Component class="javax.swing.JTextField" name="tf_dob">
-          <Properties>
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Lucida Calligraphy" size="15" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-<<<<<<< HEAD
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
-=======
-              <Color blue="0" green="0" red="99" type="rgb"/>
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
@@ -493,7 +361,6 @@
             <Property name="disabledTextColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-<<<<<<< HEAD
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Constraints>
@@ -507,26 +374,11 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
             </Property>
-=======
-          </Properties>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="230" y="233" width="190" height="30"/>
-            </Constraint>
-          </Constraints>
-        </Component>
-        <Component class="javax.swing.JTextField" name="tf_email">
-          <Properties>
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Lucida Calligraphy" size="15" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-<<<<<<< HEAD
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
-=======
-              <Color blue="0" green="0" red="99" type="rgb"/>
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
@@ -538,38 +390,24 @@
             <Property name="disabledTextColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-<<<<<<< HEAD
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="230" y="300" width="190" height="23"/>
-=======
-          </Properties>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="230" y="283" width="190" height="40"/>
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
             </Constraint>
           </Constraints>
         </Component>
         <Component class="javax.swing.JTextField" name="tf_Fname">
           <Properties>
-<<<<<<< HEAD
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
             </Property>
-=======
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Lucida Calligraphy" size="15" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-<<<<<<< HEAD
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
-=======
-              <Color blue="0" green="0" red="99" type="rgb"/>
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
@@ -581,10 +419,7 @@
             <Property name="disabledTextColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-<<<<<<< HEAD
             <Property name="enabled" type="boolean" value="false"/>
-=======
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tf_FnameActionPerformed"/>
@@ -597,21 +432,14 @@
         </Component>
         <Component class="javax.swing.JTextField" name="tf_userID">
           <Properties>
-<<<<<<< HEAD
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
             </Property>
-=======
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Lucida Calligraphy" size="15" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-<<<<<<< HEAD
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
-=======
-              <Color blue="0" green="0" red="99" type="rgb"/>
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
@@ -627,11 +455,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-<<<<<<< HEAD
               <AbsoluteConstraints x="230" y="140" width="190" height="23"/>
-=======
-              <AbsoluteConstraints x="230" y="133" width="190" height="30"/>
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
             </Constraint>
           </Constraints>
         </Component>
@@ -644,11 +468,7 @@
               <Font name="Lucida Calligraphy" size="15" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-<<<<<<< HEAD
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
-=======
-              <Color blue="0" green="0" red="99" type="rgb"/>
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
             </Property>
             <Property name="text" type="java.lang.String" value="Male"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -658,18 +478,11 @@
                 </MatteColorBorder>
               </Border>
             </Property>
-<<<<<<< HEAD
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="240" y="360" width="80" height="30"/>
-=======
-          </Properties>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="240" y="350" width="80" height="40"/>
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
             </Constraint>
           </Constraints>
         </Component>
@@ -682,11 +495,7 @@
               <Font name="Lucida Calligraphy" size="15" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-<<<<<<< HEAD
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
-=======
-              <Color blue="0" green="0" red="99" type="rgb"/>
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
             </Property>
             <Property name="text" type="java.lang.String" value="Female"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -696,18 +505,11 @@
                 </MatteColorBorder>
               </Border>
             </Property>
-<<<<<<< HEAD
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="340" y="360" width="90" height="30"/>
-=======
-          </Properties>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="340" y="350" width="90" height="40"/>
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
             </Constraint>
           </Constraints>
         </Component>
@@ -741,11 +543,14 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="ff" red="0" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Course:"/>
+            <Property name="text" type="java.lang.String" value="Batch No:"/>
           </Properties>
+          <AccessibilityProperties>
+            <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="Batch No:"/>
+          </AccessibilityProperties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="550" y="190" width="100" height="30"/>
+              <AbsoluteConstraints x="540" y="190" width="100" height="30"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -764,7 +569,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="540" y="243" width="90" height="30"/>
+              <AbsoluteConstraints x="540" y="240" width="90" height="30"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -783,7 +588,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="520" y="303" width="110" height="30"/>
+              <AbsoluteConstraints x="530" y="300" width="110" height="30"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -816,12 +621,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Edit Details"/>
           </Properties>
-<<<<<<< HEAD
-=======
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_editDetailsActionPerformed"/>
           </Events>
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="420" y="460" width="170" height="40"/>
@@ -849,11 +651,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-<<<<<<< HEAD
               <AbsoluteConstraints x="0" y="0" width="1030" height="550"/>
-=======
-              <AbsoluteConstraints x="0" y="0" width="1030" height="560"/>
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
             </Constraint>
           </Constraints>
         </Component>

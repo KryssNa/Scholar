@@ -25,7 +25,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace pref="15" max="32767" attributes="0"/>
-              <Component id="jPanel1" min="-2" pref="656" max="-2" attributes="0"/>
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
               <Component id="scrollbar1" min="-2" max="-2" attributes="0"/>
           </Group>
@@ -49,6 +49,7 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
+<<<<<<< HEAD
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
@@ -59,13 +60,27 @@
                           <Component id="jLabel1" min="-2" pref="312" max="-2" attributes="0"/>
                       </Group>
                   </Group>
+=======
+                  <EmptySpace min="-2" pref="256" max="-2" attributes="0"/>
+                  <Component id="jButton1" min="-2" pref="103" max="-2" attributes="0"/>
+>>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
                   <EmptySpace max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="156" max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" pref="312" max="-2" attributes="0"/>
+                  <EmptySpace pref="184" max="32767" attributes="0"/>
                   <Component id="label1" max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
+<<<<<<< HEAD
                   <EmptySpace min="-2" pref="256" max="-2" attributes="0"/>
                   <Component id="jButton1" min="-2" pref="103" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
+=======
+                  <Component id="tf_noticetext" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+>>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
               </Group>
           </Group>
         </DimensionLayout>
@@ -75,6 +90,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Component id="label1" min="-2" pref="38" max="-2" attributes="0"/>
+<<<<<<< HEAD
                           <EmptySpace min="0" pref="4" max="32767" attributes="0"/>
                       </Group>
                       <Component id="jLabel1" max="32767" attributes="0"/>
@@ -82,6 +98,15 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jScrollPane2" min="-2" pref="446" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+=======
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                      <Component id="jLabel1" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                  <Component id="tf_noticetext" min="-2" pref="484" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+>>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
                   <Component id="jButton1" min="-2" pref="39" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               </Group>
@@ -91,6 +116,7 @@
       <SubComponents>
         <Component class="java.awt.Label" name="label1">
         </Component>
+<<<<<<< HEAD
         <Container class="javax.swing.JScrollPane" name="jScrollPane2">
           <AuxValues>
             <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
@@ -116,6 +142,8 @@
             </Component>
           </SubComponents>
         </Container>
+=======
+>>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
         <Component class="javax.swing.JButton" name="jButton1">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -128,6 +156,24 @@
               <Color blue="33" green="33" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Send"/>
+<<<<<<< HEAD
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Lucida Calligraphy" size="24" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="66" green="66" red="ff" type="rgb"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="Notice"/>
+=======
+>>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
@@ -144,6 +190,17 @@
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Notice"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="tf_noticetext">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="cc" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Write notice here!"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tf_noticetextActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

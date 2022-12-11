@@ -4,22 +4,16 @@
  */
 package view;
 
-import constraint.Constant;
-import database.DbConnection;
-import java.awt.HeadlessException;
-import java.sql.*;
-import javax.swing.JOptionPane;
-
 /**
  *
  * @author kritimakhatri
  */
-public class UpdateProfileScreen extends javax.swing.JInternalFrame {
+public class UpdateStdProfile extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form UpdateProfileScreen
+     * Creates new form UpdateStdProfile
      */
-    public UpdateProfileScreen() {
+    public UpdateStdProfile() {
         initComponents();
     }
 
@@ -45,13 +39,8 @@ public class UpdateProfileScreen extends javax.swing.JInternalFrame {
         label5 = new java.awt.Label();
         label7 = new java.awt.Label();
         tf_Sname = new javax.swing.JTextField();
-<<<<<<< HEAD
         td_dob = new javax.swing.JTextField();
         tf_bio = new javax.swing.JTextField();
-=======
-        tf_dob = new javax.swing.JTextField();
-        tf_email = new javax.swing.JTextField();
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
         tf_Fname = new javax.swing.JTextField();
         tf_userID = new javax.swing.JTextField();
         checkbox_gender_male = new javax.swing.JCheckBox();
@@ -63,10 +52,6 @@ public class UpdateProfileScreen extends javax.swing.JInternalFrame {
         label12 = new java.awt.Label();
         btn_editDetails = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-
-        setBackground(new java.awt.Color(255, 255, 255));
-        setPreferredSize(new java.awt.Dimension(1060, 650));
-<<<<<<< HEAD
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setPreferredSize(new java.awt.Dimension(1060, 650));
@@ -108,29 +93,11 @@ public class UpdateProfileScreen extends javax.swing.JInternalFrame {
         tf_contact.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tf_contactActionPerformed(evt);
-=======
-        addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
-            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
-            }
-            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
-            }
-            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
-            }
-            public void internalFrameDeactivated(javax.swing.event.InternalFrameEvent evt) {
-            }
-            public void internalFrameDeiconified(javax.swing.event.InternalFrameEvent evt) {
-            }
-            public void internalFrameIconified(javax.swing.event.InternalFrameEvent evt) {
-            }
-            public void internalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
-                formInternalFrameOpened(evt);
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
             }
         });
         jPanel1.add(tf_contact);
         tf_contact.setBounds(670, 143, 190, 30);
 
-<<<<<<< HEAD
         tf_course.setBackground(java.awt.Color.black);
         tf_course.setFont(new java.awt.Font("Lucida Calligraphy", 1, 15)); // NOI18N
         tf_course.setForeground(new java.awt.Color(255, 255, 255));
@@ -147,77 +114,19 @@ public class UpdateProfileScreen extends javax.swing.JInternalFrame {
         jPanel1.add(label1);
         label1.setBounds(400, 20, 160, 28);
 
-=======
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel1.setPreferredSize(new java.awt.Dimension(1060, 650));
-        jPanel1.setLayout(null);
-
-        tf_address.setFont(new java.awt.Font("Lucida Calligraphy", 1, 15)); // NOI18N
-        tf_address.setForeground(new java.awt.Color(153, 0, 0));
-        tf_address.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
-        tf_address.setDisabledTextColor(new java.awt.Color(255, 255, 255));
-        jPanel1.add(tf_address);
-        tf_address.setBounds(670, 233, 190, 40);
-
-        tf_username.setFont(new java.awt.Font("Lucida Calligraphy", 1, 15)); // NOI18N
-        tf_username.setForeground(new java.awt.Color(153, 0, 0));
-        tf_username.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
-        tf_username.setDisabledTextColor(new java.awt.Color(255, 255, 255));
-        jPanel1.add(tf_username);
-        tf_username.setBounds(670, 293, 190, 40);
-
-        tf_password.setFont(new java.awt.Font("Lucida Calligraphy", 1, 15)); // NOI18N
-        tf_password.setForeground(new java.awt.Color(153, 0, 0));
-        tf_password.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
-        tf_password.setDisabledTextColor(new java.awt.Color(255, 255, 255));
-        jPanel1.add(tf_password);
-        tf_password.setBounds(670, 343, 190, 40);
-
-        tf_contact.setFont(new java.awt.Font("Lucida Calligraphy", 1, 15)); // NOI18N
-        tf_contact.setForeground(new java.awt.Color(153, 0, 0));
-        tf_contact.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
-        tf_contact.setDisabledTextColor(new java.awt.Color(255, 255, 255));
-        tf_contact.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tf_contactActionPerformed(evt);
-            }
-        });
-        jPanel1.add(tf_contact);
-        tf_contact.setBounds(670, 133, 190, 40);
-
-        tf_course.setFont(new java.awt.Font("Lucida Calligraphy", 1, 15)); // NOI18N
-        tf_course.setForeground(new java.awt.Color(153, 0, 0));
-        tf_course.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
-        tf_course.setDisabledTextColor(new java.awt.Color(255, 255, 255));
-        tf_course.setEnabled(false);
-        jPanel1.add(tf_course);
-        tf_course.setBounds(670, 183, 190, 40);
-
-        label1.setBackground(java.awt.Color.black);
-        label1.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
-        label1.setForeground(new java.awt.Color(255, 255, 255));
-        label1.setText("Update Profile");
-        jPanel1.add(label1);
-        label1.setBounds(400, 20, 160, 28);
-
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
         label2.setBackground(java.awt.Color.black);
         label2.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
         label2.setForeground(new java.awt.Color(0, 255, 51));
         label2.setText("Name:");
         jPanel1.add(label2);
-<<<<<<< HEAD
         label2.setBounds(120, 190, 90, 23);
-=======
-        label2.setBounds(120, 193, 90, 30);
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
 
         label3.setBackground(java.awt.Color.black);
         label3.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
         label3.setForeground(new java.awt.Color(0, 255, 51));
         label3.setText("User ID:");
         jPanel1.add(label3);
-        label3.setBounds(100, 140, 90, 23);
+        label3.setBounds(100, 140, 76, 23);
 
         label4.setBackground(java.awt.Color.black);
         label4.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
@@ -229,15 +138,9 @@ public class UpdateProfileScreen extends javax.swing.JInternalFrame {
         label5.setBackground(java.awt.Color.black);
         label5.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
         label5.setForeground(new java.awt.Color(0, 255, 51));
-<<<<<<< HEAD
         label5.setText("Bio:");
         jPanel1.add(label5);
         label5.setBounds(150, 300, 60, 23);
-=======
-        label5.setText("Email:");
-        jPanel1.add(label5);
-        label5.setBounds(120, 293, 90, 30);
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
 
         label7.setBackground(java.awt.Color.black);
         label7.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
@@ -246,19 +149,12 @@ public class UpdateProfileScreen extends javax.swing.JInternalFrame {
         jPanel1.add(label7);
         label7.setBounds(110, 360, 90, 23);
 
-<<<<<<< HEAD
         tf_Sname.setBackground(java.awt.Color.black);
         tf_Sname.setFont(new java.awt.Font("Lucida Calligraphy", 1, 15)); // NOI18N
         tf_Sname.setForeground(new java.awt.Color(255, 255, 255));
         tf_Sname.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
         tf_Sname.setDisabledTextColor(new java.awt.Color(255, 255, 255));
         tf_Sname.setEnabled(false);
-=======
-        tf_Sname.setFont(new java.awt.Font("Lucida Calligraphy", 1, 15)); // NOI18N
-        tf_Sname.setForeground(new java.awt.Color(153, 0, 0));
-        tf_Sname.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
-        tf_Sname.setDisabledTextColor(new java.awt.Color(255, 255, 255));
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
         tf_Sname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tf_SnameActionPerformed(evt);
@@ -267,7 +163,6 @@ public class UpdateProfileScreen extends javax.swing.JInternalFrame {
         jPanel1.add(tf_Sname);
         tf_Sname.setBounds(330, 190, 90, 30);
 
-<<<<<<< HEAD
         td_dob.setBackground(java.awt.Color.black);
         td_dob.setFont(new java.awt.Font("Lucida Calligraphy", 1, 15)); // NOI18N
         td_dob.setForeground(new java.awt.Color(255, 255, 255));
@@ -292,26 +187,6 @@ public class UpdateProfileScreen extends javax.swing.JInternalFrame {
         tf_Fname.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
         tf_Fname.setDisabledTextColor(new java.awt.Color(255, 255, 255));
         tf_Fname.setEnabled(false);
-=======
-        tf_dob.setFont(new java.awt.Font("Lucida Calligraphy", 1, 15)); // NOI18N
-        tf_dob.setForeground(new java.awt.Color(153, 0, 0));
-        tf_dob.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
-        tf_dob.setDisabledTextColor(new java.awt.Color(255, 255, 255));
-        jPanel1.add(tf_dob);
-        tf_dob.setBounds(230, 233, 190, 30);
-
-        tf_email.setFont(new java.awt.Font("Lucida Calligraphy", 1, 15)); // NOI18N
-        tf_email.setForeground(new java.awt.Color(153, 0, 0));
-        tf_email.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
-        tf_email.setDisabledTextColor(new java.awt.Color(255, 255, 255));
-        jPanel1.add(tf_email);
-        tf_email.setBounds(230, 283, 190, 40);
-
-        tf_Fname.setFont(new java.awt.Font("Lucida Calligraphy", 1, 15)); // NOI18N
-        tf_Fname.setForeground(new java.awt.Color(153, 0, 0));
-        tf_Fname.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
-        tf_Fname.setDisabledTextColor(new java.awt.Color(255, 255, 255));
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
         tf_Fname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tf_FnameActionPerformed(evt);
@@ -320,19 +195,13 @@ public class UpdateProfileScreen extends javax.swing.JInternalFrame {
         jPanel1.add(tf_Fname);
         tf_Fname.setBounds(230, 190, 100, 30);
 
-<<<<<<< HEAD
         tf_userID.setBackground(java.awt.Color.black);
         tf_userID.setFont(new java.awt.Font("Lucida Calligraphy", 1, 15)); // NOI18N
         tf_userID.setForeground(new java.awt.Color(255, 255, 255));
-=======
-        tf_userID.setFont(new java.awt.Font("Lucida Calligraphy", 1, 15)); // NOI18N
-        tf_userID.setForeground(new java.awt.Color(153, 0, 0));
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
         tf_userID.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
         tf_userID.setDisabledTextColor(new java.awt.Color(255, 255, 255));
         tf_userID.setEnabled(false);
         jPanel1.add(tf_userID);
-<<<<<<< HEAD
         tf_userID.setBounds(230, 140, 190, 23);
 
         checkbox_gender_male.setBackground(java.awt.Color.black);
@@ -352,25 +221,6 @@ public class UpdateProfileScreen extends javax.swing.JInternalFrame {
         checkbox_Genderr_female.setEnabled(false);
         jPanel1.add(checkbox_Genderr_female);
         checkbox_Genderr_female.setBounds(340, 360, 90, 30);
-=======
-        tf_userID.setBounds(230, 133, 190, 30);
-
-        checkbox_gender_male.setBackground(java.awt.Color.black);
-        checkbox_gender_male.setFont(new java.awt.Font("Lucida Calligraphy", 1, 15)); // NOI18N
-        checkbox_gender_male.setForeground(new java.awt.Color(153, 0, 0));
-        checkbox_gender_male.setText("Male");
-        checkbox_gender_male.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
-        jPanel1.add(checkbox_gender_male);
-        checkbox_gender_male.setBounds(240, 350, 80, 40);
-
-        checkbox_Genderr_female.setBackground(java.awt.Color.black);
-        checkbox_Genderr_female.setFont(new java.awt.Font("Lucida Calligraphy", 1, 15)); // NOI18N
-        checkbox_Genderr_female.setForeground(new java.awt.Color(153, 0, 0));
-        checkbox_Genderr_female.setText("Female");
-        checkbox_Genderr_female.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
-        jPanel1.add(checkbox_Genderr_female);
-        checkbox_Genderr_female.setBounds(340, 350, 90, 40);
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
 
         label8.setBackground(java.awt.Color.black);
         label8.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
@@ -382,23 +232,24 @@ public class UpdateProfileScreen extends javax.swing.JInternalFrame {
         label9.setBackground(java.awt.Color.black);
         label9.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
         label9.setForeground(new java.awt.Color(0, 255, 51));
-        label9.setText("Course:");
+        label9.setText("Batch No:");
         jPanel1.add(label9);
-        label9.setBounds(550, 190, 100, 30);
+        label9.setBounds(540, 190, 100, 30);
+        label9.getAccessibleContext().setAccessibleName("Batch No:");
 
         label10.setBackground(java.awt.Color.black);
         label10.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
         label10.setForeground(new java.awt.Color(0, 255, 51));
         label10.setText("Address:");
         jPanel1.add(label10);
-        label10.setBounds(540, 243, 90, 30);
+        label10.setBounds(540, 240, 90, 30);
 
         label11.setBackground(java.awt.Color.black);
         label11.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
         label11.setForeground(new java.awt.Color(0, 255, 51));
         label11.setText("Username:");
         jPanel1.add(label11);
-        label11.setBounds(520, 303, 110, 30);
+        label11.setBounds(530, 300, 110, 30);
 
         label12.setBackground(java.awt.Color.black);
         label12.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
@@ -410,14 +261,11 @@ public class UpdateProfileScreen extends javax.swing.JInternalFrame {
         btn_editDetails.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
         btn_editDetails.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/icons8-pencil-35.png"))); // NOI18N
         btn_editDetails.setText("Edit Details");
-<<<<<<< HEAD
-=======
         btn_editDetails.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_editDetailsActionPerformed(evt);
             }
         });
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
         jPanel1.add(btn_editDetails);
         btn_editDetails.setBounds(420, 460, 170, 40);
 
@@ -426,135 +274,39 @@ public class UpdateProfileScreen extends javax.swing.JInternalFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/FrameBG.png"))); // NOI18N
         jLabel1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
         jPanel1.add(jLabel1);
-<<<<<<< HEAD
         jLabel1.setBounds(0, 0, 1030, 550);
-=======
-        jLabel1.setBounds(0, 0, 1030, 560);
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-<<<<<<< HEAD
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1027, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 554, Short.MAX_VALUE)
-=======
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1027, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 552, Short.MAX_VALUE)
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 614, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tf_FnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_FnameActionPerformed
+    private void tf_contactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_contactActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tf_FnameActionPerformed
+    }//GEN-LAST:event_tf_contactActionPerformed
 
     private void tf_SnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_SnameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tf_SnameActionPerformed
 
-    private void tf_contactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_contactActionPerformed
+    private void tf_FnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_FnameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tf_contactActionPerformed
-<<<<<<< HEAD
-=======
+    }//GEN-LAST:event_tf_FnameActionPerformed
 
     private void btn_editDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editDetailsActionPerformed
-        
-        int id=Constant.loggedInTeacher.getTeacher_id();
-        String idd=String.valueOf(id);
-        tf_userID.setText(idd);
-        tf_username.setText(Constant.loggedInTeacher.getUsername());
-        tf_Fname.setText(Constant.loggedInTeacher.getFname());
-        tf_Sname.setText(Constant.loggedInTeacher.getSname());
-        tf_address.setText(Constant.loggedInTeacher.getAddress());
-        tf_contact.setText(Constant.loggedInTeacher.getContact());
-        tf_password.setText(Constant.loggedInTeacher.getPassword());
-        tf_course.setText(Constant.loggedInTeacher.getCourse_name());
-        tf_dob.setText(Constant.loggedInTeacher.getDob());
-        
-        if(evt.getSource()==btn_editDetails){
-            btn_editDetails.setText("Submit");
-        
-            tf_Fname.setEditable(true);
-            tf_Sname.setEditable(true);
-            tf_address.setEditable(true);
-            tf_email.setEditable(true);
-            tf_dob.setEditable(true);
-            tf_password.setEditable(true);
-            tf_username.setEditable(true);
-            
-            if(evt.getSource()==btn_editDetails){
-                
-                try{
-                    String fname=tf_Fname.getText();
-                    String sname=tf_Sname.getText();
-                    String address=tf_address.getText();
-                    String email=tf_email.getText();
-                    String contact=tf_contact.getText();
-                    String password=tf_password.getText();
-                    String username=tf_username.getText();
-                    String dob=tf_dob.getText();
-                    String tec_idd=tf_userID.getText();
-                    int ttid=Integer.parseInt(tec_idd);
-                    
-                    String query="update AddTeacher set FirstName='"+fname+"', SurName='"+sname+"', "
-                    + "DOB='"+dob+"',Email='"+email+"',Contact='"+contact+"',Address='"+address+"', "
-                    + "Username='"+username+"',Password='"+password+"' where teacher_id='"+ttid+"'";
-                    
-                    Connection conn=DbConnection.getconnection();
-                    PreparedStatement pst=conn.prepareStatement(query);
-                    int isupdated=pst.executeUpdate();
-                    if(isupdated>0){
-                    
-                        JOptionPane.showMessageDialog(null, "Details Updated Succesfully","Success",JOptionPane.INFORMATION_MESSAGE);
-                    
-                    }
-                    
-                    
-                
-                    
-                }catch(HeadlessException | NumberFormatException | SQLException e){
-                
-                    System.out.println("SQL Error:"+e);
-                }
-            
-                          }
-        
-        }
-        
-        
-    }//GEN-LAST:event_btn_editDetailsActionPerformed
 
-    private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameOpened
-        // TODO add your handling code here:
-         int id=Constant.loggedInTeacher.getTeacher_id();
-        String idd=String.valueOf(id);
-        tf_userID.setText(idd);
-        tf_username.setText(Constant.loggedInTeacher.getUsername());
-        tf_Fname.setText(Constant.loggedInTeacher.getFname());
-        tf_Sname.setText(Constant.loggedInTeacher.getSname());
-        tf_address.setText(Constant.loggedInTeacher.getAddress());
-        tf_contact.setText(Constant.loggedInTeacher.getContact());
-        tf_password.setText(Constant.loggedInTeacher.getPassword());
-        tf_course.setText(Constant.loggedInTeacher.getCourse_name());
-        tf_dob.setText(Constant.loggedInTeacher.getDob());
-        tf_email.setText(Constant.loggedInTeacher.getEmail());
-        
-    
-    }//GEN-LAST:event_formInternalFrameOpened
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
+    }//GEN-LAST:event_btn_editDetailsActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -574,7 +326,6 @@ public class UpdateProfileScreen extends javax.swing.JInternalFrame {
     private java.awt.Label label7;
     private java.awt.Label label8;
     private java.awt.Label label9;
-<<<<<<< HEAD
     private javax.swing.JTextField td_dob;
     private javax.swing.JTextField tf_Fname;
     private javax.swing.JTextField tf_Sname;
@@ -582,15 +333,6 @@ public class UpdateProfileScreen extends javax.swing.JInternalFrame {
     private javax.swing.JTextField tf_bio;
     private javax.swing.JTextField tf_contact;
     private javax.swing.JTextField tf_course;
-=======
-    private javax.swing.JTextField tf_Fname;
-    private javax.swing.JTextField tf_Sname;
-    private javax.swing.JTextField tf_address;
-    private javax.swing.JTextField tf_contact;
-    private javax.swing.JTextField tf_course;
-    private javax.swing.JTextField tf_dob;
-    private javax.swing.JTextField tf_email;
->>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
     private javax.swing.JTextField tf_password;
     private javax.swing.JTextField tf_userID;
     private javax.swing.JTextField tf_username;

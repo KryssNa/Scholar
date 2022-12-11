@@ -8,12 +8,14 @@ import models.Student;
 import models.User;
 import java.sql.*;
 import javax.swing.*;
-import static constraint.Constant.*;
 import controller.UserController;
 import controller.StudentController;
 import controller.TeacherController;
 import database.DbConnection;
+<<<<<<< HEAD
 import java.awt.HeadlessException;
+=======
+>>>>>>> b89ba47fa1699f94e8debe6f8f1ebb995769024b
 import models.Teacher;
 
 /**
