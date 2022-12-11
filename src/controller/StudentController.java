@@ -165,10 +165,13 @@ public class StudentController {
                     + "where std_id='"+std_id+"' ";
 
                     pst=conn.prepareStatement(sql);
-                    boolean isexecuted = pst.execute();
-                    if(isexecuted==true){
+                    int isexecuted = pst.executeUpdate();
+                    if(isexecuted>0){
 //                    JOptionPane.showMessageDialog(null, "Record Updated");
-                    return 1;
+                    return isupdated=1;
+                    }else{
+                    
+                        return isupdated=0;
                     }
 
                 }catch(HeadlessException | SQLException e){
