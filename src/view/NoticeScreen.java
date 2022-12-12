@@ -136,6 +136,7 @@ DbConnection dbconn;
       int value=pst.executeUpdate();
       if(value>0){
           System.out.println("Notice sent Successfully");
+          JOptionPane.showMessageDialog(null, "Notice sent Successfully","Success",JOptionPane.INFORMATION_MESSAGE);
       }else{
           System.out.println("error");
       }

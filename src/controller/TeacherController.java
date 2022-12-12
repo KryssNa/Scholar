@@ -162,6 +162,9 @@ public class TeacherController {
                     if(isexecuted==true){
 //                    JOptionPane.showMessageDialog(null, "Record Updated");
                     return 1;
+                    }else{
+                    
+                        return 0;
                     }
 
                 }catch(HeadlessException | SQLException e){

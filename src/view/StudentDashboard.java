@@ -528,7 +528,7 @@ public class StudentDashboard extends javax.swing.JFrame {
 //    noticepanel.add(jLabel111);
     
     tblNotice = new javax.swing.JTable();
-    tblNotice.setBounds(0, 3, 858, 136);
+    tblNotice.setBounds(0, 3, 800, 136);
     tblNotice.setRowHeight(50);
     tblNotice.setName("Notice");
     tblNotice.setShowGrid(false);

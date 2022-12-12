@@ -598,6 +598,7 @@ PreparedStatement pst=null;
                 String S_name = txt_surname.getText();
                 String dob = txt_dob.getText();
                 String std_id = txt_studentid.getText();
+                int st_id=Integer.parseInt(std_id);
                 String email = txt_email.getText();
                 String contact = txt_tel.getText();
                 String address = txt_address.getText();
@@ -616,13 +617,14 @@ PreparedStatement pst=null;
                 }else if(!email.endsWith("@gmail.com")){
                     JOptionPane.showMessageDialog(rootPane, "Invalid E-mail!!");
                 }else{
-                     Student t1=new Student(fname,S_name,dob,email,contact,genderr,address,std_batch,uname,password);
+                     Student t1=new Student(st_id,fname,S_name,dob,email,contact,genderr,address,std_batch,uname,password);
                      StudentController tc=new StudentController();
-                     tc.updateRecord(t1);
-                     JOptionPane.showMessageDialog(null, "Record Updated");
+                     int isupdated=tc.updateRecord(t1);
+                     if(isupdated>0){
+                 JOptionPane.showMessageDialog(null, "Record Updated Successfully");}
+                 else{System.out.println("Some error occured");}
+//                     JOptionPane.showMessageDialog(null, "Record Updated successfully");
                 }
-
-
             Date currentDate = GregorianCalendar.getInstance().getTime();
             DateFormat df = DateFormat.getDateInstance();
             String dateString = df.format(currentDate);
@@ -684,7 +686,7 @@ PreparedStatement pst=null;
             catch (Exception e)
 
             {
-                JOptionPane.showMessageDialog(null,e);
+//                JOptionPane.showMessageDialog(null,e);
             }
             String sql ="delete from AddStudent where std_id=? ";
             try{

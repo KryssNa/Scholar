@@ -574,6 +574,7 @@ cleartable();
                 String S_name = txt_surname.getText();
                 String dob = txt_dob.getText();
                 String teacher_id = txt_teacherid.getText();
+                int t_id=Integer.parseInt(teacher_id);
                 String email = txt_email.getText();
                 String contact = txt_tel.getText();
                 String course = txt_course.getText();
@@ -590,10 +591,12 @@ cleartable();
             }else if(!email.endsWith("@gmail.com")){
                 JOptionPane.showMessageDialog(rootPane, "Invalid E-mail!!");
             }else{
-                 Teacher t1=new Teacher(fname,S_name,dob,email,contact,genderr,address,course,username,password);
+                 Teacher t1=new Teacher(t_id,fname,S_name,dob,email,contact,genderr,address,course,username,password);
                  TeacherController tc=new TeacherController();
-                 tc.updateRecord(t1);
-                 JOptionPane.showMessageDialog(null, "Record Updated");
+                 int isupdated=tc.updateRecord(t1);
+                 if(isupdated==0){
+                 JOptionPane.showMessageDialog(null, "Record Updated");}
+                 else{System.out.println("Some error occured");}
                  
 //                String sql= "update AdminDash_AddStudent set firstname='"+fname+"', surname='"+S_name+"', "
 //                + "dob='"+dob+"',Email='"+email+"',contact='"+contact+"',P_address='"+P_address+"',T_address= '"+T_address+"', "
