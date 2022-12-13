@@ -6,8 +6,8 @@ package view;
 
 import database.DbConnection;
 import java.sql.*;
+
 import javax.swing.JOptionPane;
-import net.proteanit.sql.DbUtils;
 
 
 /**
@@ -136,6 +136,8 @@ DbConnection dbconn;
       int value=pst.executeUpdate();
       if(value>0){
           System.out.println("Notice sent Successfully");
+          JOptionPane.showMessageDialog(null, "Notice sent Successfully","Success",JOptionPane.INFORMATION_MESSAGE);
+
       }else{
           System.out.println("error");
       }
