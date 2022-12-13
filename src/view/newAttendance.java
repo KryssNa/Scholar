@@ -5,12 +5,15 @@
 package view;
 
 import database.DbConnection;
+import java.awt.HeadlessException;
 import java.sql.*;
 import java.sql.SQLException;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.Locale;
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
 import net.proteanit.sql.DbUtils;
 
 /**
@@ -43,12 +46,11 @@ public class newAttendance extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabelbatchCode = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jComboBoxBook = new javax.swing.JComboBox<>();
+        subcombobox = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        datechooser = new com.toedter.calendar.JDateChooser();
         ClassAttendanceButton = new javax.swing.JButton();
-        TableButton = new javax.swing.JButton();
-        AbsenteesButton = new javax.swing.JButton();
+        submit_attendance = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
@@ -77,6 +79,7 @@ public class newAttendance extends javax.swing.JInternalFrame {
                 {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
+                {null, null, null, null},
                 {null, null, null, null}
             },
             new String [] {
@@ -100,42 +103,47 @@ public class newAttendance extends javax.swing.JInternalFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Batch Code");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(210, 60, 100, 30);
+        jLabel1.setBounds(300, 50, 100, 30);
 
         jLabelbatchCode.setFont(new java.awt.Font("Candara", 0, 14)); // NOI18N
         jLabelbatchCode.setForeground(new java.awt.Color(255, 255, 255));
         jLabelbatchCode.setText("Batch 32A");
         jPanel1.add(jLabelbatchCode);
-        jLabelbatchCode.setBounds(330, 60, 240, 30);
+        jLabelbatchCode.setBounds(420, 50, 240, 30);
 
         jLabel3.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Subject");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(210, 120, 100, 30);
+        jLabel3.setBounds(300, 110, 100, 30);
 
-        jComboBoxBook.setFont(new java.awt.Font("Candara", 0, 14)); // NOI18N
-        jComboBoxBook.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxBookActionPerformed(evt);
+        subcombobox.setFont(new java.awt.Font("Candara", 0, 14)); // NOI18N
+        subcombobox.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                subcomboboxMouseClicked(evt);
             }
         });
-        jPanel1.add(jComboBoxBook);
-        jComboBoxBook.setBounds(330, 120, 240, 30);
+        subcombobox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                subcomboboxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(subcombobox);
+        subcombobox.setBounds(420, 110, 240, 30);
 
         jLabel6.setFont(new java.awt.Font("Lucida Calligraphy", 3, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Date");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(210, 200, 70, 30);
+        jLabel6.setBounds(300, 190, 70, 30);
 
-        jDateChooser1.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+        datechooser.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                jDateChooser1PropertyChange(evt);
+                datechooserPropertyChange(evt);
             }
         });
-        jPanel1.add(jDateChooser1);
-        jDateChooser1.setBounds(330, 200, 240, 30);
+        jPanel1.add(datechooser);
+        datechooser.setBounds(420, 190, 240, 30);
 
         ClassAttendanceButton.setFont(new java.awt.Font("Candara", 1, 12)); // NOI18N
         ClassAttendanceButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/marked.png"))); // NOI18N
@@ -147,29 +155,18 @@ public class newAttendance extends javax.swing.JInternalFrame {
             }
         });
         jPanel1.add(ClassAttendanceButton);
-        ClassAttendanceButton.setBounds(430, 260, 110, 30);
+        ClassAttendanceButton.setBounds(280, 270, 110, 30);
 
-        TableButton.setFont(new java.awt.Font("Candara", 1, 12)); // NOI18N
-        TableButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/table.png"))); // NOI18N
-        TableButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        TableButton.addActionListener(new java.awt.event.ActionListener() {
+        submit_attendance.setFont(new java.awt.Font("Lucida Calligraphy", 0, 12)); // NOI18N
+        submit_attendance.setText("Submit Attendance");
+        submit_attendance.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        submit_attendance.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TableButtonActionPerformed(evt);
+                submit_attendanceActionPerformed(evt);
             }
         });
-        jPanel1.add(TableButton);
-        TableButton.setBounds(220, 260, 110, 30);
-
-        AbsenteesButton.setFont(new java.awt.Font("Lucida Calligraphy", 0, 12)); // NOI18N
-        AbsenteesButton.setText("Mark Absent Student Attendance");
-        AbsenteesButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        AbsenteesButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AbsenteesButtonActionPerformed(evt);
-            }
-        });
-        jPanel1.add(AbsenteesButton);
-        AbsenteesButton.setBounds(620, 260, 250, 40);
+        jPanel1.add(submit_attendance);
+        submit_attendance.setBounds(580, 260, 180, 40);
 
         jLabel2.setFont(new java.awt.Font("Lucida Calligraphy", 3, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -191,59 +188,64 @@ public class newAttendance extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBoxBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxBookActionPerformed
+    private void subcomboboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subcomboboxActionPerformed
         // TODO add your handling code here:
-//        try {
-//            jComboBoxBook.addItem("Please Select....");
-//            ResultSet rs = conn.createStatement().executeQuery("select course from AddTeacher ");//group by std_book_session
-//            while (rs.next()) {
-//                jComboBoxBook.addItem(rs.getString(1));
-//            }
-//        } catch (Exception ex) {
-//            System.out.println(ex.toString());
-//        }
-    }//GEN-LAST:event_jComboBoxBookActionPerformed
+             try {
+                    String query="select course_name from AddTeacher";
+                            
+                    pst=conn.prepareStatement(query);
 
-    private void jDateChooser1PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jDateChooser1PropertyChange
+                    ResultSet rst = pst.executeQuery();
+                    
+                    while(rst.next()){
+                        String sub=rst.getString("Course_name");
+                        System.out.println("sub");
+                        subcombobox.addItem(sub);                    
+                    }
+                    }
+        
+        catch (SQLException ex) {
+             JOptionPane.showMessageDialog(null, ex);
+}
+    }//GEN-LAST:event_subcomboboxActionPerformed
+
+    private void datechooserPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_datechooserPropertyChange
         // TODO add your handling code here:
 
         /**
         * Restricting Using from Marking Attendance on future date
         //         */
-        //        try {
-            //            //JDateChooser Format
-            //            SimpleDateFormat comparedate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-            //            String finaldate = comparedate.format(jDateChooser1.getDate());
-            //
-            //            //Current Date Formats
-            //            DateFormat dateFormatcurrrent = new SimpleDateFormat("yyyy-MM-dd");
-            //            Date date = new Date();
-            //            String matchdate = dateFormatcurrrent.format(date);
-            //
-            //            if (finaldate.compareTo(matchdate) > 0) {
-                //                JOptionPane.showMessageDialog(null, "Your can't mark attendance on Future Date", "Future Date", JOptionPane.WARNING_MESSAGE);
-                //                ClassAttendanceButton.setEnabled(false);
-                //            } else {
-                //                ClassAttendanceButton.setEnabled(true);
-                //            }
-            //        } catch (Exception ex) {
-            //            System.out.println(ex.toString());
-            //        }
-    }//GEN-LAST:event_jDateChooser1PropertyChange
+                try {
+                        //JDateChooser Format
+                        SimpleDateFormat comparedate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+                        String finaldate = comparedate.format(datechooser.getDate());
+            
+                        //Current Date Formats
+                        DateFormat dateFormatcurrrent = new SimpleDateFormat("yyyy-MM-dd");
+                        Calendar cal =new GregorianCalendar();
+                            int month = cal.get(Calendar.MONTH);
+                        int year = cal.get(Calendar.YEAR);
+                        int day = cal.get(Calendar.DAY_OF_MONTH);
+                        
+                        String lbl_date=(month+1)+"/"+day+"/"+year;
+            
+                        if (finaldate.compareTo(lbl_date) > 0) {
+                                JOptionPane.showMessageDialog(null, "Your can't mark attendance on Future Date", "Future Date", JOptionPane.WARNING_MESSAGE);
+                                ClassAttendanceButton.setEnabled(false);
+                            } else {
+                                ClassAttendanceButton.setEnabled(true);
+                            }
+                    } catch (Exception ex) {
+                        System.out.println(ex.toString());
+                    }
+    }//GEN-LAST:event_datechooserPropertyChange
 
     private void ClassAttendanceButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClassAttendanceButtonActionPerformed
-        // TODO add your handling code here:
 
-//        /**
-//        * Casting the jDateChooser with the help of SimpleDateFormat Variable d
-//        * is pass to get the date and save it in database
-//        */
-//        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-//        String d = sdf.format(jDateChooser1.getDate());
-//
-//        try {
-//            for (int i = 0; i < ClassAttendanceTable.getRowCount(); i++) {
-//                String id = ClassAttendanceTable.getModel().getValueAt(i, 0).toString();
+            for (int i = 0; i < tblAttendance.getRowCount(); i++) {
+               tblAttendance.setValueAt("Present", i, 3);
+ 
+            }
 //                String name = ClassAttendanceTable.getModel().getValueAt(i, 1).toString();
 //                String result;
 //
@@ -267,63 +269,66 @@ public class newAttendance extends javax.swing.JInternalFrame {
 //        clearing();
     }//GEN-LAST:event_ClassAttendanceButtonActionPerformed
 
-    private void TableButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TableButtonActionPerformed
-        // TODO add your handling code here:
-        /**
-        * Retrieving data from database
-        */
-        //        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-        //        String d = sdf.format(jDateChooser1.getDate());
-        //
-        //        try {
-            //
-            //            CallableStatement call = conn.prepareCall("{ call myproc( ? , ?) }");
-            //            call.setString(1, d);
-            //            call.setString(2, jLabelbatchCode.getText());
-            //            ResultSet rs = call.executeQuery();
-            //
-            //            DefaultTableModel dt = (DefaultTableModel) ClassAttendanceTable.getModel();
-            //            while (rs.next()) {
-                //                dt.addRow(new Object[]{rs.getString("std_id"), rs.getString("std_name"), rs.getString("std_batch"), false});
-                //            }
-            //            ClassAttendanceTable.setModel(dt);
-            //
-            //        } catch (Exception ex) {
-            //
-            //            JOptionPane.showMessageDialog(null, "Attendance is already Marked", "Choosen Marked Date", JOptionPane.WARNING_MESSAGE);
-            //        }
-    }//GEN-LAST:event_TableButtonActionPerformed
+    private void submit_attendanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit_attendanceActionPerformed
+        java.util.Date currentDate = GregorianCalendar.getInstance().getTime();
+                DateFormat df = DateFormat.getDateInstance();
+                String dateString = df.format(currentDate);
 
-    private void AbsenteesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AbsenteesButtonActionPerformed
-        // TODO add your handling code here:
-        /**
-        * This Button is for retrieving absent student data
-        */
+                java.util.Date d = new java.util.Date();
+                SimpleDateFormat sdf1 = new SimpleDateFormat("HH:mm:ss");
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+                String timeString = sdf.format(d);
+
+                String value0 = timeString;
+                String value1 = sdf.format(datechooser.getDate());
+//                System.out.println(value1);
+                Object course=subcombobox.getSelectedItem();
+
+                try{
+                    
+                    for (int i = 0; i < tblAttendance.getRowCount(); i++) {
+                String id = tblAttendance.getModel().getValueAt(i, 0).toString();
+                        System.out.println(id);
+                String name = tblAttendance.getModel().getValueAt(i, 1).toString();
+//                String result;
+//System.out.println(name);
+//                boolean attendance = Boolean.parseBoolean(tblAttendance.getModel().getValueAt(i, 3).toString());
+                String attendance = tblAttendance.getModel().getValueAt(i, 3).toString();
+//System.out.println(attendance);
+
+//                if (attendance) {
+//                    result = "Present";
+//                } else {
+//                    result = "Absent";
+//                }
+
+                pst=conn.prepareStatement("insert into std_attend values ('" + value1 + "','" + id + "','" + name + "','" + jLabelbatchCode.getText() + "','" + subcombobox.getSelectedItem() + "','" + attendance + "')");
+                pst.executeUpdate();
+            }
+            JOptionPane.showMessageDialog(this, "Attendance Marked", "Notify", JOptionPane.PLAIN_MESSAGE);
 //
-//        jPanelForAbsent.setVisible(true);
-//        jPanelForPresent.setVisible(false);
-    }//GEN-LAST:event_AbsenteesButtonActionPerformed
+
+//                    String reg= "insert into Admin_Audit ( date, status) values ('"+value0+" / "+value1+"','Added Record')";
+//                    pst=conn.prepareStatement(reg);
+//                    pst.execute();
+
+                }
+                catch (HeadlessException | SQLException e)
+
+                {
+                    JOptionPane.showMessageDialog(null,e);
+                }
+    }//GEN-LAST:event_submit_attendanceActionPerformed
 
     private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameOpened
 
-//        // TODO add your handling code here:
-//         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-//        String d = sdf.format(jDateChooser1.getDate());
-
         try {
-            
-//            CallableStatement call = conn.prepareCall("{ call myproc( ? , ?) }");
-//            call.setString(1, d);
-//            call.setString(2, jLabelbatchCode.getText());
-            String query="select AddStudent.std_id ,CONCAT(AddStudent.firstname,' ',AddStudent.Surname)as Name,AddStudent.Std_batch as Student_Batch , std_attend.std_status as Attendance_Status from AddStudent left join std_attend on AddStudent.Std_id=std_attend.Std_id order by Std_id asc";
+
+            String query="select distinct AddStudent.std_id ,CONCAT(AddStudent.firstname,' ',AddStudent.Surname)as Name,AddStudent.Std_batch as Student_Batch , std_attend.std_status as Attendance_Status from AddStudent left join std_attend on AddStudent.Std_id=std_attend.Std_id order by Std_id asc";
             pst=conn.prepareStatement(query);
             
             ResultSet rst = pst.executeQuery();
 
-//            DefaultTableModel dt = (DefaultTableModel) tblAttendance.getModel();
-//            while (rst.next()) {
-////                dt.addRow(new Object[]{rst.getString("std_id"), rst.getString("FirstName"), rst.getString("std_batch"), false});
-//            }
             
             tblAttendance.setModel(DbUtils.resultSetToTableModel(rst));
 //            tblAttendance.addColumn(Attendance);
@@ -335,13 +340,32 @@ public class newAttendance extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_formInternalFrameOpened
 
+    private void subcomboboxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_subcomboboxMouseClicked
+        // TODO add your handling code here:
+        try {
+                    String query="select course_name from AddTeacher";
+                            
+                    pst=conn.prepareStatement(query);
+
+                    ResultSet rst = pst.executeQuery();
+                    
+                    while(rst.next()){
+                        String sub=rst.getString("Course_name");
+                        System.out.println("sub");
+                        subcombobox.addItem(sub);                    
+                    }
+                    }
+        
+        catch (SQLException ex) {
+             JOptionPane.showMessageDialog(null, ex);
+}
+        
+    }//GEN-LAST:event_subcomboboxMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton AbsenteesButton;
     private javax.swing.JButton ClassAttendanceButton;
-    private javax.swing.JButton TableButton;
-    private javax.swing.JComboBox<String> jComboBoxBook;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
+    private com.toedter.calendar.JDateChooser datechooser;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -349,6 +373,8 @@ public class newAttendance extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabelbatchCode;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JComboBox<String> subcombobox;
+    private javax.swing.JButton submit_attendance;
     private javax.swing.JTable tblAttendance;
     // End of variables declaration//GEN-END:variables
 }

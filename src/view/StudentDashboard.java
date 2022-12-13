@@ -1,10 +1,4 @@
 
-
-
-
-
-
-
 package view;
 
 import constraint.Constant;
