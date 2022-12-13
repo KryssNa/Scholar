@@ -205,7 +205,7 @@ public class newAttendance extends javax.swing.JInternalFrame {
                     }
         
         catch (SQLException ex) {
-             JOptionPane.showMessageDialog(null, ex);
+             JOptionPane.showMessageDialog(null, "AddTeacher Error:"+ex);
 }
     }//GEN-LAST:event_subcomboboxActionPerformed
 
@@ -215,29 +215,29 @@ public class newAttendance extends javax.swing.JInternalFrame {
         /**
         * Restricting Using from Marking Attendance on future date
         //         */
-                try {
-                        //JDateChooser Format
-                        SimpleDateFormat comparedate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-                        String finaldate = comparedate.format(datechooser.getDate());
-            
-                        //Current Date Formats
-                        DateFormat dateFormatcurrrent = new SimpleDateFormat("yyyy-MM-dd");
-                        Calendar cal =new GregorianCalendar();
-                            int month = cal.get(Calendar.MONTH);
-                        int year = cal.get(Calendar.YEAR);
-                        int day = cal.get(Calendar.DAY_OF_MONTH);
-                        
-                        String lbl_date=(month+1)+"/"+day+"/"+year;
-            
-                        if (finaldate.compareTo(lbl_date) > 0) {
-                                JOptionPane.showMessageDialog(null, "Your can't mark attendance on Future Date", "Future Date", JOptionPane.WARNING_MESSAGE);
-                                ClassAttendanceButton.setEnabled(false);
-                            } else {
-                                ClassAttendanceButton.setEnabled(true);
-                            }
-                    } catch (Exception ex) {
-                        System.out.println(ex.toString());
-                    }
+//                try {
+//                        //JDateChooser Format
+//                        SimpleDateFormat comparedate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+//                        String finaldate = comparedate.format(datechooser.getDate());
+//            
+//                        //Current Date Formats
+//                        DateFormat dateFormatcurrrent = new SimpleDateFormat("yyyy-MM-dd");
+//                        Calendar cal =new GregorianCalendar();
+//                            int month = cal.get(Calendar.MONTH);
+//                        int year = cal.get(Calendar.YEAR);
+//                        int day = cal.get(Calendar.DAY_OF_MONTH);
+//                        
+//                        String lbl_date=(month+1)+"/"+day+"/"+year;
+//            
+//                        if (finaldate.compareTo(lbl_date) > 0) {
+//                                JOptionPane.showMessageDialog(null, "Your can't mark attendance on Future Date", "Future Date", JOptionPane.WARNING_MESSAGE);
+//                                ClassAttendanceButton.setEnabled(false);
+//                            } else {
+//                                ClassAttendanceButton.setEnabled(true);
+//                            }
+//                    } catch (HeadlessException ex) {
+//                        System.out.println(ex.toString());
+//                    }
     }//GEN-LAST:event_datechooserPropertyChange
 
     private void ClassAttendanceButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClassAttendanceButtonActionPerformed
@@ -270,7 +270,22 @@ public class newAttendance extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_ClassAttendanceButtonActionPerformed
 
     private void submit_attendanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit_attendanceActionPerformed
-        java.util.Date currentDate = GregorianCalendar.getInstance().getTime();
+
+                
+                
+                if(datechooser.equals("")){
+                
+                    JOptionPane.showMessageDialog(null, "Please Enter the Date first:","Error!!",JOptionPane.ERROR_MESSAGE);
+                
+                }else if(subcombobox.equals("")){
+                
+                    JOptionPane.showMessageDialog(null, "Please select course first:","Error!!",JOptionPane.ERROR_MESSAGE);
+                
+                }else{
+
+                try{
+                    Object course=subcombobox.getSelectedItem();
+                java.util.Date currentDate = GregorianCalendar.getInstance().getTime();
                 DateFormat df = DateFormat.getDateInstance();
                 String dateString = df.format(currentDate);
 
@@ -282,30 +297,18 @@ public class newAttendance extends javax.swing.JInternalFrame {
                 String value0 = timeString;
                 String value1 = sdf.format(datechooser.getDate());
 //                System.out.println(value1);
-                Object course=subcombobox.getSelectedItem();
-
-                try{
                     
                     for (int i = 0; i < tblAttendance.getRowCount(); i++) {
                 String id = tblAttendance.getModel().getValueAt(i, 0).toString();
                         System.out.println(id);
                 String name = tblAttendance.getModel().getValueAt(i, 1).toString();
-//                String result;
-//System.out.println(name);
-//                boolean attendance = Boolean.parseBoolean(tblAttendance.getModel().getValueAt(i, 3).toString());
+//              boolean attendance = Boolean.parseBoolean(tblAttendance.getModel().getValueAt(i, 3).toString());
                 String attendance = tblAttendance.getModel().getValueAt(i, 3).toString();
-//System.out.println(attendance);
 
-//                if (attendance) {
-//                    result = "Present";
-//                } else {
-//                    result = "Absent";
-//                }
-
-                pst=conn.prepareStatement("insert into std_attend values ('" + value1 + "','" + id + "','" + name + "','" + jLabelbatchCode.getText() + "','" + subcombobox.getSelectedItem() + "','" + attendance + "')");
+                pst=conn.prepareStatement("insert into std_attend(attend_date,std_id,std_name,std_batch,std_book,std_status) values ('" + value1 + "','" + id + "','" + name + "','" + jLabelbatchCode.getText() + "','" + subcombobox.getSelectedItem() + "','" + attendance + "')");
                 pst.executeUpdate();
             }
-            JOptionPane.showMessageDialog(this, "Attendance Marked", "Notify", JOptionPane.PLAIN_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Attendance Submtted Successfully", "Success", JOptionPane.PLAIN_MESSAGE);
 //
 
 //                    String reg= "insert into Admin_Audit ( date, status) values ('"+value0+" / "+value1+"','Added Record')";
@@ -317,7 +320,7 @@ public class newAttendance extends javax.swing.JInternalFrame {
 
                 {
                     JOptionPane.showMessageDialog(null,e);
-                }
+                }}
     }//GEN-LAST:event_submit_attendanceActionPerformed
 
     private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameOpened
