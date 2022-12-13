@@ -612,11 +612,11 @@ this.dispose();        // TODO add your handling code here:
         ttdf.show();
     }//GEN-LAST:event_jButton4ActionPerformed
     private void TEACHERSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TEACHERSActionPerformed
-        AttendanceAddScreen ttdf = new AttendanceAddScreen();
-        jDesktopPane1.removeAll();
-        jDesktopPane1.add(ttdf);
-        ttdf.setBounds(0, 0, 1060, 610);
-        ttdf.show();
+//        AttendanceAddScreen ttdf = new AttendanceAddScreen();
+//        jDesktopPane1.removeAll();
+//        jDesktopPane1.add(ttdf);
+//        ttdf.setBounds(0, 0, 1060, 610);
+//        ttdf.show();
 
         // TODO add your handling code here:
     }//GEN-LAST:event_TEACHERSActionPerformed

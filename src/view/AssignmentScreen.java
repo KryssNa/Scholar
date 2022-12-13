@@ -10,19 +10,13 @@ import com.itextpdf.text.Chunk;
 import com.itextpdf.text.FontFactory;
 import com.itextpdf.text.PageSize;
 import com.itextpdf.text.Paragraph;
-import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
-import controller.UserController;
 import database.DbConnection;
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Rectangle;
 import java.io.FileOutputStream;
 import java.sql.*;
 import javax.swing.JOptionPane;
-import javax.swing.text.Document;
-import models.User;
-
 /**
  *
  * @author Iqbal-Asi
