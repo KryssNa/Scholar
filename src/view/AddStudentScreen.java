@@ -72,14 +72,14 @@ PreparedStatement pst=null;
  private void Update_table() {
     try{
         
-        conn=dbconn.getconnection();
+        conn=DbConnection.getconnection();
 
-       String sql ="select std_id as ID,CONCAT(FirstName ,' ', SurName) as Name, Contact,Address, Gender,std_batch,Username,Password from AddStudent";
+       String sql ="select std_id as ID,CONCAT(FirstName ,' ', SurName) as Name, Contact,Address, Gender,std_batch,Username,Password from AddStudent order by std_id asc";
        pst=conn.prepareStatement(sql);
         rs=pst.executeQuery();
         student_table.setModel(DbUtils.resultSetToTableModel(rs));
     }
-    catch(Exception e){
+    catch(SQLException e){
     JOptionPane.showMessageDialog(null, "Update Table Error:"+e);
     }
     finally {
@@ -89,7 +89,7 @@ PreparedStatement pst=null;
                 pst.close();
                 
             }
-            catch(Exception e){
+            catch(SQLException e){
                 
             }
         }

@@ -42,8 +42,8 @@ public class AttendanceAddScreen extends javax.swing.JInternalFrame {
         //JOption Font
         UIManager.put("OptionPane.messageFont", new FontUIResource(new Font("Candara", Font.PLAIN, 17)));
 
-        ImageIcon icon = new ImageIcon("/view/Project_Images/Logo.png");
-        this.setFrameIcon(icon);
+//        ImageIcon icon = new ImageIcon("/view/Project_Images/Logo.png");
+//        this.setFrameIcon(icon);
         setResizable(false);
         setTitle("Class Attendance");
 
@@ -219,7 +219,7 @@ public class AttendanceAddScreen extends javax.swing.JInternalFrame {
                 formInternalFrameOpened(evt);
             }
         });
-        getContentPane().setLayout(null);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanelForPresent.setLayout(null);
 
@@ -335,8 +335,7 @@ public class AttendanceAddScreen extends javax.swing.JInternalFrame {
         jPanelForPresent.add(ClassAttendanceBG);
         ClassAttendanceBG.setBounds(0, 0, 785, 520);
 
-        getContentPane().add(jPanelForPresent);
-        jPanelForPresent.setBounds(0, 0, 785, 520);
+        getContentPane().add(jPanelForPresent, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 785, 520));
 
         jPanelForAbsent.setLayout(null);
 
@@ -445,8 +444,7 @@ public class AttendanceAddScreen extends javax.swing.JInternalFrame {
         jPanelForAbsent.add(jLabelAbsentPAnelBG);
         jLabelAbsentPAnelBG.setBounds(0, 0, 785, 520);
 
-        getContentPane().add(jPanelForAbsent);
-        jPanelForAbsent.setBounds(0, 0, 785, 520);
+        getContentPane().add(jPanelForAbsent, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 785, 520));
 
         setBounds(0, 0, 800, 550);
     }// </editor-fold>//GEN-END:initComponents
@@ -462,26 +460,26 @@ public class AttendanceAddScreen extends javax.swing.JInternalFrame {
         /**
          * Retrieving data from database
          */
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-        String d = sdf.format(jDateChooser1.getDate());
-
-        try {
-            
-            CallableStatement call = conn.prepareCall("{ call myproc( ? , ?) }");
-            call.setString(1, d);
-            call.setString(2, jLabelbatchCode.getText());
-            ResultSet rs = call.executeQuery();
-
-            DefaultTableModel dt = (DefaultTableModel) ClassAttendanceTable.getModel();
-            while (rs.next()) {
-                dt.addRow(new Object[]{rs.getString("std_id"), rs.getString("std_name"), rs.getString("std_batch"), false});
-            }
-            ClassAttendanceTable.setModel(dt);
-
-        } catch (Exception ex) {
-
-            JOptionPane.showMessageDialog(null, "Attendance is already Marked", "Choosen Marked Date", JOptionPane.WARNING_MESSAGE);
-        }
+//        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+//        String d = sdf.format(jDateChooser1.getDate());
+//
+//        try {
+//            
+//            CallableStatement call = conn.prepareCall("{ call myproc( ? , ?) }");
+//            call.setString(1, d);
+//            call.setString(2, jLabelbatchCode.getText());
+//            ResultSet rs = call.executeQuery();
+//
+//            DefaultTableModel dt = (DefaultTableModel) ClassAttendanceTable.getModel();
+//            while (rs.next()) {
+//                dt.addRow(new Object[]{rs.getString("std_id"), rs.getString("std_name"), rs.getString("std_batch"), false});
+//            }
+//            ClassAttendanceTable.setModel(dt);
+//
+//        } catch (Exception ex) {
+//
+//            JOptionPane.showMessageDialog(null, "Attendance is already Marked", "Choosen Marked Date", JOptionPane.WARNING_MESSAGE);
+//        }
     }//GEN-LAST:event_TableButtonActionPerformed
 
     private void AbsenteesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AbsenteesButtonActionPerformed
@@ -499,7 +497,7 @@ public class AttendanceAddScreen extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         try {
             jComboBoxBook.addItem("Please Select....");
-            ResultSet rs = conn.createStatement().executeQuery("select std_book from std_attend where std_book = '" + jComboBoxBook.getSelectedItem() + "' ");//group by std_book_session
+            ResultSet rs = conn.createStatement().executeQuery("select course from AddTeacher ");//group by std_book_session
             while (rs.next()) {
                 jComboBoxBook.addItem(rs.getString(1));
             }
@@ -549,26 +547,26 @@ public class AttendanceAddScreen extends javax.swing.JInternalFrame {
 
         /**
          * Restricting Using from Marking Attendance on future date
-         */
-        try {
-            //JDateChooser Format
-            SimpleDateFormat comparedate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-            String finaldate = comparedate.format(jDateChooser1.getDate());
-
-            //Current Date Formats
-            DateFormat dateFormatcurrrent = new SimpleDateFormat("yyyy-MM-dd");
-            Date date = new Date();
-            String matchdate = dateFormatcurrrent.format(date);
-
-            if (finaldate.compareTo(matchdate) > 0) {
-                JOptionPane.showMessageDialog(null, "Your can't mark attendance on Future Date", "Future Date", JOptionPane.WARNING_MESSAGE);
-                ClassAttendanceButton.setEnabled(false);
-            } else {
-                ClassAttendanceButton.setEnabled(true);
-            }
-        } catch (Exception ex) {
-            System.out.println(ex.toString());
-        }
+//         */
+//        try {
+//            //JDateChooser Format
+//            SimpleDateFormat comparedate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+//            String finaldate = comparedate.format(jDateChooser1.getDate());
+//
+//            //Current Date Formats
+//            DateFormat dateFormatcurrrent = new SimpleDateFormat("yyyy-MM-dd");
+//            Date date = new Date();
+//            String matchdate = dateFormatcurrrent.format(date);
+//
+//            if (finaldate.compareTo(matchdate) > 0) {
+//                JOptionPane.showMessageDialog(null, "Your can't mark attendance on Future Date", "Future Date", JOptionPane.WARNING_MESSAGE);
+//                ClassAttendanceButton.setEnabled(false);
+//            } else {
+//                ClassAttendanceButton.setEnabled(true);
+//            }
+//        } catch (Exception ex) {
+//            System.out.println(ex.toString());
+//        }
 
     }//GEN-LAST:event_jDateChooser1PropertyChange
 
@@ -584,24 +582,24 @@ public class AttendanceAddScreen extends javax.swing.JInternalFrame {
         /**
          * Retrieving data from database
          */
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-        String d = sdf.format(jDateChooser2.getDate());
-
-        clearingAbsent();
-        try {
-            DefaultTableModel dt = (DefaultTableModel) jTableAbsent.getModel();
-            Connection conn=DbConnection.getconnection();
-            String query ="select * from std_attend where attend_date = '" + d + "' and std_batch = '" + jLabelBatchCodeAbsent.getText() + "' and std_status = 'Absent'";
-            Statement pst=conn.createStatement();
-            ResultSet rs=pst.executeQuery(query);
-            
-
-            while (rs.next()) {
-                dt.addRow(new Object[]{rs.getString("std_id"), rs.getString("std_name"), rs.getString("std_batch"), false});
-            }
-        } catch (Exception ex) {
-            System.out.println(ex.toString());
-        }
+//        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+//        String d = sdf.format(jDateChooser2.getDate());
+//
+//        clearingAbsent();
+//        try {
+//            DefaultTableModel dt = (DefaultTableModel) jTableAbsent.getModel();
+//            Connection conn=DbConnection.getconnection();
+//            String query ="select * from std_attend where attend_date = '" + d + "' and std_batch = '" + jLabelBatchCodeAbsent.getText() + "' and std_status = 'Absent'";
+//            Statement pst=conn.createStatement();
+//            ResultSet rs=pst.executeQuery(query);
+//            
+//
+//            while (rs.next()) {
+//                dt.addRow(new Object[]{rs.getString("std_id"), rs.getString("std_name"), rs.getString("std_batch"), false});
+//            }
+//        } catch (Exception ex) {
+//            System.out.println(ex.toString());
+//        }
 
     }//GEN-LAST:event_jButtonabsentTableActionPerformed
 
@@ -611,33 +609,33 @@ public class AttendanceAddScreen extends javax.swing.JInternalFrame {
          * Casting the jDateChooser with the help of SimpleDateFormat Variable d
          * is pass to get the date and save it in database
          */
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-        String d = sdf.format(jDateChooser2.getDate());
-        try {
-
-            for (int i = 0; i < jTableAbsent.getRowCount(); i++) {
-                String id = jTableAbsent.getModel().getValueAt(i, 0).toString();
-                String result;
-
-                boolean attendance = Boolean.parseBoolean(jTableAbsent.getModel().getValueAt(i, 3).toString());
-
-                if (attendance) {
-                    result = "Present";
-                } else {
-                    result = "Absent";
-                }
-             
-                pst=conn.prepareStatement("Update std_attend set std_status = '" + result + "' where std_id = '" + id + "' and attend_date = '" + d + "'");
-                pst.executeUpdate();
-            }
-
-            JOptionPane.showMessageDialog(this, "Present is marked on " + d, "Absentees Attendnace", JOptionPane.INFORMATION_MESSAGE);
-
-        } catch (Exception ex) {
-            System.out.println(ex.toString());
-        }
-        clearingAbsent();
-        clearing();
+//        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+//        String d = sdf.format(jDateChooser2.getDate());
+//        try {
+//
+//            for (int i = 0; i < jTableAbsent.getRowCount(); i++) {
+//                String id = jTableAbsent.getModel().getValueAt(i, 0).toString();
+//                String result;
+//
+//                boolean attendance = Boolean.parseBoolean(jTableAbsent.getModel().getValueAt(i, 3).toString());
+//
+//                if (attendance) {
+//                    result = "Present";
+//                } else {
+//                    result = "Absent";
+//                }
+//             
+//                pst=conn.prepareStatement("Update std_attend set std_status = '" + result + "' where std_id = '" + id + "' and attend_date = '" + d + "'");
+//                pst.executeUpdate();
+//            }
+//
+//            JOptionPane.showMessageDialog(this, "Present is marked on " + d, "Absentees Attendnace", JOptionPane.INFORMATION_MESSAGE);
+//
+//        } catch (Exception ex) {
+//            System.out.println(ex.toString());
+//        }
+//        clearingAbsent();
+//        clearing();
 
     }//GEN-LAST:event_jButtonMarkAbsentPresentActionPerformed
 
@@ -646,45 +644,45 @@ public class AttendanceAddScreen extends javax.swing.JInternalFrame {
         /**
          * Restricting Using from Marking Attendance on future date
          */
-        try {
-            //JDateChooser Format
-            SimpleDateFormat comparedate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-            String finaldate = comparedate.format(jDateChooser2.getDate());
-
-            //Current Date Formats
-            DateFormat dateFormatcurrrent = new SimpleDateFormat("yyyy-MM-dd");
-            Date date = new Date();
-            String matchdate = dateFormatcurrrent.format(date);
-
-            if (finaldate.compareTo(matchdate) > 0) {
-                JOptionPane.showMessageDialog(null, "Your can't mark attendance on Future Date", "Future Date", JOptionPane.ERROR_MESSAGE);
-                jButtonMarkAbsentPresent.setEnabled(false);
-            } else {
-                jButtonMarkAbsentPresent.setEnabled(true);
-            }
-        } catch (Exception ex) {
-            System.out.println(ex.toString());
-        }
-
-        /**
-         * Book Name and Session
-         */
-        try {
+//        try {
 //            //JDateChooser Format
-            SimpleDateFormat comparedate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-            String d = comparedate.format(jDateChooser2.getDate());
-            
-            String query ="select std_book from std_attend where attend_date = '" + d + "' and std_batch= '" + jLabelBatchCodeAbsent.getText() + "' ";
-            Statement pst=conn.createStatement();
-            ResultSet rs=pst.executeQuery(query);
-
-          while (rs.next()) {
-                jLabelAbsentbook.setText(rs.getString(1));
-//                jLabelAbsentsession.setText(rs.getString(2));
-            }
-        } catch (Exception ex) {
-            System.out.println(ex.toString());}
-        
+//            SimpleDateFormat comparedate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+//            String finaldate = comparedate.format(jDateChooser2.getDate());
+//
+//            //Current Date Formats
+//            DateFormat dateFormatcurrrent = new SimpleDateFormat("yyyy-MM-dd");
+//            Date date = new Date();
+//            String matchdate = dateFormatcurrrent.format(date);
+//
+//            if (finaldate.compareTo(matchdate) > 0) {
+//                JOptionPane.showMessageDialog(null, "Your can't mark attendance on Future Date", "Future Date", JOptionPane.ERROR_MESSAGE);
+//                jButtonMarkAbsentPresent.setEnabled(false);
+//            } else {
+//                jButtonMarkAbsentPresent.setEnabled(true);
+//            }
+//        } catch (Exception ex) {
+//            System.out.println(ex.toString());
+//        }
+//
+//        /**
+//         * Book Name and Session
+//         */
+//        try {
+////            //JDateChooser Format
+//            SimpleDateFormat comparedate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+//            String d = comparedate.format(jDateChooser2.getDate());
+//            
+//            String query ="select std_book from std_attend where attend_date = '" + d + "' and std_batch= '" + jLabelBatchCodeAbsent.getText() + "' ";
+//            Statement pst=conn.createStatement();
+//            ResultSet rs=pst.executeQuery(query);
+//
+//          while (rs.next()) {
+//                jLabelAbsentbook.setText(rs.getString(1));
+////                jLabelAbsentsession.setText(rs.getString(2));
+//            }
+//        } catch (Exception ex) {
+//            System.out.println(ex.toString());}
+//        
 
     }//GEN-LAST:event_jDateChooser2PropertyChange
 
@@ -708,18 +706,21 @@ public class AttendanceAddScreen extends javax.swing.JInternalFrame {
 
         try {
             
-            CallableStatement call = conn.prepareCall("{ call myproc( ? , ?) }");
-            call.setString(1, d);
-            call.setString(2, jLabelbatchCode.getText());
-            ResultSet rs = call.executeQuery();
+//            CallableStatement call = conn.prepareCall("{ call myproc( ? , ?) }");
+//            call.setString(1, d);
+//            call.setString(2, jLabelbatchCode.getText());
+            String query="select std_id as Student ID ,CONCAT(first_name,' ',Sname),Std_batch from AddStudent";
+            pst=conn.prepareStatement(query);
+            
+            ResultSet rst = pst.executeQuery();
 
             DefaultTableModel dt = (DefaultTableModel) ClassAttendanceTable.getModel();
-            while (rs.next()) {
-                dt.addRow(new Object[]{rs.getString("std_id"), rs.getString("std_name"), rs.getString("std_batch"), false});
+            while (rst.next()) {
+                dt.addRow(new Object[]{rst.getString("std_id"), rst.getString("CONCAT(Firstname,' ',Sname)"), rst.getString("std_batch"), false});
             }
             ClassAttendanceTable.setModel(dt);
 
-        } catch (Exception ex) {
+        } catch (SQLException ex) {
 
             JOptionPane.showMessageDialog(null, "Attendance is already Marked", "Choosen Marked Date", JOptionPane.WARNING_MESSAGE);
         }
@@ -728,9 +729,6 @@ public class AttendanceAddScreen extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_formInternalFrameOpened
 
-    public static void main(String[] args) {
-        new AttendanceAddScreen().setVisible(true);
-    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AbsenteesButton;
     private javax.swing.JLabel ClassAttendanceBG;

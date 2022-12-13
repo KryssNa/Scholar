@@ -34,7 +34,7 @@ public class teacherDashScreen extends javax.swing.JFrame {
         PanelMenu = new javax.swing.JPanel();
         Class = new javax.swing.JButton();
         STUDENTS = new javax.swing.JButton();
-        TEACHERS = new javax.swing.JButton();
+        attendance = new javax.swing.JButton();
         btnNotice = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         btnOnlineAssessment = new javax.swing.JButton();
@@ -122,14 +122,14 @@ public class teacherDashScreen extends javax.swing.JFrame {
             }
         });
 
-        TEACHERS.setBackground(new java.awt.Color(255, 204, 153));
-        TEACHERS.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
-        TEACHERS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/icons8-attendance-33.png"))); // NOI18N
-        TEACHERS.setText("Attendance");
-        TEACHERS.setBorder(null);
-        TEACHERS.addActionListener(new java.awt.event.ActionListener() {
+        attendance.setBackground(new java.awt.Color(255, 204, 153));
+        attendance.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
+        attendance.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/icons8-attendance-33.png"))); // NOI18N
+        attendance.setText("Attendance");
+        attendance.setBorder(null);
+        attendance.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TEACHERSActionPerformed(evt);
+                attendanceActionPerformed(evt);
             }
         });
 
@@ -199,7 +199,7 @@ public class teacherDashScreen extends javax.swing.JFrame {
                             .addComponent(btnNotice, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(STUDENTS, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)
                             .addComponent(Class, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(TEACHERS, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(attendance, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnOnlineAssessment, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(13, Short.MAX_VALUE))
@@ -214,7 +214,7 @@ public class teacherDashScreen extends javax.swing.JFrame {
                 .addGap(35, 35, 35)
                 .addComponent(Class, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(TEACHERS, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(attendance, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnOnlineAssessment, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -286,7 +286,7 @@ public class teacherDashScreen extends javax.swing.JFrame {
                 .addComponent(label7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ProfileLayout.createSequentialGroup()
-                .addContainerGap(47, Short.MAX_VALUE)
+                .addContainerGap(57, Short.MAX_VALUE)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ProfileLayout.createSequentialGroup()
@@ -319,7 +319,7 @@ public class teacherDashScreen extends javax.swing.JFrame {
         );
 
         jDesktopPane1.add(Profile);
-        Profile.setBounds(860, 0, 200, 315);
+        Profile.setBounds(790, 0, 210, 315);
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -390,7 +390,7 @@ public class teacherDashScreen extends javax.swing.JFrame {
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addGap(36, 36, 36)
                                 .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 338, Short.MAX_VALUE))
+                        .addGap(0, 268, Short.MAX_VALUE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -444,7 +444,7 @@ public class teacherDashScreen extends javax.swing.JFrame {
         );
 
         jDesktopPane1.add(jPanel4);
-        jPanel4.setBounds(-5, 0, 870, 610);
+        jPanel4.setBounds(-5, 0, 800, 610);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -573,7 +573,7 @@ public class teacherDashScreen extends javax.swing.JFrame {
         );
 
         jDesktopPane1.add(jPanel1);
-        jPanel1.setBounds(850, 310, 210, 300);
+        jPanel1.setBounds(790, 310, 210, 300);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -583,7 +583,9 @@ public class teacherDashScreen extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(LogoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(PanelMenu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1060, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, 0)
+                .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -638,15 +640,15 @@ this.dispose();        // TODO add your handling code here:
         ttdf.setBounds(0, 0, 1060, 650);
         ttdf.show();
     }//GEN-LAST:event_jButton4ActionPerformed
-    private void TEACHERSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TEACHERSActionPerformed
-        AttendanceAddScreen ttdf = new AttendanceAddScreen();
+    private void attendanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_attendanceActionPerformed
+        newAttendance ttdf = new newAttendance();
         jDesktopPane1.removeAll();
         jDesktopPane1.add(ttdf);
-        ttdf.setBounds(0, 0, 1060, 610);
+        ttdf.setBounds(0, 0, 999, 610);
         ttdf.show();
 
         // TODO add your handling code here:
-    }//GEN-LAST:event_TEACHERSActionPerformed
+    }//GEN-LAST:event_attendanceActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
@@ -697,7 +699,7 @@ this.dispose();        // TODO add your handling code here:
     private javax.swing.JPanel PanelMenu;
     private javax.swing.JPanel Profile;
     private javax.swing.JButton STUDENTS;
-    private javax.swing.JButton TEACHERS;
+    private javax.swing.JButton attendance;
     private javax.swing.JButton btnNotice;
     private javax.swing.JButton btnOnlineAssessment;
     private javax.swing.JButton jButton2;
