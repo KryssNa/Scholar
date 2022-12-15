@@ -373,6 +373,10 @@ public class LoginScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_btnloginActionPerformed
 
     private void btnsignupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsignupActionPerformed
+
+       this.dispose();
+       new SignupScreen().setVisible(true);
+     
         // TODO add your handling code here:
     }//GEN-LAST:event_btnsignupActionPerformed
 
