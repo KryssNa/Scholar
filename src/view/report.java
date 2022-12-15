@@ -48,7 +48,7 @@ DbConnection dbconn;
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(0, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(153, 0, 204));
 
         btn_sendreports.setBackground(new java.awt.Color(204, 255, 204));
         btn_sendreports.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
