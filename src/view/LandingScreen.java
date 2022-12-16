@@ -75,6 +75,7 @@ public class LandingScreen extends javax.swing.JFrame {
             }
         });
 
+        jButton4.setBackground(new java.awt.Color(252, 243, 234));
         jButton4.setText("Our Services");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
