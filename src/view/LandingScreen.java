@@ -52,7 +52,7 @@ public class LandingScreen extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/logo.PNG"))); // NOI18N
 
-        jButton1.setBackground(new java.awt.Color(51, 204, 255));
+        jButton1.setBackground(new java.awt.Color(201, 231, 255));
         jButton1.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         jButton1.setText("Get Started");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -77,7 +77,6 @@ public class LandingScreen extends javax.swing.JFrame {
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(252, 243, 234));
         jButton4.setText("Our Services");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
