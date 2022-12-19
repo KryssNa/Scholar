@@ -129,8 +129,8 @@ DbConnection dbconn;
       PreparedStatement pst=conn.prepareStatement(query);
       int value=pst.executeUpdate();
       if(value>0){
-          System.out.println("Thanks for your feedback.we will work on it soon!");
-          JOptionPane.showMessageDialog(null, "Thanks for your feedback.we will work on it soon!","Success",JOptionPane.INFORMATION_MESSAGE);
+          System.out.println("Thanks for your report.we will work on it soon!");
+          JOptionPane.showMessageDialog(null, "Thanks for your report* .we will work on it soon!","Success",JOptionPane.INFORMATION_MESSAGE);
 
       }else{
           System.out.println("error");
