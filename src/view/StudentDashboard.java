@@ -102,7 +102,7 @@ public class StudentDashboard extends javax.swing.JFrame {
 
         Class.setBackground(new java.awt.Color(255, 204, 153));
         Class.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
-        Class.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/icons8-courses-38.png"))); // NOI18N
+        Class.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/Subject.png"))); // NOI18N
         Class.setText("  Courses   ");
         Class.setBorder(null);
         Class.addActionListener(new java.awt.event.ActionListener() {
@@ -113,7 +113,7 @@ public class StudentDashboard extends javax.swing.JFrame {
 
         STUDENTS.setBackground(new java.awt.Color(255, 204, 153));
         STUDENTS.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
-        STUDENTS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/icons8-download-graph-report-33.png"))); // NOI18N
+        STUDENTS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/report.png"))); // NOI18N
         STUDENTS.setText("  Report      ");
         STUDENTS.setBorder(null);
         STUDENTS.addActionListener(new java.awt.event.ActionListener() {
@@ -124,7 +124,7 @@ public class StudentDashboard extends javax.swing.JFrame {
 
         TEACHERS.setBackground(new java.awt.Color(255, 204, 153));
         TEACHERS.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
-        TEACHERS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/icons8-attendance-33.png"))); // NOI18N
+        TEACHERS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/attendance.png"))); // NOI18N
         TEACHERS.setText("Attendance");
         TEACHERS.setBorder(null);
         TEACHERS.addActionListener(new java.awt.event.ActionListener() {
@@ -146,13 +146,13 @@ public class StudentDashboard extends javax.swing.JFrame {
 
         jButton6.setBackground(new java.awt.Color(255, 204, 153));
         jButton6.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/icons8-settings-35.png"))); // NOI18N
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/icons8-gear-16.png"))); // NOI18N
         jButton6.setText("   Settings  ");
         jButton6.setBorder(null);
 
         btnOnlineAssessment.setBackground(new java.awt.Color(255, 204, 153));
         btnOnlineAssessment.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
-        btnOnlineAssessment.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/icons8-assessment-30.png"))); // NOI18N
+        btnOnlineAssessment.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/assessment.png"))); // NOI18N
         btnOnlineAssessment.setText("Assessment");
         btnOnlineAssessment.setBorder(null);
         btnOnlineAssessment.addActionListener(new java.awt.event.ActionListener() {
@@ -161,7 +161,7 @@ public class StudentDashboard extends javax.swing.JFrame {
             }
         });
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/icons8-home-page-30.png"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/Home.png"))); // NOI18N
 
         jLabel7.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
         jLabel7.setText("Dashboard");
@@ -189,8 +189,9 @@ public class StudentDashboard extends javax.swing.JFrame {
             .addGroup(PanelMenuLayout.createSequentialGroup()
                 .addGroup(PanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelMenuLayout.createSequentialGroup()
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(15, 15, 15)
+                        .addComponent(jLabel6)
+                        .addGap(18, 18, 18)
                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(PanelMenuLayout.createSequentialGroup()
                         .addGap(24, 24, 24)
@@ -207,10 +208,13 @@ public class StudentDashboard extends javax.swing.JFrame {
         PanelMenuLayout.setVerticalGroup(
             PanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelMenuLayout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addGroup(PanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
+                .addGroup(PanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelMenuLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PanelMenuLayout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(29, 29, 29)
                 .addComponent(Class, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -343,7 +347,7 @@ public class StudentDashboard extends javax.swing.JFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 810, Short.MAX_VALUE)
+            .addGap(0, 800, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -351,7 +355,7 @@ public class StudentDashboard extends javax.swing.JFrame {
         );
 
         jDesktopPane1.add(jPanel4);
-        jPanel4.setBounds(-5, 140, 810, 470);
+        jPanel4.setBounds(-5, 140, 800, 470);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -439,8 +443,9 @@ public class StudentDashboard extends javax.swing.JFrame {
                 .addGap(16, 16, 16)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(2, 2, 2)
                         .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(8, 8, 8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -468,15 +473,15 @@ public class StudentDashboard extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(92, Short.MAX_VALUE))
+                .addContainerGap(98, Short.MAX_VALUE))
         );
 
         jDesktopPane1.add(jPanel1);

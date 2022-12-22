@@ -304,6 +304,11 @@ public class LoginScreen extends javax.swing.JFrame {
         btnForgotpass.setText("Forgot Password?");
         btnForgotpass.setBorderPainted(false);
         btnForgotpass.setContentAreaFilled(false);
+        btnForgotpass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnForgotpassActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnForgotpass);
         btnForgotpass.setBounds(390, 247, 180, 60);
 
@@ -399,6 +404,11 @@ public class LoginScreen extends javax.swing.JFrame {
     private void tfusernameMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tfusernameMouseMoved
 testenrollment();        // TODO add your handling code here:
     }//GEN-LAST:event_tfusernameMouseMoved
+
+    private void btnForgotpassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnForgotpassActionPerformed
+        this.dispose();
+        new ForgotPssScreen().setVisible(true);
+    }//GEN-LAST:event_btnForgotpassActionPerformed
 
     /**
      * @param args the command line arguments
