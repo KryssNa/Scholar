@@ -368,7 +368,9 @@ PreparedStatement pst=null;
         student_table.setGridColor(new java.awt.Color(102, 102, 102));
         student_table.setSelectionBackground(new java.awt.Color(0, 255, 102));
         student_table.setSelectionForeground(new java.awt.Color(255, 255, 255));
+        student_table.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(student_table);
+        student_table.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 
         jPanel3.add(jScrollPane1);
         jScrollPane1.setBounds(70, 370, 850, 180);

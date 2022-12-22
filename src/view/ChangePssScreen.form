@@ -114,12 +114,12 @@
                                   <Group type="102" attributes="0">
                                       <Component id="label6" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="jPasswordField3" min="-2" pref="148" max="-2" attributes="0"/>
+                                      <Component id="tf_cpass" min="-2" pref="148" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
                                       <Component id="label3" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jPasswordField2" min="-2" pref="148" max="-2" attributes="0"/>
+                                      <Component id="tf_npass" min="-2" pref="148" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="jSeparator3" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jSeparator2" alignment="0" max="32767" attributes="0"/>
@@ -138,7 +138,7 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel2" min="-2" pref="146" max="-2" attributes="0"/>
-                                          <Component id="jPasswordField1" min="-2" pref="148" max="-2" attributes="0"/>
+                                          <Component id="tf_opass" min="-2" pref="148" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -162,7 +162,7 @@
                       </Group>
                       <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jPasswordField1" min="-2" max="-2" attributes="0"/>
+                          <Component id="tf_opass" min="-2" max="-2" attributes="0"/>
                           <Component id="label4" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -170,13 +170,13 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="label3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jPasswordField2" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="tf_npass" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jSeparator2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="jPasswordField3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tf_cpass" min="-2" max="-2" attributes="0"/>
                           <Component id="label6" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -225,6 +225,9 @@
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator2">
             </Component>
@@ -232,7 +235,7 @@
             </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator4">
             </Component>
-            <Component class="javax.swing.JPasswordField" name="jPasswordField1">
+            <Component class="javax.swing.JPasswordField" name="tf_opass">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -267,7 +270,7 @@
                 <Property name="text" type="java.lang.String" value="Enter New Password :"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JPasswordField" name="jPasswordField2">
+            <Component class="javax.swing.JPasswordField" name="tf_npass">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -288,10 +291,10 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Username :"/>
+                <Property name="text" type="java.lang.String" value="User ID :"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JPasswordField" name="jPasswordField3">
+            <Component class="javax.swing.JPasswordField" name="tf_cpass">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>

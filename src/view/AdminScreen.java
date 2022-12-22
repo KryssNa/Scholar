@@ -1,22 +1,16 @@
 package view;
 
-import com.sun.jdi.connect.spi.Connection;
 import constraint.Constant;
 import database.DbConnection;
 import java.awt.Image;
-import java.awt.Point;
-import java.awt.event.ActionEvent;
-import java.beans.Statement;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JFileChooser;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import net.proteanit.sql.DbUtils;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -28,12 +22,19 @@ import net.proteanit.sql.DbUtils;
  * @author HP
  */
 public class AdminScreen extends javax.swing.JFrame {
+    java.sql.Connection conn;
+DbConnection dbconn;
 
+
+ResultSet rs=null;
+java.sql.Statement st;
+PreparedStatement pst=null;
     /**
      * Creates new form AdminScreen
      */
     public AdminScreen() {
         initComponents();
+        student_table = new javax.swing.JTable();
     }
     
 
@@ -69,6 +70,7 @@ public class AdminScreen extends javax.swing.JFrame {
         jButton8 = new javax.swing.JButton();
         rg_tea = new java.awt.Button();
         rg_std = new java.awt.Button();
+        viewpanel = new javax.swing.JScrollPane();
         Profile = new javax.swing.JPanel();
         jButton9 = new javax.swing.JButton();
         label7 = new java.awt.Label();
@@ -166,6 +168,11 @@ public class AdminScreen extends javax.swing.JFrame {
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/icons8-gear-16.png"))); // NOI18N
         jButton6.setText("Settings");
         jButton6.setBorder(null);
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jButton10.setBackground(new java.awt.Color(255, 204, 153));
         jButton10.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
@@ -347,6 +354,10 @@ public class AdminScreen extends javax.swing.JFrame {
         });
         jPanel5.add(rg_std);
         rg_std.setBounds(60, 330, 310, 220);
+
+        viewpanel.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel5.add(viewpanel);
+        viewpanel.setBounds(0, 40, 790, 280);
 
         jDesktopPane1.add(jPanel5);
         jPanel5.setBounds(0, 0, 800, 620);
@@ -636,143 +647,27 @@ JFileChooser chooser = new JFileChooser();
     }//GEN-LAST:event_jLabel7MouseClicked
 
     private void rg_teaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rg_teaActionPerformed
-        JFrame Frame = new JFrame("View");
-        JLabel spd = new JLabel("Registered Teachers");  
-        
-        JLabel id = new JLabel("Teacher ID:");
-        JLabel txt_teacherid = new JLabel("");
-        
-        JLabel fname = new JLabel("First Name:");
-        JLabel txt_firstname = new JLabel("");
-        
-        JLabel sname = new JLabel("Surname:");
-        JLabel txt_surname = new JLabel("");
-        
-        JLabel dob = new JLabel("Date of birth:");
-        JLabel txt_dob = new JLabel("");
-        
-        JLabel gender = new JLabel("Gender:");
-//        JRadioButton r_male = new JRadioButton("");
-//        JRadioButton r_female = new JRadioButton("");
-//        
-        JLabel email = new JLabel("Email:");
-        JLabel txt_email = new JLabel("");
-        
-        JLabel cnumber = new JLabel("Contact Number:");
-        JLabel txt_tel = new JLabel("");
-        
-        JLabel cname = new JLabel("Course Name:");
-        JLabel txt_course = new JLabel("");
-        
-        JLabel address = new JLabel("Address:");
-        JLabel tf_Address = new JLabel("");
-        
-        JLabel uname = new JLabel("User Name:");
-        JLabel tf_username = new JLabel("");
-        
-        JLabel password = new JLabel("Password:");
-        JLabel tf_pass = new JLabel("");
-        
-        JLabel cpassword = new JLabel("Confirm Password:");
-        JLabel tf_Cpass = new JLabel("");
-        
-        JButton btn = new JButton("Close");
-        
-        spd.setBounds(10,10, 1500,20);
 
-        id.setBounds(10,50, 85,20);
-        txt_teacherid.setBounds(50,50,255,20);
+        ViewTeacherScreen ttdf = new ViewTeacherScreen();
+//        jDesktopPane1.removeAll();
+        jDesktopPane1.add(ttdf);
+        ttdf.setBounds(0, 40, 790, 280);
+        ttdf.show(); 
 
-        fname.setBounds(10,80, 85,20);
-        txt_firstname.setBounds(90,80,85,20);
-
-        sname.setBounds(10,110, 85,20);
-        txt_surname.setBounds(50,110,120,20);
-
-        dob.setBounds(10,140, 85,20);
-        txt_dob.setBounds(100,140,120,20);
-
-        gender.setBounds(10,170, 150,20);
-//        r_male.setBounds(130,170,110,20);
-//        r_female.setBounds(180,170,110,20);
-
-        email.setBounds(10,200, 150,20);
-        txt_email.setBounds(165,200,110,20);
-
-
-        cnumber.setBounds(400,50, 100,20);
-        txt_tel.setBounds(95,340,150,20);
-
-        cname.setBounds(400,80, 100,20);
-        txt_course.setBounds(110,370,150,20);
-
-        address.setBounds(400,110, 85,20);
-        tf_Address.setBounds(50,400,85,20);
-
-        uname.setBounds(400,140, 85,20);
-        tf_username.setBounds(490,340,150,20);
-
-        password.setBounds(400,170, 100,20);
-        tf_pass.setBounds(500,370,150,20);
-
-        cpassword.setBounds(400,200, 120,20);
-        tf_Cpass.setBounds(440,400,85,20);
-        
-        btn.setBounds(400,230,85,20);
-        
-        Frame.add(spd);
-        
-        Frame.add(id);
-        Frame.add(txt_teacherid);
-        
-        Frame.add(fname);
-        Frame.add(txt_firstname);
-        
-        Frame.add(sname);
-        Frame.add(txt_surname);
-        
-        Frame.add(dob);
-        Frame.add(txt_dob);
-        
-        Frame.add(gender);
-//        Frame.add(r_male);
-//        Frame.add(r_female);
-        
-        Frame.add(email);
-        Frame.add(txt_email);
-        
-        Frame.add(cnumber);
-        Frame.add(txt_tel);
-        
-        Frame.add(cname);
-        Frame.add(txt_course);
-        
-        Frame.add(address);
-        Frame.add(tf_Address);
-        
-        Frame.add(uname);
-        Frame.add(tf_username);
-        
-        Frame.add(password);
-        Frame.add(tf_pass);
-        
-        Frame.add(cpassword);
-        Frame.add(tf_Cpass);
-        
-        Frame.setSize(800,470);
-        Frame.setLayout(null);
-        Frame.setVisible(true); 
-        Frame.setBackground(new java.awt.Color(255, 255, 255));
-        Point Center = null;
-        Frame.setLocation(Center);
-        
-        
-        
     }//GEN-LAST:event_rg_teaActionPerformed
 
     private void rg_stdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rg_stdActionPerformed
         // TODO add your handling code here:
+                ViewStudentScreen ttdf = new ViewStudentScreen();
+         viewpanel.removeAll();
+        jDesktopPane1.add(ttdf);
+        ttdf.setBounds(0, 40, 790, 280);
+        ttdf.show(); 
     }//GEN-LAST:event_rg_stdActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+   // TODO add your handling code here:
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     private void ClassActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_ClassActionPerformed
 
@@ -920,7 +815,9 @@ JFileChooser chooser = new JFileChooser();
     private javax.swing.JLabel lblUsername;
     private java.awt.Button rg_std;
     private java.awt.Button rg_tea;
+    private javax.swing.JScrollPane viewpanel;
     // End of variables declaration//GEN-END:variables
+   private javax.swing.JTable student_table;
     private ImageIcon format = null;
     // strin filename
     String filename = null;
