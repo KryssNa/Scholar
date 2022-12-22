@@ -4,6 +4,8 @@
  */
 package view;
 import controller.UserController;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.*;
 
 import models.User;
@@ -21,8 +23,8 @@ public class SignupScreen extends javax.swing.JFrame {
     public SignupScreen() {
         initComponents();
     }
-    
-    
+
+ 
     public void insertuser(){
     
           // TODO add your handling code here:
@@ -30,20 +32,27 @@ public class SignupScreen extends javax.swing.JFrame {
         String email = tfemail.getText();
         String pass = tfpass.getText();
         String cpass = tfCpass.getText();
+         String regex = "^(.+)@(.+)$";  
+        //Compile regular expression to get the pattern  
+        Pattern pattern = Pattern.compile(regex); 
+        Matcher emailMacher = pattern.matcher(email);
         int user_id=0;
-
-        
-        
-        
-        // JOptionPane.showMessageDialog(null, appoint);
+            boolean check = tfemail.isValid();  
         
         if(uname.equals("")||email.equals("")||pass.equals("")||cpass.equals("")){
           JOptionPane.showMessageDialog(null, "Please Fill all the details");
           
         
-    }  else if(!email.endsWith("@gmail.com")){
+    }else if(!uname.trim().matches("^[A-Za-z]\\w{5,29}$")){
+        
+        JOptionPane.showMessageDialog(null, "Username must be of letter, digits or underscore ");
+    }  else if(!emailMacher.matches()){
         JOptionPane.showMessageDialog(rootPane, "Invalid E-mail!!");
     
+    }else if(!pass.trim().matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$")){
+    
+           JOptionPane.showMessageDialog(rootPane, "Password must contail Uppercase, lowercase ,Symbol and number","Invalid Password",JOptionPane.ERROR_MESSAGE);
+         
     }
         else if(!pass.equals(cpass)){
               JOptionPane.showMessageDialog(rootPane, "Password must be same");

@@ -1,10 +1,13 @@
 package view;
 
 import constraint.Constant;
+import database.DbConnection;
 import java.awt.Image;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -19,13 +22,21 @@ import javax.swing.JOptionPane;
  * @author HP
  */
 public class AdminScreen extends javax.swing.JFrame {
+    java.sql.Connection conn;
+DbConnection dbconn;
 
+
+ResultSet rs=null;
+java.sql.Statement st;
+PreparedStatement pst=null;
     /**
      * Creates new form AdminScreen
      */
     public AdminScreen() {
         initComponents();
+        student_table = new javax.swing.JTable();
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -39,19 +50,15 @@ public class AdminScreen extends javax.swing.JFrame {
 
         jPanel8 = new javax.swing.JPanel();
         PanelMenu = new javax.swing.JPanel();
-        Classroom = new javax.swing.JLabel();
-        Subject = new javax.swing.JLabel();
-        Students = new javax.swing.JLabel();
-        Teachers = new javax.swing.JLabel();
-        Events = new javax.swing.JLabel();
         Class = new javax.swing.JButton();
         SUBJECT = new javax.swing.JButton();
         STUDENTS = new javax.swing.JButton();
         TEACHERS = new javax.swing.JButton();
         EVENTS = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
         jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         LogoPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jDesktopPane1 = new javax.swing.JDesktopPane();
@@ -61,9 +68,15 @@ public class AdminScreen extends javax.swing.JFrame {
         label12 = new java.awt.Label();
         jLabel6 = new javax.swing.JLabel();
         jButton8 = new javax.swing.JButton();
+<<<<<<< HEAD
         jButton10 = new javax.swing.JButton();
         button3 = new java.awt.Button();
         button4 = new java.awt.Button();
+=======
+        rg_tea = new java.awt.Button();
+        rg_std = new java.awt.Button();
+        viewpanel = new javax.swing.JScrollPane();
+>>>>>>> d85028ae4a84d7891de62959b4bd73b1c5bc2bd5
         Profile = new javax.swing.JPanel();
         jButton9 = new javax.swing.JButton();
         label7 = new java.awt.Label();
@@ -106,26 +119,9 @@ public class AdminScreen extends javax.swing.JFrame {
         PanelMenu.setBackground(new java.awt.Color(255, 204, 153));
         PanelMenu.setPreferredSize(new java.awt.Dimension(250, 600));
 
-        Classroom.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/Classroom.png"))); // NOI18N
-
-        Subject.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/Subject.png"))); // NOI18N
-        Subject.setMaximumSize(new java.awt.Dimension(30, 30));
-        Subject.setMinimumSize(new java.awt.Dimension(30, 30));
-        Subject.setPreferredSize(new java.awt.Dimension(30, 30));
-
-        Students.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/Students.png"))); // NOI18N
-
-        Teachers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/Teacher.png"))); // NOI18N
-        Teachers.setMaximumSize(new java.awt.Dimension(30, 30));
-        Teachers.setMinimumSize(new java.awt.Dimension(30, 30));
-        Teachers.setPreferredSize(new java.awt.Dimension(30, 30));
-
-        Events.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/Event.png"))); // NOI18N
-        Events.setMaximumSize(new java.awt.Dimension(30, 30));
-        Events.setMinimumSize(new java.awt.Dimension(30, 30));
-        Events.setPreferredSize(new java.awt.Dimension(30, 30));
-
         Class.setBackground(new java.awt.Color(255, 204, 153));
+        Class.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
+        Class.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/Classroom.png"))); // NOI18N
         Class.setText("Class");
         Class.setBorder(null);
         Class.addActionListener(new java.awt.event.ActionListener() {
@@ -135,6 +131,8 @@ public class AdminScreen extends javax.swing.JFrame {
         });
 
         SUBJECT.setBackground(new java.awt.Color(255, 204, 153));
+        SUBJECT.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
+        SUBJECT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/Subject.png"))); // NOI18N
         SUBJECT.setText("Subject");
         SUBJECT.setBorder(null);
         SUBJECT.addActionListener(new java.awt.event.ActionListener() {
@@ -144,6 +142,8 @@ public class AdminScreen extends javax.swing.JFrame {
         });
 
         STUDENTS.setBackground(new java.awt.Color(255, 204, 153));
+        STUDENTS.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
+        STUDENTS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/Students.png"))); // NOI18N
         STUDENTS.setText("Students");
         STUDENTS.setBorder(null);
         STUDENTS.addActionListener(new java.awt.event.ActionListener() {
@@ -153,6 +153,8 @@ public class AdminScreen extends javax.swing.JFrame {
         });
 
         TEACHERS.setBackground(new java.awt.Color(255, 204, 153));
+        TEACHERS.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
+        TEACHERS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/Teacher.png"))); // NOI18N
         TEACHERS.setText("Teachers");
         TEACHERS.setBorder(null);
         TEACHERS.addActionListener(new java.awt.event.ActionListener() {
@@ -162,96 +164,94 @@ public class AdminScreen extends javax.swing.JFrame {
         });
 
         EVENTS.setBackground(new java.awt.Color(255, 204, 153));
+        EVENTS.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
+        EVENTS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/Event.png"))); // NOI18N
         EVENTS.setText("Events");
         EVENTS.setBorder(null);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/icons8-gear-16.png"))); // NOI18N
-
         jButton6.setBackground(new java.awt.Color(255, 204, 153));
+        jButton6.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/icons8-gear-16.png"))); // NOI18N
         jButton6.setText("Settings");
         jButton6.setBorder(null);
-
-        jButton7.setText("Exit");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                jButton6ActionPerformed(evt);
             }
         });
+
+        jButton10.setBackground(new java.awt.Color(255, 204, 153));
+        jButton10.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
+        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/icons8-close-window-30.png"))); // NOI18N
+        jButton10.setText("     Exit     ");
+        jButton10.setBorder(null);
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
+        jLabel7.setText("Dashboard");
+        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel7MouseClicked(evt);
+            }
+        });
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/Home.png"))); // NOI18N
 
         javax.swing.GroupLayout PanelMenuLayout = new javax.swing.GroupLayout(PanelMenu);
         PanelMenu.setLayout(PanelMenuLayout);
         PanelMenuLayout.setHorizontalGroup(
             PanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelMenuLayout.createSequentialGroup()
-                .addGroup(PanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelMenuLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(PanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(PanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(PanelMenuLayout.createSequentialGroup()
-                                    .addComponent(Subject, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(SUBJECT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(PanelMenuLayout.createSequentialGroup()
-                                    .addGroup(PanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(Teachers, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(Students, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(Classroom, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(PanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addGroup(PanelMenuLayout.createSequentialGroup()
-                                            .addGap(12, 12, 12)
-                                            .addComponent(Class, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addGroup(PanelMenuLayout.createSequentialGroup()
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addGroup(PanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(TEACHERS, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(STUDENTS, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                            .addGroup(PanelMenuLayout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addGroup(PanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(PanelMenuLayout.createSequentialGroup()
-                                        .addComponent(Events, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(EVENTS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addGroup(PanelMenuLayout.createSequentialGroup()
-                                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE))))))
-                    .addGroup(PanelMenuLayout.createSequentialGroup()
-                        .addGap(65, 65, 65)
-                        .addComponent(jButton7)))
-                .addGap(58, 67, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelMenuLayout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addGroup(PanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(EVENTS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(65, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelMenuLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(PanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(Class, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SUBJECT, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(STUDENTS, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TEACHERS, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(65, 65, 65))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelMenuLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29))
         );
         PanelMenuLayout.setVerticalGroup(
             PanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelMenuLayout.createSequentialGroup()
-                .addGap(66, 66, 66)
+                .addContainerGap()
                 .addGroup(PanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Classroom, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Class, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE))
+                    .addGroup(PanelMenuLayout.createSequentialGroup()
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelMenuLayout.createSequentialGroup()
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)))
+                .addComponent(Class, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(SUBJECT, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(STUDENTS, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(TEACHERS, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(PanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Subject, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SUBJECT, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(PanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Students, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(STUDENTS, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(PanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Teachers, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TEACHERS, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(PanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(EVENTS, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Events, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(PanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37)
-                .addComponent(jButton7)
-                .addContainerGap())
+                .addComponent(EVENTS, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46))
         );
 
         LogoPanel.setBackground(new java.awt.Color(255, 255, 255));
@@ -349,24 +349,34 @@ public class AdminScreen extends javax.swing.JFrame {
         jPanel5.add(jPanel4);
         jPanel4.setBounds(0, 0, 790, 40);
 
-        button3.setBackground(new java.awt.Color(153, 255, 255));
-        button3.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        button3.setLabel("View Registered Students");
-        button3.setName("View "); // NOI18N
-        jPanel5.add(button3);
-        button3.setBounds(60, 330, 310, 220);
-
-        button4.setBackground(new java.awt.Color(153, 255, 255));
-        button4.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        button4.setLabel("View Registered Teachers");
-        button4.setName("View "); // NOI18N
-        button4.addActionListener(new java.awt.event.ActionListener() {
+        rg_tea.setActionCommand("View Registered Teachers");
+        rg_tea.setBackground(new java.awt.Color(153, 255, 255));
+        rg_tea.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        rg_tea.setLabel("View Registered Teachers");
+        rg_tea.setName("View "); // NOI18N
+        rg_tea.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button4ActionPerformed(evt);
+                rg_teaActionPerformed(evt);
             }
         });
-        jPanel5.add(button4);
-        button4.setBounds(450, 330, 310, 220);
+        jPanel5.add(rg_tea);
+        rg_tea.setBounds(410, 330, 310, 220);
+
+        rg_std.setBackground(new java.awt.Color(153, 255, 255));
+        rg_std.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        rg_std.setLabel("View Registered Students");
+        rg_std.setName("View "); // NOI18N
+        rg_std.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rg_stdActionPerformed(evt);
+            }
+        });
+        jPanel5.add(rg_std);
+        rg_std.setBounds(60, 330, 310, 220);
+
+        viewpanel.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel5.add(viewpanel);
+        viewpanel.setBounds(0, 40, 790, 280);
 
         jDesktopPane1.add(jPanel5);
         jPanel5.setBounds(0, 0, 800, 620);
@@ -701,7 +711,8 @@ new CalenderScreen().setVisible(true);
     }// GEN-LAST:event_TEACHERSActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton8ActionPerformed
-        new NoticeScreen().setVisible(true); // TODO add your handling code here:
+        new NoticeScreen().setVisible(true);
+        // TODO add your handling code here:
     }// GEN-LAST:event_jButton8ActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {// GEN-FIRST:event_formWindowOpened
@@ -754,20 +765,13 @@ new CalenderScreen().setVisible(true);
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Class;
-    private javax.swing.JLabel Classroom;
     private javax.swing.JButton EVENTS;
-    private javax.swing.JLabel Events;
     private javax.swing.JPanel LogoPanel;
     private javax.swing.JPanel PanelMenu;
     private javax.swing.JPanel Profile;
     private javax.swing.JButton STUDENTS;
     private javax.swing.JButton SUBJECT;
-    private javax.swing.JLabel Students;
-    private javax.swing.JLabel Subject;
     private javax.swing.JButton TEACHERS;
-    private javax.swing.JLabel Teachers;
-    private java.awt.Button button3;
-    private java.awt.Button button4;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
@@ -775,14 +779,14 @@ new CalenderScreen().setVisible(true);
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -799,7 +803,11 @@ new CalenderScreen().setVisible(true);
     private java.awt.Label label8;
     private java.awt.Label label9;
     private javax.swing.JLabel lblUsername;
+    private java.awt.Button rg_std;
+    private java.awt.Button rg_tea;
+    private javax.swing.JScrollPane viewpanel;
     // End of variables declaration//GEN-END:variables
+   private javax.swing.JTable student_table;
     private ImageIcon format = null;
     // strin filename
     String filename = null;
