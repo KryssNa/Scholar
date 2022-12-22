@@ -68,15 +68,9 @@ PreparedStatement pst=null;
         label12 = new java.awt.Label();
         jLabel6 = new javax.swing.JLabel();
         jButton8 = new javax.swing.JButton();
-<<<<<<< HEAD
-        jButton10 = new javax.swing.JButton();
-        button3 = new java.awt.Button();
-        button4 = new java.awt.Button();
-=======
         rg_tea = new java.awt.Button();
         rg_std = new java.awt.Button();
         viewpanel = new javax.swing.JScrollPane();
->>>>>>> d85028ae4a84d7891de62959b4bd73b1c5bc2bd5
         Profile = new javax.swing.JPanel();
         jButton9 = new javax.swing.JButton();
         label7 = new java.awt.Label();
@@ -295,13 +289,6 @@ PreparedStatement pst=null;
             }
         });
 
-        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/icons8-calendar-20.png"))); // NOI18N
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -311,9 +298,7 @@ PreparedStatement pst=null;
                 .addComponent(label12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(2, 2, 2)
                 .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 245, Short.MAX_VALUE)
-                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 289, Short.MAX_VALUE)
                 .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -323,13 +308,9 @@ PreparedStatement pst=null;
                     .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
                     .addComponent(label12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                 .addContainerGap())
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -654,10 +635,39 @@ JFileChooser chooser = new JFileChooser();
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-this.dispose();
-new CalenderScreen().setVisible(true);
-// TODO add your handling code here:
+        this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
+        jDesktopPane1.removeAll();
+        jDesktopPane1.add(jPanel1);
+        jDesktopPane1.add(Profile);
+        jDesktopPane1.add(jPanel4);
+        jDesktopPane1.show();       // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel7MouseClicked
+
+    private void rg_teaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rg_teaActionPerformed
+
+        ViewTeacherScreen ttdf = new ViewTeacherScreen();
+//        jDesktopPane1.removeAll();
+        jDesktopPane1.add(ttdf);
+        ttdf.setBounds(0, 40, 790, 280);
+        ttdf.show(); 
+
+    }//GEN-LAST:event_rg_teaActionPerformed
+
+    private void rg_stdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rg_stdActionPerformed
+        // TODO add your handling code here:
+                ViewStudentScreen ttdf = new ViewStudentScreen();
+         viewpanel.removeAll();
+        jDesktopPane1.add(ttdf);
+        ttdf.setBounds(0, 40, 790, 280);
+        ttdf.show(); 
+    }//GEN-LAST:event_rg_stdActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+   // TODO add your handling code here:
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     private void ClassActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_ClassActionPerformed
 
