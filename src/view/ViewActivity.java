@@ -39,7 +39,7 @@ PreparedStatement pst=null;
         
         conn=DbConnection.getconnection();
 
-        String sql ="select date, status, Added_by, Updated_by from Activites ";
+        String sql ="select date, status, Added_by, Updated_by from Activities ";
         
         pst=conn.prepareStatement(sql);
         rs=pst.executeQuery();
