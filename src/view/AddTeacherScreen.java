@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
 package view;
+import constraint.Constant;
 import controller.TeacherController;
 import database.DbConnection;
 import net.proteanit.sql.DbUtils;
@@ -531,8 +532,8 @@ PreparedStatement pst=null;
                 String value1 = dateString;
 
                 try{
-
-                    String reg= "insert into Admin_Audit ( date, status) values ('"+value0+" / "+value1+"','Added Record')";
+                    String usern=(Constant.loggedInUser.getuserUsername());
+                    String reg= "insert into Activities ( date, status,Added_by) values ('"+value0+" / "+value1+"','Added Record','"+usern+"')";
                     pst=conn.prepareStatement(reg);
                     pst.execute();
 
@@ -622,7 +623,8 @@ cleartable();
             String values = dateString;
 
             try{
-                String reg= "insert into Admin_Audit (emp_id, date, status) values ('','"+value0+" / "+values+"','Updated Record')";
+                String usernaam=(Constant.loggedInUser.getuserUsername());
+                String reg= "insert into Activities ( date, status,Updated_by) values ('"+value0+" / "+values+"','Update Record','"+usernaam+"')";
                 pst=conn.prepareStatement(reg);
                 pst.execute();
             }
@@ -664,7 +666,9 @@ cleartable();
             String value1 = dateString;
 
             try{
-                String reg= "insert into Admin_Audit ( date, status) values ("+value0+" / "+value1+"','Deleted Record')";
+               
+                String usernaam=(Constant.loggedInUser.getuserUsername());
+                String reg= "insert into Activities ( date, status,Added_by) values ('"+value0+" / "+value1+"','Deleted Record','"+usernaam+"')";
                 pst=conn.prepareStatement(reg);
                 pst.execute();
             }
