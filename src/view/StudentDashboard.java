@@ -736,8 +736,8 @@ new Class_Client().setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-       ChangingPassScreen ttdf = new ChangingPassScreen();
-//        jDesktopPane1.removeAll();
+       SettingScreen ttdf = new SettingScreen();
+        jDesktopPane1.removeAll();
         jDesktopPane1.add(ttdf);
         ttdf.setBounds(0, 40, 1060, 650);
         ttdf.show();

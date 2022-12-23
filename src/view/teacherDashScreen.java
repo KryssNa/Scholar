@@ -158,6 +158,11 @@ public class teacherDashScreen extends javax.swing.JFrame {
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/icons8-gear-16.png"))); // NOI18N
         jButton6.setText("   Settings  ");
         jButton6.setBorder(null);
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         btnOnlineAssessment.setBackground(new java.awt.Color(255, 204, 153));
         btnOnlineAssessment.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
@@ -739,6 +744,14 @@ this.dispose();
 new Class_Server().setVisible(true);
 // TODO add your handling code here:
     }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+       SettingScreen ttdf = new SettingScreen();
+        jDesktopPane1.removeAll();
+        jDesktopPane1.add(ttdf);
+        ttdf.setBounds(0, 40, 1060, 650);
+        ttdf.show();
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments
