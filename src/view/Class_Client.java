@@ -45,7 +45,7 @@ public class Class_Client extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
-        jLabel1.setText("Client");
+        jLabel1.setText("Student");
 
         tfClientsend.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,6 +111,7 @@ public class Class_Client extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void tfClientsendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfClientsendActionPerformed

@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
 package view;
+import constraint.Constant;
 import controller.TeacherController;
 import database.DbConnection;
 import net.proteanit.sql.DbUtils;
@@ -368,7 +369,9 @@ PreparedStatement pst=null;
         student_table.setGridColor(new java.awt.Color(102, 102, 102));
         student_table.setSelectionBackground(new java.awt.Color(0, 255, 102));
         student_table.setSelectionForeground(new java.awt.Color(255, 255, 255));
+        student_table.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(student_table);
+        student_table.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 
         jPanel3.add(jScrollPane1);
         jScrollPane1.setBounds(70, 370, 850, 180);
@@ -529,8 +532,8 @@ PreparedStatement pst=null;
                 String value1 = dateString;
 
                 try{
-
-                    String reg= "insert into Admin_Audit ( date, status) values ('"+value0+" / "+value1+"','Added Record')";
+                    String usern=(Constant.loggedInUser.getuserUsername());
+                    String reg= "insert into Activities ( date, status,Added_by) values ('"+value0+" / "+value1+"','Added Record','"+usern+"')";
                     pst=conn.prepareStatement(reg);
                     pst.execute();
 
@@ -620,7 +623,8 @@ cleartable();
             String values = dateString;
 
             try{
-                String reg= "insert into Admin_Audit (emp_id, date, status) values ('','"+value0+" / "+values+"','Updated Record')";
+                String usernaam=(Constant.loggedInUser.getuserUsername());
+                String reg= "insert into Activities ( date, status,Updated_by) values ('"+value0+" / "+values+"','Update Record','"+usernaam+"')";
                 pst=conn.prepareStatement(reg);
                 pst.execute();
             }
@@ -662,7 +666,9 @@ cleartable();
             String value1 = dateString;
 
             try{
-                String reg= "insert into Admin_Audit ( date, status) values ("+value0+" / "+value1+"','Deleted Record')";
+               
+                String usernaam=(Constant.loggedInUser.getuserUsername());
+                String reg= "insert into Activities ( date, status,Added_by) values ('"+value0+" / "+value1+"','Deleted Record','"+usernaam+"')";
                 pst=conn.prepareStatement(reg);
                 pst.execute();
             }

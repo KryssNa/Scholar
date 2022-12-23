@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package view;
 
 import java.util.regex.Matcher;
@@ -10,10 +6,6 @@ import java.util.regex.Pattern;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-/**
- *
- * @author Iqbal-Asi
- */
 public class Validation {
     public static String validateData(String a, String b){
         Pattern p = Pattern.compile(a);
@@ -31,20 +23,18 @@ public class Validation {
         Pattern p = Pattern.compile(a);
         Matcher m = p.matcher(b);
         if (m.matches()){
-            Icon icon = (new ImageIcon("view.Project_Images/validdation-smiley.jpg"));
+            Icon icon = (new ImageIcon("/view/icon/smile.png"));
             String image = icon.toString();
             
             return icon;
         }
         else {
-            Icon icon = (new ImageIcon("view.Project_Images/validdation-sad.jpg"));
+            Icon icon = (new ImageIcon("/view/icon/cry.png"));
             String image = icon.toString();
             
             return icon;
         }
         
     }
-    
-    
-        
+      
 }
