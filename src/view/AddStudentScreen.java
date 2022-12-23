@@ -528,7 +528,7 @@ PreparedStatement pst=null;
                     //                JOptionPane.showMessageDialog(rootPane, e);
                     System.out.println("SQL Error "+e);
 
-                }}
+                }
 
                 Date currentDate = GregorianCalendar.getInstance().getTime();
                 DateFormat df = DateFormat.getDateInstance();
@@ -543,7 +543,7 @@ PreparedStatement pst=null;
 
                 try{
 
-                    String reg= "insert into Admin_Audit ( date, status) values ('"+value0+" / "+value1+"','Added Record')";
+                    String reg= "insert into Activitiew ( date, status) values ('"+value0+" / "+value1+"','Added Record')";
                     pst=conn.prepareStatement(reg);
                     pst.execute();
 
@@ -566,7 +566,7 @@ PreparedStatement pst=null;
 
                     }
                 }
-            }
+            }}
     }//GEN-LAST:event_cmd_saveActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

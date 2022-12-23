@@ -35,7 +35,7 @@ public class UpdateProfileScreen extends javax.swing.JInternalFrame {
         tf_password.setText(Constant.loggedInTeacher.getPassword());
         lblcourse.setText(Constant.loggedInTeacher.getCourse_name());
         tf_dob.setText(Constant.loggedInTeacher.getDob());
-        tf_email.setText(Constant.loggedInTeacher.getEmail());
+        tf_dob.setText(Constant.loggedInTeacher.getEmail());
         lblgender.setText(Constant.loggedInTeacher.getGender());
     
     }
@@ -62,7 +62,7 @@ public class UpdateProfileScreen extends javax.swing.JInternalFrame {
         label7 = new java.awt.Label();
         tf_Sname = new javax.swing.JTextField();
         tf_dob = new javax.swing.JTextField();
-        tf_email = new javax.swing.JTextField();
+        tf_email1 = new javax.swing.JTextField();
         tf_Fname = new javax.swing.JTextField();
         label8 = new java.awt.Label();
         label9 = new java.awt.Label();
@@ -99,29 +99,33 @@ public class UpdateProfileScreen extends javax.swing.JInternalFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(1060, 650));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        tf_address.setBackground(new java.awt.Color(0, 0, 0));
         tf_address.setFont(new java.awt.Font("Lucida Calligraphy", 1, 15)); // NOI18N
-        tf_address.setForeground(new java.awt.Color(153, 0, 0));
+        tf_address.setForeground(new java.awt.Color(255, 51, 51));
         tf_address.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         tf_address.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
         tf_address.setDisabledTextColor(new java.awt.Color(255, 255, 255));
         jPanel1.add(tf_address, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 243, 190, 30));
 
+        tf_username.setBackground(new java.awt.Color(0, 0, 0));
         tf_username.setFont(new java.awt.Font("Lucida Calligraphy", 1, 15)); // NOI18N
-        tf_username.setForeground(new java.awt.Color(153, 0, 0));
+        tf_username.setForeground(new java.awt.Color(255, 51, 51));
         tf_username.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         tf_username.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
         tf_username.setDisabledTextColor(new java.awt.Color(255, 255, 255));
         jPanel1.add(tf_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 303, 190, 30));
 
+        tf_password.setBackground(new java.awt.Color(0, 0, 0));
         tf_password.setFont(new java.awt.Font("Lucida Calligraphy", 1, 15)); // NOI18N
-        tf_password.setForeground(new java.awt.Color(153, 0, 0));
+        tf_password.setForeground(new java.awt.Color(255, 51, 51));
         tf_password.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         tf_password.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
         tf_password.setDisabledTextColor(new java.awt.Color(255, 255, 255));
         jPanel1.add(tf_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 353, 190, 30));
 
+        tf_contact.setBackground(new java.awt.Color(0, 0, 0));
         tf_contact.setFont(new java.awt.Font("Lucida Calligraphy", 1, 15)); // NOI18N
-        tf_contact.setForeground(new java.awt.Color(153, 0, 0));
+        tf_contact.setForeground(new java.awt.Color(255, 51, 51));
         tf_contact.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         tf_contact.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
         tf_contact.setDisabledTextColor(new java.awt.Color(255, 255, 255));
@@ -154,7 +158,7 @@ public class UpdateProfileScreen extends javax.swing.JInternalFrame {
         label4.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
         label4.setForeground(new java.awt.Color(0, 255, 51));
         label4.setText("D.O.B:");
-        jPanel1.add(label4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 240, 80, 23));
+        jPanel1.add(label4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 243, 80, 30));
 
         label5.setBackground(java.awt.Color.black);
         label5.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
@@ -168,8 +172,9 @@ public class UpdateProfileScreen extends javax.swing.JInternalFrame {
         label7.setText("Gender:");
         jPanel1.add(label7, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, 90, 23));
 
+        tf_Sname.setBackground(new java.awt.Color(0, 0, 0));
         tf_Sname.setFont(new java.awt.Font("Lucida Calligraphy", 1, 15)); // NOI18N
-        tf_Sname.setForeground(new java.awt.Color(153, 0, 0));
+        tf_Sname.setForeground(new java.awt.Color(255, 51, 51));
         tf_Sname.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         tf_Sname.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
         tf_Sname.setDisabledTextColor(new java.awt.Color(255, 255, 255));
@@ -180,22 +185,25 @@ public class UpdateProfileScreen extends javax.swing.JInternalFrame {
         });
         jPanel1.add(tf_Sname, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 190, 90, 30));
 
-        tf_dob.setFont(new java.awt.Font("Lucida Calligraphy", 1, 15)); // NOI18N
-        tf_dob.setForeground(new java.awt.Color(153, 0, 0));
+        tf_dob.setBackground(java.awt.Color.black);
+        tf_dob.setFont(new java.awt.Font("Lucida Calligraphy", 1, 12)); // NOI18N
+        tf_dob.setForeground(new java.awt.Color(255, 51, 51));
         tf_dob.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         tf_dob.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
         tf_dob.setDisabledTextColor(new java.awt.Color(255, 255, 255));
-        jPanel1.add(tf_dob, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 233, 190, 30));
+        jPanel1.add(tf_dob, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 240, 190, 30));
 
-        tf_email.setFont(new java.awt.Font("Lucida Calligraphy", 1, 15)); // NOI18N
-        tf_email.setForeground(new java.awt.Color(153, 0, 0));
-        tf_email.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        tf_email.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
-        tf_email.setDisabledTextColor(new java.awt.Color(255, 255, 255));
-        jPanel1.add(tf_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 293, 190, 30));
+        tf_email1.setBackground(new java.awt.Color(0, 0, 0));
+        tf_email1.setFont(new java.awt.Font("Lucida Calligraphy", 1, 12)); // NOI18N
+        tf_email1.setForeground(new java.awt.Color(255, 51, 51));
+        tf_email1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        tf_email1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
+        tf_email1.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        jPanel1.add(tf_email1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 288, 190, 30));
 
+        tf_Fname.setBackground(new java.awt.Color(0, 0, 0));
         tf_Fname.setFont(new java.awt.Font("Lucida Calligraphy", 1, 15)); // NOI18N
-        tf_Fname.setForeground(new java.awt.Color(153, 0, 0));
+        tf_Fname.setForeground(new java.awt.Color(255, 51, 51));
         tf_Fname.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         tf_Fname.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
         tf_Fname.setDisabledTextColor(new java.awt.Color(255, 255, 255));
@@ -311,7 +319,7 @@ public class UpdateProfileScreen extends javax.swing.JInternalFrame {
                     String fname=tf_Fname.getText();
                     String sname=tf_Sname.getText();
                     String address=tf_address.getText();
-                    String email=tf_email.getText();
+                    String email=tf_dob.getText();
                     String contact=tf_contact.getText();
                     String password=tf_password.getText();
                     String username=tf_username.getText();
@@ -361,7 +369,7 @@ public class UpdateProfileScreen extends javax.swing.JInternalFrame {
         tf_password.setText(Constant.loggedInTeacher.getPassword());
         lblcourse.setText(Constant.loggedInTeacher.getCourse_name());
         tf_dob.setText(Constant.loggedInTeacher.getDob());
-        tf_email.setText(Constant.loggedInTeacher.getEmail());
+        tf_dob.setText(Constant.loggedInTeacher.getEmail());
         lblgender.setText(Constant.loggedInTeacher.getGender());
         
     
@@ -391,7 +399,7 @@ public class UpdateProfileScreen extends javax.swing.JInternalFrame {
     private javax.swing.JTextField tf_address;
     private javax.swing.JTextField tf_contact;
     private javax.swing.JTextField tf_dob;
-    private javax.swing.JTextField tf_email;
+    private javax.swing.JTextField tf_email1;
     private javax.swing.JTextField tf_password;
     private javax.swing.JTextField tf_username;
     // End of variables declaration//GEN-END:variables

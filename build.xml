@@ -10,6 +10,11 @@
 <project name="Scholar" default="default" basedir=".">
     <description>Builds, tests, and runs the project Scholar.</description>
     <import file="nbproject/build-impl.xml"/>
+    <dependency>
+  <groupId>com.twilio.sdk</groupId>
+  <artifactId>twilio</artifactId>
+  <version>7.54.2</version>
+</dependency>
     <!--
 
     There exist several targets which are by default empty and which can be 

@@ -9,7 +9,7 @@ package view;
  * @author HP
  */
 public class ForgotPssScreen extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form ForgotPssScreen
      */
