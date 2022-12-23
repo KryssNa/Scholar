@@ -683,7 +683,7 @@ JFileChooser chooser = new JFileChooser();
         LogoutScreen ttdf = new LogoutScreen();
         jDesktopPane1.removeAll();
         jDesktopPane1.add(ttdf);
-        ttdf.setBounds(0, 0, 1060, 650);
+        ttdf.setBounds(0, 0, 1020, 610);
         ttdf.show();
     }//GEN-LAST:event_jButton6ActionPerformed
 

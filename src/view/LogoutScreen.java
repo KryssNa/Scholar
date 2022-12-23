@@ -28,21 +28,16 @@ public class LogoutScreen extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         PanelMenu = new javax.swing.JPanel();
         Class = new javax.swing.JButton();
-        btnNotice = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jButton8 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(1060, 650));
 
-        jPanel1.setPreferredSize(new java.awt.Dimension(1060, 650));
-
-        PanelMenu.setBackground(new java.awt.Color(204, 204, 204));
+        PanelMenu.setBackground(new java.awt.Color(0, 0, 0));
         PanelMenu.setFont(new java.awt.Font("Lucida Calligraphy", 0, 12)); // NOI18N
         PanelMenu.setPreferredSize(new java.awt.Dimension(250, 600));
+        PanelMenu.setLayout(null);
 
         Class.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
         Class.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/password c.png"))); // NOI18N
@@ -53,98 +48,24 @@ public class LogoutScreen extends javax.swing.JInternalFrame {
                 ClassActionPerformed(evt);
             }
         });
+        PanelMenu.add(Class);
+        Class.setBounds(320, 110, 162, 30);
 
-        btnNotice.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
-        btnNotice.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/kkkkk.png"))); // NOI18N
-        btnNotice.setText("Logout");
-        btnNotice.setBorder(null);
-        btnNotice.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNoticeActionPerformed(evt);
-            }
-        });
-
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/icons8-gear-16.png"))); // NOI18N
-
-        jLabel7.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
-        jLabel7.setText("Settings");
-        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel7MouseClicked(evt);
-            }
-        });
-
-        jButton8.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
-        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/icons8-close-window-30.png"))); // NOI18N
-        jButton8.setText("     Exit     ");
-        jButton8.setBorder(null);
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout PanelMenuLayout = new javax.swing.GroupLayout(PanelMenu);
-        PanelMenu.setLayout(PanelMenuLayout);
-        PanelMenuLayout.setHorizontalGroup(
-            PanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelMenuLayout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addGroup(PanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(PanelMenuLayout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(Class, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnNotice, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(13, Short.MAX_VALUE))
-        );
-        PanelMenuLayout.setVerticalGroup(
-            PanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelMenuLayout.createSequentialGroup()
-                .addGroup(PanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelMenuLayout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(PanelMenuLayout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addComponent(Class, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnNotice, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 269, Short.MAX_VALUE)
-                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(177, 177, 177))
-        );
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(PanelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 883, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(PanelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 616, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/FrameBG.png"))); // NOI18N
+        PanelMenu.add(jLabel1);
+        jLabel1.setBounds(0, 0, 1040, 630);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1073, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(PanelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 998, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 591, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(PanelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -155,53 +76,10 @@ public class LogoutScreen extends javax.swing.JInternalFrame {
         //        new OpenRoom().setVisible(true);
     }//GEN-LAST:event_ClassActionPerformed
 
-    private void btnNoticeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNoticeActionPerformed
-       JOptionPane.showConfirmDialog(null, "Are you sure you want to Logout?","Log Out",JOptionPane.YES_NO_OPTION);
-        int result = 0;
-       if(result == JOptionPane.YES_OPTION){
-           new LoginScreen.setVisible(true);
-       }else if (result == JOptionPane.NO_OPTION){
-       this.dispose();
-       }
-        
-
-//int result = JOptionPane.showConfirmDialog(frame,"Sure? You want to exit?", "Swing Tester",
-//               JOptionPane.YES_NO_OPTION,
-//               JOptionPane.QUESTION_MESSAGE);
-//            if(result == JOptionPane.YES_OPTION){
-//               label.setText("You selected: Yes");
-//            }else if (result == JOptionPane.NO_OPTION){
-//               label.setText("You selected: No");
-//            }else {
-//               label.setText("None selected");
-//            }
-//         }
-//      });
-//       
-    }//GEN-LAST:event_btnNoticeActionPerformed
-
-    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
-//        jDesktopPane1.removeAll();
-//        noticepanel.removeAll();
-//        jDesktopPane1.add(jPanel1);
-//        jDesktopPane1.add(noticepanel);
-//        jDesktopPane1.add(Profile);
-//        jDesktopPane1.add(jPanel4);
-//        jDesktopPane1.show();       // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel7MouseClicked
-
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        this.dispose();        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Class;
     private javax.swing.JPanel PanelMenu;
-    private javax.swing.JButton btnNotice;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
