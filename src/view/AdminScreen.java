@@ -649,7 +649,7 @@ JFileChooser chooser = new JFileChooser();
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        this.dispose();        // TODO add your handling code here:
+        new CalenderScreen().setVisible(true);       // TODO add your handling code here:
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
@@ -683,7 +683,7 @@ JFileChooser chooser = new JFileChooser();
         LogoutScreen ttdf = new LogoutScreen();
         jDesktopPane1.removeAll();
         jDesktopPane1.add(ttdf);
-        ttdf.setBounds(0, 0, 1060, 650);
+        ttdf.setBounds(0, 0, 1020, 610);
         ttdf.show();
     }//GEN-LAST:event_jButton6ActionPerformed
 
