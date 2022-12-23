@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
  *
  * @author ACER
  */
-public class report extends javax.swing.JFrame {
+public class commentt extends javax.swing.JFrame {
     
 Connection conn;
 DbConnection dbconn;
@@ -22,7 +22,7 @@ DbConnection dbconn;
     /**
      * Creates new form notice
      */
-    public report() {
+    public commentt() {
         initComponents();
         
         
@@ -53,7 +53,7 @@ DbConnection dbconn;
         btn_sendreports.setBackground(new java.awt.Color(204, 255, 204));
         btn_sendreports.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
         btn_sendreports.setForeground(new java.awt.Color(255, 51, 51));
-        btn_sendreports.setText("Send");
+        btn_sendreports.setText("POST");
         btn_sendreports.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_sendreportsActionPerformed(evt);
@@ -63,7 +63,7 @@ DbConnection dbconn;
         jLabel1.setFont(new java.awt.Font("Lucida Calligraphy", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 102, 102));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Report");
+        jLabel1.setText("Add comment");
 
         tf_reports.setColumns(20);
         tf_reports.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
@@ -163,14 +163,18 @@ DbConnection dbconn;
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(report.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(commentt.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(report.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(commentt.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(report.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(commentt.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(report.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(commentt.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -179,7 +183,7 @@ DbConnection dbconn;
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new report().setVisible(true);
+                new commentt().setVisible(true);
             }
         });
     }

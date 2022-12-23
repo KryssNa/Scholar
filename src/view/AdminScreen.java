@@ -216,7 +216,7 @@ PreparedStatement pst=null;
                     .addComponent(TEACHERS, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(65, 65, 65))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelMenuLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(45, Short.MAX_VALUE)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -649,7 +649,7 @@ JFileChooser chooser = new JFileChooser();
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        this.dispose();        // TODO add your handling code here:
+        new CalenderScreen().setVisible(true);       // TODO add your handling code here:
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
@@ -680,7 +680,11 @@ JFileChooser chooser = new JFileChooser();
     }//GEN-LAST:event_rg_stdActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-   // TODO add your handling code here:
+        SettingScreen ttdf = new SettingScreen();
+        jDesktopPane1.removeAll();
+        jDesktopPane1.add(ttdf);
+        ttdf.setBounds(0, 0, 1020, 610);
+        ttdf.show();
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void ClassActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_ClassActionPerformed

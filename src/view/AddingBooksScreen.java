@@ -113,6 +113,11 @@ DbConnection dbconn;
         jButton1.setBackground(new java.awt.Color(255, 204, 153));
         jButton1.setText("Home");
         jButton1.setBorder(null);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -290,7 +295,7 @@ DbConnection dbconn;
         );
 
         btn_submit.setBackground(new java.awt.Color(204, 204, 204));
-        btn_submit.setText("Submit");
+        btn_submit.setText("Add");
         btn_submit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_submitActionPerformed(evt);
@@ -541,6 +546,10 @@ DbConnection dbconn;
         }catch(Exception e){System.out.println(e);} updateTable();}
     
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
