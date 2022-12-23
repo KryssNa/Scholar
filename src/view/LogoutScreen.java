@@ -159,7 +159,7 @@ public class LogoutScreen extends javax.swing.JInternalFrame {
        JOptionPane.showConfirmDialog(null, "Are you sure you want to Logout?","Log Out",JOptionPane.YES_NO_OPTION);
         int result = 0;
        if(result == JOptionPane.YES_OPTION){
-           new LoginScreen.setVisible(true);
+//           new LoginScreen.setVisible(true);
        }else if (result == JOptionPane.NO_OPTION){
        this.dispose();
        }
