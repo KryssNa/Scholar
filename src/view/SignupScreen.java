@@ -51,7 +51,7 @@ public class SignupScreen extends javax.swing.JFrame {
     
     }else if(!pass.trim().matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$")){
     
-           JOptionPane.showMessageDialog(rootPane, "Password must contail Uppercase, lowercase ,Symbol and number","Invalid Password",JOptionPane.ERROR_MESSAGE);
+           JOptionPane.showMessageDialog(rootPane, "Password must be 8 digit & contain Uppercase, lowercase ,Symbol and number","Invalid Password",JOptionPane.ERROR_MESSAGE);
          
     }
         else if(!pass.equals(cpass)){

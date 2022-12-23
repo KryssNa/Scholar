@@ -61,6 +61,7 @@ public class Virtualclass extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setLayout(null);
@@ -68,12 +69,12 @@ public class Virtualclass extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("username:");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(6, 15, 61, 17);
+        jLabel3.setBounds(6, 15, 54, 16);
 
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("password:");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(6, 63, 62, 17);
+        jLabel4.setBounds(6, 63, 53, 16);
 
         txt_username.setBackground(new java.awt.Color(153, 204, 255));
         txt_username.addActionListener(new java.awt.event.ActionListener() {
@@ -82,7 +83,7 @@ public class Virtualclass extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txt_username);
-        txt_username.setBounds(12, 38, 112, 23);
+        txt_username.setBounds(12, 38, 112, 22);
 
         txt_password.setBackground(new java.awt.Color(153, 204, 255));
         txt_password.addActionListener(new java.awt.event.ActionListener() {
@@ -91,7 +92,7 @@ public class Virtualclass extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txt_password);
-        txt_password.setBounds(12, 92, 112, 23);
+        txt_password.setBounds(12, 92, 112, 22);
 
         jButton1.setBackground(new java.awt.Color(153, 204, 255));
         jButton1.setText("Join");
@@ -103,36 +104,18 @@ public class Virtualclass extends javax.swing.JFrame {
         jPanel1.add(jButton1);
         jButton1.setBounds(38, 127, 72, 23);
 
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(440, 80, 136, 198);
+
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Virtual classroom");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(440, 20, 170, 49);
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/her.jpg"))); // NOI18N
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(440, 440, 440)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(jLabel5))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(440, 440, 440)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(80, 80, 80)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(10, 0, 600, 520);
 
         pack();
         setLocationRelativeTo(null);
