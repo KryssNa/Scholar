@@ -151,6 +151,11 @@ public class StudentDashboard extends javax.swing.JFrame {
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/icons8-gear-16.png"))); // NOI18N
         jButton6.setText("   Settings  ");
         jButton6.setBorder(null);
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         btnOnlineAssessment.setBackground(new java.awt.Color(255, 204, 153));
         btnOnlineAssessment.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
@@ -368,7 +373,7 @@ public class StudentDashboard extends javax.swing.JFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
+            .addGap(0, 810, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -376,7 +381,7 @@ public class StudentDashboard extends javax.swing.JFrame {
         );
 
         jDesktopPane1.add(jPanel4);
-        jPanel4.setBounds(-5, 140, 800, 470);
+        jPanel4.setBounds(-5, 140, 810, 470);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -723,8 +728,20 @@ new Class_Client().setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        // TODO add your handling code here:
+        ViewBooks ttdf = new ViewBooks();
+//        jDesktopPane1.removeAll();
+        jDesktopPane1.add(ttdf);
+        ttdf.setBounds(0, 40, 790, 280);
+        ttdf.show();
     }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+       ChangingPassScreen ttdf = new ChangingPassScreen();
+//        jDesktopPane1.removeAll();
+        jDesktopPane1.add(ttdf);
+        ttdf.setBounds(0, 40, 1060, 650);
+        ttdf.show();
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments
