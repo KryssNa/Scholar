@@ -4,6 +4,13 @@
  */
 package view;
 
+import database.DbConnection;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author HP
@@ -16,7 +23,48 @@ public class FrgtScreen_second extends javax.swing.JFrame {
     public FrgtScreen_second() {
         initComponents();
     }
-
+         public boolean testuname(){
+        
+        Connection conn=DbConnection.getconnection();
+        
+        boolean isValid=false;
+        
+        try{
+            String uname=tf_uname.getText();
+            String query1="Select * from Admin where username=?";
+            String query2="Select * from AddStudent where Username=?";
+            String query3="Select * from AddTeacher where Username=?";
+            PreparedStatement usernamePST=conn.prepareStatement(query1);
+            PreparedStatement studentPST=conn.prepareStatement(query2);
+            PreparedStatement TeacherPST=conn.prepareStatement(query3);
+            usernamePST.setString(1, uname);
+            studentPST.setString(1, uname);
+            TeacherPST.setString(1, uname);
+            
+            ResultSet rs2=studentPST.executeQuery();
+            ResultSet rs1=usernamePST.executeQuery();
+            ResultSet rs3=TeacherPST.executeQuery();
+            if (rs1.next()){
+            
+                isValid=true;
+            
+            }else if(rs2.next()){
+                 isValid=true;
+            
+            }else if(rs3.next()){
+                 isValid=true;
+            
+            }
+            else{
+            
+            isValid=false;
+            }
+        }catch(SQLException e){
+        
+            JOptionPane.showMessageDialog(null, e); 
+        }
+        return isValid;
+        }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -31,12 +79,12 @@ public class FrgtScreen_second extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         label1 = new java.awt.Label();
         label2 = new java.awt.Label();
-        jTextField1 = new javax.swing.JTextField();
+        tf_uname = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         jButton1 = new javax.swing.JButton();
-        jTextField2 = new javax.swing.JTextField();
+        tf_cpass = new javax.swing.JTextField();
         jSeparator2 = new javax.swing.JSeparator();
-        jTextField3 = new javax.swing.JTextField();
+        tf_newpass = new javax.swing.JTextField();
         jSeparator3 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -57,34 +105,39 @@ public class FrgtScreen_second extends javax.swing.JFrame {
         label2.setForeground(new java.awt.Color(255, 255, 255));
         label2.setText("Password ?");
 
-        jTextField1.setBackground(new java.awt.Color(51, 51, 51));
-        jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField1.setText("Enter Your Usename");
-        jTextField1.setBorder(null);
+        tf_uname.setBackground(new java.awt.Color(51, 51, 51));
+        tf_uname.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        tf_uname.setForeground(new java.awt.Color(255, 255, 255));
+        tf_uname.setText("Enter Your Usename");
+        tf_uname.setBorder(null);
 
         jButton1.setBackground(new java.awt.Color(153, 0, 153));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Save");
         jButton1.setBorder(null);
         jButton1.setBorderPainted(false);
-
-        jTextField2.setBackground(new java.awt.Color(51, 51, 51));
-        jTextField2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField2.setText("Re-Enter Password");
-        jTextField2.setBorder(null);
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
 
-        jTextField3.setBackground(new java.awt.Color(51, 51, 51));
-        jTextField3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jTextField3.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField3.setText("Enter New Password");
-        jTextField3.setBorder(null);
+        tf_cpass.setBackground(new java.awt.Color(51, 51, 51));
+        tf_cpass.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        tf_cpass.setForeground(new java.awt.Color(255, 255, 255));
+        tf_cpass.setText("Re-Enter Password");
+        tf_cpass.setBorder(null);
+        tf_cpass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_cpassActionPerformed(evt);
+            }
+        });
+
+        tf_newpass.setBackground(new java.awt.Color(51, 51, 51));
+        tf_newpass.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        tf_newpass.setForeground(new java.awt.Color(255, 255, 255));
+        tf_newpass.setText("Enter New Password");
+        tf_newpass.setBorder(null);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -100,10 +153,10 @@ public class FrgtScreen_second extends javax.swing.JFrame {
                         .addGap(108, 108, 108)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tf_cpass, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tf_uname, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tf_newpass, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(171, 171, 171)
@@ -121,15 +174,15 @@ public class FrgtScreen_second extends javax.swing.JFrame {
                 .addGap(1, 1, 1)
                 .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(65, 65, 65)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tf_uname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(3, 3, 3)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tf_newpass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tf_cpass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
@@ -175,9 +228,66 @@ public class FrgtScreen_second extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void tf_cpassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_cpassActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_tf_cpassActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        String username=tf_uname.getText();
+        String pass=tf_newpass.getText();
+        String cpass=tf_cpass.getText();
+        if(testuname()==false){
+        
+            JOptionPane.showMessageDialog(null, "Invalid Username!!","Invalid!!",JOptionPane.ERROR_MESSAGE);       
+        }else if(!pass.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$")){
+    
+           JOptionPane.showMessageDialog(rootPane, "Password must be 8 digit & contain Uppercase, lowercase ,Symbol and number","Invalid Password",JOptionPane.ERROR_MESSAGE);
+         
+    }
+        else if(!pass.equals(cpass)){
+              JOptionPane.showMessageDialog(rootPane, "Password must be same");
+          }
+    
+        
+        else{
+            try{
+             String query="update Admin set Password='"+pass+"' where username='"+username+"'";
+             String query1="update AddStudent set Password='"+pass+"' where Username='"+username+"'";
+             String query2="update AddTeacher set Password='"+pass+"' where Username='"+username+"'";
+                    Connection conn=DbConnection.getconnection();
+                    PreparedStatement pst=conn.prepareStatement(query);
+                    int isupdated=pst.executeUpdate();
+                    
+                    PreparedStatement pst1=conn.prepareStatement(query1);
+                    int isupdated1=pst1.executeUpdate();
+                    
+                    PreparedStatement pst2=conn.prepareStatement(query2);
+                    int isupdated2=pst2.executeUpdate();
+                    if(isupdated>0){
+                    
+                        JOptionPane.showMessageDialog(null, "Password Changed Succesfully","Success",JOptionPane.INFORMATION_MESSAGE);
+                       
+                    
+                    }
+                    else if(isupdated1>0){
+                    
+                        JOptionPane.showMessageDialog(null, "Password Changed Succesfully","Success",JOptionPane.INFORMATION_MESSAGE);
+                       
+                    
+                    }
+                    else if(isupdated2>0){
+                    
+                        JOptionPane.showMessageDialog(null, "Password Changed Succesfully","Success",JOptionPane.INFORMATION_MESSAGE);
+                       
+                    
+                    }
+            }catch(SQLException e){System.out.println(e);}
+        
+            
+        }
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -222,10 +332,10 @@ public class FrgtScreen_second extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private java.awt.Label label1;
     private java.awt.Label label2;
+    private javax.swing.JTextField tf_cpass;
+    private javax.swing.JTextField tf_newpass;
+    private javax.swing.JTextField tf_uname;
     // End of variables declaration//GEN-END:variables
 }
