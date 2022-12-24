@@ -110,6 +110,11 @@ public class FrgtScreen_second extends javax.swing.JFrame {
         tf_uname.setForeground(new java.awt.Color(255, 255, 255));
         tf_uname.setText("Enter Your Usename");
         tf_uname.setBorder(null);
+        tf_uname.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_unameActionPerformed(evt);
+            }
+        });
 
         jButton1.setBackground(new java.awt.Color(153, 0, 153));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
@@ -226,6 +231,7 @@ public class FrgtScreen_second extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void tf_cpassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_cpassActionPerformed
@@ -288,6 +294,10 @@ public class FrgtScreen_second extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void tf_unameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_unameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_unameActionPerformed
 
     /**
      * @param args the command line arguments
