@@ -717,8 +717,8 @@ this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
-new CalenderScreen().setVisible(true);
+    
+    new CalenderScreen().setVisible(true);
 // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
