@@ -24,6 +24,8 @@ public class UpdateAdProfile extends javax.swing.JInternalFrame {
         initComponents();
     }
      public void updaterecord(){
+         
+         if(Constant.loggedInUser !=null){
     
         int id=Constant.loggedInUser.getUserId();
         String idd=String.valueOf(id);
@@ -32,7 +34,7 @@ public class UpdateAdProfile extends javax.swing.JInternalFrame {
 
         tf_password.setText(Constant.loggedInUser.getuserPass());
         tf_email.setText(Constant.loggedInUser.getuserEmail());
-     }
+     }}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -207,14 +209,14 @@ public class UpdateAdProfile extends javax.swing.JInternalFrame {
 
     private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameOpened
         // TODO add your handling code here:
-        
+        if(Constant.loggedInUser !=null){
         int id=Constant.loggedInUser.getUserId();
         String idd=String.valueOf(id);
         lbluser_id.setText(idd);
         tf_username.setText(Constant.loggedInUser.getuserUsername());
 
         tf_password.setText(Constant.loggedInUser.getuserPass());
-        tf_email.setText(Constant.loggedInUser.getuserEmail());
+        tf_email.setText(Constant.loggedInUser.getuserEmail());}
     }//GEN-LAST:event_formInternalFrameOpened
 
 

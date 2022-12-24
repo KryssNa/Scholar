@@ -682,9 +682,9 @@ this.dispose();        // TODO add your handling code here:
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
-        
+        if(Constant.loggedInStudent !=null){
         String fname=Constant.loggedInStudent.getUsername();
-        lblStudent.setText(fname);
+        lblStudent.setText(fname);}
     }//GEN-LAST:event_formWindowOpened
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed

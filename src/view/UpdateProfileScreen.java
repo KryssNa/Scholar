@@ -23,6 +23,8 @@ public class UpdateProfileScreen extends javax.swing.JInternalFrame {
         initComponents();
     }
     public void updaterecord(){
+        
+        if(Constant.loggedInTeacher !=null){
     
         int id=Constant.loggedInTeacher.getTeacher_id();
         String idd=String.valueOf(id);
@@ -39,7 +41,7 @@ public class UpdateProfileScreen extends javax.swing.JInternalFrame {
         lblgender.setText(Constant.loggedInTeacher.getGender());
     
     }
-
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -358,6 +360,8 @@ public class UpdateProfileScreen extends javax.swing.JInternalFrame {
 
     private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameOpened
         // TODO add your handling code here:
+        
+        if(Constant.loggedInTeacher !=null){
          int id=Constant.loggedInTeacher.getTeacher_id();
         String idd=String.valueOf(id);
         lbluser_id.setText(idd);
@@ -371,7 +375,7 @@ public class UpdateProfileScreen extends javax.swing.JInternalFrame {
         tf_dob.setText(Constant.loggedInTeacher.getDob());
         tf_dob.setText(Constant.loggedInTeacher.getEmail());
         lblgender.setText(Constant.loggedInTeacher.getGender());
-        
+        }
     
     }//GEN-LAST:event_formInternalFrameOpened
 

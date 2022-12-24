@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
 package view;
+import constraint.Constant;
 import controller.StudentController;
 import database.DbConnection;
 import net.proteanit.sql.DbUtils;
@@ -542,9 +543,9 @@ PreparedStatement pst=null;
                 String value1 = dateString;
 
                 try{
-
-                    String reg= "insert into Activitiew ( date, status) values ('"+value0+" / "+value1+"','Added Record')";
-                    pst=conn.prepareStatement(reg);
+                 String usernaam=(Constant.loggedInUser.getuserUsername());
+                String reg= "insert into Activities ( date, status,Added_by) values ('"+value0+" / "+value1+"','Update Record','"+usernaam+"')";
+                pst=conn.prepareStatement(reg);
                     pst.execute();
 
                 }
@@ -637,8 +638,9 @@ PreparedStatement pst=null;
             String values = dateString;
 
             try{
-                String reg= "insert into Admin_Audit (emp_id, date, status) values ('','"+value0+" / "+values+"','Updated Record')";
-                pst=conn.prepareStatement(reg);
+                String usernaam=(Constant.loggedInUser.getuserUsername());
+                String reg= "insert into Activities ( date, status,Updated_by) values ('"+value0+" / "+values+"','Update Record','"+usernaam+"')";
+                 pst=conn.prepareStatement(reg);
                 pst.execute();
             }
             catch (Exception e)
@@ -679,7 +681,8 @@ PreparedStatement pst=null;
             String value1 = dateString;
 
             try{
-                String reg= "insert into Admin_Audit ( date, status) values ("+value0+" / "+value1+"','Deleted Record')";
+                String usernaam=(Constant.loggedInUser.getuserUsername());
+                String reg= "insert into Activities ( date, status,Updated_by) values ('"+value0+" / "+value1+"','Deleted Record','"+usernaam+"')";
                 pst=conn.prepareStatement(reg);
                 pst.execute();
             }

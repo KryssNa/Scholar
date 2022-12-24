@@ -765,9 +765,10 @@ JFileChooser chooser = new JFileChooser();
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {// GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
-                String uname=Constant.loggedInStudent.getUsername();
+        if(Constant.loggedInUser !=null){
+                String uname=Constant.loggedInUser.getuserUsername();
         lblUsername.setText(uname);
-        
+        }
     }// GEN-LAST:event_formWindowOpened
 
     /**

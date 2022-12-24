@@ -26,9 +26,10 @@ public class UpdateStdProfile extends javax.swing.JInternalFrame {
     }
     public void updaterecord(){
 //    
-//        int id=Constant.loggedInStudent.getstd_id();+
-//        String idd=String.valueOf(id);
-//        lbl_user.setText(idd);
+        if(Constant.loggedInStudent !=null){
+        int id=Constant.loggedInStudent.getstd_id();
+        String idd=String.valueOf(id);
+        lbl_user.setText(idd);
         tf_username.setText(Constant.loggedInStudent.getUsername());
         tf_Fname.setText(Constant.loggedInStudent.getFname());
         tf_Sname.setText(Constant.loggedInStudent.getSname());
@@ -37,9 +38,9 @@ public class UpdateStdProfile extends javax.swing.JInternalFrame {
         tf_password.setText(Constant.loggedInStudent.getPassword());
         tf_course.setText(Constant.loggedInStudent.getstd_batch());
         tf_dob.setText(Constant.loggedInStudent.getDob());
-        tf_email.setText(Constant.loggedInTeacher.getEmail());
-        tf_gender.setText(Constant.loggedInTeacher.getGender());
-    
+        tf_email.setText(Constant.loggedInStudent.getEmail());
+        tf_gender.setText(Constant.loggedInStudent.getGender());
+        }
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -274,9 +275,10 @@ public class UpdateStdProfile extends javax.swing.JInternalFrame {
         label12.setBounds(520, 350, 120, 30);
 
         lbl_user.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
-        lbl_user.setText("jLabel2");
+        lbl_user.setForeground(new java.awt.Color(255, 51, 51));
+        lbl_user.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jPanel1.add(lbl_user);
-        lbl_user.setBounds(230, 130, 190, 30);
+        lbl_user.setBounds(230, 130, 130, 30);
 
         tf_email.setBackground(java.awt.Color.black);
         tf_email.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
@@ -348,12 +350,13 @@ public class UpdateStdProfile extends javax.swing.JInternalFrame {
                     String password=tf_password.getText();
                     String username=tf_username.getText();
                     String dob=tf_dob.getText();
+                    String gender=tf_gender.getText();
                     String tec_idd=lbl_user.getText();
                     int ttid=Integer.parseInt(tec_idd);
                     
                     String query="update AddStudent set FirstName='"+fname+"', SurName='"+sname+"', "
                     + "DOB='"+dob+"',Email='"+email+"',Contact='"+contact+"',Address='"+address+"', "
-                    + "Username='"+username+"',Password='"+password+"' where std_id='"+ttid+"'";
+                    + "Address='"+gender+"', Username='"+username+"',Password='"+password+"' where std_id='"+ttid+"'";
                     
                     Connection conn=DbConnection.getconnection();
                     PreparedStatement pst=conn.prepareStatement(query);

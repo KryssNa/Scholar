@@ -351,9 +351,11 @@ public class LoginScreen extends javax.swing.JFrame {
         if(username.equals("") || pass.equals("") ){
             JOptionPane.showMessageDialog(null, "Please fill all the details");
         }else if(enrollmentStudent()==true){
+            dispose();
             new StudentDashboard().setVisible(true);
         
         }else if(enrollmentTeacher()==true){
+            dispose();
             new teacherDashScreen().setVisible(true);
             
         }else{
@@ -364,6 +366,7 @@ public class LoginScreen extends javax.swing.JFrame {
                 constraint.Constant.loggedInUser=user;                
                          JOptionPane.showMessageDialog(null, "Welcome to Scholar Admin","Administration",
                             JOptionPane.INFORMATION_MESSAGE);
+                         dispose();
                          new AdminScreen().setVisible(true);
                 
             }else{

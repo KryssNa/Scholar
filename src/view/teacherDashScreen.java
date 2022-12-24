@@ -700,7 +700,8 @@ this.dispose();        // TODO add your handling code here:
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
-        lblTeacher.setText(Constant.loggedInTeacher.getUsername());
+        if(Constant.loggedInTeacher !=null){
+        lblTeacher.setText(Constant.loggedInTeacher.getUsername());}
     }//GEN-LAST:event_formWindowOpened
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

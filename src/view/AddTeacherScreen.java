@@ -668,7 +668,7 @@ cleartable();
             try{
                
                 String usernaam=(Constant.loggedInUser.getuserUsername());
-                String reg= "insert into Activities ( date, status,Added_by) values ('"+value0+" / "+value1+"','Deleted Record','"+usernaam+"')";
+                String reg= "insert into Activities ( date, status,Updated_by) values ('"+value0+" / "+value1+"','Deleted Record','"+usernaam+"')";
                 pst=conn.prepareStatement(reg);
                 pst.execute();
             }
