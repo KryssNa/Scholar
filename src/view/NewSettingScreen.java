@@ -40,14 +40,14 @@ public class NewSettingScreen extends javax.swing.JInternalFrame {
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setLayout(null);
 
-        jButton1.setText("Update");
+        jButton1.setText("Change Password");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(440, 150, 110, 30);
+        jButton1.setBounds(370, 330, 140, 30);
 
         btn_logout.setText("Logout");
         btn_logout.addActionListener(new java.awt.event.ActionListener() {
@@ -87,6 +87,10 @@ public class NewSettingScreen extends javax.swing.JInternalFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        ChangingPassScreen cp=new ChangingPassScreen();
+        jPanel1.removeAll();
+        jPanel1.add(cp);
+        cp.show();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btn_logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_logoutActionPerformed

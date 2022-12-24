@@ -286,11 +286,31 @@ public class ChangingPassScreen extends javax.swing.JInternalFrame {
           }else{
         
         try{
-             String query="update Admin set Password='"+new_pass+"' where username='"+username+"'";
+            String query="update Admin set Password='"+new_pass+"' where username='"+username+"'";
+             String query1="update AddStudent set Password='"+new_pass+"' where Username='"+username+"'";
+             String query2="update AddTeacher set Password='"+new_pass+"' where Username='"+username+"'";
                     Connection conn=DbConnection.getconnection();
                     PreparedStatement pst=conn.prepareStatement(query);
                     int isupdated=pst.executeUpdate();
+                    
+                    PreparedStatement pst1=conn.prepareStatement(query1);
+                    int isupdated1=pst1.executeUpdate();
+                    
+                    PreparedStatement pst2=conn.prepareStatement(query2);
+                    int isupdated2=pst2.executeUpdate();
                     if(isupdated>0){
+                    
+                        JOptionPane.showMessageDialog(null, "Password Changed Succesfully","Success",JOptionPane.INFORMATION_MESSAGE);
+                       
+                    
+                    }
+                    else if(isupdated1>0){
+                    
+                        JOptionPane.showMessageDialog(null, "Password Changed Succesfully","Success",JOptionPane.INFORMATION_MESSAGE);
+                       
+                    
+                    }
+                    else if(isupdated2>0){
                     
                         JOptionPane.showMessageDialog(null, "Password Changed Succesfully","Success",JOptionPane.INFORMATION_MESSAGE);
                        
