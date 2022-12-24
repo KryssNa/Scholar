@@ -40,6 +40,7 @@ public class NewSettingScreen extends javax.swing.JInternalFrame {
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setLayout(null);
 
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/password c.png"))); // NOI18N
         jButton1.setText("Change Password");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -47,8 +48,9 @@ public class NewSettingScreen extends javax.swing.JInternalFrame {
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(370, 330, 140, 30);
+        jButton1.setBounds(370, 330, 160, 30);
 
+        btn_logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/kkkkk.png"))); // NOI18N
         btn_logout.setText("Logout");
         btn_logout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -56,8 +58,9 @@ public class NewSettingScreen extends javax.swing.JInternalFrame {
             }
         });
         jPanel1.add(btn_logout);
-        btn_logout.setBounds(200, 480, 200, 30);
+        btn_logout.setBounds(200, 410, 200, 30);
 
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/deactive.png"))); // NOI18N
         jButton2.setText("Deactivate Account");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -65,7 +68,7 @@ public class NewSettingScreen extends javax.swing.JInternalFrame {
             }
         });
         jPanel1.add(jButton2);
-        jButton2.setBounds(485, 473, 200, 30);
+        jButton2.setBounds(510, 410, 200, 30);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/FrameBG.png"))); // NOI18N
         jPanel1.add(jLabel1);
