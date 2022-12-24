@@ -736,7 +736,7 @@ new Class_Client().setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-       SettingScreen ttdf = new SettingScreen();
+       NewSettingScreen ttdf = new NewSettingScreen();
         jDesktopPane1.removeAll();
         jDesktopPane1.add(ttdf);
         ttdf.setBounds(0, 40, 1060, 650);
