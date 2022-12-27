@@ -127,7 +127,6 @@ public class NewSettingScreen extends javax.swing.JInternalFrame {
     private void btn_logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_logoutActionPerformed
         // TODO add your handling code here:
         int value=JOptionPane.showConfirmDialog(null, "Are you sure you want to Logout?", "Logout", JOptionPane.YES_NO_OPTION);
-        System.out.println(value);
         if(value==0){
         
             constraint.Constant.loggedInUser=null;

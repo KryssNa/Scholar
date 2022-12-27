@@ -4,6 +4,7 @@
  */
 package view;
 
+import constraint.Constant;
 import database.DbConnection;
 import java.sql.*;
 import java.sql.PreparedStatement;
@@ -83,6 +84,24 @@ public class ChangingPassScreen extends javax.swing.JInternalFrame {
         lbloldpass1 = new java.awt.Label();
         lblusername = new javax.swing.JLabel();
 
+        addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
+            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameDeactivated(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameDeiconified(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameIconified(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
+                formInternalFrameOpened(evt);
+            }
+        });
+
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(1200, 600));
 
@@ -144,6 +163,8 @@ public class ChangingPassScreen extends javax.swing.JInternalFrame {
         lbloldpass1.setForeground(new java.awt.Color(255, 255, 255));
         lbloldpass1.setText("Enter Old Password :");
 
+        lblusername.setFont(new java.awt.Font("Lucida Calligraphy", 1, 16)); // NOI18N
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -191,13 +212,14 @@ public class ChangingPassScreen extends javax.swing.JInternalFrame {
                 .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(1, 1, 1)
                 .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(52, 52, 52)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(52, 52, 52)
                         .addComponent(lbluname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(22, 22, 22))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(lblusername, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblusername, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(tf_opass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -335,6 +357,16 @@ public class ChangingPassScreen extends javax.swing.JInternalFrame {
     private void tf_opassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_opassActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tf_opassActionPerformed
+
+    private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameOpened
+if(Constant.loggedInUser.getuserUsername() !=null){
+        lblusername.setText(Constant.loggedInUser.getuserUsername()); 
+}else if(Constant.loggedInStudent.getUsername()!=null){
+        lblusername.setText(Constant.loggedInStudent.getUsername()); 
+} else if(Constant.loggedInTeacher.getUsername()!=null){
+        lblusername.setText(Constant.loggedInTeacher.getUsername()); }        // TODO add your handling code here:
+           // TODO add your handling code here:
+    }//GEN-LAST:event_formInternalFrameOpened
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

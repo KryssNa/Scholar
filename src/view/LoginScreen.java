@@ -194,7 +194,7 @@ public class LoginScreen extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().setLayout(null);
 
@@ -364,7 +364,7 @@ public class LoginScreen extends javax.swing.JFrame {
             User user=uc.loginUser(username, pass);
             if(user!=null){
                 constraint.Constant.loggedInUser=user;                
-                         JOptionPane.showMessageDialog(null, "Welcome to Scholar Admin","Administration",
+                         JOptionPane.showMessageDialog(null, "Welcome to Scholar "+username,"Administration",
                             JOptionPane.INFORMATION_MESSAGE);
                          dispose();
                          new AdminScreen().setVisible(true);

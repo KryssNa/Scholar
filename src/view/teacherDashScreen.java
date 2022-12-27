@@ -1,13 +1,19 @@
 package view;
 
 import constraint.Constant;
+import database.DbConnection;
 import java.awt.Image;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import net.proteanit.sql.DbUtils;
 
 
 /*
@@ -74,6 +80,7 @@ public class teacherDashScreen extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
+        noticepanel = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         label9 = new java.awt.Label();
@@ -401,6 +408,19 @@ public class teacherDashScreen extends javax.swing.JFrame {
         jTextField4.setText("60%");
         jTextField4.setBorder(null);
 
+        noticepanel.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout noticepanelLayout = new javax.swing.GroupLayout(noticepanel);
+        noticepanel.setLayout(noticepanelLayout);
+        noticepanelLayout.setHorizontalGroup(
+            noticepanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        noticepanelLayout.setVerticalGroup(
+            noticepanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 137, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -438,19 +458,24 @@ public class teacherDashScreen extends javax.swing.JFrame {
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addGap(36, 36, 36)
                                 .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 268, Short.MAX_VALUE))
+                        .addGap(0, 258, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 276, Short.MAX_VALUE)
                         .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(151, 151, 151))))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(noticepanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(143, 143, 143)
+                .addComponent(noticepanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -492,7 +517,7 @@ public class teacherDashScreen extends javax.swing.JFrame {
         );
 
         jDesktopPane1.add(jPanel4);
-        jPanel4.setBounds(0, 0, 800, 610);
+        jPanel4.setBounds(0, 0, 790, 610);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -649,20 +674,124 @@ public class teacherDashScreen extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void STUDENTSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_STUDENTSActionPerformed
-
+ tblNotice = new javax.swing.JTable();
+    tblNotice.setBounds(0, 3, 840, 136);
+    tblNotice.setRowHeight(40);
+    tblNotice.setName("Reports");
+    tblNotice.setShowGrid(false);
+    tblNotice.setBorder(javax.swing.BorderFactory.createTitledBorder("Reports!"));
+    tblNotice.setFont(new java.awt.Font("Lucida Calligraphy", 1, 10));
+    tblNotice.setModel(new javax.swing.table.DefaultTableModel(
+        new Object [][] {
+            {null},
+            {null},
+            {null},
+            {null}
+        },
+        new String [] {
+            "Notice"
+        }
+    ) {
+        boolean[] canEdit = new boolean [] {
+            false
+        };
+        
+        public boolean isCellEditable(int rowIndex, int columnIndex) {
+            return canEdit [columnIndex];
+        }
+    });
+    tblNotice.getTableHeader().setReorderingAllowed(false);
+    noticepanel.add(tblNotice);
+    
+    if (tblNotice.getColumnModel().getColumnCount() > 0) {
+        tblNotice.getColumnModel().getColumn(0).setPreferredWidth(20);
+    }
+    
+    try{
+    
+        Connection conn=DbConnection.getconnection();
+        String query = "select * from reports";
+        Statement st=conn.createStatement();
+        ResultSet rs=st.executeQuery(query);
+        
+        while(rs.next()){
+        
+            tblNotice.setModel(DbUtils.resultSetToTableModel(rs));
+        }
+        
+        
+    }catch(SQLException e){
+    
+        System.out.println("SQL error: "+e);
+    }
     }//GEN-LAST:event_STUDENTSActionPerformed
 
     private void ClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClassActionPerformed
-
+        ContentsScreen ttdf = new ContentsScreen();
+        jDesktopPane1.removeAll();
+        jDesktopPane1.add(ttdf);
+        ttdf.setBounds(0, 0, 1060, 610);
+        ttdf.show();
 //        new OpenRoom().setVisible(true);
     }//GEN-LAST:event_ClassActionPerformed
 
     private void btnNoticeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNoticeActionPerformed
-        // TODO add your handling code here:
+ tblNotice = new javax.swing.JTable();
+    tblNotice.setBounds(0, 3, 858, 136);
+    tblNotice.setRowHeight(50);
+    tblNotice.setName("Notice");
+    tblNotice.setShowGrid(false);
+    tblNotice.setBorder(javax.swing.BorderFactory.createTitledBorder("Notice!"));
+    tblNotice.setFont(new java.awt.Font("Lucida Calligraphy", 1, 10));
+    tblNotice.setModel(new javax.swing.table.DefaultTableModel(
+        new Object [][] {
+            {null},
+            {null},
+            {null},
+            {null}
+        },
+        new String [] {
+            "Notice"
+        }
+    ) {
+        boolean[] canEdit = new boolean [] {
+            false
+        };
+        
+        public boolean isCellEditable(int rowIndex, int columnIndex) {
+            return canEdit [columnIndex];
+        }
+    });
+    tblNotice.getTableHeader().setReorderingAllowed(false);
+    noticepanel.add(tblNotice);
+    
+    if (tblNotice.getColumnModel().getColumnCount() > 0) {
+        tblNotice.getColumnModel().getColumn(0).setPreferredWidth(20);
+    }
+    
+    try{
+    
+        Connection conn=DbConnection.getconnection();
+        String query = "select * from noticee";
+        Statement st=conn.createStatement();
+        ResultSet rs=st.executeQuery(query);
+        
+        while(rs.next()){
+        
+            tblNotice.setModel(DbUtils.resultSetToTableModel(rs));
+        }
+        
+        
+    }catch(SQLException e){
+    
+        System.out.println("SQL error: "+e);
+    }        // TODO add your handling code here:
     }//GEN-LAST:event_btnNoticeActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-this.dispose();        // TODO add your handling code here:
+    int value=JOptionPane.showConfirmDialog(null, "Are you sure you want to Exit?", "Exit", JOptionPane.YES_NO_OPTION);
+        if(value==0){
+        this.dispose();  }          // TODO add your handling code here:
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void btnOnlineAssessmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOnlineAssessmentActionPerformed
@@ -841,8 +970,10 @@ new Class_Server().setVisible(true);
     private java.awt.Label label9;
     private javax.swing.JLabel lblTeacher;
     private javax.swing.JLabel lbl_img;
+    private javax.swing.JPanel noticepanel;
     // End of variables declaration//GEN-END:variables
-
+    private javax.swing.JTable tblNotice;
+    private javax.swing.JLabel jLabel111;
     private ImageIcon format =null;
     //strin filename
     String filename = null;

@@ -660,7 +660,9 @@ JFileChooser chooser = new JFileChooser();
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-       new CalenderScreen().setVisible(true);
+           int value=JOptionPane.showConfirmDialog(null, "Are you sure you want to Exit?", "Exit", JOptionPane.YES_NO_OPTION);
+        if(value==0){
+        this.dispose();  }  
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
@@ -668,6 +670,7 @@ JFileChooser chooser = new JFileChooser();
         jDesktopPane1.add(jPanel1);
         jDesktopPane1.add(Profile);
         jDesktopPane1.add(jPanel4);
+        jDesktopPane1.add(jPanel5);
         jDesktopPane1.show();       // TODO add your handling code here:
     }//GEN-LAST:event_jLabel7MouseClicked
 

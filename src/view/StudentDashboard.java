@@ -563,7 +563,11 @@ public class StudentDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_STUDENTSActionPerformed
 
     private void ClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClassActionPerformed
-
+        ContentsScreen ttdf = new ContentsScreen();
+        jDesktopPane1.removeAll();
+        jDesktopPane1.add(ttdf);
+        ttdf.setBounds(0, 0, 1060, 610);
+        ttdf.show();
 //        new OpenRoom().setVisible(true);
     }//GEN-LAST:event_ClassActionPerformed
 
@@ -642,7 +646,9 @@ public class StudentDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_btnNoticeActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-this.dispose();        // TODO add your handling code here:
+    int value=JOptionPane.showConfirmDialog(null, "Are you sure you want to Exit?", "Exit", JOptionPane.YES_NO_OPTION);
+        if(value==0){
+        this.dispose();  }      // TODO add your handling code here:
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void btnOnlineAssessmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOnlineAssessmentActionPerformed
