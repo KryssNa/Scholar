@@ -559,7 +559,56 @@ public class StudentDashboard extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void STUDENTSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_STUDENTSActionPerformed
-
+ tblNotice = new javax.swing.JTable();
+    tblNotice.setBounds(0, 3, 840, 136);
+    tblNotice.setRowHeight(40);
+    tblNotice.setName("Reports");
+    tblNotice.setShowGrid(false);
+    tblNotice.setBorder(javax.swing.BorderFactory.createTitledBorder("Reports!"));
+    tblNotice.setFont(new java.awt.Font("Lucida Calligraphy", 1, 10));
+    tblNotice.setModel(new javax.swing.table.DefaultTableModel(
+        new Object [][] {
+            {null},
+            {null},
+            {null},
+            {null}
+        },
+        new String [] {
+            "Notice"
+        }
+    ) {
+        boolean[] canEdit = new boolean [] {
+            false
+        };
+        
+        public boolean isCellEditable(int rowIndex, int columnIndex) {
+            return canEdit [columnIndex];
+        }
+    });
+    tblNotice.getTableHeader().setReorderingAllowed(false);
+    noticepanel.add(tblNotice);
+    
+    if (tblNotice.getColumnModel().getColumnCount() > 0) {
+        tblNotice.getColumnModel().getColumn(0).setPreferredWidth(20);
+    }
+    
+    try{
+    
+        Connection conn=DbConnection.getconnection();
+        String query = "select * from reports";
+        Statement st=conn.createStatement();
+        ResultSet rs=st.executeQuery(query);
+        
+        while(rs.next()){
+        
+            tblNotice.setModel(DbUtils.resultSetToTableModel(rs));
+        }
+        
+        
+    }catch(SQLException e){
+    
+        System.out.println("SQL error: "+e);
+    }
     }//GEN-LAST:event_STUDENTSActionPerformed
 
     private void ClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClassActionPerformed
