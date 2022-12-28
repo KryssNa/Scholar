@@ -36,6 +36,7 @@ public class NewSettingScreen extends javax.swing.JInternalFrame {
         jButton1 = new javax.swing.JButton();
         btn_logout = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -77,6 +78,15 @@ public class NewSettingScreen extends javax.swing.JInternalFrame {
         jPanel1.add(jButton2);
         jButton2.setBounds(360, 310, 200, 30);
 
+        jButton3.setText("Text Into Speech");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton3);
+        jButton3.setBounds(360, 420, 200, 30);
+
         jLabel2.setFont(new java.awt.Font("Lucida Calligraphy", 0, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/icons8-settings-58.png"))); // NOI18N
@@ -93,8 +103,6 @@ public class NewSettingScreen extends javax.swing.JInternalFrame {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/icons8-denied-100.png"))); // NOI18N
         jPanel1.add(jLabel4);
         jLabel4.setBounds(670, 330, 110, 100);
-
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Downloads\\icons8-webpage-log-out-of-personal-account-layout-100.png")); // NOI18N
         jPanel1.add(jLabel6);
         jLabel6.setBounds(820, 330, 100, 100);
 
@@ -210,11 +218,16 @@ public class NewSettingScreen extends javax.swing.JInternalFrame {
      }}
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        new TextIntoSpeechScreen().setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_logout;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;

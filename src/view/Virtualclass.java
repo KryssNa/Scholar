@@ -141,7 +141,8 @@ public class Virtualclass extends javax.swing.JFrame {
             if (Constant.loggedInStudent.getUsername().equals(email) && Constant.loggedInStudent.getPassword().equals(pass)) {
                 System.out.println("Joined");
                  JOptionPane.showMessageDialog(null,"Meeting Joined Successfully","Success",JOptionPane.PLAIN_MESSAGE);
-
+                 this.dispose();
+                 new joinmeetingScreen().setVisible(true);
             } else {
 //                System.out.println(" Error Joining meeting");
                  JOptionPane.showMessageDialog(null,"Wrong Password!! ","Wrong Password",JOptionPane.ERROR_MESSAGE);
