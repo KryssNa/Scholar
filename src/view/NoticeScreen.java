@@ -45,7 +45,7 @@ DbConnection dbconn;
         jLabel1 = new javax.swing.JLabel();
         tf_noticetext = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jButton1.setBackground(new java.awt.Color(204, 255, 204));
         jButton1.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N

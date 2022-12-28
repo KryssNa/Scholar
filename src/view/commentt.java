@@ -46,7 +46,7 @@ DbConnection dbconn;
         jScrollPane1 = new javax.swing.JScrollPane();
         tf_reports = new javax.swing.JTextArea();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(153, 0, 204));
 
