@@ -174,7 +174,7 @@ public class teacherDashScreen extends javax.swing.JFrame {
         btnOnlineAssessment.setBackground(new java.awt.Color(255, 204, 153));
         btnOnlineAssessment.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
         btnOnlineAssessment.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/assessment.png"))); // NOI18N
-        btnOnlineAssessment.setText("Assessment");
+        btnOnlineAssessment.setText("Assignment");
         btnOnlineAssessment.setBorder(null);
         btnOnlineAssessment.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

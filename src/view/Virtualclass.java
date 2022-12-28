@@ -23,14 +23,10 @@ public class Virtualclass extends javax.swing.JFrame {
     }
 
     public boolean validateLogin() {
-        String name = txt_username.getText();
+        String name = Constant.loggedInStudent.getUsername();
         String pwd = new String(txt_password.getPassword());
 
-        if (name.equals("")) {
-            JOptionPane.showMessageDialog(this, "please enter username");
-            return false;
-
-        }
+      
         if (pwd.equals("")) {
             JOptionPane.showMessageDialog(this, "please enter password");
             return false;
@@ -54,14 +50,19 @@ public class Virtualclass extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        txt_username = new javax.swing.JTextField();
         txt_password = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
+        username = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setLayout(null);
@@ -69,21 +70,12 @@ public class Virtualclass extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("username:");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(6, 15, 54, 16);
+        jLabel3.setBounds(40, 10, 61, 17);
 
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("password:");
+        jLabel4.setText("Enter password:");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(6, 63, 53, 16);
-
-        txt_username.setBackground(new java.awt.Color(153, 204, 255));
-        txt_username.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_usernameActionPerformed(evt);
-            }
-        });
-        jPanel1.add(txt_username);
-        txt_username.setBounds(12, 38, 112, 22);
+        jLabel4.setBounds(10, 70, 110, 40);
 
         txt_password.setBackground(new java.awt.Color(153, 204, 255));
         txt_password.addActionListener(new java.awt.event.ActionListener() {
@@ -92,7 +84,7 @@ public class Virtualclass extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txt_password);
-        txt_password.setBounds(12, 92, 112, 22);
+        txt_password.setBounds(10, 120, 120, 23);
 
         jButton1.setBackground(new java.awt.Color(153, 204, 255));
         jButton1.setText("Join");
@@ -102,24 +94,31 @@ public class Virtualclass extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(38, 127, 72, 23);
+        jButton1.setBounds(40, 160, 72, 23);
 
-        getContentPane().add(jPanel1);
-        jPanel1.setBounds(440, 80, 136, 198);
+        username.setForeground(new java.awt.Color(0, 255, 102));
+        username.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(username);
+        username.setBounds(10, 37, 110, 30);
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(436, 58, 140, 190));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Virtual classroom");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(440, 20, 170, 49);
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, 170, 49));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon/her.jpg"))); // NOI18N
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(10, 0, 600, 520);
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 440));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+      if(Constant.loggedInStudent != null){
+        username.setText(Constant.loggedInStudent.getUsername());}  // TODO add your handling code here:
+    }//GEN-LAST:event_formWindowOpened
 
     private void txt_usernameActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_txt_usernameActionPerformed
         validateLogin();
@@ -133,19 +132,19 @@ public class Virtualclass extends javax.swing.JFrame {
         //
 
         if (validateLogin() == true) {
-            String email = txt_username.getText();
+            String email = Constant.loggedInStudent.getUsername();
             String pass=txt_password.getText();
             System.out.println(pass);
             
-            System.out.println(Constant.loggedInUser.getuserEmail());
+//            System.out.println(Constant.loggedInStudent.getUsername());
 
-            if (Constant.loggedInUser.getuserUsername().equals(email) && Constant.loggedInUser.getuserPass().equals(pass)) {
+            if (Constant.loggedInStudent.getUsername().equals(email) && Constant.loggedInStudent.getPassword().equals(pass)) {
                 System.out.println("Joined");
-                // JOptionPane.showMessageDialog(null,"Meeting Joined Successfully");
+                 JOptionPane.showMessageDialog(null,"Meeting Joined Successfully","Success",JOptionPane.PLAIN_MESSAGE);
 
             } else {
-                System.out.println(" Error Joining meeting");
-                // JOptionPane.showMessageDialog(null,"Not Inserted ");
+//                System.out.println(" Error Joining meeting");
+                 JOptionPane.showMessageDialog(null,"Wrong Password!! ","Wrong Password",JOptionPane.ERROR_MESSAGE);
             }
         }
 
@@ -203,6 +202,6 @@ public class Virtualclass extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JPasswordField txt_password;
-    private javax.swing.JTextField txt_username;
+    private javax.swing.JLabel username;
     // End of variables declaration//GEN-END:variables
 }
