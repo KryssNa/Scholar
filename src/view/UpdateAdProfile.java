@@ -181,7 +181,9 @@ public class UpdateAdProfile extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_editDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editDetailsActionPerformed
-                try{
+        int value=JOptionPane.showConfirmDialog(null, "Are you sure you want to Update details?", "Update details", JOptionPane.YES_NO_OPTION);
+        if(value==0){        
+        try{
                     String password=tf_password.getText();
                     String username=tf_username.getText();
                     String email=tf_email.getText();
@@ -203,7 +205,7 @@ public class UpdateAdProfile extends javax.swing.JInternalFrame {
                         System.out.println(e);
                     
                     }
-        
+        }
         
     }//GEN-LAST:event_btn_editDetailsActionPerformed
 

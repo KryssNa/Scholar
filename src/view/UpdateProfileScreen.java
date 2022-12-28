@@ -317,6 +317,8 @@ public class UpdateProfileScreen extends javax.swing.JInternalFrame {
 //        
 //        if(evt.getSource()==btn_editDetails){
 //            
+ int value=JOptionPane.showConfirmDialog(null, "Are you sure you want to Update details?", "Update details", JOptionPane.YES_NO_OPTION);
+        if(value==0){ 
                 try{
                     String fname=tf_Fname.getText();
                     String sname=tf_Sname.getText();
@@ -352,7 +354,7 @@ public class UpdateProfileScreen extends javax.swing.JInternalFrame {
                 }
             
                           
-        
+        }
         
         
         

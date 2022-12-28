@@ -341,7 +341,9 @@ public class UpdateStdProfile extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_tf_FnameActionPerformed
 
     private void btn_editDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editDetailsActionPerformed
-                try{
+ int value=JOptionPane.showConfirmDialog(null, "Are you sure you want to Update details?", "Update details", JOptionPane.YES_NO_OPTION);
+        if(value==0){ 
+        try{
                     String fname=tf_Fname.getText();
                     String sname=tf_Sname.getText();
                     String address=tf_address.getText();
@@ -375,7 +377,7 @@ public class UpdateStdProfile extends javax.swing.JInternalFrame {
                 
                     System.out.println("SQL Error:"+e);
                 }
-        
+        }
     }//GEN-LAST:event_btn_editDetailsActionPerformed
 
     private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameOpened
