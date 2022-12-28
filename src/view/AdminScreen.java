@@ -19,7 +19,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author HP
+ * @author HP                   
  */
 public class AdminScreen extends javax.swing.JFrame {
     java.sql.Connection conn;
